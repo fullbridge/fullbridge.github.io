@@ -1,0 +1,82 @@
+$body-font: 'Source Sans Pro', sans-serif;
+$heading-font: 'Roboto Condensed', sans-serif;
+$icon-font: 'icomoon';
+
+$fb-red: #8E1A21;
+$fb-blue: #13a8e1;
+
+$yellow-alert: #FFEB3B;
+$green-success: #43AC6A;
+
+$cyan: #1FBDED;
+$magenta: #EF4987;
+$yellow: #F8981D;
+$black: darken(white,80%);
+$orange: #F8981D;
+$purple: #98489D;
+$green: #8DC73F;
+
+$facebook-blue: #3b5998;
+$twitter-blue: #03ABEA;
+$instagram-brown: #4C2500;
+$pinterest-red: #C92228;
+$soundcloud-orange: #f50;
+
+$gray-lightest: #f4f4f4;
+$gray-lighter: darken($gray-lightest,5%);
+$gray-light: darken($gray-lightest,10%);
+$gray-regular: darken($gray-lightest,35%);
+$gray-dark: darken($gray-lightest,60%);
+$gray-darker: darken($gray-lightest,70%);
+$gray-darkest: darken($gray-lightest,80%);
+$off-white: #fffaef;
+$highlight-blue: lighten($fb-blue,45%);
+$highlight-yellow: #fff4d8;
+$highlight-red: #ffdada;
+$highlight-green: #ecffd1;
+
+$primary-color: $gray-darkest;
+$secondary-color: $fb-red;
+$tertiary-color: $fb-blue;
+
+$primary-button-color: $primary-color;
+$secondary-button-color: $secondary-color;
+$special-button-color: $tertiary-color;
+
+$heading-color: $primary-color;
+$body-text-color: $gray-dark;
+$link-color: $tertiary-color;
+$background-color: white;
+$hover-bg-color: rgba(black,.05);
+
+$timing: 150ms;
+
+$light-divider: 1px solid $gray-lighter;
+$dark-divider: 1px solid $gray-light;
+$transparent-dark-divider: 1px solid rgba(black,.05);
+$transparent-light-divider: 1px solid rgba(white,.2);
+
+$input-color: $hover-bg-color;
+$input-focus-color: rgba(white,.2);
+$input-border: inset 0 0 1px $gray-darkest;
+$input-focus-border: inset 0 0 1px $gray-darkest, 0 0 .3em $link-color;
+$placeholder-text-color: $gray-regular;
+$focus-bg-color: $highlight-blue;
+
+$border-radius: 1px;
+$box-shadow: 0 0 1em $gray-light;
+$menu-bar-height: 3em;
+
+$gutter: 2em;
+
+$golden-side-width: 21.6447%;
+$golden-main-width: (100% - ($golden-side-width*2));
+
+$wrapper: 8%;
+$small-max-width: 850px;
+$large-max-width: 1440px;
+
+$row-spacing: .7em;
+
+$small-screen: 768px;
+$medium-screen: 1440px;

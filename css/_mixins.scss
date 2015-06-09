@@ -1,0 +1,356 @@
+$font-stack:
+  (group: body, id: regular, font: ($body-font), weight: 400, style: normal),
+  (group: body, id: italic, font: ($body-font), weight: 400, style: italic),
+  (group: body, id: bold, font: ($body-font), weight: 700, style: normal),
+  (group: body, id: bold-italic, font: ($body-font), weight: 400, style: italic),
+  (group: heading, id: regular, font: ($heading-font), weight: 400, style: normal),
+  (group: heading, id: bold, font: ($heading-font), weight: 700, style: normal),
+  (group: code, id: regular, font: (monospace), weight: 400, style: normal),
+  (group: icon, id: regular, font: ($icon-font), weight: 400, style: normal);
+
+@mixin font($group, $id:regular){
+  @each $font in $font-stack{
+    @if($group == map-get($font, group) and $id == map-get($font, id)){
+      font-family: map-get($font, font);
+      font-weight: map-get($font, weight);
+      font-style: map-get($font, style);
+    }
+  }
+}
+
+@mixin bp($min: 0, $max: 0) 
+{
+  $type: type-of($min);
+  
+  @if $type == string {
+    @if $min == small { 
+      @media only screen and (max-width: $small-screen) { @content; }
+    }
+    
+    @else if $min == medium {
+      @media only screen and (min-width: ($small-screen + 1px)) and (max-width: $medium-screen) { @content; }
+    }
+    
+    @else if $min == large {
+      @media only screen and (min-width: ($medium-screen + 1px)) { @content; }
+    }
+    
+    @else if $min == mobile {
+      @media only screen and (max-width: $small-screen) { @content; }
+    }
+    
+    @else if $min == desktop {
+      @media only screen and (min-width: ($small-screen + 1px)) { @content; }
+    }
+  
+    // Otherwise pass a warning to the compiler as to the appropriate options
+    @else {
+      @warn "The breakpoint mixin supports the following attributes: mobile, desktop, small, medium, large";
+    }
+  }
+  @else if $type == number {
+    // Allow for custom parameters for min and max size
+    $query: "all" !default;
+    @if      $min != 0 and $max != 0 { $query: "(min-width: #{$min}) and (max-width: #{$max})"; } // set both min and max
+    @else if $min != 0 and $max == 0 { $query: "(min-width: #{$min})"; } // set just min
+    @else if $min == 0 and $max != 0 { $query: "(max-width: #{$max})"; } // set just max
+    @media #{$query} { @content; }
+  }
+}
+
+@mixin orientation-portrait
+{
+    @media screen and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin orientation-landscape
+{
+    @media screen and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin clearfix 
+{
+    *zoom: 1;
+
+    &:before, &:after 
+    {
+        content: ' ';
+        display: table;
+    }
+    
+    &:after 
+    {
+        clear: both;
+    }
+}
+
+@mixin antialiased
+{
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-smoothing: antialiased !important;
+}
+
+@mixin ligatures
+{
+    -moz-font-feature-settings: 'liga', 'dlig';
+    -ms-font-feature-settings: 'liga', 'dlig'; 
+    -o-font-feature-settings: 'liga', 'dlig'; 
+    -webkit-font-feature-settings: 'liga', 'dlig'; 
+    font-feature-settings: 'liga', 'dlig';
+}
+
+@mixin kerning
+{
+    -moz-font-feature-settings: 'kern';
+    -ms-font-feature-settings: 'kern';
+    -o-font-feature-settings: 'kern';
+    -webkit-font-feature-settings: 'kern';
+    font-feature-settings: 'kern';
+    font-kerning: normal; /* Safari 7+, Firefox 24+, Chrome 33(?)+, Opera 21+*/
+}
+
+@mixin border-box
+{
+    -moz-box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+@mixin opacity($opacity) 
+{
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin transition($property)
+{
+    -moz-transition: $property;
+    -webkit-transition: $property;
+    -o-transition: $property;
+    -ms-transition: $property;
+    transition: $property;
+}
+
+@mixin animation($animate)
+{
+    -moz-animation: $animate;
+    -webkit-animation: $animate;
+    -o-animation: $animate;
+    -ms-animation: $animate;
+    animation: $animate;
+}
+
+@mixin transform($translate)
+{
+    -moz-transform: $translate;
+    -webkit-transform: $translate;
+    -o-transform: $translate;
+    -ms-transform: $translate;
+    transform: $translate;
+}
+
+@mixin background-size($bg-size)
+{
+    -webkit-background-size: $bg-size;
+    -moz-background-size: $bg-size;
+    -o-background-size: $bg-size;
+    background-size: $bg-size;
+}
+
+@mixin vertical-scroll
+{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin horizontal-scroll
+{
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin visible-scrollbar
+{
+    /* Let's get this party started */
+    &::-webkit-scrollbar 
+    {
+        width: 6px;
+    }
+     
+    /* Track */
+    &::-webkit-scrollbar-track 
+    {
+        background-color: transparent;
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb 
+    {
+        background: rgba(black,.1); 
+    }
+    /*
+    &::-webkit-scrollbar-thumb:window-inactive 
+    {} */
+
+    &::-webkit-scrollbar-button 
+    {
+        display: none;
+        width: 0;
+        height: 0; 
+    }
+
+    &::-webkit-scrollbar-corner 
+    {
+        background-color: transparent;
+    }
+}
+
+@mixin vertical-align-middle
+{
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin horizontal-align-middle
+{
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@mixin xy-align-middle
+{
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+@mixin truncate
+{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin visible
+{
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    visibility: visible;
+}
+
+@mixin hidden
+{
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+@mixin justify-text
+{
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    -webkit-hyphenate-limit-lines: 2;
+    -moz-hyphenate-limit-lines: 2;
+    -ms-hyphenate-limit-lines: 2;
+    hyphenate-limit-lines: 2;
+    -webkit-hyphenate-limit-chars: 6 3 2;
+    -moz-hyphenate-limit-chars: 6 3 2;
+    -ms-hyphenate-limit-chars: 6 3 2;
+    hyphenate-limit-chars: 6 3 2;
+    -webkit-hyphenate-limit-last: always;
+    -moz-hyphenate-limit-last: always;
+    -ms-hyphenate-limit-last: always;
+    hyphenate-limit-last: always;
+}
+
+@mixin triangle-up($sides, $bottom, $color)
+{
+    width: 0;
+    height: 0;
+    content: '';
+    border-left: $sides solid transparent;
+    border-right: $sides solid transparent;
+    border-bottom: $bottom solid $color;
+}
+
+@mixin triangle-down($sides, $bottom, $color)
+{
+    width: 0;
+    height: 0;
+    content: '';
+    border-left: $sides solid transparent;
+    border-right: $sides solid transparent;
+    border-top: $bottom solid $color;
+}
+
+@mixin triangle-right($sides, $stroke, $color)
+{
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: $sides solid transparent;
+    border-bottom: $sides solid transparent;
+    border-left: $stroke solid $color;
+}
+
+@mixin triangle-left($sides, $stroke, $color)
+{
+    width: 0;
+    height: 0;
+    content: '';
+    border-top: $sides solid transparent;
+    border-bottom: $sides solid transparent;
+    border-right: $stroke solid $color;
+}
+
+@mixin button-gradient($button-bg-color, $top-color, $bottom-color)
+{
+    background-color: $button-bg-color;
+    background-image: -webkit-linear-gradient(top,$top-color,$bottom-color);
+    background-image: -moz-linear-gradient(top,$top-color,$bottom-color);
+    background-image: -o-linear-gradient(top,$top-color,$bottom-color);
+    background-image: -ms-linear-gradient(top,$top-color,$bottom-color);
+    background-image: linear-gradient(top,$top-color,$bottom-color);
+}
+
+@mixin img-grayscale
+{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+    filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+
+%visuallyhidden 
+{
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}

@@ -1,0 +1,187 @@
+/* ==========================================================================
+   Responsive tables from Zurb
+   ========================================================================== */
+
+.table 
+{ 
+	margin: 0; 
+	border: $light-divider;
+	border-radius: $border-radius; 
+	background-color: $background-color;
+
+	thead,
+	tfoot 
+	{ 
+		color: $heading-color;
+		background-color: $hover-bg-color; 
+	}
+
+	th,
+	td 
+	{ 
+		text-align: left;
+
+		[dir=rtl] &
+		{
+			text-align: right;
+		} 
+	}
+
+	thead tr th,
+	tfoot tr td 
+	{ 
+		padding: $row-spacing ($gutter/2);
+		font-weight: bold; 
+	}
+
+	thead tr th:first-child,
+	tfoot tr td:first-child 
+	{ 
+		border-left: none;
+	}
+
+	thead tr th:last-child,
+	tfoot tr td:last-child 
+	{ 
+		border-right: none; 
+	}
+
+	/*tbody tr.even,
+	tbody tr.alt 
+	{ 
+		background-color: $hover-bg-color; 
+	}
+
+	tbody tr:nth-child(even) 
+	{ 
+		background-color: $hover-bg-color; 
+	}*/
+
+	tbody tr td
+	{ 
+		padding: $row-spacing ($gutter/2); 
+		vertical-align: top; 
+		border: none;
+	}
+
+	tbody tr
+	{ 
+		border-bottom: $light-divider;
+	}
+
+	&.data
+	{
+		th,
+		td 
+		{ 
+			text-align: right; 
+
+			&:first-child
+			{
+				text-align: left;
+			}
+
+			[dir=rtl] &
+			{
+				text-align: left;
+
+				&:first-child
+				{
+					text-align: right;
+				}
+			}
+		}
+	}
+
+	&.small
+	{
+		font-size: .8em;
+	}
+
+	.label
+	{
+		margin: 0 !important;
+	}
+}
+
+@include bp(small)
+{
+	table.responsive 
+	{ 
+		margin-bottom: 0;
+	}
+	
+	.pinned 
+	{ 
+		position: absolute; 
+		left: 0; 
+		top: 0; 
+		background-color: $background-color; 
+		width: 35%;
+		border-right: $light-divider; 
+		border-left: $light-divider;
+
+		@include horizontal-scroll;
+	}
+
+	.pinned table 
+	{ 
+		border-right: none; 
+		border-left: none; 
+		width: 100%; 
+	}
+
+	.pinned table th, 
+	.pinned table td 
+	{ 
+		white-space: nowrap; 
+	}
+
+	.pinned td:last-child 
+	{ 
+		border-bottom: none; 
+	}
+
+	.pinned table tr 
+	{ 
+		height: auto !important; 
+	}
+	
+	div.table-wrapper 
+	{ 
+		position: relative; 
+		overflow: hidden; 
+		border-right: $light-divider; 
+	}
+
+	div.table-wrapper div.scrollable 
+	{ 
+		margin-left: 35%; 
+	}
+
+	div.table-wrapper div.scrollable 
+	{ 
+		@include horizontal-scroll; 
+	}	
+	
+	table.responsive
+	{
+		border-right: none;
+		border-left: none;
+	}
+
+	table.responsive td, table.responsive th 
+	{ 
+		position: relative; 
+		white-space: nowrap; 
+		overflow: hidden; 
+	}
+
+	table.responsive th:first-child, 
+	table.responsive td:first-child, 
+	table.responsive td:first-child, 
+	table.responsive.pinned td 
+	{ 
+		display: none; 
+	}
+}

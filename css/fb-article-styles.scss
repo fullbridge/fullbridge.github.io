@@ -1,0 +1,441 @@
+/* ==========================================================================
+   Article styles
+   ========================================================================== */
+a
+{
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    margin-top: $row-spacing;
+    margin-bottom: 0;
+    color: $heading-color;
+    line-height: 1.25;
+
+    @include font(heading, bold);
+
+}
+
+h1
+{
+    @include bp(small)
+    {
+        font-size: 1.6em;
+    }
+
+    @include bp(medium)
+    {
+        font-size: 1.9em;
+    }
+
+    @include bp(large)
+    {
+        font-size: 2em;
+    }
+}
+
+h2
+{
+    @include bp(small)
+    {
+        font-size: 1.4em;
+    }
+
+    @include bp(medium)
+    {
+        font-size: 1.6em;
+    }
+
+    @include bp(large)
+    {
+        font-size: 1.8em;
+    }
+}
+
+h3
+{
+    @include bp(small)
+    {
+        font-size: 1.2em;
+    }
+
+    @include bp(medium)
+    {
+        font-size: 1.3em;
+    }
+
+    @include bp(large)
+    {
+        font-size: 1.5em;
+    }
+}
+
+h4
+{
+    @include bp(small)
+    {
+        font-size: 1em;
+    }
+
+    @include bp(medium)
+    {
+        font-size: 1.1em;
+    }
+
+    @include bp(large)
+    {
+        font-size: 1.3em;
+    }
+}
+
+h5
+{
+    @include bp(small)
+    {
+        font-size: .9em;
+    }
+
+    @include bp(medium)
+    {
+        font-size: 1em;
+    }
+
+    @include bp(large)
+    {
+        font-size: 1.2em;
+    }
+}
+
+h6
+{
+    text-transform: uppercase;
+
+    @include bp(small)
+    {
+        font-size: .7em;
+    }
+
+    @include bp(medium)
+    {
+        font-size: .8em;
+    }
+
+    @include bp(large)
+    {
+        font-size: .9em;
+    }
+}
+
+h1,
+h2
+{
+    @include bp(medium)
+    {
+        letter-spacing: -1px;
+    }
+
+    @include bp(large)
+    {
+        letter-spacing: -2px;
+    }
+}
+
+header hgroup
+{
+    h1 + h2
+    {
+        margin-top: 0;
+        color: $gray-regular;
+        text-transform: uppercase;
+        letter-spacing: .25em;
+        font-family: $body-font;
+        font-weight: normal;
+
+        @include bp(small)
+        {
+            font-size: .7em;
+        }
+
+        @include bp(medium)
+        {
+            font-size: .8em;
+        }
+
+        @include bp(large)
+        {
+            font-size: .9em;
+        }
+    }
+}
+
+.opening
+{
+    font-size: 1.2em;
+
+    &:first-letter
+    {
+        float: left;
+        margin-right: .15em;
+        padding: 0 .2em;
+        color: $heading-color;
+        line-height: 1.1;
+        text-transform: uppercase;
+        font-size: 3.4em;
+        border: $light-divider;
+        border-style: double;
+        border-width: 4px;
+
+        @include font(heading, bold);
+    }
+}
+
+[dir=rtl] .opening
+{
+    &:first-letter
+    {
+        float: right;
+        margin-right: auto;
+        margin-left: .15em;
+    }
+}
+
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+select,
+option,
+optgroup
+{
+    @include font(body,regular);
+}
+
+p,
+ol,
+ul,
+header,
+footer,
+hgroup,
+details,
+summary,
+.block
+{
+    margin: $row-spacing auto;
+}
+
+.block-2
+{
+    margin: ($row-spacing*2) auto;
+}
+
+figure,
+blockquote,
+pre
+{
+    margin: $row-spacing*1.4 auto;
+}
+
+ul:not([class]),
+ol:not([class])
+{
+    padding: 0 2em;
+}
+
+figure
+{
+    text-align: center;
+
+    img
+    {
+        width: 100%;
+        height: auto;
+    }
+
+    figcaption
+    {
+        margin-top: .2em;
+        color: $gray-regular;
+        font-size: .8em;
+    }
+
+    .embed
+    {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+        
+        iframe,object,embed
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+blockquote
+{
+    padding: 0;
+    color: $heading-color;
+    text-align: center;
+    font-weight: bold;
+    border: $light-divider;
+    border-style: double;
+    border-width: 4px;
+    border-right: none;
+    border-left: none;
+
+    > p
+    {
+        @include bp(small)
+        {
+            font-size: 1.1em;
+        }
+
+        @include bp(medium)
+        {
+            font-size: 1.2em;
+        }
+
+        @include bp(large)
+        {
+            font-size: 1.4em;
+        }
+
+        &:before,
+        &:after
+        {
+            color: $gray-regular;
+            font-weight: bold;
+        }
+
+        &:before
+        {
+            content: '\201C';
+        }
+
+        &:after
+        {
+            content: '\201D';
+        }
+    }
+}
+
+[dir=rtl] blockquote
+{
+    > p
+    {
+        &:before
+        {
+            content: '\201D';
+        }
+
+        &:after
+        {
+            content: '\201C';
+        }
+    }
+}
+
+code
+{
+    padding: .1em .5em;
+    font-size: .9em;
+    background-color: $gray-lightest;
+}
+
+pre
+{
+    border-left: 5px solid $gray-light;
+
+    code
+    {
+        display: block;
+        margin: 0;
+        padding: .5em 1em;
+        font-size: .7em;
+        white-space: nowrap;
+
+        @include horizontal-scroll;
+    }
+}
+
+[dir=rtl] pre
+{
+    border-right: 5px solid $gray-light;
+    border-left: none;
+}
+
+
+hr 
+{
+    display: block;
+    height: 1px;
+    margin: ($row-spacing*2) auto;
+    padding: 0;
+    border: 0;
+    border-top: $light-divider;
+}
+
+address
+{
+    display: inline;
+}
+
+sup
+{
+    top: -.3em;
+}
+
+aside
+{
+    margin-bottom: $row-spacing;
+    padding: 0 $row-spacing;
+    border: $light-divider;
+
+    @include bp(small)
+    {
+        margin-top: $row-spacing;
+        margin-bottom: $row-spacing;
+    }
+
+    @include bp(medium)
+    {
+        width: 13em;
+    }
+
+    @include bp(large)
+    {
+        width: 16em;
+    }
+
+    @include bp(desktop)
+    {
+        position: relative;
+        top: .3em;
+        float: right;
+        margin-left: 1em;
+    }
+
+    [dir=rtl] &
+    {
+        @include bp(desktop)
+        {
+            float: left;
+            margin-right: 1em;
+            margin-left: 0;
+        }
+    }
+}

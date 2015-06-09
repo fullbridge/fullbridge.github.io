@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <!-- Mobile view styles -->
+        <meta name="HandheldFriendly" content="True"> 
+        <meta name="MobileOptimized" content="320"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta http-equiv="cleartype" content="on">
+
+        <!-- SEO shit -->
+        <meta name="author" content="Mike Mai Network">
+        <meta name="description" content="Living style guide of the Fullbridge platform.">
+        <meta property="og:title" content="Fullbridge Styleguide" />
+        <meta property="og:description" content="Living style guide of the Fullbrige platform." />
+        <meta property="og:type" content="website" />
+        <!--<meta property="og:image" content="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />-->
+        <meta property="og:url" content="http://fullbridge.com" />
+        <meta property="og:site_name" content="Fullbridge Styleguide" />
+        <title>Fullbridge Sign Up</title>
+        <link rel="canonical" href="http://platform.fullbridge.com/styleguide">
+
+        <!-- CSS for the site -->
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!-- Thumbnail for social
+        <link rel="image_src" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" /> -->
+
+        <!-- Touch icons
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://s3.amazonaws.com/mikemai/assets/img/ios/m/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/mikemai/assets/img/ios/l/apple-touch-icon-precomposed.png">
+        <link rel="icon" href="https://s3.amazonaws.com/mikemai/assets/img/favicon.ico"> -->
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!--<div class="row collapse">
+            <div class="column">
+                <div style="height: 3em; background:black;">Top nav</div>
+            </div>
+        </div>-->
+
+        <div class="row">
+            <main class="large-4 medium-6 small-centered columns">
+                <article>
+                    <div class="alert-box warning validations hidden">
+                        <p>
+                            There are something wrong with the following fields:
+                        </p>
+                        <ul>
+                            <li>Last name</li>
+                            <li>Email</li>
+                        </ul>
+                        <a href="javascript:" class="close" data-anijs="if: click, do: $addClass hidden, to: .alert-box"></a>
+                    </div>
+                    <h2>
+                        Sign up for Fullbridge
+                    </h2>
+                    <form class="form">
+                        <fieldset>
+                            <div class="row">
+                                <div class="medium-6 small-12 columns">
+                                    <label class="label expand">
+                                        <input type="text" placeholder="First name" required aria-required="true" autofocus>
+                                        <div class="label-text">
+                                            <span class="valid">Sweet first name</span>
+                                            <span class="invalid">Please enter a name</span>
+                                            <span class="default">First name</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="medium-6 small-12 columns">
+                                    <label class="label expand">
+                                        <input type="text" placeholder="Last name" required aria-required="true">
+                                        <div class="label-text">
+                                            <span class="valid">Sweet last name</span>
+                                            <span class="invalid">Please enter a name</span>
+                                            <span class="default">Last name</span>
+                                        </div>
+                                        <div class="alert-bubble validations hidden">
+                                            <p>
+                                                Last name is required.
+                                            </p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <label class="label expand">
+                                        <input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Must use valid email." required aria-required="true">
+                                        <div class="label-text">
+                                            <span class="valid">Hey, nice email</span>
+                                            <span class="invalid">Hmm, that's not an email</span>
+                                            <span class="default">Email</span>
+                                        </div>
+                                        <div class="alert-bubble validations hidden">
+                                            <p>
+                                                There's already an account with this email. <a href="javascript:">Try signing in</a>
+                                            </p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <label class="label expand">
+                                        <input type="password" placeholder="Password" pattern=".{8,}" title="Must enter 8 characters. Special characters are allowed." required aria-required="true">
+                                        <div class="label-text">
+                                            <span class="valid">Good password!</span>
+                                            <span class="invalid">Too simple</span>
+                                            <span class="default">Password</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <p>
+                            <button type="submit" class="button primary large expand" data-anijs="if: click, do: $removeClass hidden, to: .validations;">
+                                Sign up now
+                            </button>
+                        </p>
+                    </form>
+                </article>
+            </main>
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="http://anijs.github.io/lib/anijs0.8.0/anijs.js"></script>
+        <script src="http://anijs.github.io/lib/anijs0.8.0/helpers/dom/anijs-helper-dom.js"></script>
+        <script src="js/vendor/foundation-responsive-tables.js"></script>
+        <script src="js/vendor/fastclick.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

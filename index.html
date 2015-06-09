@@ -1,1 +1,2568 @@
-Hello World
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <!-- Mobile view styles -->
+        <meta name="HandheldFriendly" content="True"> 
+        <meta name="MobileOptimized" content="320"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta http-equiv="cleartype" content="on">
+
+        <!-- SEO shit -->
+        <meta name="author" content="Mike Mai Network">
+        <meta name="description" content="Living style guide of the Fullbridge platform.">
+        <meta property="og:title" content="Fullbridge Styleguide" />
+        <meta property="og:description" content="Living style guide of the Fullbrige platform." />
+        <meta property="og:type" content="website" />
+        <!--<meta property="og:image" content="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />-->
+        <meta property="og:url" content="http://fullbridge.com" />
+        <meta property="og:site_name" content="Fullbridge Styleguide" />
+        <title>Fullbridge Styleguide</title>
+        <link rel="canonical" href="http://platform.fullbridge.com/styleguide">
+
+        <!-- CSS for the site -->
+        <link rel="stylesheet" href="css/main.css">
+
+        <!-- Thumbnail for social
+        <link rel="image_src" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" /> -->
+
+        <!-- Touch icons
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://s3.amazonaws.com/mikemai/assets/img/ios/m/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/mikemai/assets/img/ios/l/apple-touch-icon-precomposed.png">
+        <link rel="icon" href="https://s3.amazonaws.com/mikemai/assets/img/favicon.ico"> -->
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!--<div class="menu-bar">
+            <strong>Fullbridge</strong> &raquo; <strong>Design</strong>
+        </div>-->
+
+        <div class="row">
+            <div class="large-2 medium-3 columns sidebar fixed">
+                <div class="side-nav">
+                    <header
+                        data-anijs="
+                            if: click, do: $toggleClass open;
+                        ">
+                        Unit 1: UI Style Guide
+                    </header>
+                    <nav role="navigation" title="Style Guide navigation">
+                        <ul>
+                            <li>
+                                <a href="javascript:" class="done">Forms</a>
+                                <ul>
+                                    <li>
+                                        <a href="#form-fields" class="done">Form fields</a>
+                                    </li>
+                                    <li>
+                                        <a href="#switches" class="done">Switches</a>
+                                    </li>
+                                    <li>
+                                        <a href="#range-sliders" class="done">Range sliders</a>
+                                    </li>
+                                    <li>
+                                        <a href="#fieldset" class="done">Fieldset</a>
+                                    </li>
+                                    <li>
+                                        <a href="#disabled" class="done">Disabled</a>
+                                    </li>
+                                    <li>
+                                        <a href="#read-only" class="done">Read only</a>
+                                    </li>
+                                    <li>
+                                        <a href="#datalist" class="done">Datalist</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="done">Alerts</a>
+                                <ul>
+                                    <li>
+                                        <a href="#alert-boxes" class="done">Alert boxes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#alert-bubbles" class="done">Alert bubbles</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="done">Buttons</a>
+                                <ul>
+                                    <li>
+                                        <a href="#links" class="done">Links</a>
+                                    </li>
+                                    <li>
+                                        <a href="#buttons" class="done">Buttons</a>
+                                    </li>
+                                    <li>
+                                        <a href="#split-buttons" class="done">Split buttons</a>
+                                    </li>
+                                    <li>
+                                        <a href="#button-groups" class="done">Button groups</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tooltips" class="done">Tooltips</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="done">Article styles</a>
+                                <ul>
+                                    <li>
+                                        <a href="#kitchen-sink" class="done">Kitchen sink</a>
+                                    </li>
+                                    <li>
+                                        <a href="#columns" class="done">Columns</a>
+                                    </li>
+                                    <li>
+                                        <a href="#block-grid" class="done">Block grid</a>
+                                    </li>
+                                    <li>
+                                        <a href="#example-article" class="done">Example article</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="">Misc</a>
+                                <ul>
+                                    <li>
+                                        <a href="#progress-bars" class="active">Progress bars</a>
+                                    </li>
+                                    <li>
+                                        <a href="#accordion" class="">Accordion</a>
+                                    </li>
+                                    <li>
+                                        <a href="#modals" class="">Modals</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tabs" class="">Tabs</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tables" class="done">Tables</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="javascript:">Section</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:">Section</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Subsection</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <main class="large-10 medium-9 columns">
+                <article>
+                    <section class="row section">
+                        <div class="large-10 medium-12 large-centered columns">
+                            <h2>
+                                Forms
+                            </h2>
+                            <form class="form">
+                                <h3>
+                                    <a name="form-fields" href="#form-fields" class="link jump"></a> Form fields
+                                </h3>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="text" placeholder="Required input" required aria-required="true">
+                                                <div class="label-text">
+                                                    <span class="valid">Sweet, it's valid</span>
+                                                    <span class="invalid">Sorry, invalid input</span>
+                                                    <span class="default">Label text</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="email" placeholder="Email input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Must use valid email." value="emceehao@gmail.com" required aria-required="true">
+                                                <div class="label-text">
+                                                    <span class="valid">Hey, nice email</span>
+                                                    <span class="invalid">Hmm, that's not an email</span>
+                                                    <span class="default">Email</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="text" name="text" placeholder="Start date">
+                                                <div class="label-text">Start date</div>
+                                                <div class="icon-insert-invitation"></div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="text" name="text" placeholder="End date">
+                                                <div class="label-text">End date</div>
+                                                <div class="icon-insert-invitation"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="text" name="speech" x-webkit-speech="" placeholder="Speech recognition input">
+                                                <div class="label-text">Speech recognition input</div>
+                                                <div class="icon-mic"></div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="url" placeholder="URL input" required aria-required="true">
+                                                <div class="label-text">
+                                                    <span class="valid">Hey, nice URL</span>
+                                                    <span class="invalid">Hmm, that's not an URL</span>
+                                                    <span class="default">URL</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <div class="row collapse">
+                                                <div class="small-3 columns">
+                                                    <div class="prefix">http://</div>
+                                                </div>
+                                                <div class="small-9 columns">
+                                                    <label class="label expand">
+                                                        <input type="url" rel="prefix" placeholder="URL prefix">
+                                                        <div class="label-text">URL prefix</div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <div class="row collapse">
+                                                <div class="small-10 columns">
+                                                    <label class="label expand">
+                                                        <input type="url" rel="prefix" placeholder="URL postfix">
+                                                        <div class="label-text">URL postfix</div>
+                                                    </label>
+                                                </div>
+                                                <div class="small-2 columns">
+                                                    <div class="postfix">.com</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <div class="row collapse">
+                                                <div class="small-10 columns">
+                                                    <label class="label expand">
+                                                        <input type="tel" placeholder="Tel input">
+                                                        <div class="label-text">Tel input</div>
+                                                        <div class="icon-dialpad"></div>
+                                                    </label>
+                                                </div>
+                                                <div class="small-2 columns">
+                                                    <p>
+                                                        <button class="button primary expand">Call</button>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <div class="row collapse">
+                                                <div class="small-9 columns">
+                                                    <label class="label expand">
+                                                        <input type="search" placeholder="Search input">
+                                                        <div class="label-text">Search input</div>
+                                                        <div class="icon-search"></div>
+                                                    </label>
+                                                </div>
+                                                <div class="small-3 columns">
+                                                    <p>
+                                                        <button class="button primary expand">Search</button>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="number" placeholder="Number input" required aria-required="true">
+                                                <div class="label-text">
+                                                    <span class="valid">Hey, nice number</span>
+                                                    <span class="invalid">Hmm, that's not a number</span>
+                                                    <span class="default">Number</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="password" placeholder="Password input" pattern=".{8,}" title="Must enter 8 characters. Special characters are allowed.">
+                                                <div class="label-text">Password input</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="time">
+                                                <div class="label-text">Time input</div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="date">
+                                                <div class="label-text">Date input</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="month">
+                                                <div class="label-text">Month input</div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="week">
+                                                <div class="label-text">Week input</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input type="datetime-local">
+                                                <div class="label-text">Datetime-local input</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <textarea id="textarea" cols="30" rows="5" placeholder="Textarea text"></textarea>
+                                                <div class="label-text">Textarea text</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="file">
+                                                <div class="label-text"><span class="icon-cloud-upload"></span> File input</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <div class="select">
+                                                    <select>
+                                                        <option disabled selected>Single select</option>
+                                                        <option>Option 01</option>
+                                                        <option>Option 02</option>
+                                                    </select>
+                                                    <div class="label-text">Single select</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <div class="select-multiple">
+                                                    <select multiple size="6">
+                                                        <option>Option 1</option>
+                                                        <option>Option 2</option>
+                                                        <option>Option 3</option>
+                                                        <option>Option 4</option>
+                                                        <option>Option 5</option>
+                                                        <option>Option 6</option>
+                                                        <option>Option 7</option>
+                                                        <option>Option 8</option>
+                                                        <option>Option 9</option>
+                                                        <option>Option 10</option>
+                                                    </select>
+                                                    <div class="label-text">Multiple select</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="radio" name="rad-fancy">
+                                                <div class="text">
+                                                    Fancy Radio 1
+                                                </div>
+                                            </label>
+                                            <label class="label expand">
+                                                <input type="radio" name="rad-fancy">
+                                                <div class="text">
+                                                    Fancy Radio 2
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="checkbox">
+                                                <div class="text">
+                                                    Fancy Checkbox 1
+                                                </div>
+                                            </label>
+                                            <label class="label expand">
+                                                <input type="checkbox">
+                                                <div class="text">
+                                                    Fancy Checkbox 2
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!--
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <label class="label">
+                                                <input type="radio" name="rad-boring">
+                                                <div class="radio"></div>
+                                                <div class="text">
+                                                    Boring Radio 1
+                                                </div>
+                                            </label>
+                                            <label class="label">
+                                                <input type="radio" name="rad-boring">
+                                                <div class="radio"></div>
+                                                <div class="text">
+                                                    Boring Radio 2
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <label class="label">
+                                                <input type="checkbox">
+                                                <div class="checkbox"></div>
+                                                <div class="text">
+                                                    Boring Checkbox 1
+                                                </div>
+                                            </label>
+                                            <label class="label">
+                                                <input type="checkbox">
+                                                <div class="checkbox"></div>
+                                                <div class="text">
+                                                    Boring Checkbox 2
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    -->
+                                </fieldset>
+                                <h3>
+                                    <a name="switches" href="#switches" class="link jump"></a> Switches
+                                </h3>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="checkbox">
+                                                <div class="switch"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <h3>
+                                    <a name="range-sliders" href="#range-sliders" class="link jump"></a> Range sliders
+                                </h3>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input class="range" type="range" value="0" min="0" max="100" list="numbers">
+                                                <output>0</output>
+                                                <div class="label-text">Range input</div>
+                                                <div class="spacer"></div>
+                                                <datalist id="numbers">
+                                                    <option>25</option>
+                                                    <option>50</option>
+                                                    <option>75</option>
+                                                </datalist>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <h3>
+                                    <a name="fieldset" href="#fieldset" class="link jump"></a> Fieldset
+                                </h3>
+                                <fieldset>
+                                    <legend>
+                                        This is a legend for a fieldset
+                                    </legend>
+                                    <div class="row">
+                                        <div class="medium-6 small-12 columns">
+                                            <label class="label expand">
+                                                <input type="text" placeholder="First name" required aria-required="true">
+                                                <div class="label-text">
+                                                    <span class="valid">Sweet first name</span>
+                                                    <span class="invalid">Please enter a name</span>
+                                                    <span class="default">First name</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 small-12 columns">
+                                            <label class="label expand">
+                                                <input type="text" placeholder="Last name" required aria-required="true">
+                                                <div class="label-text">
+                                                    <span class="valid">Sweet last name</span>
+                                                    <span class="invalid">Please enter a name</span>
+                                                    <span class="default">Last name</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Must use valid email." required aria-required="true">
+                                                <div class="label-text">
+                                                    <span class="valid">Hey, nice email</span>
+                                                    <span class="invalid">Hmm, that's not an email</span>
+                                                    <span class="default">Email</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input type="password" placeholder="Password" pattern=".{8,}" title="Must enter 8 characters. Special characters are allowed." required aria-required="true">
+                                                <div class="label-text">
+                                                    <span class="valid">Good password!</span>
+                                                    <span class="invalid">Too simple</span>
+                                                    <span class="default">Password</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <h3>
+                                    <a name="disabled" href="#disabled" class="link jump"></a> Disabled
+                                </h3>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="text" placeholder="Disabled text input" disabled>
+                                                <div class="label-text">
+                                                    Disabled text input
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="number" placeholder="Disabled number input" disabled>
+                                                <div class="label-text">
+                                                    Disabled number input
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <textarea id="textarea" cols="30" rows="5" placeholder="Disabled textarea" disabled></textarea>
+                                                <div class="label-text">Disabled textarea</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="file" disabled>
+                                                <div class="label-text"><span class="icon-cloud-upload"></span> Disabled file input</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <div class="select">
+                                                    <select disabled>
+                                                        <option>Option 01</option>
+                                                        <option>Option 02</option>
+                                                    </select>
+                                                    <div class="label-text">Disabled select</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="radio" name="rad-disabled" disabled>
+                                                <div class="text">
+                                                    Disabled Radio
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <label class="label expand">
+                                                <input type="checkbox" disabled>
+                                                <div class="text">
+                                                    Disabled Checkbox
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="checkbox" disabled>
+                                                <div class="switch"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="range" value="0" min="0" max="100" disabled>
+                                                <output>0</output>
+                                                <div class="label-text">Disabled range input</div>
+                                                <div class="spacer"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <h3>
+                                    <a name="read-only" href="#read-only" class="link jump"></a> Read only
+                                </h3>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="text" placeholder="Read-only text input" readonly>
+                                                <div class="label-text">
+                                                    Read-only text input
+                                                </div>
+                                                <div class="icon-lock-outline"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="number" placeholder="Read-only number input" readonly>
+                                                <div class="label-text">
+                                                    Read-only number input
+                                                </div>
+                                                <div class="icon-lock-outline"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <textarea id="textarea" cols="30" rows="5" placeholder="Read-only textarea" readonly></textarea>
+                                                <div class="label-text">Read-only textarea</div>
+                                                <div class="icon-lock-outline"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label">
+                                                <input type="range" value="0" min="0" max="100" readonly>
+                                                <output>0</output>
+                                                <div class="label-text">Read-only range input</div>
+                                                <div class="spacer"></div>
+                                                <div class="icon-lock-outline"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <h3>
+                                    <a name="datalist" href="#datalist" class="link jump"></a> Datalist
+                                </h3>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input type="text" value="" list="fav-color" placeholder="Text input with datalist">
+                                                <span class="label-text">Text input with datalist</span>
+                                                <datalist id="fav-color">
+                                                    <option value="Red">Red</option>
+                                                    <option value="Orange">Orange</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Purple">Purple</option>
+                                                </datalist>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input type="date" value="" list="days" placeholder="Date input with datalist">
+                                                <span class="label-text">Date input with datalist</span>
+                                                <datalist id="days">
+                                                    <option label="Independence Day">2013-07-04</option>
+                                                    <option label="Labor Day">2013-09-02</option>
+                                                    <option label="Columbus Day">2013-10-14</option>
+                                                </datalist>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input type="time" value="" list="times" placeholder="Time input with datalist">
+                                                <span class="label-text">Time input with datalist</span>
+                                                <datalist id="times">
+                                                    <option label="Midnight">00:00</option>
+                                                    <option>06:00</option>
+                                                    <option label="Noon">12:00</option>
+                                                    <option>18:00</option>
+                                                </datalist>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input type="datetime-local" value="" list="datetime-locals" placeholder="Datetime-local input with datalist">
+                                                <span class="label-text">Datetime-local input with datalist</span>
+                                                <datalist id="datetime-locals">
+                                                    <option label="Santa Visit">2012-12-24T23:59</option>
+                                                    <option label="Chrismas party">2012-12-25T18:00</option>
+                                                    <option>2012-12-30T00:00</option>
+                                                    <option label="Happy New Year">2013-01-01T00:00</option>
+                                                </datalist>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input type="month" value="" list="months" placeholder="Month input with datalist">
+                                                <span class="label-text">Month input with datalist</span>
+                                                <datalist id="months">
+                                                    <option label="End of last century">2000-12</option>
+                                                    <option>2010-01</option>
+                                                    <option>2011-01</option>
+                                                    <option>2012-01</option>
+                                                    <option>2013-01</option>
+                                                </datalist>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input type="week" value="" list="weeks" placeholder="Week input with datalist">
+                                                <span class="label-text">Week input with datalist</span>
+                                                <datalist id="weeks">
+                                                    <option label="First week of 2013">2013-W01</option>
+                                                    <option label="Second week of 2013">2013-W02</option>
+                                                    <option label="13th week of 2013">2013-W13</option>
+                                                    <option label="The last week of 2013">2013-W52</option>
+                                                </datalist>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <h3>
+                                <a name="progress-bars" href="#progress-bars" class="link jump"></a> Progress bars
+                            </h3>
+                            <div class="block">
+                                <div class="progress">
+                                    <span class="meter success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</span>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="progress">
+                                    <span class="meter" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="30" style="width: 30%;">30%</span>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="progress">
+                                    <span class="meter" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10" style="width: 10%;">10%</span>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="progress">
+                                    <span class="meter" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 0%;">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row section">
+                        <div class="large-10 medium-12 large-centered columns">
+                            <h2>
+                                Alerts
+                            </h2>
+                            <h3>
+                                <a name="alert-boxes" href="#alert-boxes" class="link jump"></a> Alert boxes
+                            </h3>
+                            <div class="alert-box standard">
+                                <p>
+                                    <strong>Standard alert message.</strong> Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box info">
+                                <p>
+                                    <strong>Info alert message.</strong> Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box warning">
+                                <p>
+                                    <strong>Warning alert message.</strong> Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box success">
+                                <p>
+                                    <strong>Success alert message.</strong> Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <h6>
+                                Example
+                            </h6>
+                            <div class="alert-box warning">
+                                <p>
+                                    <strong>Changes not saved.</strong> Please complete *required fields.
+                                </p>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <hr>
+                            <div class="alert-box standard">
+                                <header>
+                                    Standard alert message with a header
+                                </header>
+                                <p>
+                                    Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box info">
+                                <header>
+                                    Info alert message with a header
+                                </header>
+                                <p>
+                                    Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box warning">
+                                <header>
+                                    Warning alert message with a header
+                                </header>
+                                <p>
+                                    Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box success">
+                                <header>
+                                    Success alert message with a header
+                                </header>
+                                <p>
+                                    Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <hr>
+                            <div class="alert-box standard">
+                                <p>
+                                    <strong>Standard alert message with actions.</strong> Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:">Learn more</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box info">
+                                <p>
+                                    <strong>Info alert message with actions.</strong> Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:">More info</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Don't show again</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box warning">
+                                <p>
+                                    <strong>Warning alert message with actions.</strong> Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:">Resolve</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Ignore</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box success">
+                                <p>
+                                    <strong>Success alert message with actions.</strong> Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:">Cool, got it</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Undo</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <hr>
+                            <div class="alert-box standard">
+                                <header>
+                                    Standard alert message with a header and actions
+                                </header>
+                                <p>
+                                    Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:">Learn more</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box info">
+                                <header>
+                                    Info alert message with a header and actions
+                                </header>
+                                <p>
+                                    Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:">More info</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Don't show again</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box warning">
+                                <header>
+                                    Warning alert message with a header and actions
+                                </header>
+                                <p>
+                                    Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:">Resolve</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Ignore</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box success">
+                                <header>
+                                    Success alert message with a header and actions
+                                </header>
+                                <p>
+                                    Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                                </p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:">Cool, got it</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Undo</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <hr>
+                            <form class="alert-box with-scrollbar standard form">
+                                <a href="javascript:" class="close"></a>
+                                <header>
+                                    Scrollable standard alert message
+                                </header>
+                                <div class="scrollable">
+                                    <fieldset>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-alert">
+                                            <div class="text">
+                                                Option 1
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-alert">
+                                            <div class="text">
+                                                Option 2
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-alert">
+                                            <div class="text">
+                                                Option 3
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-alert">
+                                            <div class="text">
+                                                Option 4
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-alert">
+                                            <div class="text">
+                                                Option 5
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                                <ul class="actions">
+                                    <li>
+                                        <button>Submit</button>
+                                    </li>
+                                    <li>
+                                        <button>Cancel</button>
+                                    </li>
+                                    <li class="more">
+                                        <button>Help</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <form class="alert-box with-scrollbar info form">
+                                <a href="javascript:" class="close"></a>
+                                <header>
+                                    Scrollable info alert message
+                                </header>
+                                <div class="scrollable">
+                                    <fieldset>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-info">
+                                            <div class="text">
+                                                Option 1
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-info">
+                                            <div class="text">
+                                                Option 2
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-info">
+                                            <div class="text">
+                                                Option 3
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-info">
+                                            <div class="text">
+                                                Option 4
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-info">
+                                            <div class="text">
+                                                Option 5
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                                <ul class="actions">
+                                    <li>
+                                        <button>Submit</button>
+                                    </li>
+                                    <li>
+                                        <button>Cancel</button>
+                                    </li>
+                                    <li class="more">
+                                        <button>Help</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <form class="alert-box with-scrollbar warning form">
+                                <a href="javascript:" class="close"></a>
+                                <header>
+                                    Scrollable warning alert message
+                                </header>
+                                <div class="scrollable">
+                                    <fieldset>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-warning">
+                                            <div class="text">
+                                                Option 1
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-warning">
+                                            <div class="text">
+                                                Option 2
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-warning">
+                                            <div class="text">
+                                                Option 3
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-warning">
+                                            <div class="text">
+                                                Option 4
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-warning">
+                                            <div class="text">
+                                                Option 5
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                                <ul class="actions">
+                                    <li>
+                                        <button>Submit</button>
+                                    </li>
+                                    <li>
+                                        <button>Cancel</button>
+                                    </li>
+                                    <li class="more">
+                                        <button>Help</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <form class="alert-box with-scrollbar success form">
+                                <a href="javascript:" class="close"></a>
+                                <header>
+                                    Scrollable success alert message
+                                </header>
+                                <div class="scrollable">
+                                    <fieldset>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-success">
+                                            <div class="text">
+                                                Option 1
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-success">
+                                            <div class="text">
+                                                Option 2
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-success">
+                                            <div class="text">
+                                                Option 3
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-success">
+                                            <div class="text">
+                                                Option 4
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-success">
+                                            <div class="text">
+                                                Option 5
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                                <ul class="actions">
+                                    <li>
+                                        <button>Submit</button>
+                                    </li>
+                                    <li>
+                                        <button>Cancel</button>
+                                    </li>
+                                    <li class="more">
+                                        <button>Help</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <h6>
+                                Example
+                            </h6>
+                            <form class="alert-box with-scrollbar warning form">
+                                <a href="javascript:" class="close"></a>
+                                <header>
+                                    Did you mean?
+                                </header>
+                                <div class="scrollable">
+                                    <fieldset>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                Boston, MA
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                Boston, NY
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                Boston, PA
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                Metro Boston, CA
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                New Boston, MN
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                                <ul class="actions">
+                                    <li>
+                                        <button>Submit</button>
+                                    </li>
+                                    <li>
+                                        <button>Cancel</button>
+                                    </li>
+                                    <li class="more">
+                                        <button>Help</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <h6>
+                                مثال
+                            </h6>
+                            <form class="alert-box with-scrollbar warning form">
+                                <a href="javascript:" class="close"></a>
+                                <header>
+                                    هل تعني؟
+                                </header>
+                                <div class="scrollable">
+                                    <fieldset>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                Boston, MA
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                Boston, NY
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                Boston, PA
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                Metro Boston, CA
+                                            </div>
+                                        </label>
+                                        <label class="label expand">
+                                            <input type="radio" name="rad-city">
+                                            <div class="text">
+                                                New Boston, MN
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                                <ul class="actions">
+                                    <li>
+                                        <button>عرض</button>
+                                    </li>
+                                    <li>
+                                        <button>إلغاء</button>
+                                    </li>
+                                    <li class="more">
+                                        <button>مساعدة</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <hr>
+                            <div class="alert-box standard">
+                                <header>
+                                    Inline actions
+                                </header>
+                                <p>
+                                    For really short action buttons.
+                                </p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:">Action 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Action 2</a>
+                                    </li>
+                                    <li class="more">
+                                        <a href="javascript:">Neither</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box standard">
+                                <header>
+                                    Stack actions
+                                </header>
+                                <p>
+                                    For longer action buttons.
+                                </p>
+                                <ul class="actions stack">
+                                    <li>
+                                        <a href="javascript:">Action 1 so long that it needs to stack</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Action 2 so long that it needs to stack</a>
+                                    </li>
+                                    <li class="more">
+                                        <a href="javascript:">Neither so long that it needs to stack</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <div class="alert-box standard">
+                                <header>
+                                    Stack actions for small screens
+                                </header>
+                                <p>
+                                    For action buttons too long on small screens.
+                                </p>
+                                <ul class="actions small-stack">
+                                    <li>
+                                        <a href="javascript:">Action 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:">Action 2</a>
+                                    </li>
+                                    <li class="more">
+                                        <a href="javascript:">Neither</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:" class="close"></a>
+                            </div>
+                            <h3>
+                                <a name="alert-bubbles" href="#alert-bubbles" class="link jump"></a> Alert bubbles
+                            </h3>
+                            <p>
+                                Alert bubbles are used for server-side validations.
+                            </p>
+                            <form class="form">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="medium-6 small-12 columns">
+                                            <label class="label expand">
+                                                <input class="filled touched" type="url" placeholder="Username" value="awesomesauce" required aria-required="true" invalid>
+                                                <div class="label-text">
+                                                    <span class="valid">Sweet name</span>
+                                                    <span class="invalid">Invalid name</span>
+                                                    <span class="default">Username</span>
+                                                </div>
+                                            </label>
+                                            <div class="alert-bubble">
+                                                <p>
+                                                    This name is already taken. Try another.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="medium-6 small-12 columns">
+                                            <label class="label expand">
+                                                <input class="filled touched" type="email" placeholder="Email" value="awesome@sauce" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Must use valid email." required aria-required="true" invalid>
+                                                <div class="label-text">
+                                                    <span class="valid">Hey, nice email</span>
+                                                    <span class="invalid">Hmm, that's not an email</span>
+                                                    <span class="default">Email</span>
+                                                </div>
+                                            </label>
+                                            <div class="alert-bubble">
+                                                <p>
+                                                    You should be using a valid email so we could verify who you are.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label class="label expand">
+                                                <input class="filled touched" type="password" placeholder="Password" value="888" pattern=".{8,}" title="Must enter 8 characters. Special characters are allowed." required aria-required="true" invalid>
+                                                <div class="label-text">
+                                                    <span class="valid">Good password!</span>
+                                                    <span class="invalid">Invalid password</span>
+                                                    <span class="default">Password</span>
+                                                </div>
+                                            </label>
+                                            <div class="alert-bubble">
+                                                <p>
+                                                    The password you entered was invalid. <a href="javascript:">Forgot password?</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </section>
+                    <section class="row section">
+                        <div class="large-10 medium-12 large-centered columns">
+                            <h2>
+                                Buttons
+                            </h2>
+                            <h3>
+                                <a name="links" href="#links" class="link jump"></a> Links
+                            </h3>
+                            <p><a href="javascript:" class="link external">External link</a></p>
+                            <p><a href="javascript:" class="link">Internal link</a></p>
+                            <h3>
+                                <a name="buttons" href="#buttons" class="link jump"></a> Buttons
+                            </h3>
+                            <h4>
+                                Input types
+                            </h4>
+                            <p>
+                                <input class="button primary" type="button" value="Input type button">
+                                <input class="button primary" type="reset" value="Input type reset">
+                                <input class="button primary" type="submit" value="Input type submit">
+                            </p>
+                            <p>
+                                <input class="button disabled" type="submit" value="Input type submit disabled" disabled>
+                            </p>
+                            <h4>
+                                Button types
+                            </h4>
+                            <p>
+                                <button class="button primary" type="button">Button type button</button>
+                                <button class="button primary" type="reset">Button type reset</button>
+                                <button class="button primary" type="submit">Button type submit</button>
+                            </p>
+                            <p>
+                                <button class="button disabled" type="button" disabled>Button type button disabled</button>
+                            </p>
+                            <h4>
+                                Sizes
+                            </h4>
+                            <p>
+                                <button class="button primary large">Large button</button>
+                                <button class="button primary">Default button</button>
+                                <button class="button primary small">Small button</button>
+                                <button class="button primary tiny">tiny button</button>
+                            </p>
+                            <h4>
+                                Styles
+                            </h4>
+                            <p>
+                                <button class="button primary">Primary button</button>
+                                <button class="button secondary">Secondary button</button>
+                                <button class="button special">Special button</button>
+                            </p>
+                            <h4>
+                                Validations
+                            </h4>
+                            <p>
+                                <button class="button alert">Alert button</button>
+                            </p>
+                            <p>
+                                <button class="button success">Success button</button>
+                            </p>
+                            <h3>
+                                <a name="split-buttons" href="#split-buttons" class="link jump"></a> Split buttons/links
+                            </h3>
+                            <h4>
+                                Single
+                            </h4>
+                            <div class="block">
+                                <div class="drop down left">
+                                    <a href="javascript:" class="button primary split">
+                                        Split button
+                                    </a>
+                                    <ul class="bubble">
+                                        <li><a href="javascript:">This is a link</a></li>
+                                        <li><a href="javascript:">This is another</a></li>
+                                        <li><a href="javascript:">Yet another</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h4>
+                                Drop up/down, flush right/left
+                            </h4>
+                            <div class="block">
+                                <div class="row">
+                                    <div class="medium-3 small-6 columns">
+                                        <div class="drop up left expand">
+                                            <a href="javascript:" class="button primary split">
+                                                Up left
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="medium-3 small-6 columns">
+                                        <div class="drop down left expand">
+                                            <a href="javascript:" class="button primary split">
+                                                Down left
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="medium-3 small-6 columns">
+                                        <div class="drop up right expand">
+                                            <a href="javascript:" class="button primary split">
+                                                Up right
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="medium-3 small-6 columns">
+                                        <div class="drop down right expand">
+                                            <a href="javascript:" class="button primary split">
+                                                Down right
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>
+                                <a name="button-groups" href="#button-groups" class="link jump"></a> Button groups
+                            </h3>
+                            <h4>
+                                Standard
+                            </h4>
+                            <div class="block">
+                                <ul class="button-group">
+                                    <li><a href="javascript:" class="button primary">Button 1</a></li>
+                                    <li>
+                                        <div class="drop down left">
+                                            <a href="javascript:" class="button primary split">
+                                                Button 2
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="javascript:" class="button primary">Button 3</a></li>
+                                </ul>
+                            </div>
+                            <h4>
+                                Stack
+                            </h4>
+                            <div class="block">
+                                <ul class="button-group stack">
+                                    <li><a href="javascript:" class="button primary">Button 1</a></li>
+                                    <li>
+                                        <div class="drop up right">
+                                            <a href="javascript:" class="button primary split">
+                                                Button 2
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="javascript:" class="button primary">Button 3</a></li>
+                                </ul>
+                            </div>
+                            <h4>
+                                Stack for small screens
+                            </h4>
+                            <div class="block">
+                                <ul class="button-group small-stack">
+                                    <li><a href="javascript:" class="button primary">Button 1</a></li>
+                                    <li>
+                                        <div class="drop up left">
+                                            <a href="javascript:" class="button primary split">
+                                                Button 2
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="javascript:" class="button primary">Button 3</a></li>
+                                </ul>
+                            </div>
+                            <h4>
+                                Even 2
+                            </h4>
+                            <div class="block">
+                                <ul class="button-group even-2">
+                                    <li><a href="javascript:" class="button primary">Button 1</a></li>
+                                    <li>
+                                        <div class="drop down right">
+                                            <a href="javascript:" class="button primary split">
+                                                Button 2
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="javascript:" class="button primary">Button 3</a></li>
+                                    <li><a href="javascript:" class="button primary">Button 4</a></li>
+                                </ul>
+                            </div>
+                            <h4>
+                                Even 3
+                            </h4>
+                            <div class="block">
+                                <ul class="button-group even-3 small-stack">
+                                    <li><a href="javascript:" class="button primary">Button 1</a></li>
+                                    <li>
+                                        <div class="drop down right">
+                                            <a href="javascript:" class="button primary split">
+                                                Button 2
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="javascript:" class="button primary">Button 3</a></li>
+                                    <li><a href="javascript:" class="button primary">Button 4</a></li>
+                                    <li><a href="javascript:" class="button primary">Button 5</a></li>
+                                    <li><a href="javascript:" class="button primary">Button 6</a></li>
+                                </ul>
+                            </div>
+                            <h4>
+                                Even 4
+                            </h4>
+                            <div class="block">
+                                <ul class="button-group even-4 small-stack">
+                                    <li><a href="javascript:" class="button primary">Button 1</a></li>
+                                    <li>
+                                        <div class="drop down left">
+                                            <a href="javascript:" class="button primary split">
+                                                Button 2
+                                            </a>
+                                            <ul class="bubble">
+                                                <li><a href="javascript:">This is a link</a></li>
+                                                <li><a href="javascript:">This is another</a></li>
+                                                <li><a href="javascript:">Yet another</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="javascript:" class="button primary">Button 3</a></li>
+                                    <li><a href="javascript:" class="button primary">Button 4</a></li>
+                                    <li><a href="javascript:" class="button primary">Button 5</a></li>
+                                    <li><a href="javascript:" class="button primary">Button 6</a></li>
+                                    <li><a href="javascript:" class="button primary">Button 7</a></li>
+                                    <li><a href="javascript:" class="button primary">Button 8</a></li>
+                                </ul>
+                            </div>
+                            <h4>
+                                Text link
+                            </h4>
+                            <div class="block">
+                                <div class="drop up left">
+                                    <a href="javascript:" class="link split internal">
+                                        Up left
+                                    </a>
+                                    <ul class="bubble">
+                                        <li><a href="javascript:">This is a link</a></li>
+                                        <li><a href="javascript:">This is another</a></li>
+                                        <li><a href="javascript:">Yet another</a></li>
+                                    </ul>
+                                </div>
+                                <div class="drop down left">
+                                    <a href="javascript:" class="link split internal">
+                                        Down left
+                                    </a>
+                                    <ul class="bubble">
+                                        <li><a href="javascript:">This is a link</a></li>
+                                        <li><a href="javascript:">This is another</a></li>
+                                        <li><a href="javascript:">Yet another</a></li>
+                                    </ul>
+                                </div>
+                                <div class="drop up right">
+                                    <a href="javascript:" class="link split internal">
+                                        Up right
+                                    </a>
+                                    <ul class="bubble">
+                                        <li><a href="javascript:">This is a link</a></li>
+                                        <li><a href="javascript:">This is another</a></li>
+                                        <li><a href="javascript:">Yet another</a></li>
+                                    </ul>
+                                </div>
+                                <div class="drop down right">
+                                    <a href="javascript:" class="link split internal">
+                                        Down right
+                                    </a>
+                                    <ul class="bubble">
+                                        <li><a href="javascript:">This is a link</a></li>
+                                        <li><a href="javascript:">This is another</a></li>
+                                        <li><a href="javascript:">Yet another</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3>
+                                <a name="tooltips" href="#tooltips" class="link jump"></a> Tooltips
+                            </h3>
+                            <h4>
+                                Using a wrapper (can contain links inside bubble)
+                            </h4>
+                            <div class="row">
+                                <div class="small-6 columns">
+                                    <div class="block">
+                                        <div class="tooltip short down left">
+                                            <a href="javascript:" class="tip">
+                                                Short phrase 
+                                                <span class="icon-info"></span>
+                                            </a>
+                                            <div class="bubble">
+                                                <p>
+                                                    Some tips
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="small-6 columns">
+                                    <div class="block">
+                                        <div class="tooltip long down right">
+                                            <a href="javascript:" class="tip">
+                                                Long text نص طويل
+                                                <span class="icon-info"></span>
+                                            </a>
+                                            <div class="bubble">
+                                                <p>
+                                                    Tooltip text. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin. <a href="javascript:" class="link external">Text link</a>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="medium-3 small-6 columns">
+                                    <div class="block">
+                                        <div class="tooltip long down left">
+                                            <a href="javascript:" class="tip">
+                                                Down left
+                                                <span class="icon-info"></span>
+                                            </a>
+                                            <div class="bubble">
+                                                <p>
+                                                    Tooltip text. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin. <a href="javascript:" class="link external">Text link</a>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="medium-3 small-6 columns">
+                                    <div class="block">
+                                        <div class="tooltip long down right">
+                                            <a href="javascript:" class="tip">
+                                                Down right
+                                                <span class="icon-info"></span>
+                                            </a>
+                                            <div class="bubble">
+                                                <p>
+                                                    Tooltip text. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin. <a href="javascript:" class="link external">Text link</a>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="medium-3 small-6 columns">
+                                    <div class="block">
+                                        <div class="tooltip long up left">
+                                            <a href="javascript:" class="tip">
+                                                Up left
+                                                <span class="icon-info"></span>
+                                            </a>
+                                            <div class="bubble">
+                                                <p>
+                                                    Tooltip text. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin. <a href="javascript:" class="link external">Text link</a>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="medium-3 small-6 columns">
+                                    <div class="block">
+                                        <div class="tooltip long up right">
+                                            <a href="javascript:" class="tip">
+                                                Up right
+                                                <span class="icon-info"></span>
+                                            </a>
+                                            <div class="bubble">
+                                                <p>
+                                                    Tooltip text. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin. <a href="javascript:" class="link external">Text link</a>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <div class="block">
+                                        <div class="tooltip long up middle expand">
+                                            <a href="javascript:" class="button secondary">
+                                                Middle up
+                                            </a>
+                                            <div class="bubble">
+                                                <p>
+                                                    Tooltip text. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin. <a href="javascript:" class="link internal">Text link</a>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block">
+                                        <div class="tooltip long down middle expand">
+                                            <a href="javascript:" class="button special">
+                                                Middle down
+                                            </a>
+                                            <div class="bubble">
+                                                <p>
+                                                    Tooltip text. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin. <a href="javascript:" class="link internal">Text link</a>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>
+                                Using data-tip (can't contain links inside bubble)
+                            </h4>
+                            <div class="row">
+                                <div class="medium-3 small-6 columns">
+                                    <div class="block">
+                                        <p>
+                                            <a href="javascript:" data-tip="Some more tips" class="tip down left short">Down left <span class="icon-info"></span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="medium-3 small-6 columns">
+                                    <div class="block">
+                                        <p>
+                                            <a href="javascript:" data-tip="Some more tips. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante." class="tip down right long">Down right <span class="icon-info"></span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="medium-3 small-6 columns">
+                                    <div class="block">
+                                        <p>
+                                            <a href="javascript:" data-tip="Some more tips" class="tip up left short">Up left <span class="icon-info"></span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="medium-3 small-6 columns">
+                                    <div class="block">
+                                        <p>
+                                            <span data-tip="Some more tips" class="up right short">Up right <span class="icon-info"></span></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <div class="block">
+                                        <p data-tip="Some more tips" class="tip up middle short">
+                                            <strong>Middle up.</strong> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue.
+                                        </p>
+                                        <p data-tip="Some more tips. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante." class="tip down middle long">
+                                            <strong>Middle down.</strong> Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row section">
+                        <div class="large-10 medium-12 large-centered columns">
+                            <div class="row">
+                                <div class="column">
+                                    <h2>
+                                        Article styles
+                                    </h2>
+                                    <h3>
+                                        <a name="kitchen-sink" href="#kitchen-sink" class="link jump"></a> Kitchen sink
+                                    </h3>
+                                    <p>
+                                        Paragraphs. <strong>Bold</strong>, <em>italic</em>, <a href="javascript:" class="link">linked</a>, <a href="javascript:" class="link external">external</a>, <code>code</code>.
+                                    </p>
+                                    <p>
+                                        Chuck shank kielbasa, shankle ground round corned beef ribeye pig filet mignon alcatra ball tip. Kielbasa ham drumstick pastrami. Sirloin kevin bacon, ribeye swine.
+                                    </p>
+                                    <ul>
+                                        <li>Unordered list item</li>
+                                        <li>Unordered list item</li>
+                                        <li>Unordered list item</li>
+                                    </ul>
+                                    <ol>
+                                        <li>Ordered list item</li>
+                                        <li>Ordered list item</li>
+                                        <li>Ordered list item</li>
+                                    </ol>
+                                    <aside>
+                                        <p>
+                                            Aside content.
+                                        </p>
+                                    </aside>
+                                    <p>
+                                        Bresaola pork capicola ham, doner turducken beef. Strip steak rump flank salami fatback meatloaf, short loin bresaola kevin cupim leberkas drumstick. Doner meatloaf t-bone turkey meatball rump ball tip drumstick short loin.
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            Pull quote FTW leberkas capicola tri-tip porchetta turducken short ribs shoulder salami. Pork belly tail alcatra turducken prosciutto hamburger picanha.
+                                        </p>
+                                    </blockquote>
+                                    <p>
+                                        Bresaola pork capicola ham, doner turducken beef. Strip steak rump flank salami fatback meatloaf, short loin bresaola kevin cupim leberkas drumstick. Doner meatloaf t-bone turkey meatball rump ball tip drumstick short loin.
+                                    </p>
+                                    <figure>
+                                        <img src="https://placekitten.com/g/1600/900" alt="">
+                                        <figcaption>
+                                            Figure caption
+                                        </figcaption>
+                                    </figure>
+                                    <figure>
+                                        <div class="embed">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/c2OV_MtSn04" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                        <figcaption>
+                                            Some video
+                                        </figcaption>
+                                    </figure>
+                                    <pre><code>pre<br>{<br>&nbsp;&nbsp;padding: .5em 1em; border-left: 5px solid $gray-light; background-color: $gray-lightest;<br>}</code></pre>
+                                    <p>
+                                        Bresaola pork capicola ham, doner turducken beef. Strip steak rump flank salami fatback meatloaf, short loin bresaola kevin cupim leberkas drumstick. Doner meatloaf t-bone turkey meatball rump ball tip drumstick short loin.
+                                    </p>
+                                    <details open>
+                                        <summary>More info</summary>
+                                        <div class="block">
+                                            <p>Additional information</p>
+                                            <ul>
+                                                <li>Point 1</li>
+                                                <li>Point 2</li>
+                                            </ul>
+                                        </div>
+                                    </details>
+                                    <details>
+                                        <summary>More info</summary>
+                                        <div class="block">
+                                            <p>Additional information</p>
+                                            <ul>
+                                                <li>Point 1</li>
+                                                <li>Point 2</li>
+                                            </ul>
+                                        </div>
+                                    </details>
+                                    <details>
+                                        <summary>More info</summary>
+                                        <div class="block">
+                                            <p>Additional information</p>
+                                            <ul>
+                                                <li>Point 1</li>
+                                                <li>Point 2</li>
+                                            </ul>
+                                        </div>
+                                    </details>
+                                    <header>
+                                        <hgroup>
+                                            <h1>
+                                                H1 Article Title
+                                            </h1>
+                                            <h2>
+                                                H2 Article Subtitle
+                                            </h2>
+                                        </hgroup>
+                                    </header>
+                                    <p>
+                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante.
+                                    </p>
+                                    <h1>
+                                        H1 Regular
+                                    </h1>
+                                    <p>
+                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante.
+                                    </p>
+                                    <h2>
+                                        H2 Regular
+                                    </h2>
+                                    <p>
+                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante.
+                                    </p>
+                                    <h3>
+                                        H3 Regular
+                                    </h3>
+                                    <p>
+                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante.
+                                    </p>
+                                    <h4>
+                                        H4 Regular
+                                    </h4>
+                                    <p>
+                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante.
+                                    </p>
+                                    <h5>
+                                        H5 Regular
+                                    </h5>
+                                    <p>
+                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante.
+                                    </p>
+                                    <h6>
+                                        H6 Regular
+                                    </h6>
+                                    <p>
+                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante.
+                                    </p>
+                                    <footer>
+                                        <small>
+                                            by <address><a class="link external" title="Posts by Author Name" href="javascript:">Author Name</a></address> on <time datetime="2009-11-04">November 4th, 2009</time>
+                                        </small>
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <h3>
+                                        <a href="#columns" name="columns" class="link jump"></a> Columns
+                                    </h3>
+                                </div>
+                                <div class="medium-8 small-12 columns">
+                                    <p>
+                                        <strong>8 columns</strong>. Molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum.
+                                    </p>
+                                    <p>
+                                        Fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque.
+                                    </p>
+                                    <p>
+                                        Consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo.
+                                    </p>
+                                </div>
+                                <div class="medium-4 small-12 columns">
+                                    <p>
+                                        <strong>4 Columns</strong>. Sagittis ante a urna. Morbi a est quis orci consequat rutrum. Nullam egestas feugiat felis. Integer adipiscing semper ligula. Nunc molestie, nisl sit amet cursus convallis, sapien lectus pretium metus, vitae pretium enim wisi id lectus. Donec vestibulum. Etiam vel nibh. Nulla facilisi. Mauris pharetra. Donec augue. Fusce ultrices, neque id dignissim ultrices, tellus mauris dictum elit, vel lacinia enim metus eu nunc. Proin at.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="medium-4 small-12 columns">
+                                    <h4>
+                                        Column heading
+                                    </h4>
+                                    <figure>
+                                        <img src="https://placekitten.com/g/500/500" alt="">
+                                        <figcaption>
+                                            Figure caption
+                                        </figcaption>
+                                    </figure>
+                                    <p>
+                                        <strong>4 Columns</strong>. Molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum.
+                                    </p>
+                                </div>
+                                <div class="medium-4 small-12 columns">
+                                    <h4>
+                                        Column heading
+                                    </h4>
+                                    <p>
+                                        <strong>4 Columns</strong>. Fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque.
+                                    </p>
+                                    <p>
+                                        Consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo.
+                                    </p>
+                                </div>
+                                <div class="medium-4 small-12 columns">
+                                    <h4>
+                                        Column heading
+                                    </h4>
+                                    <blockquote>
+                                        <p>
+                                            Pull quote FTW leberkas capicola tri-tip porchetta turducken short ribs shoulder salami. Pork belly tail alcatra turducken prosciutto hamburger picanha.
+                                        </p>
+                                    </blockquote>
+                                    <p>
+                                        <strong>4 Columns</strong>.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <h3>
+                                        <a href="#block-grid" name="block-grid" class="link jump"></a> Block grid
+                                    </h3>
+                                    <ul class="large-block-grid-6 medium-block-grid-3 small-block-grid-2">
+                                        <li><div class="placeholder">6 to 3 to 2</div></li>
+                                        <li><div class="placeholder">6 to 3 to 2</div></li>
+                                        <li><div class="placeholder">6 to 3 to 2</div></li>
+                                        <li><div class="placeholder">6 to 3 to 2</div></li>
+                                        <li><div class="placeholder">6 to 3 to 2</div></li>
+                                        <li><div class="placeholder">6 to 3 to 2</div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <h3>
+                                        <a href="#example-article" name="example-article" class="link jump"></a> Example Article
+                                    </h3>
+                                    <h1>
+                                        Pod 1: Strategy and Innovation at Apple
+                                    </h1>
+                                    <figure>
+                                        <img src="http://d2xhwju6fvossd.cloudfront.net/cf/images/405167c0856711e499c745074e228eda/950_fp_ipad_drawing_long_AP120426049975_20130319.jpg" alt="">
+                                        <figcaption>Sunflowers, Roz Hall</figcaption>
+                                    </figure>
+                                    <p class="opening">
+                                        The iPad Picasso. This work of art could easily be mistaken for oil paintings or watercolors, but they've actually been created on an iPad. Digital artist Roz Hall, 31, has spent the last two years perfecting his technique to create the masterpieces on his mobile phone and tablet. Photos by John Connor Press Assocs Ltd / Rex Features. For more information, visit <a href="http://www.rexfeatures.com/stacklink/IESKHOEPL" class="link external">http://www.rexfeatures.com/stacklink/IESKHOEPL</a>.
+                                    </p>
+                                    <h2>
+                                        1. Team Exercise
+                                    </h2>
+                                    <h4>
+                                        Background
+                                    </h4>
+                                    <p>
+                                        Apple is a prime example of a company whose success is built on innovation. It has had many successful innovations throughout its history that have spurred growth and strengthened customer loyalty. Through its unique and cutting edge product offerings, Apple has demonstrated all the types of innovation that we have discussed today.
+                                    </p>
+                                    <h4>
+                                        Guidance
+                                    </h4>
+                                    <p>
+                                        Use the excerpt provided and do your own outside research to learn more about strategy and innovation at Apple, focusing specifically on the Apple iPad. Craft a memo addressing the following questions:
+                                    </p>
+                                    <ul>
+                                        <li>How did Apple's strategy pivot after Steve Jobs returned to his role as CEO in 1997? What are the implicit tradeoffs that Apple has made in carving out a strategic position?</li>
+                                        <li>Is the iPad consistent with Apple's strategy? How?</li>
+                                        <li>Is the iPad a sustaining or disruptive innovation? Be sure to explain your answer.</li>
+                                        <li>Would you describe the iPad as a successful innovation?</li>
+                                        <li>What are the major risk factors that Apple faces going forward? Think carefully about Apple's strategy and history of innovation.</li>
+                                    </ul>
+                                    <p>
+                                        For each of the questions above, <strong>be sure to explain your answers using relevant, factual information (both qualitative and quantitative)</strong>.
+                                    </p>
+                                    <h2>
+                                        2. Individual Exercise
+                                    </h2>
+                                    <h4>
+                                        Research Resources
+                                    </h4>
+                                    <aside>
+                                        <p>
+                                            <small>
+                                                <strong>Description:</strong> Yoffie, David B., and Penelope Rossano. "Apple Inc. in 2012." Harvard Business School Case 712-490, August 2012. (Revised from original May 2012 version.)
+                                                <br>
+                                                <strong>File size:</strong> 4MB
+                                            </small>
+                                        </p>
+                                        <p>
+                                            <a href="javascript:" class="button primary tiny">Download the PDF</a>
+                                        </p>
+                                    </aside>
+                                    <p>
+                                        You may want to start your research by reading the following Harvard Business School case. The case goes through the history of Apple, Steve Jobs' legacy as CEO, and the innovations, market context, and business model underpinning the company's recent success. Skim the full article for relevant context and information, and be sure to pay close attention to the description of the iPad found on p. 13 and 14. 
+                                    </p>
+                                    <h4>
+                                        Deliverable
+                                    </h4>
+                                    <p>
+                                        Upload your memo, which should be no more than 500 words, as a message to the submissions system.
+                                    </p>
+                                    <p>
+                                        You will be scored on your ability to explain Apple's strategy and the impact of the iPad, and on your skill in finding and sharing credible, relevant information.
+                                    </p>
+                                    <p>
+                                        <a href="javascript:" class="button secondary small-expand">Start message</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row section">
+                        <div class="large-10 medium-12 large-centered columns">
+                            <h2>
+                                Misc.
+                            </h2>
+                            <h3>
+                                <a name="tables" href="#tables" class="link jump"></a> Tables
+                            </h3>
+                            <h4>
+                                Standard
+                            </h4>
+                            <div class="block">
+                                <table class="table responsive">
+                                    <thead>
+                                        <tr>
+                                            <th width="200">Table Header</th>
+                                            <th>Table Header</th>
+                                            <th width="150">Table Header</th>
+                                            <th width="150">Table Header</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Content Goes Here</td>
+                                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                                            <td>Content Goes Here</td>
+                                            <td>Content Goes Here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Content Goes Here</td>
+                                            <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                            <td>Content Goes Here</td>
+                                            <td>Content Goes Here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Content Goes Here</td>
+                                            <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                            <td>Content Goes Here</td>
+                                            <td>Content Goes Here</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4>
+                                Small
+                            </h4>
+                            <div class="block">
+                                <table class="table responsive small">
+                                    <thead>
+                                        <tr>
+                                            <th width="200">Table Header</th>
+                                            <th>Table Header</th>
+                                            <th width="150">Table Header</th>
+                                            <th width="150">Table Header</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Content Goes Here</td>
+                                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                                            <td>Content Goes Here</td>
+                                            <td>Content Goes Here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Content Goes Here</td>
+                                            <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                            <td>Content Goes Here</td>
+                                            <td>Content Goes Here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Content Goes Here</td>
+                                            <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                            <td>Content Goes Here</td>
+                                            <td>Content Goes Here</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Table footer</td>
+                                            <td>Table footer</td>
+                                            <td>Table footer</td>
+                                            <td>Table footer</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <h4>
+                                Data and inputs
+                            </h4>
+                            <div class="block">
+                                <form class="form">
+                                    <table class="table data responsive small">
+                                        <thead>
+                                            <tr>
+                                                <th width="200">
+                                                    <label class="label">
+                                                        <input type="checkbox">
+                                                        <div class="checkbox"></div>
+                                                        <div class="text">Main column</div>
+                                                    </label>
+                                                </th>
+                                                <th width="100">Data 1</th>
+                                                <th width="100">Data 2</th>
+                                                <th width="100">Data 3</th>
+                                                <th width="100">Data 4</th>
+                                                <th width="100">Data 5</th>
+                                                <th width="100">Data 6</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label class="label expand tall">
+                                                        <input type="checkbox">
+                                                        <div class="checkbox"></div>
+                                                        <div class="text">Item 1</div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="label expand hide-label">
+                                                        <input type="number" value="" list="fav-number" placeholder="10">
+                                                        <span class="label-text">Number</span>
+                                                        <datalist id="fav-number">
+                                                            <option value="10">10</option>
+                                                            <option value="20">20</option>
+                                                            <option value="30">30</option>
+                                                            <option value="40">40</option>
+                                                            <option value="50">50</option>
+                                                            <option value="60">60</option>
+                                                        </datalist>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="label expand hide-label">
+                                                        <div class="select">
+                                                            <select>
+                                                                <option>10</option>
+                                                                <option selected>20</option>
+                                                                <option>30</option>
+                                                                <option>40</option>
+                                                                <option>50</option>
+                                                                <option>60</option>
+                                                            </select>
+                                                            <div class="label-text">Single select</div>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="label expand hide-label">
+                                                        <div class="select">
+                                                            <select>
+                                                                <option>10</option>
+                                                                <option>20</option>
+                                                                <option selected>30</option>
+                                                                <option>40</option>
+                                                                <option>50</option>
+                                                                <option>60</option>
+                                                            </select>
+                                                            <div class="label-text">Single select</div>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="label expand hide-label">
+                                                        <div class="select">
+                                                            <select>
+                                                                <option>10</option>
+                                                                <option>20</option>
+                                                                <option>30</option>
+                                                                <option selected>40</option>
+                                                                <option>50</option>
+                                                                <option>60</option>
+                                                            </select>
+                                                            <div class="label-text">Single select</div>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="label expand hide-label">
+                                                        <div class="select">
+                                                            <select>
+                                                                <option>10</option>
+                                                                <option>20</option>
+                                                                <option>30</option>
+                                                                <option>40</option>
+                                                                <option selected>50</option>
+                                                                <option>60</option>
+                                                            </select>
+                                                            <div class="label-text">Single select</div>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="label expand hide-label">
+                                                        <div class="select">
+                                                            <select>
+                                                                <option>10</option>
+                                                                <option>20</option>
+                                                                <option>30</option>
+                                                                <option>40</option>
+                                                                <option>50</option>
+                                                                <option selected>60</option>
+                                                            </select>
+                                                            <div class="label-text">Single select</div>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="label expand">
+                                                        <input type="checkbox">
+                                                        <div class="checkbox"></div>
+                                                        <div class="text">Item 2</div>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    10
+                                                </td>
+                                                <td>
+                                                    20
+                                                </td>
+                                                <td>
+                                                    30
+                                                </td>
+                                                <td>
+                                                    40
+                                                </td>
+                                                <td>
+                                                    50
+                                                </td>
+                                                <td>
+                                                    60
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="label expand">
+                                                        <input type="checkbox">
+                                                        <div class="checkbox"></div>
+                                                        <div class="text">Item 3</div>
+                                                    </label>
+                                                </td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>30</td>
+                                                <td>40</td>
+                                                <td>50</td>
+                                                <td>60</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="label expand">
+                                                        <input type="checkbox">
+                                                        <div class="checkbox"></div>
+                                                        <div class="text">Item 4</div>
+                                                    </label>
+                                                </td>
+                                                <td>10</td>
+                                                <td>20</td>
+                                                <td>30</td>
+                                                <td>40</td>
+                                                <td>50</td>
+                                                <td>60</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </main>
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="http://anijs.github.io/lib/anijs0.8.0/anijs.js"></script>
+        <script src="http://anijs.github.io/lib/anijs0.8.0/helpers/dom/anijs-helper-dom.js"></script>
+        <script src="js/vendor/foundation-responsive-tables.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,2823 @@
+/* ==========================================================================
+   Forms and buttons
+   ========================================================================== */
+
+.form
+{
+    ::-webkit-input-placeholder 
+    {
+        color: $placeholder-text-color;
+    }
+
+    :-moz-placeholder 
+    { /* Firefox 18- */
+        color: $placeholder-text-color;  
+    }
+
+    ::-moz-placeholder 
+    {  /* Firefox 19+ */
+        color: $placeholder-text-color;  
+    }
+
+    :-ms-input-placeholder 
+    {  
+        color: $placeholder-text-color;
+    }
+
+    #{$all-text-inputs}, 
+    textarea,
+    .select,
+    .select-multiple
+    {
+        width: auto;
+        min-height: $menu-bar-height;
+        padding: 0 ($gutter/2);
+        color: $body-text-color;
+        line-height: 3;
+        outline: none;
+        border: none;
+        border-radius: $border-radius;
+        background-color: $input-color;
+        -webkit-appearance: none;
+
+        @include transition(background-color $timing);
+    }
+
+    #{$all-text-inputs}, 
+    textarea,
+    select
+    {
+        min-width: ($menu-bar-height*1.5);
+
+        & + .label-text
+        {
+            position: absolute;
+            top: 0;
+            left: ($gutter/2);
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+
+            .default
+            {
+                display: inline;
+            }
+
+            .valid,
+            .invalid
+            {
+                display: none;
+            }
+        }
+
+        &:required + .label-text
+        {
+            padding-left: 1.1em;
+
+            &:before
+            {
+                position: absolute;
+                top: 0;
+                left: .1em;
+                line-height: 1;
+                content: '*';
+                font-size: 2em;
+            }
+        }
+
+        &.touched:required
+        {
+            &:valid
+            {
+                background-color: $highlight-green;
+                box-shadow: inset 0 0 1px $green-success;
+
+                &:focus + .label-text
+                {
+                    .valid
+                    {
+                        display: inline;
+                    }
+
+                    .invalid,
+                    .default
+                    {
+                        display: none;
+                    }
+                }
+
+                + .label-text + .alert-bubble
+                {
+                    display: none;
+                }
+            }
+
+            &:invalid
+            {
+                background-color: lighten($yellow-alert,15%);
+                box-shadow: inset 0 0 1px darken($yellow-alert,35%);
+
+                &:focus + .label-text
+                {
+                    .invalid
+                    {
+                        display: inline;
+                    }
+
+                    .valid,
+                    .default
+                    {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &:focus
+        {
+            background-color: $input-focus-color !important;
+            box-shadow: $input-focus-border;
+
+            & + .label-text
+            {
+                top: -.8em;
+                width: auto;
+                overflow: visible;
+                visibility: visible;
+
+                @include transition(top $timing);
+            }
+        }
+    }
+
+    textarea
+    {
+        height: auto;
+        padding: $row-spacing ($gutter/2);
+        line-height: 1.4;
+    }
+
+    input[type="file"]
+    {
+        @extend %visuallyhidden;
+        @include opacity(0);
+
+        & + .label-text
+        {
+            cursor: pointer;
+            
+            @extend .button;
+            @extend .button.primary;
+        }
+
+        html:not(.touch) &:focus + .label-text
+        {
+            box-shadow: $input-focus-border;
+
+            @include animation(pulse-primary-button-bg 2s ease-in-out infinite);
+        }
+    }
+
+    input[type="range"] 
+    {
+        position: absolute;
+        left: ($gutter/2);
+        bottom: $row-spacing;
+        width: calc(100% - 5em);
+        background-color: transparent;
+        -webkit-appearance: none;
+
+        & + output
+        {
+            position: absolute;
+            top: 1em;
+            right: ($gutter/2);
+
+            &:after
+            {
+                content: '%';
+            }
+        }
+
+        & + output + .label-text
+        {
+            position: absolute;
+            top: -.8em;
+            left: ($gutter/2);
+            color: $body-text-color;
+            background-color: $background-color;
+            box-shadow: $input-border;
+
+            & + .spacer
+            {
+                display: block;
+                width: 100%;
+                min-width: 12em;
+                height: $menu-bar-height;
+                border-radius: $border-radius;
+                background-color: $input-color;
+
+                @include transition(background-color $timing);
+
+                & + [class^="icon-"], 
+                & + [class*=" icon-"]
+                {
+                    position: absolute;
+                    right: ($gutter/2);
+                    color: $gray-light;
+                    cursor: auto;
+
+                    @include vertical-align-middle;
+                }
+            }
+        }
+
+        &:focus
+        {
+            outline: none;
+
+            & + output + .label-text
+            {
+                color: white;
+                background-color: $gray-darkest;
+                box-shadow: none;
+
+                & + .spacer
+                {
+                    background-color: $input-focus-color;
+                    box-shadow: $input-border;
+                }
+            }
+        }
+
+        &::-webkit-slider-runnable-track 
+        {
+            width: calc(100% - 2em);
+            height: 1.2em;
+            cursor: pointer;
+            border: none !important;
+            border-radius: $border-radius;
+            background-color: $gray-lighter;
+        }
+
+        &::-webkit-slider-thumb 
+        {
+            height: 1.4em;
+            width: 1.4em;
+            margin-top: -.1em;
+            border: none !important;
+            border-radius: $border-radius;
+            background-color: $background-color;
+            box-shadow: $input-border;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+
+        &:focus::-webkit-slider-runnable-track 
+        {
+            background-color: $gray-lighter;
+            box-shadow: $input-focus-border;
+        }
+
+        &:focus::-webkit-slider-thumb 
+        {
+            background-color: $background-color; 
+            box-shadow: $input-border;
+        }
+
+        &::-moz-range-track 
+        {
+            width: calc(100% - 2em);
+            height: 1.2em;
+            cursor: pointer;
+            border: none !important;
+            border-radius: 0;
+            background-color: $gray-lighter;
+        }
+
+        &::-moz-range-thumb 
+        {
+            height: 1.4em;
+            width: 1.4em;
+            cursor: pointer;
+            border: none !important;
+            border-radius: $border-radius;
+            background-color: $background-color;
+            box-shadow: $input-border;
+        }
+
+        &:focus::-moz-range-track
+        {
+            box-shadow: $input-focus-border;
+        }
+
+        &:focus::-moz-range-thumb 
+        {
+            background-color: $background-color;
+            box-shadow: $input-border;
+        }
+
+        &::-ms-track 
+        {
+            width: calc(100% - 2em);
+            height: 1.2em;
+            color: transparent;
+            cursor: pointer;
+            border-color: transparent;
+            background: transparent;
+        }
+
+        &::-ms-fill-lower 
+        {
+            border: none !important;
+            border-radius: 0;
+            background-color: $gray-lighter;
+        }
+
+        &::-ms-fill-upper 
+        {
+            border: none !important;
+            border-radius: 0;
+            background-color: $gray-lighter;
+        }
+
+        &::-ms-thumb 
+        {
+            height: 1.4em;
+            width: 1.4em;
+            cursor: pointer;
+            border: none !important;
+            border-radius: $border-radius;
+            background-color: $background-color;
+            box-shadow: $input-border;
+        }
+
+        &:focus::-ms-fill-lower 
+        {
+            background-color: $gray-lighter;
+        }
+
+        &:focus::-ms-fill-upper 
+        {
+            background-color: $gray-lighter;
+        }
+
+        &:focus::-ms-thumb 
+        {
+            background-color: $background-color; 
+            box-shadow: $input-border;
+        }
+
+        &[readonly] + output
+        {
+            right: 3em;
+        }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"]
+    {
+        @extend %visuallyhidden;
+
+        /* Boring radio and checkbox */
+
+        & + .radio
+        {
+            border-radius: 100em;
+        }
+
+        & + .checkbox
+        {
+            border-radius: $border-radius;
+        }
+
+        & + .radio,
+        & + .checkbox
+        {
+            position: absolute;
+            left: 0;
+            width: 1.4em;
+            height: 1.4em;
+            cursor: pointer;
+            background-color: $input-color;
+
+            & + .text
+            {
+                margin-left: 2em;
+                cursor: pointer;
+            }
+        }
+
+        &:checked + .radio,
+        &:checked + .checkbox
+        {
+            &:before
+            {
+                position: absolute;
+                width: .5em;
+                height: .5em;
+                color: $link-color;
+                content: '';
+                background-color: $link-color;
+
+                @include xy-align-middle;
+            }
+        }
+
+        &:checked + .checkbox
+        {
+            &:before
+            {
+                border-radius: $border-radius;
+            }
+        }
+
+        &:checked + .radio
+        {
+            &:before
+            {
+                border-radius: 100em;
+            }
+        }
+
+        &:focus + .radio,
+        &:focus + .checkbox
+        {
+            background-color: $input-focus-color;
+            box-shadow: $input-focus-border;
+        }
+
+        /* Fancy radio and checkbox */
+
+        & + .text
+        {
+            min-height: $menu-bar-height;
+            padding: (($menu-bar-height - 1.4em)/2) ($gutter/2) (($menu-bar-height - 1.4em)/2) $gutter*1.5;
+            cursor: pointer;
+            background-color: $input-color;
+
+            &:before
+            {
+                position: absolute;
+                top: (($menu-bar-height - 1.4em)/2);
+                left: ($gutter/2);
+                width: 1.4em;
+                height: 1.4em;
+                content: '';
+                border: .7em solid $input-color;
+                background-color: $input-color;
+            }
+        }
+
+        &:checked + .text
+        {
+            &:before
+            {
+                border: .4em solid $gray-lighter;
+                background-color: $link-color;
+
+                @include transition(border $timing);
+            }
+        }
+
+        &:focus + .text
+        {
+            background-color: $input-focus-color;
+            box-shadow: $input-focus-border;
+
+            @include transition(background-color $timing);
+        }
+    }
+
+    input[type="radio"]
+    {
+        & + .text
+        {
+            border-radius: 100em;
+
+            &:before
+            {
+                border-radius: 100em;
+            }
+        }
+    }
+
+    input[type="checkbox"]
+    {
+        & + .text
+        {
+            border-radius: $border-radius;
+
+            &:before
+            {
+                border-radius: $border-radius;
+            }
+        }
+    }
+
+    input[type="checkbox"]
+    {
+        & + .switch
+        {
+            position: relative;
+            width: 100%;
+            min-width: ($menu-bar-height*2);
+            height: $menu-bar-height;
+            cursor: pointer;
+            border-radius: .5em;
+            background-color: $input-color;
+
+            &:before,
+            &:after
+            {
+                display: block;
+                height: $menu-bar-height;
+            }
+
+            &:before
+            {
+                margin: 0 50% 0 0;
+                content: '';
+                border-radius: .5em;
+                background-color: $background-color;
+                box-shadow: 0 0 1px $gray-darkest;
+
+                @include transition(margin $timing);
+            }
+
+            &:after
+            {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50%;
+                color: $gray-light;
+                line-height: 3;
+                content: '\e611';
+                text-align: center;
+
+                @include font(icon,regular);
+            }
+        }
+
+        &:checked + .switch
+        {
+            background-color: $link-color;
+
+            &:before
+            {
+                margin: 0 0 0 50%;
+            }
+
+            &:after
+            {
+                right: auto;
+                left: 0;
+                color: rgba(white,.5);
+                content: '\007C';
+
+                @include font(code,regular);
+            }
+        }
+
+        &:focus + .switch
+        {
+            box-shadow: $input-focus-border;
+        }
+    }
+
+    .select 
+    {
+        display: inline-block;
+        position: relative;
+        padding: 0;
+        background-color: transparent;
+
+        select 
+        {
+            width: 100%;
+            height: $menu-bar-height;
+            margin: 0;
+            padding: 0 2em 0 ($gutter/2);
+            color: $body-text-color;
+            line-height: 3;
+            cursor: pointer;
+            outline: none;
+            font-size: 1em;
+            border: none;
+            border-radius: 0;
+            background-color: $input-color;
+            -webkit-appearance: none;
+            -moz-appearance: window;
+
+            @include transition(background-color $timing);
+          
+            &::-ms-expand 
+            {
+                display: none;
+            }
+
+            &:focus
+            {
+                background-color: $input-focus-color;
+                box-shadow: $input-focus-border;
+            }
+          
+        }
+
+        &:after 
+        {
+            position: absolute;
+            right: ($gutter/2);
+            pointer-events: none;
+
+            @include triangle-down(.3em, .5em, $body-text-color);
+            @include vertical-align-middle;
+        }
+    }
+
+    @-moz-document url-prefix()
+    { 
+        .select select 
+        {
+            padding-right: 2em;    
+        }
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) { 
+        .select select 
+        {
+            padding-right: 2em;    
+        }
+    }
+
+    .select-multiple
+    {
+        display: block;
+        position: relative;
+        height: auto;
+        padding: 0;
+        background-color: transparent;
+
+        select 
+        {
+            width: 100%;
+            min-height: $menu-bar-height;
+            margin: 0 0 -1.1em 0;
+            padding: $row-spacing ($gutter/2);
+            color: $body-text-color;
+            line-height: 1;
+            outline: none;
+            font-size: 1em;
+            border: none;
+            border-radius: 0;
+            background-color: $input-color;
+            -webkit-appearance: none;
+            -moz-appearance: window;
+
+            @include visible-scrollbar;
+            @include transition(background-color $timing);
+          
+            &::-ms-expand 
+            {
+                display: none;
+            }
+
+            & + .label-text
+            {
+                position: absolute;
+                top: -.8em;
+                left: ($gutter/2);
+                width: auto;
+                overflow: visible;
+                visibility: visible;
+                color: $body-text-color;
+                background-color: $background-color;
+                box-shadow: $input-border;
+            }
+
+            &:focus
+            {
+                background-color: $input-focus-color;
+                box-shadow: $input-focus-border;
+            }
+
+            option
+            {
+                margin: 0 (-$gutter/2);
+                padding: .2em ($gutter/2);
+                font-size: 1em;
+                background-color: transparent;
+            }
+        }
+    }
+
+    #{$all-text-inputs},
+    textarea
+    {
+        & + .label-text + [class^="icon-"], 
+        & + .label-text + [class*=" icon-"]
+        {
+            position: absolute;
+            right: ($gutter/2);
+            color: $gray-regular;
+            cursor: auto;
+        }
+    }
+
+    #{$all-text-inputs}
+    {
+        & + .label-text + [class^="icon-"], 
+        & + .label-text + [class*=" icon-"]
+        {
+            @include vertical-align-middle;
+        }
+    }
+
+    textarea
+    {
+        & + .label-text + [class^="icon-"], 
+        & + .label-text + [class*=" icon-"]
+        {
+            top: 1em;
+        }
+    }
+
+    *[readonly]
+    {
+        cursor: text !important;
+
+        & + .label-text + [class^="icon-"], 
+        & + .label-text + [class*=" icon-"]
+        {
+            color: $gray-light !important;
+        }
+    }
+
+    *[readonly],
+    input[type=search], 
+    input[type=tel]
+    {
+        padding-right: 2em !important;
+    }
+
+    *.filled,
+    *[readonly],
+    *[disabled],
+    input[type="time"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="datetime"],
+    input[type="datetime-local"]
+    {
+        & + .label-text
+        {
+            top: -.8em !important;
+            width: auto !important;
+            overflow: visible;
+            visibility: visible !important;
+            color: $body-text-color;
+            background-color: $background-color;
+            box-shadow: $input-border;
+        }
+
+        &:focus + .label-text
+        {
+            color: white;
+            background-color: $gray-darkest;
+        }
+    }
+
+    legend
+    {
+        width: 100%;
+        color: $heading-color;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    .label
+    {
+        display: inline-block;
+        position: relative;
+        margin: $row-spacing $gutter $row-spacing 0;
+
+        #{$all-text-inputs}, 
+        textarea,
+        .select,
+        .select-multiple
+        {
+            display: block !important;
+            width: 100%;
+        }
+
+        &.tall
+        {
+            input[type="checkbox"],
+            input[type="radio"]
+            {
+                & + .checkbox,
+                & + .radio
+                {
+                    @include vertical-align-middle;
+
+                    ~ .text
+                    {
+                        height: $menu-bar-height !important;
+                        line-height: 3 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .label-text
+    {
+        padding: .2em .4em;
+        color: white;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: auto;
+        font-size: .8em;
+        border-radius: $border-radius;
+        background-color: $gray-darkest;
+
+        @include transition(background-color $timing);
+    }
+
+    .hide-label
+    {
+        .label-text
+        {
+            display: none;
+        }
+    }
+
+    .prefix,
+    .postfix
+    {
+        height: $menu-bar-height;
+        margin: $row-spacing 0;
+        line-height: 3;
+        background-color: $input-color;
+
+    }
+
+    .prefix
+    {
+        padding-left: ($gutter/2);
+        text-align: left;
+    }
+
+    .postfix
+    {
+        padding-right: ($gutter/2);
+        text-align: right;
+    }
+}
+
+[dir=rtl] .form
+{
+    #{$all-text-inputs}, 
+    textarea,
+    select
+    {
+        & + .label-text
+        {
+            right: ($gutter/2);
+            left: auto;
+        }
+
+        &:required + .label-text
+        {
+            padding-right: 1.1em;
+            padding-left: .4em;
+
+            &:before
+            {
+                right: .1em;
+                left: auto;
+            }
+        }
+    }
+
+    input[type="range"] 
+    {
+        right: ($gutter/2) !important;
+        left: auto;
+
+        & + output
+        {
+            right: auto;
+            left: ($gutter/2);
+        }
+
+        & + output + .label-text
+        {
+            right: ($gutter/2);
+            left: auto;
+
+            & + .spacer
+            {
+                & + [class^="icon-"], 
+                & + [class*=" icon-"]
+                {
+                    right: auto;
+                    left: ($gutter/2);
+                }
+            }
+        }
+
+        &[readonly]
+        {
+            width: calc(100% - 6em);
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        &[readonly] + output
+        {
+            right: auto;
+            left: 3em;
+        }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"]
+    {
+        /* Boring radio and checkbox */
+
+        & + .radio,
+        & + .checkbox
+        {
+            right: 0;
+            left: auto;
+
+            & + .text
+            {
+                margin-right: 2em;
+                margin-left: 0;
+            }
+        }
+
+        /* Fancy radio and checkbox */
+
+        & + .text
+        {
+            padding: 0.8em 3em 0.8em ($gutter/2);
+
+            &:before
+            {
+                right: ($gutter/2);
+                left: auto;
+            }
+        }
+    }
+
+    input[type="checkbox"]
+    {
+        & + .switch
+        {
+            &:after
+            {
+                text-align: center;
+            }
+        }
+
+        &:checked + .switch
+        {
+            &:after
+            {
+                text-align: center;
+            }
+        }
+    }
+
+    .select 
+    {
+        &:after 
+        {
+            right: auto;
+            left: ($gutter/2);
+        }
+    }
+
+    @-moz-document url-prefix()
+    { 
+        .select select 
+        {
+            padding-right: ($gutter/2);  
+            padding-left: 2em;  
+        }
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) { 
+        .select select 
+        {
+            padding-right: ($gutter/2);   
+            padding-left: 2em;   
+        }
+    }
+
+    .select-multiple
+    {
+        select 
+        {
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+            padding-right: ($gutter/2) !important;
+            padding-left: ($gutter/2) !important;
+        }
+    }
+
+    #{$all-text-inputs},
+    textarea
+    {
+        & + .label-text + [class^="icon-"], 
+        & + .label-text + [class*=" icon-"]
+        {
+            right: auto;
+            left: ($gutter/2);
+        }
+    }
+
+    *[readonly],
+    input[type=search], 
+    input[type=tel]
+    {
+        padding-right: ($gutter/2) !important;
+        padding-left: 2em !important;
+    }
+
+    .label
+    {
+        margin: $row-spacing 0 $row-spacing $gutter;
+    }
+
+    .prefix
+    {
+        padding-right: ($gutter/2);
+        padding-left: auto;
+        text-align: right;
+    }
+
+    .postfix
+    {
+        padding-right: auto;
+        padding-left: ($gutter/2);
+        text-align: left;
+    }
+}
+
+.progress
+{
+    display: block;
+    width: 100%;
+    height: 1.6em;
+    line-height: 1;
+    border-radius: 100em;
+    background-color: $gray-lightest;
+
+    .meter
+    {
+        float: left;
+        height: 100%;
+        color: white;
+        line-height: 2;
+        text-shadow: 0 0 1px black;
+        text-indent: 1em;
+        font-size: .8em;
+        font-weight: bold;
+        border-radius: 100em;
+        background-size: 3.5em 2em, 100% 100%, 100% 100%;
+        background-image:
+        -webkit-linear-gradient( 
+            135deg,
+            transparent,
+            transparent 33%,
+            rgba(white,.1) 33%,
+            rgba(white,.1) 66%,
+            transparent 66%),
+        -webkit-linear-gradient( 
+            top,
+            transparent,
+            $hover-bg-color),
+        -webkit-linear-gradient( 
+            left, 
+            $heading-color, 
+            $heading-color)
+        ;
+        background-image:
+        -moz-linear-gradient( 
+            135deg,
+            transparent,
+            transparent 33%,
+            rgba(white,.1) 33%,
+            rgba(white,.1) 66%,
+            transparent 66%),
+        -moz-linear-gradient( 
+            top,
+            transparent,
+            $hover-bg-color),
+        -moz-linear-gradient( 
+            left, 
+            $heading-color, 
+            $heading-color)
+        ;
+        background-image:
+        -o-linear-gradient( 
+            135deg,
+            transparent,
+            transparent 33%,
+            rgba(white,.1) 33%,
+            rgba(white,.1) 66%,
+            transparent 66%),
+        -o-linear-gradient( 
+            top,
+            transparent,
+            $hover-bg-color),
+        -o-linear-gradient( 
+            left, 
+            $heading-color, 
+            $heading-color)
+        ;
+        background-image:
+        -ms-linear-gradient( 
+            135deg,
+            transparent,
+            transparent 33%,
+            rgba(white,.1) 33%,
+            rgba(white,.1) 66%,
+            transparent 66%),
+        -ms-linear-gradient( 
+            top,
+            transparent,
+            $hover-bg-color),
+        -ms-linear-gradient( 
+            left, 
+            $heading-color, 
+            $heading-color)
+        ;
+        background-image:
+        linear-gradient( 
+            135deg,
+            transparent,
+            transparent 33%,
+            rgba(white,.1) 33%,
+            rgba(white,.1) 66%,
+            transparent 66%),
+        linear-gradient( 
+            top,
+            transparent,
+            $hover-bg-color),
+        linear-gradient( 
+            left, 
+            $heading-color, 
+            $heading-color)
+        ;
+
+        @include animation(progress-bar 5s linear infinite);
+
+        &.success
+        {
+            background-image: none;
+            background-color: $green-success;
+        }
+    }
+}
+
+.button
+{
+    display: inline-block;
+    height: $menu-bar-height;
+    margin: 0 0 2px 0;
+    padding: 0 ($gutter/2);
+    line-height: 3;
+    text-align: center;
+    text-decoration:none;
+    white-space: nowrap;
+    font-size: 1em;
+    border: none !important;
+    border-radius: $border-radius;
+    outline: none;
+
+    @include transition(background-color $timing);
+
+    html:not(.touch) &:hover,
+    &:active,
+    html:not(.touch) &:focus
+    {
+        background-image: none !important;
+    }
+
+    html:not(.touch) &:focus
+    {
+        box-shadow: $input-focus-border;
+    }
+
+    &.split
+    {
+        position: relative;
+        padding-right: $menu-bar-height;
+
+        &:after
+        {
+            position: absolute;
+            right: 0;
+            width: ($menu-bar-height*2/3);
+            height: $menu-bar-height;
+            color: white;
+            content: '\e606';
+            line-height: 3;
+            text-indent: 0;
+            text-align: center;
+            border-left: $transparent-light-divider;
+
+            @include font(icon,regular);
+        }
+    }
+
+    &.stack
+    {
+        width: 100%;
+        margin: 0;
+
+        & + .stack
+        {
+            margin: $row-spacing 0 0 0;
+        }
+    }
+
+    &.small-stack
+    {
+        @include bp(small)
+        {
+            width: 100%;
+            margin: 0;
+
+            & + .small-stack
+            {
+                margin: $row-spacing 0 0 0;
+            }
+        }
+    }
+}
+
+[dir=rtl] .button
+{
+    margin: 0 0 2px 0;
+
+    &.split
+    {
+        padding-right: ($gutter/2);
+        padding-left: $menu-bar-height;
+
+        &:after
+        {
+            right: auto;
+            left: 0;
+            border-right: $transparent-light-divider;
+            border-left: none;
+        }
+    }
+}
+
+.button.primary
+{
+    color: white !important;
+    background-color: $primary-button-color;
+
+    html:not(.touch) &:hover
+    {
+        background-color: lighten($primary-button-color,10%);
+    }
+
+    &:active
+    {
+        background-color: $primary-button-color;
+    }
+
+    html:not(.touch) &:focus
+    {
+        @include animation(pulse-primary-button-bg 2s ease-in-out infinite);
+    }
+}
+
+.button.secondary
+{
+    color: white !important;
+
+    @include button-gradient(
+        $secondary-button-color,
+        $secondary-button-color,
+        darken($secondary-button-color,7%)
+    );
+
+    html:not(.touch) &:hover
+    {
+        background-color: lighten($secondary-button-color,5%);
+    }
+
+    &:active
+    {
+        background-color: darken($secondary-button-color,7%);
+    }
+
+    html:not(.touch) &:focus
+    {
+        @include animation(pulse-secondary-button-bg 2s ease-in-out infinite);
+    }
+
+}
+
+.button.special
+{
+    color: white !important;
+
+    @include button-gradient(
+        $special-button-color,
+        $special-button-color,
+        darken($special-button-color,5%)
+    );
+
+    html:not(.touch) &:hover
+    {
+        background-color: $special-button-color;
+    }
+
+    &:active
+    {
+        background-color: darken($special-button-color,5%);
+    }
+
+    html:not(.touch) &:focus
+    {
+        @include animation(pulse-special-button-bg 2s ease-in-out infinite);
+    }
+
+}
+
+.button.alert
+{
+    position: relative;
+    color: darken($yellow-alert,50%) !important;
+
+    @include button-gradient(
+        $yellow-alert,
+        $yellow-alert,
+        darken($yellow-alert,15%)
+    );
+
+    html:not(.touch) &:hover
+    {
+        background-color: $yellow-alert;
+    }
+
+    &:active
+    {
+        background-color: darken($yellow-alert,15%);
+    }
+
+    html:not(.touch) &:focus
+    {
+        @include animation(pulse-alert-button-bg 2s ease-in-out infinite);
+    }
+
+    &:before
+    {
+        position: absolute;
+        top: -.3em;
+        right: -.8em;
+        height: 1em;
+        color: darken($yellow-alert,50%);
+        line-height: 1;
+        content: '\e60f';
+
+        @include font(icon,regular);
+    }
+
+    &.split
+    {
+        &:after
+        {
+            color: darken($yellow-alert,50%);
+            border-left: 1px solid darken($yellow-alert,20%);
+        }
+    }
+
+}
+
+[dir=rtl] .button.alert
+{
+    &:before
+    {
+        right: auto;
+        left: -.1em;
+    }
+
+    &.split
+    {
+        &:after
+        {
+            border-right: 1px solid darken($yellow-alert,20%);
+            border-left: none;
+        }
+    }
+}
+
+.button.success
+{
+    color: white !important;
+
+    @include button-gradient(
+        $green-success,
+        $green-success,
+        darken($green-success,5%)
+    );
+
+    html:not(.touch) &:hover
+    {
+        background-color: $green-success;
+    }
+
+    &:active
+    {
+        background-color: darken($green-success,5%);
+    }
+
+    html:not(.touch) &:focus
+    {
+        @include animation(pulse-success-button-bg 2s ease-in-out infinite);
+    }
+}
+
+.drop,
+.tooltip
+{
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+
+    > .button,
+    > .link,
+    > .tip
+    {
+        display: block;
+        width: 100%;
+    }
+
+    > .button,
+    > .link
+    {
+        &.open
+        {
+            &.split
+            {
+                &:after
+                {
+                    content: '\e60d';
+                }
+            }
+        }
+    }
+
+    > .button
+    {
+        cursor: pointer;
+
+        @include truncate;
+    }
+
+    > .tip
+    {
+        color: inherit;
+        text-decoration: none;
+        cursor: help;
+    }
+}
+
+.drop
+{
+    .bubble
+    {
+        position: absolute;
+        width: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: $row-spacing ($gutter/2);
+        visibility: hidden;
+        list-style: none;
+        border-radius: $border-radius;
+        background-color: $background-color;
+        z-index: 1;
+        box-shadow: $input-focus-border;
+
+        @include bp(small)
+        {
+            font-size: 1.5rem;
+        }
+
+        @include bp(medium)
+        {
+            font-size: 1.8rem;
+        }
+
+        @include bp(large)
+        {
+            font-size: 2rem;
+        }
+
+        &:before,
+        &:after
+        {
+            position: absolute;
+        }
+
+        li
+        {
+            margin: ($row-spacing/2) 0;
+            padding: 0;
+
+            a
+            {
+                display: block;
+                padding: 0;
+                color: $link-color;
+                text-decoration: none;
+                white-space: nowrap;
+
+                @include bp(small)
+                {
+                    width: 10.5em;
+                    white-space: normal;
+                }
+
+                html:not(.touch) &:hover
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .open + .bubble
+    {
+        width: auto;
+        overflow: visible;
+        visibility: visible;
+    }
+
+    &.up.left,
+    &.down.left
+    {
+        .bubble
+        {
+            left: 0;
+        }
+
+        .bubble:before,
+        .bubble:after
+        {
+            left: calc(1em - 8px);
+        }
+    }
+
+    &.up.right,
+    &.down.right
+    {
+        .bubble
+        {
+            right: 0;
+        }
+
+        .bubble:before,
+        .bubble:after
+        {
+            right: calc(1em - 8px);
+        }
+    }
+
+    &.up
+    {
+        .bubble
+        {
+            bottom: calc(100% - 1em);
+
+            &:before
+            {
+                bottom: -7px;
+
+                @include triangle-down(8px, 8px, $gray-regular);
+            }
+
+            &:after
+            {
+                bottom: -6px;
+
+                @include triangle-down(8px, 8px, white);
+            }
+        }
+
+        .open + .bubble
+        {
+            bottom: 100%;
+
+            @include transition(bottom $timing);
+        }
+    }
+
+    &.down
+    {
+        .bubble
+        {
+            &:before
+            {
+                top: -7px;
+
+                @include triangle-up(8px, 8px, $gray-regular);
+            }
+
+            &:after
+            {
+                top: -6px;
+
+                @include triangle-up(8px, 8px, white);
+            }
+        }
+
+        .button + .bubble
+        {
+            top: ($menu-bar-height - 1em);
+        }
+
+        .link + .bubble
+        {
+            top: .8em;
+        }
+
+        .button.open + .bubble
+        {
+            top: $menu-bar-height;
+        }
+
+        .link.open + .bubble
+        {
+            top: 1.8em;
+        }
+
+        .open + .bubble
+        {
+            @include transition(top $timing);
+        }
+    }
+
+    &.stack,
+    &.stack .button
+    {
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    &.stack
+    {
+        .bubble
+        {
+            right: 0 !important;
+            left: 0 !important;
+        }
+    
+        .bubble:before,
+        .bubble:after
+        {
+            right: calc(1em - 8px) !important;
+            left: auto !important;
+        }
+    }
+
+    &.small-stack,
+    &.small-stack .button
+    {
+        @include bp(small)
+        {
+            width: 100% !important;
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+        }
+    }
+
+    &.small-stack
+    {
+        @include bp(small)
+        {
+            .bubble
+            {
+                right: 0 !important;
+                left: 0 !important;
+            }
+        
+            .bubble:before,
+            .bubble:after
+            {
+                right: calc(1em - 8px) !important;
+                left: auto !important;
+            }
+        }
+    }
+
+}
+
+[dir=rtl] .drop
+{
+    margin-right: auto;
+    margin-left: .5em;
+
+    > .button,
+    > .link
+    {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    &.up.left,
+    &.down.left
+    {
+        .bubble
+        {
+            right: auto;
+            left: 0;
+        }
+    }
+
+    &.up.right,
+    &.down.right
+    {
+        .bubble
+        {
+            right: 0;
+            left: auto;
+        }
+    }
+
+    &.stack,
+    &.stack .button
+    {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    &.stack
+    {
+        .bubble
+        {
+            right: 0 !important;
+            left: 0 !important;
+        }
+    
+        .bubble:before,
+        .bubble:after
+        {
+            right: auto !important;
+            left: calc(1em - 8px) !important;
+        }
+    }
+
+    &.small-stack,
+    &.small-stack .button
+    {
+        @include bp(small)
+        {
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+        }
+    }
+
+    &.small-stack
+    {
+        @include bp(small)
+        {
+            .bubble
+            {
+                right: 0 !important;
+                left: 0 !important;
+            }
+        
+            .bubble:before,
+            .bubble:after
+            {
+                right: auto !important;
+                left: calc(1em - 8px) !important;
+            }
+        }
+    }
+}
+
+.tooltip
+{
+    .bubble
+    {
+        position: absolute;
+        width: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 1px ($gutter/2);
+        visibility: hidden;
+        color: white;
+        line-height: 1.4;
+        font-size: 1.5rem;
+        border-radius: $border-radius;
+        background-color: $heading-color;
+        z-index: 1;
+
+        @include font(body,regular);
+
+        @include bp(small)
+        {
+            font-size: 1.5rem;
+        }
+
+        @include bp(medium)
+        {
+            font-size: 1.5rem;
+        }
+
+        @include bp(large)
+        {
+            font-size: 1.8rem;
+        }
+
+        &:before
+        {
+            position: absolute;
+        }
+
+        .link
+        {
+            &.external
+            {
+                border-bottom: 1px solid $gray-darker !important;
+                box-shadow: 0 -.25em 0 $gray-darker inset !important;
+            }
+        }
+    }
+
+    html:not(.touch) &:hover .bubble,
+    html.touch & .open + .bubble
+    {
+        width: auto;
+        overflow: visible;
+        visibility: visible;
+    }
+
+    &.left
+    {
+        .bubble
+        {
+            left: calc(100% - 2em);
+        }
+
+        .bubble:before
+        {
+            left: 1em;
+        }
+    }
+
+    &.right
+    {
+        .bubble
+        {
+            right: -.9em;
+        }
+
+        .bubble:before
+        {
+            right: 1em;
+        }
+    }
+
+    &.middle
+    {
+        .bubble,
+        .bubble:before
+        {
+            @include horizontal-align-middle;
+        }
+    }
+
+    &.up
+    {
+        .bubble
+        {
+            bottom: calc(100% - 1em);
+
+            &:before
+            {
+                bottom: -7px;
+
+                @include triangle-down(8px, 8px, $heading-color);
+            }
+        }
+
+        html:not(.touch) &:hover .bubble,
+        html.touch & .open + .bubble
+        {
+            bottom: 100%;
+
+            @include transition(bottom $timing);
+        }
+    }
+
+    &.down
+    {
+        .bubble
+        {
+            top: calc(100% - 1em);
+
+            &:before
+            {
+                top: -7px;
+
+                @include triangle-up(8px, 8px, $heading-color);
+            }
+        }
+
+        html:not(.touch) &:hover .bubble,
+        html.touch & .open + .bubble
+        {
+            top: 100%;
+
+            @include transition(top $timing);
+        }
+    }
+
+    &.short
+    {
+        .bubble
+        {
+            white-space: nowrap;
+        }
+    }
+
+    &.long
+    {
+        .bubble
+        {
+            white-space: normal;
+
+            @include bp(small)
+            {
+                width: 10.5em !important;
+            }
+
+            @include bp(desktop)
+            {
+                width: 14em !important;
+            }
+        }
+    }
+}
+
+/* Using data-tip (can't contain link inside bubble) */
+
+[data-tip]
+{
+    position: relative;
+    cursor: help;
+
+    &.tip
+    {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &:before,
+    &:after
+    {
+        position: absolute;
+        width: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    &:before 
+    {
+        margin: 0;
+        padding: ($gutter/2);
+        color: white;
+        line-height: 1.4;
+        content: attr(data-tip);
+        font-size: 1.5rem;
+        border-radius: $border-radius;
+        background-color: $heading-color;
+        z-index: 1;
+
+        @include font(body,regular);
+
+        @include bp(small)
+        {
+            font-size: 1.5rem;
+        }
+
+        @include bp(medium)
+        {
+            font-size: 1.5rem;
+        }
+
+        @include bp(large)
+        {
+            font-size: 1.8rem;
+        }
+    }
+
+    html:not(.touch) &:hover:before,
+    html:not(.touch) &:hover:after,
+    html.touch &.open:before,
+    html.touch &.open:after
+    {
+        width: auto;
+        overflow: visible;
+        visibility: visible;
+    }
+
+    &.left
+    {
+        &:before
+        {
+            left: calc(100% - 1.9em);
+        }
+
+        &:after
+        {
+            left: calc(100% - .9em);
+        }
+    }
+
+    &.right
+    {
+        &:before
+        {
+            right: -.9em;
+        }
+
+        &:after
+        {
+            right: .1em;
+        }
+    }
+
+    &.middle
+    {
+        &:before,
+        &:after
+        {
+            @include horizontal-align-middle;
+        }
+    }
+
+    &.up
+    {
+        &:before
+        {
+            bottom: calc(100% - 1em);
+        }
+
+        &:after
+        {
+            bottom: calc(100% + 1em);
+
+            @include triangle-down(8px, 8px, $heading-color);
+        }
+
+        html:not(.touch) &:hover:before,
+        html.touch &.open:before
+        {
+            bottom: 100%;
+
+            @include transition(bottom $timing);
+        }
+
+        html:not(.touch) &:hover:after,
+        html.touch &.open:after
+        {
+            bottom: calc(100% - 7px);
+
+            @include transition(bottom $timing);
+        }
+    }
+
+    &.down
+    {
+        &:before
+        {
+            top: calc(100% - 1em);
+        }
+
+        &:after
+        {
+            top: calc(100% + 1em);
+
+            @include triangle-up(8px, 8px, $heading-color);
+        }
+
+        html:not(.touch) &:hover:before,
+        html.touch &.open:before
+        {
+            top: 100%;
+
+            @include transition(top $timing);
+        }
+
+        html:not(.touch) &:hover:after,
+        html.touch &.open:after
+        {
+            top: calc(100% - 7px);
+
+            @include transition(top $timing);
+        }
+    }
+
+    &.short
+    {
+        &:before
+        {
+            white-space: nowrap;
+        }
+    }
+
+    &.long
+    {
+        &:before
+        {
+            white-space: normal;
+
+            @include bp(small)
+            {
+                width: 10.5em !important;
+            }
+
+            @include bp(desktop)
+            {
+                width: 14em !important;
+            }
+        }
+    }
+}
+
+.link
+{
+    color: $link-color;
+    text-decoration: none;
+    word-break: break-all;
+
+    &:link
+    {
+        border-bottom: 1px dotted $gray-regular;
+    }
+
+    &:visited
+    {
+        color: $gray-regular;
+        border-bottom-color: $gray-regular;
+    }
+
+    html:not(.touch) &:hover
+    {
+        color: $link-color;
+        border-bottom-color: $body-text-color;
+    }
+
+    &:active
+    {
+        position: relative;
+        top: 1px;
+    }
+
+    &.external
+    {
+        color: inherit !important;
+        border-bottom: 1px solid $gray-lightest !important;
+        box-shadow: 0 -.25em 0 $gray-lightest inset !important;
+
+        html:not(.touch) &:hover
+        {
+            color: $link-color !important;
+        }
+
+        &:after
+        {
+            margin-left: .2em;
+            color: $link-color;
+            content: '\e600';
+            font-size: .8em;
+
+            @include font(icon, regular);
+        }
+    }
+
+    &.jump
+    {
+        &:before
+        {
+            position: absolute;
+            content: '#';
+
+            @include transform(translateX(-110%));
+        }
+    }
+
+    &.split
+    {
+        &:after
+        {
+            line-height: 1;
+            content: '\e606';
+            font-size: .8em;
+
+            @include font(icon,regular);
+        }
+    }
+}
+
+[dir=rtl] .link
+{
+    &.external
+    {
+        &:before
+        {
+            margin-right: .2em;
+            color: $link-color;
+            content: '\e600';
+            font-size: .8em;
+
+            @include font(icon, regular);
+        }
+
+        &:after
+        {
+            display: none;
+        }
+    }
+
+    &.jump
+    {
+        &:before
+        {
+            @include transform(translateX(110%));
+        }
+    }
+
+    &.split
+    {
+        &:before
+        {
+            line-height: 1;
+            content: '\e606';
+            font-size: .8em;
+
+            @include font(icon,regular);
+        }
+
+        &:after
+        {
+            display: none;
+        }
+    }
+}
+
+.button-group
+{
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+
+    @include clearfix;
+
+    > li
+    {
+        float: left;
+        margin: 0;
+        padding: 0;
+
+        .button,
+        .drop
+        {
+            display: block;
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+        }
+
+        .drop.up.right,
+        .drop.down.right
+        {
+            .bubble
+            {
+                right: 0;
+            }
+        }
+
+        .drop.up.left,
+        .drop.down.left
+        {
+            .bubble
+            {
+                left: 0;
+            }
+        }
+
+        & + li
+        {
+            margin-left: 2px;
+        }
+    }
+
+    &.even-2,
+    &.even-3,
+    &.even-4,
+    &.even-5,
+    &.even-6,
+    &.even-7,
+    &.even-8
+    {
+        margin-right: -1px;
+        margin-left: -1px;
+
+        > li
+        {
+            margin: 0 !important;
+            padding: 0 1px;
+        }
+    }
+
+    &.even-2
+    {
+        > li
+        {
+            width: (100%/2);
+        }
+    }
+
+    &.even-3
+    {
+        > li
+        {
+            width: (100%/3);
+        }
+    }
+
+    &.even-4
+    {
+        > li
+        {
+            width: (100%/4);
+        }
+    }
+
+    &.even-5
+    {
+        > li
+        {
+            width: (100%/5);
+        }
+    }
+
+    &.even-6
+    {
+        > li
+        {
+            width: (100%/6);
+        }
+    }
+
+    &.stack
+    {
+        margin-right: 0;
+        margin-left: 0;
+
+        > li
+        {
+            width: 100%;
+            margin: 0;
+
+            .drop.up,
+            .drop.down
+            {
+                .bubble
+                {
+                    right: 0;
+                }
+            
+                .bubble:before,
+                .bubble:after
+                {
+                    right: calc(1em - 8px);
+                    left: auto;
+                }
+            }
+
+            .button
+            {
+                @include truncate;
+            }
+
+            .button.split
+            {
+                padding-left: $menu-bar-height;
+            }
+
+            .bubble
+            {
+                right: 0 !important;
+                left: 0 !important;
+            }
+        }
+    }
+
+    &.small-stack
+    {
+        @include bp(small)
+        {
+            margin-right: 0;
+            margin-left: 0;
+
+            > li
+            {
+                width: 100%;
+                margin: 0;
+
+                .drop.up,
+                .drop.down
+                {
+                    .bubble
+                    {
+                        right: 0;
+                    }
+                
+                    .bubble:before,
+                    .bubble:after
+                    {
+                        right: calc(1em - 8px);
+                        left: auto;
+                    }
+                }
+
+                .button
+                {
+                    @include truncate;
+                }
+
+                .button.split
+                {
+                    padding-left: $menu-bar-height;
+                }
+
+                .bubble
+                {
+                    right: 0 !important;
+                    left: 0 !important;
+                }
+            }
+        }
+    }
+}
+
+[dir=rtl] .button-group
+{
+    > li
+    {
+        float: right;
+
+        & + li
+        {
+            margin-right: 1px;
+            margin-left: 0;
+        }
+    }
+
+    &.stack
+    {
+        > li
+        {
+            margin: 0;
+
+            .drop.up,
+            .drop.down
+            {
+                .bubble
+                {
+                    right: auto;
+                    left: 0;
+                }
+            
+                .bubble:before,
+                .bubble:after
+                {
+                    right: auto;
+                    left: calc(1em - 8px);
+                }
+            }
+
+            .button.split
+            {
+                padding-right: $menu-bar-height;
+                padding-left: $menu-bar-height;
+            }
+        }
+    }
+
+    &.small-stack
+    {
+        @include bp(small)
+        {
+            > li
+            {
+                margin: 0;
+
+                .drop.up,
+                .drop.down
+                {
+                    .bubble
+                    {
+                        right: auto;
+                        left: 0;
+                    }
+                
+                    .bubble:before,
+                    .bubble:after
+                    {
+                        right: auto;
+                        left: calc(1em - 8px);
+                    }
+                }
+
+                .button.split
+                {
+                    padding-right: $menu-bar-height;
+                    padding-left: $menu-bar-height;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------- */
+/* Inputs and button sizing modifiers */
+
+.form .label,
+.button,
+.drop,
+.tooltip
+{
+    &.tiny
+    {
+        text-transform: uppercase;
+        font-size: .6em;
+        font-weight: bold;
+    }
+
+    &.small
+    {
+        font-size: .8em;
+    }
+
+    &.large
+    {
+        font-size: 1.2em;
+    }
+
+    &.expand
+    {
+        display: block;
+        width: 100%;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    &.small-expand
+    {
+        @include bp(small)
+        {
+            display: block;
+            width: 100%;
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+        }
+    }
+}
+
+.button
+{
+    &.expand
+    {
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+
+        @include truncate;
+    }
+
+    &.small-expand
+    {
+        @include bp(small)
+        {
+            margin-bottom: 0 !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+
+            @include truncate;
+        }
+    }
+}
+
+.expand + .expand
+{
+    margin-top: $row-spacing;
+}
+
+/* ------------------- */
+/* Disabled overwrites */
+
+*.disabled,
+html:not(.touch) *.disabled:hover,
+*.disabled:active,
+*:disabled,
+html:not(.touch) *:disabled:hover,
+*:disabled:active,
+.form *:disabled + .label-text,
+.form *:disabled + output + .label-text + .spacer,
+.form *:disabled + .text,
+.form *:disabled + .switch
+{
+    cursor: not-allowed !important;
+    background-image: url('../img/bg-disabled.png') !important;
+}
+
+/* ---------- */
+/* Animations */
+
+/* Button focus */
+
+@-webkit-keyframes pulse-primary-button-bg 
+{
+    0%   { background-color: $primary-button-color; }
+    50%  { background-color: lighten($primary-button-color,20%); }
+    100% { background-color: $primary-button-color; }
+}
+
+@-moz-keyframes pulse-primary-button-bg 
+{
+    0%   { background-color: $primary-button-color; }
+    50%  { background-color: lighten($primary-button-color,20%); }
+    100% { background-color: $primary-button-color; }
+}
+
+@-o-keyframes pulse-primary-button-bg 
+{
+    0%   { background-color: $primary-button-color; }
+    50%  { background-color: lighten($primary-button-color,20%); }
+    100% { background-color: $primary-button-color; }
+}
+
+@keyframes pulse-primary-button-bg 
+{
+    0%   { background-color: $primary-button-color; }
+    50%  { background-color: lighten($primary-button-color,20%); }
+    100% { background-color: $primary-button-color; }
+}
+
+@-webkit-keyframes pulse-secondary-button-bg 
+{
+    0%   { background-color: $secondary-button-color; }
+    50%  { background-color: lighten($secondary-button-color,20%); }
+    100% { background-color: $secondary-button-color; }
+}
+
+@-moz-keyframes pulse-secondary-button-bg 
+{
+    0%   { background-color: $secondary-button-color; }
+    50%  { background-color: lighten($secondary-button-color,20%); }
+    100% { background-color: $secondary-button-color; }
+}
+
+@-o-keyframes pulse-secondary-button-bg 
+{
+    0%   { background-color: $secondary-button-color; }
+    50%  { background-color: lighten($secondary-button-color,20%); }
+    100% { background-color: $secondary-button-color; }
+}
+
+@keyframes pulse-secondary-button-bg 
+{
+    0%   { background-color: $secondary-button-color; }
+    50%  { background-color: lighten($secondary-button-color,20%); }
+    100% { background-color: $secondary-button-color; }
+}
+
+@-webkit-keyframes pulse-special-button-bg 
+{
+    0%   { background-color: $special-button-color; }
+    50%  { background-color: lighten($special-button-color,20%); }
+    100% { background-color: $special-button-color; }
+}
+
+@-moz-keyframes pulse-special-button-bg 
+{
+    0%   { background-color: $special-button-color; }
+    50%  { background-color: lighten($special-button-color,20%); }
+    100% { background-color: $special-button-color; }
+}
+
+@-o-keyframes pulse-special-button-bg 
+{
+    0%   { background-color: $special-button-color; }
+    50%  { background-color: lighten($special-button-color,20%); }
+    100% { background-color: $special-button-color; }
+}
+
+@keyframes pulse-special-button-bg 
+{
+    0%   { background-color: $special-button-color; }
+    50%  { background-color: lighten($special-button-color,20%); }
+    100% { background-color: $special-button-color; }
+}
+
+
+@-webkit-keyframes pulse-alert-button-bg 
+{
+    0%   { background-color: $yellow-alert; }
+    50%  { background-color: lighten($yellow-alert,20%); }
+    100% { background-color: $yellow-alert; }
+}
+
+@-moz-keyframes pulse-alert-button-bg 
+{
+    0%   { background-color: $yellow-alert; }
+    50%  { background-color: lighten($yellow-alert,20%); }
+    100% { background-color: $yellow-alert; }
+}
+
+@-o-keyframes pulse-alert-button-bg 
+{
+    0%   { background-color: $yellow-alert; }
+    50%  { background-color: lighten($yellow-alert,20%); }
+    100% { background-color: $yellow-alert; }
+}
+
+@keyframes pulse-alert-button-bg 
+{
+    0%   { background-color: $yellow-alert; }
+    50%  { background-color: lighten($yellow-alert,20%); }
+    100% { background-color: $yellow-alert; }
+}
+
+@-webkit-keyframes pulse-success-button-bg 
+{
+    0%   { background-color: $green-success; }
+    50%  { background-color: lighten($green-success,20%); }
+    100% { background-color: $green-success; }
+}
+
+@-moz-keyframes pulse-success-button-bg 
+{
+    0%   { background-color: $green-success; }
+    50%  { background-color: lighten($green-success,20%); }
+    100% { background-color: $green-success; }
+}
+
+@-o-keyframes pulse-success-button-bg 
+{
+    0%   { background-color: $green-success; }
+    50%  { background-color: lighten($green-success,20%); }
+    100% { background-color: $green-success; }
+}
+
+@keyframes pulse-success-button-bg 
+{
+    0%   { background-color: $green-success; }
+    50%  { background-color: lighten($green-success,20%); }
+    100% { background-color: $green-success; }
+}
+
+/* Progress */
+
+@-webkit-keyframes progress-bar 
+{
+    100% { background-position: -100px 0%; }
+}
+
+@-moz-keyframes progress-bar 
+{
+    100% { background-position: -100px 0%; }
+}
+
+@-o-keyframes progress-bar 
+{
+    100% { background-position: -100px 0%; }
+}
+
+@keyframes progress-bar 
+{
+    100% { background-position: -100px 0%; }
+}

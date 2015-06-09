@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.column.sidebar,
+.columns.sidebar
+{
+    &.fixed
+    {
+        @include bp(desktop)
+        {
+            position: fixed;
+            height: 100%;
+            padding-right: ($gutter/2);
+            padding-left: 0;
+            
+            @include transform(translate(0%,0%));
+        }
+
+        [dir=rtl] &
+        {
+            @include bp(desktop)
+            {
+                left: auto;
+                right: 0;
+                padding-right: 0;
+                padding-left: ($gutter/2);
+            }
+        }
+
+        &.top-bar-push
+        {
+            @include bp(desktop)
+            {
+                height: calc(100% - $menu-bar-height);
+            }
+        }
+
+        .side-nav
+        {
+            @include bp(desktop)
+            {
+                height: 100%;
+
+                @include vertical-scroll;
+                @include visible-scrollbar;
+            }
+        }
+    }
+
+    [dir=rtl] & + .column,
+    [dir=rtl] & + .columns
+    {
+        float: left;
+    }
+}
+
+.side-nav
+{
+    background-color: darken(white,3%);
+
+    @include font(body);
+
+    > header
+    {
+        margin: 0;
+        padding: $row-spacing ($gutter/2);
+        color: $heading-color;
+
+        @include font(heading,bold);
+
+        @include bp(small)
+        {
+            cursor: pointer;
+        }
+
+        &.open + nav
+        {
+            @include bp(small)
+            {
+                display: block;
+            }
+        }
+    }
+
+    > nav
+    {
+        @include bp(small)
+        {
+            display: none;
+        }
+
+        ul
+        {
+            margin: 0;
+            padding: 0;
+
+            > li
+            {
+                margin: 0 auto;
+                padding: 0;
+                line-height: 1;
+                text-transform: uppercase;
+                font-weight: bold;
+
+                &.divider
+                {
+                    margin: ($row-spacing*2) auto;
+                    border-top: $light-divider;
+                }
+                
+                a
+                {
+                    display: block;
+                    margin: 0;
+                    padding: $row-spacing ($gutter/2);
+                    color: $heading-color;
+                    text-decoration: none;
+                    border: none !important;
+
+                    .text
+                    {
+                        font-size: .8em;
+                    }
+
+                    &.done
+                    {
+                        color: $gray-regular;
+                        background-color: $hover-bg-color;
+                    }
+
+                    &.active
+                    {
+                        color: $heading-color;
+                        font-weight: bold;
+                        background-color: transparent;
+                    }
+
+                    html:not(.touch) &:hover
+                    {
+                        color: $heading-color;
+                        background-color: $hover-bg-color;
+                    }
+                }
+
+                ul
+                {
+                    li
+                    {
+                        text-transform: none;
+                        font-size: 1em;
+                        font-weight: normal;
+
+                        a
+                        {
+                            color: $body-text-color;
+
+                            &.done,
+                            &.active
+                            {
+                                position: relative;
+
+                                &:before
+                                {
+                                    position: absolute;
+                                    left: .2rem;
+                                    font-size: .8em;
+
+                                    @include font(icon);
+                                    @include vertical-align-middle;
+
+                                    [dir=rtl] &
+                                    {
+                                        left: auto;
+                                        right: .2rem;
+                                    }
+                                }
+                            }
+
+                            &.active
+                            {
+                                &:before
+                                {
+                                    color: $heading-color;
+                                    content: '\e60b';
+
+                                    [dir=rtl] &
+                                    {
+                                        content: '\e60a';
+                                    }
+                                }
+                            }
+
+                            &.done
+                            {
+                                &:before
+                                {
+                                    color: $link-color;
+                                    content: '\e60c';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*.menu-bar
+{
+    position: fixed;
+    width: 100%;
+    height: $menu-bar-height;
+    padding: 0 ($gutter/2);
+    color: white;
+    line-height: 3;
+    background-color: $secondary-color;
+    z-index: 1;
+
+    @include transform(translate(0%,0%));
+
+    & + .content
+    {
+        padding-top: $menu-bar-height;
+
+        .fixed
+        {
+            @include bp(desktop)
+            {
+                height: calc(100% - 3em);
+            }
+        }
+    }
+}*/
