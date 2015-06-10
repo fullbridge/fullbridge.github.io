@@ -1,0 +1,263 @@
+/* ==========================================================================
+   Tabs
+   ========================================================================== */
+
+.tabs 
+{
+    margin: 0;
+    font-size: 0;
+
+    &:after 
+    {
+        display: table;
+        clear: both;
+        content: '';
+    }
+
+    .tab 
+    {
+        display: inline;
+    }
+
+    .tab-label 
+    {
+        display: inline-block;
+        position: relative;
+        left: 1px;
+        margin-left: -1px;
+        padding: $row-spacing ($gutter/2); 
+        color: $heading-color;
+        vertical-align: bottom;
+        cursor: pointer;
+        border: $light-divider; 
+        background-color: $gray-lightest; 
+
+        @include border-top-radius($border-radius);
+
+        @include bp(small)
+        {
+            font-size: 15px;
+            font-size: 1.5rem;
+        }
+
+        @include bp(medium)
+        {
+            font-size: 18px;
+            font-size: 1.8rem;
+        }
+
+        @include bp(large)
+        {
+            font-size: 20px;
+            font-size: 2rem;
+        }
+
+        [dir=rtl] &
+        {
+            margin-right: 1px;
+            margin-left: -2px;
+        }
+    }
+
+    .tab > [type="radio"] 
+    {
+        @extend %visuallyhidden;
+        @include opacity(0);
+    }
+
+    .tab-panel 
+    {
+        display: inline;
+        display: inline-block;
+        position: relative;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+
+    .tab-content 
+    {
+        display: block;
+        float: left;
+        width: 100%;
+        margin-top: -1px;
+        padding: 0 ($gutter/2);
+        border: $light-divider;
+        background-color: $background-color;
+
+        @include bp(small)
+        {
+            font-size: 15px;
+            font-size: 1.5rem;
+        }
+
+        @include bp(medium)
+        {
+            font-size: 18px;
+            font-size: 1.8rem;
+        }
+
+        @include bp(large)
+        {
+            font-size: 20px;
+            font-size: 2rem;
+        }
+    }
+
+    .tab [type="radio"]:checked + .tab-label 
+    {
+        padding: .8em ($gutter/2);
+        font-weight: bold;
+        border-bottom-width: 0;
+        background-color: $background-color;
+        z-index: 1;
+    }
+
+    .tab [type="radio"]:checked ~ .tab-panel 
+    {
+        display: inline;
+    }
+
+    &.borderless
+    {
+        .tab-content
+        {
+            padding: 0;
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+        }
+    }
+
+    &.small-stack
+    {
+        @include bp(small)
+        {
+            .tab-label
+            {
+                width: 100%;
+                padding-right: 2em;
+                font-weight: bold;
+                border-radius: 0;
+
+                &:before
+                {
+                    position: absolute;
+                    right: ($gutter/2);
+                    content: '+';
+
+                    @include center(y);
+                }
+
+                [dir=rtl] &
+                {
+                    padding-right: ($gutter/2);
+                    padding-left: 2em;
+
+                    &:before
+                    {
+                        right: auto;
+                        left: ($gutter/2);
+                    }
+                }
+            }
+
+            .tab
+            {
+                &:first-child .tab-label
+                {
+                    @include border-top-radius($border-radius);
+                }
+
+                &:last-child .tab-label
+                {
+                    @include border-bottom-radius($border-radius);
+                }
+
+                [type="radio"]:checked + .tab-label 
+                {
+                    background-color: $gray-lightest;
+                    box-shadow: 0 0 .3em $link-color;
+
+                    @include border-bottom-radius(0);
+
+                    &:before
+                    {
+                        color: $gray-light;
+                    }
+                }
+            }
+
+            .tab-content
+            {
+                padding-right: ($gutter/2);
+                padding-left: ($gutter/2);
+                border-right: $light-divider;
+                border-bottom: $light-divider;
+                border-left: $light-divider;
+            }
+        }
+    }
+}
+
+
+
+/* ----------------------------- */
+/* INTERNET EXPLORER 8 and below */
+
+@media \0screen\,screen\9 {
+    /* IE7 and IE6 */
+    .tabs 
+    {
+        zoom: 1;
+    }
+
+    /* IE8 and below */
+    .tabs .tab .tab-radio 
+    {
+        z-index: -1;
+    }
+
+    /* IE7 and IE6 */
+    .tabs .tab .tab-panel 
+    {
+        display: none;
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* IE7 and IE6 */
+    .tabs .tab-content
+    {
+        float: none;
+        width: auto;
+        padding-bottom: 1px;
+        padding-top: 1px;
+    }
+
+    /* IE8 and below */
+    .tabs .checked label 
+    {
+        padding-top: .8em;
+        padding-bottom: .8em;
+        border-bottom-width: 0;
+        background-color: $background-color;
+        z-index: 1;        
+    }
+
+    /* IE8 */
+    .tabs .checked .tab-panel 
+    {
+        display: inline;
+    }
+
+    /* IE7 and IE6 */
+    .tabs .checked .tab-panel
+    {
+        display: inline;
+        float: left;
+        width: 100%;
+    }
+}

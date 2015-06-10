@@ -129,33 +129,6 @@ $font-stack:
     filter: alpha(opacity=$opacity-ie); //IE8
 }
 
-@mixin transition($property)
-{
-    -moz-transition: $property;
-    -webkit-transition: $property;
-    -o-transition: $property;
-    -ms-transition: $property;
-    transition: $property;
-}
-
-@mixin animation($animate)
-{
-    -moz-animation: $animate;
-    -webkit-animation: $animate;
-    -o-animation: $animate;
-    -ms-animation: $animate;
-    animation: $animate;
-}
-
-@mixin transform($translate)
-{
-    -moz-transform: $translate;
-    -webkit-transform: $translate;
-    -o-transform: $translate;
-    -ms-transform: $translate;
-    transform: $translate;
-}
-
 @mixin background-size($bg-size)
 {
     -webkit-background-size: $bg-size;
@@ -214,29 +187,24 @@ $font-stack:
     }
 }
 
-@mixin vertical-align-middle
-{
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-@mixin horizontal-align-middle
-{
+@mixin center($xy:xy) {
+  @if $xy == xy {
     left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
-@mixin xy-align-middle
-{
     top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
     left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
 }
 
 @mixin truncate
@@ -244,24 +212,6 @@ $font-stack:
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-@mixin visible
-{
-    position: relative;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    visibility: visible;
-}
-
-@mixin hidden
-{
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
 }
 
 @mixin justify-text

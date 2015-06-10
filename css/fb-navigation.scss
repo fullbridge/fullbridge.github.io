@@ -163,15 +163,17 @@
                                 &:before
                                 {
                                     position: absolute;
+                                    left: 2px;
                                     left: .2rem;
                                     font-size: .8em;
 
                                     @include font(icon);
-                                    @include vertical-align-middle;
+                                    @include center(y);
 
                                     [dir=rtl] &
                                     {
                                         left: auto;
+                                        right: 2px;
                                         right: .2rem;
                                     }
                                 }

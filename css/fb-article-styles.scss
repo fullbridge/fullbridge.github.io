@@ -13,7 +13,7 @@ h4,
 h5,
 h6
 {
-    margin-top: $row-spacing;
+    margin-top: ($row-spacing*1.5);
     margin-bottom: 0;
     color: $heading-color;
     line-height: 1.25;
@@ -192,6 +192,14 @@ header hgroup
         border-width: 4px;
 
         @include font(heading, bold);
+    }
+}
+
+@-moz-document url-prefix()
+{ 
+    .opening:first-letter
+    {
+        padding: .2em;
     }
 }
 
