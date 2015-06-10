@@ -38,8 +38,8 @@
         border: none;
         border-radius: $border-radius;
         background-color: $input-color;
-        -webkit-appearance: none;
 
+        @include appearance(none);
         @include transition(background-color $timing);
     }
 
@@ -185,7 +185,8 @@
         bottom: $row-spacing;
         width: calc(100% - 5em);
         background-color: transparent;
-        -webkit-appearance: none;
+
+        @include appearance(none);
 
         & + output
         {
@@ -270,7 +271,8 @@
             background-color: $background-color;
             box-shadow: $input-border;
             cursor: pointer;
-            -webkit-appearance: none;
+
+            @include appearance(none);
         }
 
         &:focus::-webkit-slider-runnable-track 
@@ -287,7 +289,7 @@
 
         &::-moz-range-track 
         {
-            width: calc(100% - 2em);
+            width: 100%;
             height: 1.2em;
             cursor: pointer;
             border: none !important;
@@ -607,8 +609,8 @@
             border: none;
             border-radius: 0;
             background-color: $input-color;
-            -webkit-appearance: none;
-            -moz-appearance: window;
+
+            @include appearance(none);
 
             @include transition(background-color $timing);
           
@@ -672,8 +674,8 @@
             border: none;
             border-radius: 0;
             background-color: $input-color;
-            -webkit-appearance: none;
-            -moz-appearance: window;
+
+            @include appearance(none);
 
             @include visible-scrollbar;
             @include transition(background-color $timing);
@@ -709,16 +711,6 @@
                 font-size: 1em;
                 background-color: transparent;
             }
-        }
-    }
-
-    @-moz-document url-prefix() 
-    { 
-        .select,
-        .select-multiple  
-        {
-            background-color: $input-focus-color;
-            box-shadow: $input-border;
         }
     }
 
