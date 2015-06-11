@@ -30,7 +30,7 @@
         vertical-align: bottom;
         cursor: pointer;
         border: $light-divider; 
-        background-color: $gray-lightest; 
+        background-color: $input-color; 
 
         @include border-top-radius($border-radius);
 
@@ -118,6 +118,13 @@
         display: inline;
     }
 
+    .tab [type="radio"]:checked ~ .tab-panel>.tab-content 
+    {
+        position: relative;
+
+        @include animation(tab 150ms ease);
+    }
+
     &.borderless
     {
         .tab-content
@@ -137,7 +144,6 @@
             {
                 width: 100%;
                 padding-right: 2em;
-                font-weight: bold;
                 border-radius: 0;
 
                 &:before
@@ -176,14 +182,13 @@
 
                 [type="radio"]:checked + .tab-label 
                 {
-                    background-color: $gray-lightest;
-                    box-shadow: 0 0 .3em $link-color;
+                    text-decoration: underline;
 
                     @include border-bottom-radius(0);
 
                     &:before
                     {
-                        color: $gray-light;
+                        color: $gray-lighter;
                     }
                 }
             }
@@ -199,8 +204,6 @@
         }
     }
 }
-
-
 
 /* ----------------------------- */
 /* INTERNET EXPLORER 8 and below */
@@ -259,5 +262,20 @@
         display: inline;
         float: left;
         width: 100%;
+    }
+}
+
+/* --------- */
+/* Animation */
+
+@include keyframes(tab) 
+{
+    from 
+    {
+        top: -1em;
+    }
+    to 
+    {
+        top: 0;
     }
 }

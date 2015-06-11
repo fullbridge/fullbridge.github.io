@@ -47,7 +47,7 @@
     textarea,
     select
     {
-        min-width: ($menu-bar-height*1.5);
+        min-width: ($menu-bar-height*2);
 
         & + .label-text
         {
@@ -170,7 +170,7 @@
             @extend .button.primary;
         }
 
-        html:not(.touch) &:focus + .label-text
+        &:focus + .label-text
         {
             box-shadow: $input-focus-border;
 
@@ -526,7 +526,7 @@
             min-width: ($menu-bar-height*2);
             height: $menu-bar-height;
             cursor: pointer;
-            border-radius: .5em;
+            border-radius: 100em;
             background-color: $input-color;
 
             &:before,
@@ -540,7 +540,7 @@
             {
                 margin: 0 50% 0 0;
                 content: '';
-                border-radius: .5em;
+                border-radius: 100em;
                 background-color: $background-color;
                 box-shadow: 0 0 1px $gray-darkest;
 
@@ -555,7 +555,7 @@
                 width: 50%;
                 color: $gray-light;
                 line-height: 3;
-                content: '\e611';
+                content: '\e60d';
                 text-align: center;
 
                 @include font(icon,regular);
@@ -576,9 +576,7 @@
                 right: auto;
                 left: 0;
                 color: rgba(white,.5);
-                content: '\007C';
-
-                @include font(code,regular);
+                content: '\e60c';
             }
         }
 
@@ -1078,7 +1076,7 @@
     width: 100%;
     height: 1.6em;
     line-height: 1;
-    border-radius: 100em;
+    border-radius: $border-radius;
     background-color: $gray-lightest;
 
     .meter
@@ -1091,7 +1089,7 @@
         text-indent: 1em;
         font-size: .8em;
         font-weight: bold;
-        border-radius: 100em;
+        border-radius: $border-radius;
         background-size: 3.5em 2em, 100% 100%, 100% 100%;
         background-image:
         -webkit-linear-gradient( 
@@ -1182,6 +1180,11 @@
         @include animation(progress-bar 2s linear infinite);
         @include transition(width .6s ease);
 
+        [dir=rtl] &
+        {
+            float: right
+        }
+
         &.success
         {
             background-image: none;
@@ -1190,7 +1193,7 @@
 
         &.going
         {
-            @include animation(progress-bar-going 4s linear infinite);
+            @include animation(progress-bar-going 3s ease-in infinite);
         }
     }
 }
@@ -1214,12 +1217,12 @@
 
     html:not(.touch) &:hover,
     &:active,
-    html:not(.touch) &:focus
+    &:focus
     {
         background-image: none !important;
     }
 
-    html:not(.touch) &:focus
+    &:focus
     {
         box-shadow: $input-focus-border;
     }
@@ -1306,7 +1309,7 @@
         background-color: $primary-button-color;
     }
 
-    html:not(.touch) &:focus
+    &:focus
     {
         @include animation(pulse-primary-button-bg 2s ease-in-out infinite);
     }
@@ -1332,7 +1335,7 @@
         background-color: darken($secondary-button-color,7%);
     }
 
-    html:not(.touch) &:focus
+    &:focus
     {
         @include animation(pulse-secondary-button-bg 2s ease-in-out infinite);
     }
@@ -1359,7 +1362,7 @@
         background-color: darken($special-button-color,5%);
     }
 
-    html:not(.touch) &:focus
+    &:focus
     {
         @include animation(pulse-special-button-bg 2s ease-in-out infinite);
     }
@@ -1387,7 +1390,7 @@
         background-color: darken($yellow-alert,15%);
     }
 
-    html:not(.touch) &:focus
+    &:focus
     {
         @include animation(pulse-alert-button-bg 2s ease-in-out infinite);
     }
@@ -1454,7 +1457,7 @@
         background-color: darken($green-success,5%);
     }
 
-    html:not(.touch) &:focus
+    &:focus
     {
         @include animation(pulse-success-button-bg 2s ease-in-out infinite);
     }
@@ -2747,141 +2750,35 @@ html:not(.touch) *:disabled:hover,
 
 /* Button focus */
 
-@-webkit-keyframes pulse-primary-button-bg 
+@include keyframes(pulse-primary-button-bg) 
 {
     0%   { background-color: $primary-button-color; }
     50%  { background-color: lighten($primary-button-color,20%); }
     100% { background-color: $primary-button-color; }
 }
 
-@-moz-keyframes pulse-primary-button-bg 
-{
-    0%   { background-color: $primary-button-color; }
-    50%  { background-color: lighten($primary-button-color,20%); }
-    100% { background-color: $primary-button-color; }
-}
-
-@-o-keyframes pulse-primary-button-bg 
-{
-    0%   { background-color: $primary-button-color; }
-    50%  { background-color: lighten($primary-button-color,20%); }
-    100% { background-color: $primary-button-color; }
-}
-
-@keyframes pulse-primary-button-bg 
-{
-    0%   { background-color: $primary-button-color; }
-    50%  { background-color: lighten($primary-button-color,20%); }
-    100% { background-color: $primary-button-color; }
-}
-
-@-webkit-keyframes pulse-secondary-button-bg 
+@include keyframes(pulse-secondary-button-bg)
 {
     0%   { background-color: $secondary-button-color; }
     50%  { background-color: lighten($secondary-button-color,20%); }
     100% { background-color: $secondary-button-color; }
 }
 
-@-moz-keyframes pulse-secondary-button-bg 
-{
-    0%   { background-color: $secondary-button-color; }
-    50%  { background-color: lighten($secondary-button-color,20%); }
-    100% { background-color: $secondary-button-color; }
-}
-
-@-o-keyframes pulse-secondary-button-bg 
-{
-    0%   { background-color: $secondary-button-color; }
-    50%  { background-color: lighten($secondary-button-color,20%); }
-    100% { background-color: $secondary-button-color; }
-}
-
-@keyframes pulse-secondary-button-bg 
-{
-    0%   { background-color: $secondary-button-color; }
-    50%  { background-color: lighten($secondary-button-color,20%); }
-    100% { background-color: $secondary-button-color; }
-}
-
-@-webkit-keyframes pulse-special-button-bg 
+@include keyframes(pulse-special-button-bg)
 {
     0%   { background-color: $special-button-color; }
     50%  { background-color: lighten($special-button-color,20%); }
     100% { background-color: $special-button-color; }
 }
 
-@-moz-keyframes pulse-special-button-bg 
-{
-    0%   { background-color: $special-button-color; }
-    50%  { background-color: lighten($special-button-color,20%); }
-    100% { background-color: $special-button-color; }
-}
-
-@-o-keyframes pulse-special-button-bg 
-{
-    0%   { background-color: $special-button-color; }
-    50%  { background-color: lighten($special-button-color,20%); }
-    100% { background-color: $special-button-color; }
-}
-
-@keyframes pulse-special-button-bg 
-{
-    0%   { background-color: $special-button-color; }
-    50%  { background-color: lighten($special-button-color,20%); }
-    100% { background-color: $special-button-color; }
-}
-
-
-@-webkit-keyframes pulse-alert-button-bg 
+@include keyframes(pulse-alert-button-bg)
 {
     0%   { background-color: $yellow-alert; }
     50%  { background-color: lighten($yellow-alert,20%); }
     100% { background-color: $yellow-alert; }
 }
 
-@-moz-keyframes pulse-alert-button-bg 
-{
-    0%   { background-color: $yellow-alert; }
-    50%  { background-color: lighten($yellow-alert,20%); }
-    100% { background-color: $yellow-alert; }
-}
-
-@-o-keyframes pulse-alert-button-bg 
-{
-    0%   { background-color: $yellow-alert; }
-    50%  { background-color: lighten($yellow-alert,20%); }
-    100% { background-color: $yellow-alert; }
-}
-
-@keyframes pulse-alert-button-bg 
-{
-    0%   { background-color: $yellow-alert; }
-    50%  { background-color: lighten($yellow-alert,20%); }
-    100% { background-color: $yellow-alert; }
-}
-
-@-webkit-keyframes pulse-success-button-bg 
-{
-    0%   { background-color: $green-success; }
-    50%  { background-color: lighten($green-success,20%); }
-    100% { background-color: $green-success; }
-}
-
-@-moz-keyframes pulse-success-button-bg 
-{
-    0%   { background-color: $green-success; }
-    50%  { background-color: lighten($green-success,20%); }
-    100% { background-color: $green-success; }
-}
-
-@-o-keyframes pulse-success-button-bg 
-{
-    0%   { background-color: $green-success; }
-    50%  { background-color: lighten($green-success,20%); }
-    100% { background-color: $green-success; }
-}
-
-@keyframes pulse-success-button-bg 
+@include keyframes(pulse-success-button-bg)
 {
     0%   { background-color: $green-success; }
     50%  { background-color: lighten($green-success,20%); }
@@ -2890,42 +2787,28 @@ html:not(.touch) *:disabled:hover,
 
 /* Progress */
 
-@-webkit-keyframes progress-bar 
+@include keyframes(progress-bar) 
 {
-    from{background-position:3.5em 0}to{background-position:0 0}
+    from 
+    {
+        background-position:3.5em 0;
+    }
+    to 
+    {
+        background-position:0 0;
+    }
 }
 
-@-moz-keyframes progress-bar 
+@include keyframes(progress-bar-going) 
 {
-    from{background-position:3.5em 0}to{background-position:0 0}
-}
-
-@-o-keyframes progress-bar 
-{
-    from{background-position:3.5em 0}to{background-position:0 0}
-}
-
-@keyframes progress-bar 
-{
-    from{background-position:3.5em 0}to{background-position:0 0}
-}
-
-@-webkit-keyframes progress-bar-going
-{
-    from{ width: 0%; background-position:3.5em 0; }to{ width: 100%; background-position:0 0; }
-}
-
-@-moz-keyframes progress-bar-going
-{
-    from{ width: 0%; background-position:3.5em 0; }to{ width: 100%; background-position:0 0; }
-}
-
-@-o-keyframes progress-bar-going
-{
-    from{ width: 0%; background-position:3.5em 0; }to{ width: 100%; background-position:0 0; }
-}
-
-@keyframes progress-bar-going
-{
-    from{ width: 0%; background-position:3.5em 0; }to{ width: 100%; background-position:0 0; }
+    from 
+    {
+        width: 0%; 
+        background-position:3.5em 0;
+    }
+    to 
+    {
+        width: 100%; 
+        background-position:0 0;
+    }
 }

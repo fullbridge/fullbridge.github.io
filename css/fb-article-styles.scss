@@ -244,6 +244,12 @@ summary,
     margin: ($row-spacing*2) auto;
 }
 
+.block,
+.block-2
+{
+    display: block;
+}
+
 figure,
 blockquote,
 pre
@@ -446,4 +452,10 @@ aside
             margin-left: 0;
         }
     }
+}
+
+summary
+{
+    cursor: pointer;
+    outline: none;
 }

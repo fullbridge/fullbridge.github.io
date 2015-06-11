@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Accordions
+   ========================================================================== */
+
+.accordions
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: $light-divider;
+    border-bottom: $light-divider;
+
+    .accordion
+    {
+        margin: 0;
+        padding: 0;
+        background-color: $input-focus-color;
+
+        label
+        {
+            display: block;
+            position: relative;
+            padding: $row-spacing $gutter $row-spacing ($gutter/2);
+            color: $heading-color;
+            cursor: pointer;
+            background-color: $input-color;
+
+            [dir=rtl] &
+            {
+                padding: $row-spacing ($gutter/2) $row-spacing $gutter;
+            }
+
+            &:after
+            {
+                position: absolute;
+                right: ($gutter/2);
+                content: '+';
+
+                @include center(y);
+
+                [dir=rtl] &
+                {
+                    right: auto;
+                    left: ($gutter/2);
+                }
+            }
+        }
+
+        .accordion-panel
+        {
+            position: relative;
+            top: -1em;
+            width: 0;
+            height: 0;
+            padding: 0 ($gutter/2);
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"]
+        {
+            @extend %visuallyhidden;
+
+            &:checked
+            {
+                & + label
+                {
+                    text-decoration: underline;
+                    font-weight: bold;
+                    background-color: transparent;
+                }
+
+                & ~ .accordion-panel
+                {
+                    top: 0;
+                    width: auto;
+                    height: auto;
+                    overflow: visible;
+                    visibility: visible;
+
+                    @include transition(top $timing);
+                }
+            }
+        }
+
+        input[type="checkbox"]
+        {
+            &:checked + label:after
+            {
+                content: '–';
+            }
+        }
+
+        input[type="radio"]
+        {    
+            &:checked + label:after
+            {
+                color: $gray-lighter;
+            }
+        }
+    }
+
+    .accordion + .accordion
+    {
+        border-top: $light-divider;
+    }
+}

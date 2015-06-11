@@ -13,7 +13,7 @@
 	tfoot 
 	{ 
 		color: $heading-color;
-		background-color: $hover-bg-color; 
+		background-color: $input-color; 
 	}
 
 	th,
@@ -46,16 +46,14 @@
 		border-right: none; 
 	}
 
-	/*tbody tr.even,
+	/* Use if need to alternate row styling
+	tbody tr.even,
 	tbody tr.alt 
-	{ 
-		background-color: $hover-bg-color; 
-	}
+	{}
 
 	tbody tr:nth-child(even) 
-	{ 
-		background-color: $hover-bg-color; 
-	}*/
+	{}
+	*/
 
 	tbody tr td
 	{ 
@@ -122,6 +120,12 @@
 		border-left: $light-divider;
 
 		@include horizontal-scroll;
+
+		[dir=rtl] &
+		{
+			right: 0;
+			left: auto;
+		}
 	}
 
 	.pinned table 
@@ -152,11 +156,23 @@
 		position: relative; 
 		overflow: hidden; 
 		border-right: $light-divider; 
+
+		[dir=rtl] &
+		{
+			border-right: none;
+			border-left: $light-divider;
+		}
 	}
 
 	div.table-wrapper div.scrollable 
 	{ 
-		margin-left: 35%; 
+		margin-left: 35%;
+
+		[dir=rtl] &
+		{
+			margin-right: 35%;
+			margin-left: auto;
+		}
 	}
 
 	div.table-wrapper div.scrollable 
