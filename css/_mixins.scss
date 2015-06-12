@@ -35,17 +35,13 @@ $font-stack:
       @media only screen and (min-width: ($medium-screen + 1px)) { @content; }
     }
     
-    @else if $min == mobile {
-      @media only screen and (max-width: $small-screen) { @content; }
-    }
-    
     @else if $min == desktop {
       @media only screen and (min-width: ($small-screen + 1px)) { @content; }
     }
   
     // Otherwise pass a warning to the compiler as to the appropriate options
     @else {
-      @warn "The breakpoint mixin supports the following attributes: mobile, desktop, small, medium, large";
+      @warn "The breakpoint mixin supports the following attributes: desktop, small, medium, large";
     }
   }
   @else if $type == number {
@@ -240,9 +236,10 @@ $font-stack:
     width: 0;
     height: 0;
     content: '';
-    border-left: $sides solid transparent;
+    border-top: none;
     border-right: $sides solid transparent;
     border-bottom: $bottom solid $color;
+    border-left: $sides solid transparent;
 }
 
 @mixin triangle-down($sides, $bottom, $color)
@@ -250,9 +247,10 @@ $font-stack:
     width: 0;
     height: 0;
     content: '';
-    border-left: $sides solid transparent;
-    border-right: $sides solid transparent;
     border-top: $bottom solid $color;
+    border-right: $sides solid transparent;
+    border-bottom: none;
+    border-left: $sides solid transparent;
 }
 
 @mixin triangle-right($sides, $stroke, $color)
@@ -261,6 +259,7 @@ $font-stack:
     height: 0;
     content: '';
     border-top: $sides solid transparent;
+    border-right: none;
     border-bottom: $sides solid transparent;
     border-left: $stroke solid $color;
 }
@@ -271,8 +270,9 @@ $font-stack:
     height: 0;
     content: '';
     border-top: $sides solid transparent;
-    border-bottom: $sides solid transparent;
     border-right: $stroke solid $color;
+    border-bottom: $sides solid transparent;
+    border-left: none;
 }
 
 @mixin button-gradient($button-bg-color, $top-color, $bottom-color)

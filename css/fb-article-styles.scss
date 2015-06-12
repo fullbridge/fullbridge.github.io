@@ -193,6 +193,16 @@ header hgroup
 
         @include font(heading, bold);
     }
+
+    [dir=rtl] &
+    {
+        &:first-letter
+        {
+            float: right;
+            margin-right: auto;
+            margin-left: .15em;
+        }
+    }
 }
 
 @-moz-document url-prefix()
@@ -200,16 +210,6 @@ header hgroup
     .opening:first-letter
     {
         padding: .2em;
-    }
-}
-
-[dir=rtl] .opening
-{
-    &:first-letter
-    {
-        float: right;
-        margin-right: auto;
-        margin-left: .15em;
     }
 }
 
@@ -345,20 +345,20 @@ blockquote
             content: '\201D';
         }
     }
-}
 
-[dir=rtl] blockquote
-{
-    > p
+    [dir=rtl] &
     {
-        &:before
+        > p
         {
-            content: '\201D';
-        }
+            &:before
+            {
+                content: '\201D';
+            }
 
-        &:after
-        {
-            content: '\201C';
+            &:after
+            {
+                content: '\201C';
+            }
         }
     }
 }
@@ -384,12 +384,12 @@ pre
 
         @include horizontal-scroll;
     }
-}
 
-[dir=rtl] pre
-{
-    border-right: 5px solid $gray-light;
-    border-left: none;
+    [dir=rtl] &
+    {
+        border-right: 5px solid $gray-light;
+        border-left: none;
+    }
 }
 
 
