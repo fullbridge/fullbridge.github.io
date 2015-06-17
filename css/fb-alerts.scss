@@ -10,6 +10,11 @@
     padding: 1px $menu-bar-height 1px ($gutter/2);
     color: $heading-color;
     border-radius: $border-radius;
+    
+    [dir=rtl] &
+    {
+        padding: 1px ($gutter/2) 1px $menu-bar-height;
+    }
 
     header
     {
@@ -34,9 +39,21 @@
 
         @include font(icon,regular);
 
+        [dir=rtl] &
+        {
+            right: auto;
+            left: 0;
+        }
+
         &:before
         {
             content: '\e60d';
+        }
+
+        &:focus
+        {
+            outline: none;
+            box-shadow: $input-focus-border;
         }
     }
 
@@ -49,6 +66,12 @@
 
         @include clearfix;
 
+        [dir=rtl] &
+        {
+            margin-right: 0;
+            margin-left: -2em;
+        }
+
         li
         {
             float: left;
@@ -57,10 +80,22 @@
             padding: 1.1em 0;
             color: inherit;
 
+            [dir=rtl] &
+            {
+                float: right;
+                margin: 0 0 0 .8em;
+            }
+
             &.more
             {
                 float: right;
                 margin: 0;
+
+                [dir=rtl] &
+                {
+                    float: left;
+                    margin: 0;
+                }
             }
         }
 
@@ -85,6 +120,12 @@
             {
                 @include opacity(.5);
             }
+
+            &:focus
+            {
+                outline: none;
+                box-shadow: $input-focus-border;
+            }
         }
 
         &.stack
@@ -95,6 +136,12 @@
                 height: auto;
                 margin: $row-spacing 0;
                 padding: 0;
+
+                [dir=rtl] &
+                {
+                    float: none;
+                    margin: $row-spacing 0;
+                }
 
                 a
                 {
@@ -116,6 +163,12 @@
                     margin: $row-spacing 0;
                     padding: 0;
 
+                    [dir=rtl] &
+                    {
+                        float: none;
+                        margin: $row-spacing 0;
+                    }
+
                     a
                     {
                         display: inline-block;
@@ -132,6 +185,12 @@
         padding-top: $menu-bar-height;
         padding-bottom: $menu-bar-height;
 
+        [dir=rtl] &
+        {
+            padding-top: $menu-bar-height;
+            padding-bottom: $menu-bar-height;
+        }
+
         header
         {
             position: absolute;
@@ -140,6 +199,12 @@
             left: ($gutter/2/1.1);
 
             @include truncate;
+
+            [dir=rtl] &
+            {
+                right: ($gutter/2/1.1);
+                left: ($menu-bar-height/1.1);
+            }
         }
 
         .scrollable
@@ -147,11 +212,16 @@
             @include visible-scrollbar;
             @include vertical-scroll;
 
-            height: 13em;
+            max-height: 13em;
             margin: 0 (-$menu-bar-height) 0 (-$gutter/2) !important;
             padding: 0 ($gutter/2);
             border-top: $transparent-dark-divider;
             border-bottom: $transparent-dark-divider;
+
+            [dir=rtl] &
+            {
+                margin: 0 (-$gutter/2) 0 (-$menu-bar-height) !important;
+            }
 
             > *:first-child
             {
@@ -167,6 +237,12 @@
             width: 100%;
             margin: 0;
             padding: 0 ($gutter/2);
+
+            [dir=rtl] &
+            {
+                right: 0;
+                left: 0;
+            }
         }
     }
 
@@ -201,79 +277,6 @@
         input[type="submit"]
         {
             color: $link-color;
-        }
-    }
-}
-
-[dir=rtl] .alert-box
-{
-    padding: 1px ($gutter/2) 1px $menu-bar-height;
-
-    .close
-    {
-        right: auto;
-        left: 0;
-    }
-
-    .actions
-    {
-        margin-right: 0;
-        margin-left: -2em;
-
-        li
-        {
-            float: right;
-            margin: 0 0 0 .8em;
-
-            &.more
-            {
-                float: left;
-                margin: 0;
-            }
-        }
-
-        &.stack
-        {
-            li
-            {
-                float: none;
-                margin: $row-spacing 0;
-            }
-        }
-
-        &.small-stack
-        {
-            @include bp(small)
-            {
-                li
-                {
-                    float: none;
-                    margin: $row-spacing 0;
-                }
-            }
-        }
-    }
-
-    &.with-scrollbar
-    {
-        padding-top: $menu-bar-height;
-        padding-bottom: $menu-bar-height;
-
-        header
-        {
-            right: ($gutter/2/1.1);
-            left: ($menu-bar-height/1.1);
-        }
-
-        .scrollable
-        {
-            margin: 0 (-$gutter/2) 0 (-$menu-bar-height) !important;
-        }
-
-        .actions
-        {
-            right: 0;
-            left: 0;
         }
     }
 }

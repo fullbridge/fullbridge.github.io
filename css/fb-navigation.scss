@@ -128,7 +128,7 @@
 
                     &.active
                     {
-                        color: $heading-color;
+                        color: $link-color;
                         font-weight: bold;
                         background-color: transparent;
                     }
@@ -136,7 +136,6 @@
                     html:not(.touch) &:hover
                     {
                         color: $heading-color;
-                        background-color: $hover-bg-color;
                     }
                 }
 
@@ -176,6 +175,15 @@
                                 }
                             }
 
+                            &.done
+                            {
+                                &:before
+                                {
+                                    color: $link-color;
+                                    content: '\e60c';
+                                }
+                            }
+
                             &.active
                             {
                                 &:before
@@ -187,15 +195,6 @@
                                     {
                                         content: '\e60a';
                                     }
-                                }
-                            }
-
-                            &.done
-                            {
-                                &:before
-                                {
-                                    color: $link-color;
-                                    content: '\e60c';
                                 }
                             }
                         }
@@ -253,6 +252,11 @@
         padding: 0 2rem;
         font-size: 15px;
         font-size: 1.5rem;
+
+        [dir=rtl] &
+        {
+            float: right;
+        }
         
         @include bp(small)
         {
@@ -348,16 +352,16 @@
             {
                 border-right: $light-divider;
 
-                &:before,
-                &:after
-                {
-                    display: none;
-                }
-
                 [dir=rtl] &
                 {
                     border-right: none;
                     border-left: $light-divider;
+                }
+
+                &:before,
+                &:after
+                {
+                    display: none;
                 }
             }
 
@@ -372,9 +376,19 @@
             content: '\e615';
         }
 
-        &.back a:before
+        &.back a
         {
-            content: '\e60a';
+            @include transform(scaleX(-1));
+
+            [dir=rtl] &
+            {
+                @include transform(scaleX(1));
+            }
+
+            &:before
+            {
+                content: '\e600';
+            }
         }
 
         &.unavailable a
@@ -400,11 +414,6 @@
             {
                 font-weight: bold;
             }
-        }
-
-        [dir=rtl] &
-        {
-            float: right;
         }
     }
 }

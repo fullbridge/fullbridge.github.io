@@ -59,11 +59,11 @@ $transparent-light-divider: 1px solid rgba(white,.2);
 $input-color: $hover-bg-color;
 $input-focus-color: rgba(white,.2);
 $input-border: inset 0 0 1px $gray-darkest;
-$input-focus-border: inset 0 0 1px $gray-darkest, 0 0 .3em $link-color;
+$input-focus-border: inset 0 0 1px $gray-darkest, 0 0 2px $link-color, 0 0 .3em $link-color;
 $placeholder-text-color: $gray-regular;
 $focus-bg-color: $highlight-blue;
 
-$border-radius: 2px;
+$border-radius: 1px;
 $box-shadow: 0 0 1em $gray-light;
 $menu-bar-height: 3em;
 
@@ -80,3 +80,5 @@ $row-spacing: .7em;
 
 $small-screen: 768px;
 $medium-screen: 1440px;
+
+$modal-z: 99999;

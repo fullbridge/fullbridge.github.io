@@ -54,18 +54,16 @@
             <div class="large-2 medium-3 columns sidebar fixed">
                 <div class="side-nav">
                     <header
-                        data-anijs="
-                            if: click, do: $toggleClass open;
-                        ">
-                        Unit 1: UI Style Guide
+                        data-anijs="if: click, do: $toggleClass open;">
+                        UI Style Guide
                     </header>
                     <nav role="navigation" title="Style Guide navigation">
                         <ul>
                             <li>
-                                <a href="javascript:" class="done">Forms</a>
+                                <a href="#forms" class="done">Forms</a>
                                 <ul>
                                     <li>
-                                        <a href="#form-fields" class="done">Form fields</a>
+                                        <a href="#form-fields" class="done active">Form fields</a>
                                     </li>
                                     <li>
                                         <a href="#switches" class="done">Switches</a>
@@ -91,7 +89,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:" class="done">Alerts</a>
+                                <a href="#alerts" class="done">Alerts</a>
                                 <ul>
                                     <li>
                                         <a href="#alert-boxes" class="done">Alert boxes</a>
@@ -102,7 +100,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:" class="done">Buttons</a>
+                                <a href="#button-styles" class="done">Buttons styles</a>
                                 <ul>
                                     <li>
                                         <a href="#links" class="done">Links</a>
@@ -122,7 +120,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:" class="done">Article styles</a>
+                                <a href="#article-styles" class="done">Article styles</a>
                                 <ul>
                                     <li>
                                         <a href="#kitchen-sink" class="done">Kitchen sink</a>
@@ -133,28 +131,25 @@
                                     <li>
                                         <a href="#block-grid" class="done">Block grid</a>
                                     </li>
-                                    <li>
-                                        <a href="#example-article" class="done">Example article</a>
-                                    </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:" class="">Misc</a>
+                                <a href="#misc" class="done">Misc</a>
                                 <ul>
                                     <li>
                                         <a href="#breadcrumbs" class="done">Breadcrumbs</a>
                                     </li>
                                     <li>
-                                        <a href="#accordions" class="done">Accordions</a>
-                                    </li>
-                                    <li>
-                                        <a href="#modals" class="active">Modals</a>
-                                    </li>
-                                    <li>
-                                        <a href="#tabs" class="done">Tabs</a>
+                                        <a href="#modals" class="done">Modals</a>
                                     </li>
                                     <li>
                                         <a href="#tables" class="done">Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="#accordions" class="done">Accordions</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tabs" class="done">Tabs</a>
                                     </li>
                                 </ul>
                             </li>
@@ -173,47 +168,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="javascript:">Section</a>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:">Subsection</a>
-                                    </li>
-                                </ul>
-                            </li>
+                            <input type="hidden" 
+                                data-anijs="if: click, on: .side-nav nav a, do: $removeClass active, to: .side-nav nav a;
+                                            if: click, on: .side-nav nav a, do: $addClass active, to: target;">
                         </ul>
                     </nav>
                 </div>
@@ -223,7 +180,7 @@
                     <section class="row section">
                         <div class="large-10 medium-12 large-centered columns">
                             <h2>
-                                Forms
+                                <a name="forms" href="#forms" class="link jump"></a> Forms
                             </h2>
                             <form class="form">
                                 <h3>
@@ -415,7 +372,7 @@
                                         <div class="column">
                                             <label class="label">
                                                 <input type="file">
-                                                <div class="label-text"><span class="icon-cloud-upload"></span> File input</div>
+                                                <div class="label-text">File input</div>
                                             </label>
                                         </div>
                                     </div>
@@ -644,7 +601,7 @@
                                         <div class="column">
                                             <label class="label">
                                                 <input type="file" disabled>
-                                                <div class="label-text"><span class="icon-cloud-upload"></span> Disabled file input</div>
+                                                <div class="label-text">Disabled file input</div>
                                             </label>
                                         </div>
                                     </div>
@@ -881,7 +838,7 @@
                     <section class="row section">
                         <div class="large-10 medium-12 large-centered columns">
                             <h2>
-                                Alerts
+                                <a name="alerts" href="#alerts" class="link jump"></a> Alerts
                             </h2>
                             <h3>
                                 <a name="alert-boxes" href="#alert-boxes" class="link jump"></a> Alert boxes
@@ -1514,7 +1471,7 @@
                     <section class="row section">
                         <div class="large-10 medium-12 large-centered columns">
                             <h2>
-                                Buttons
+                                <a name="button-styles" href="#button-styles" class="link jump"></a> Button styles
                             </h2>
                             <h3>
                                 <a name="links" href="#links" class="link jump"></a> Links
@@ -1729,8 +1686,6 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><a href="javascript:" class="button primary">Button 3</a></li>
-                                    <li><a href="javascript:" class="button primary">Button 4</a></li>
                                 </ul>
                             </div>
                             <h4>
@@ -1752,9 +1707,6 @@
                                         </div>
                                     </li>
                                     <li><a href="javascript:" class="button primary">Button 3</a></li>
-                                    <li><a href="javascript:" class="button primary">Button 4</a></li>
-                                    <li><a href="javascript:" class="button primary">Button 5</a></li>
-                                    <li><a href="javascript:" class="button primary">Button 6</a></li>
                                 </ul>
                             </div>
                             <h4>
@@ -1777,10 +1729,6 @@
                                     </li>
                                     <li><a href="javascript:" class="button primary">Button 3</a></li>
                                     <li><a href="javascript:" class="button primary">Button 4</a></li>
-                                    <li><a href="javascript:" class="button primary">Button 5</a></li>
-                                    <li><a href="javascript:" class="button primary">Button 6</a></li>
-                                    <li><a href="javascript:" class="button primary">Button 7</a></li>
-                                    <li><a href="javascript:" class="button primary">Button 8</a></li>
                                 </ul>
                             </div>
                             <h4>
@@ -1977,34 +1925,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="column">
-                                    <div class="block">
-                                        <div class="tooltip long up middle expand">
-                                            <a href="javascript:" class="button secondary">
-                                                Middle up
-                                            </a>
-                                            <div class="bubble">
-                                                <p>
-                                                    Tooltip text. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin. <a href="javascript:" class="link internal">Text link</a>.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="block">
-                                        <div class="tooltip long down middle expand">
-                                            <a href="javascript:" class="button special">
-                                                Middle down
-                                            </a>
-                                            <div class="bubble">
-                                                <p>
-                                                    Tooltip text. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin. <a href="javascript:" class="link internal">Text link</a>.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <h4>
                                 Using data-tip (can't contain links inside bubble)
                             </h4>
@@ -2057,7 +1977,7 @@
                             <div class="row">
                                 <div class="column">
                                     <h2>
-                                        Article styles
+                                        <a name="article-styles" href="#article-styles" class="link jump"></a> Article styles
                                     </h2>
                                     <h3>
                                         <a name="kitchen-sink" href="#kitchen-sink" class="link jump"></a> Kitchen sink
@@ -2094,20 +2014,6 @@
                                     <p>
                                         Bresaola pork capicola ham, doner turducken beef. Strip steak rump flank salami fatback meatloaf, short loin bresaola kevin cupim leberkas drumstick. Doner meatloaf t-bone turkey meatball rump ball tip drumstick short loin.
                                     </p>
-                                    <figure>
-                                        <img src="https://placekitten.com/g/1600/900" alt="">
-                                        <figcaption>
-                                            Figure caption
-                                        </figcaption>
-                                    </figure>
-                                    <figure>
-                                        <div class="embed">
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/c2OV_MtSn04" frameborder="0" allowfullscreen></iframe>
-                                        </div>
-                                        <figcaption>
-                                            Some video
-                                        </figcaption>
-                                    </figure>
                                     <pre><code>pre<br>{<br>&nbsp;&nbsp;padding: .5em 1em; border-left: 5px solid $gray-light; background-color: $gray-lightest;<br>}</code></pre>
                                     <p>
                                         Bresaola pork capicola ham, doner turducken beef. Strip steak rump flank salami fatback meatloaf, short loin bresaola kevin cupim leberkas drumstick. Doner meatloaf t-bone turkey meatball rump ball tip drumstick short loin.
@@ -2142,6 +2048,41 @@
                                             </ul>
                                         </div>
                                     </details>
+                                    <h4>Figures</h4>
+                                    <figure>
+                                        <img src="https://placekitten.com/g/1600/900" alt="">
+                                        <figcaption>
+                                            Figure caption
+                                        </figcaption>
+                                    </figure>
+                                    <figure>
+                                        <div class="embed">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/c2OV_MtSn04" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                        <figcaption>
+                                            External video embed
+                                        </figcaption>
+                                    </figure>
+                                    <figure>
+                                        <video id="video1" controls preload poster="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="640" height="360">
+                                            <source id="mp4" src="http://media.w3.org/2010/05/bunny/trailer.mp4" type="video/mp4">
+                                            <source id="ogv" src="http://media.w3.org/2010/05/bunny/trailer.ogv" type="video/ogg">
+                                            <p>Your user agent does not support the HTML5 Video element.</p>
+                                        </video>
+                                        <figcaption>
+                                            HTML5 video
+                                        </figcaption>
+                                    </figure>
+                                    <figure>
+                                        <audio controls>
+                                            <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp4" type='audio/mp4'>
+                                            <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga" type='audio/ogg; codecs=vorbis'>
+                                            <p>Your user agent does not support the HTML5 Audio element.</p>
+                                        </audio>
+                                        <figcaption>
+                                            Audio element
+                                        </figcaption>
+                                    </figure>
                                     <header>
                                         <hgroup>
                                             <h1>
@@ -2281,7 +2222,7 @@
                     <section class="row section">
                         <div class="large-10 medium-12 large-centered columns">
                             <h2>
-                                Misc.
+                                <a name="misc" href="#misc" class="link jump"></a> Misc.
                             </h2>
                             <h3>
                                 <a name="breadcrumbs" href="#breadcrumbs" class="link jump"></a> Breadcrumbs
@@ -2300,227 +2241,24 @@
                                 </ul>
                             </div>
                             <h3>
-                                <a name="accordions" href="#accordions" class="link jump"></a> Accordions
-                            </h3>
-                            <h4>
-                                Open/collapse multiple
-                            </h4>
-                            <div class="block">
-                                <ul class="accordions">
-                                    <li class="accordion">
-                                        <input id="accordion-1" type="checkbox" name="accordion-group-1">
-                                        <label for="accordion-1">Accordion 1</label>
-                                        <div class="accordion-panel">
-                                            <div class="row">
-                                                <div class="small-6 columns">
-                                                    <p>Accordion 1 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                </div>
-                                                <div class="small-6 columns">
-                                                    <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </li>
-                                    <li class="accordion">
-                                        <input id="accordion-2" type="checkbox" name="accordion-group-1">
-                                        <label for="accordion-2">Accordion 2</label>
-                                        <div class="accordion-panel">
-                                            <h5>
-                                                Accordion 2 content
-                                            </h5>
-                                            <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
-                                            <p>Woot!</p>
-                                        </div> 
-                                    </li>
-                                    <li class="accordion">
-                                        <input id="accordion-3" type="checkbox" name="accordion-group-1">
-                                        <label for="accordion-3">Accordion 3</label>
-                                        <div class="accordion-panel">
-                                            <p>Accordion 3 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
-                                        </div> 
-                                    </li>
-                                </ul>
-                            </div>
-                            <h4>
-                                Open one at a time
-                            </h4>
-                            <div class="block">
-                                <ul class="accordions">
-                                    <li class="accordion">
-                                        <input id="accordion-4" type="radio" name="accordion-group-2">
-                                        <label for="accordion-4">Accordion 4</label>
-                                        <div class="accordion-panel">
-                                            <h5>
-                                                Accordion 4 content
-                                            </h5>
-                                            <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
-                                            <p>Woot!</p>
-                                        </div> 
-                                    </li>
-                                    <li class="accordion">
-                                        <input id="accordion-5" type="radio" name="accordion-group-2">
-                                        <label for="accordion-5">Accordion 5</label>
-                                        <div class="accordion-panel">
-                                            <div class="row">
-                                                <div class="small-6 columns">
-                                                    <p>Accordion 5 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                </div>
-                                                <div class="small-6 columns">
-                                                    <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </li>
-                                    <li class="accordion">
-                                        <input id="accordion-6" type="radio" name="accordion-group-2" checked>
-                                        <label for="accordion-6">Accordion 6</label>
-                                        <div class="accordion-panel">
-                                            <p>Accordion 6 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
-                                        </div> 
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3>
-                                <a name="tabs" href="#tabs" class="link jump"></a> Tabs
+                                <a name="modals" href="#modals" class="link jump"></a> Modals
                             </h3>
                             <p>
-                                A tab label should be short as 1 to 2 words. Long labels will break the layout for not so big screens. Consider screen size when using tabs.
+                                <a href="javascript:" class="link"
+                                    data-anijs="if: click, do: $addClass open, to: #modal-1;">Open an alert modal</a>
                             </p>
-                            <h4>
-                                Standard
-                            </h4>
-                            <div class="block">
-                                <div class="tabs">
-                                    <div class="tab">
-                                        <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked>
-                                        <label class="tab-label" for="tab-1">Tab 1</label>
-                                        <div class="tab-panel">
-                                            <div class="tab-content">
-                                                <div class="row">
-                                                    <div class="small-6 columns">
-                                                        <p>Tab 1 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                    </div>
-                                                    <div class="small-6 columns">
-                                                        <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="tab">
-                                        <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
-                                        <label class="tab-label" for="tab-2">Tab 2</label>
-                                        <div class="tab-panel">
-                                            <div class="tab-content">
-                                                <h5>
-                                                    Tab 2 content
-                                                </h5>
-                                                <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
-                                                <p>Woot!</p>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="tab">
-                                        <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
-                                        <label class="tab-label" for="tab-3">Tab 3</label>
-                                        <div class="tab-panel">
-                                            <div class="tab-content">
-                                                <p>Tab 3 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                            <h4>
-                                Stack tabs on small screens
-                            </h4>
-                            <div class="block">
-                                <div class="tabs small-stack">
-                                    <div class="tab">
-                                        <input class="tab-radio" type="radio" id="tab-4" name="tab-group-2">
-                                        <label class="tab-label" for="tab-4">Tab 4</label>
-                                        <div class="tab-panel">
-                                            <div class="tab-content">
-                                                <h5>
-                                                    Tab 4 content
-                                                </h5>
-                                                <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
-                                                <p>Woot!</p>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="tab">
-                                        <input class="tab-radio" type="radio" id="tab-5" name="tab-group-2" checked>
-                                        <label class="tab-label" for="tab-5">Tab 5 Nunc Eu Ullamcorper Orci</label>
-                                        <div class="tab-panel">
-                                            <div class="tab-content">
-                                                <p>Tab 5 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="tab">
-                                        <input class="tab-radio" type="radio" id="tab-6" name="tab-group-2">
-                                        <label class="tab-label" for="tab-6">Tab 6</label>
-                                        <div class="tab-panel">
-                                            <div class="tab-content">
-                                                <div class="row">
-                                                    <div class="small-6 columns">
-                                                        <p>Tab 6 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                    </div>
-                                                    <div class="small-6 columns">
-                                                        <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                            <h4>
-                                Borderless
-                            </h4>
-                            <div class="block">
-                                <div class="tabs borderless">
-                                    <div class="tab">
-                                        <input class="tab-radio" type="radio" id="tab-7" name="tab-group-3">
-                                        <label class="tab-label" for="tab-7">Tab 7</label>
-                                        <div class="tab-panel">
-                                            <div class="tab-content">
-                                                <h5>
-                                                    Tab 7 content
-                                                </h5>
-                                                <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
-                                                <p>Woot!</p>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="tab">
-                                        <input class="tab-radio" type="radio" id="tab-8" name="tab-group-3">
-                                        <label class="tab-label" for="tab-8">Tab 8</label>
-                                        <div class="tab-panel">
-                                            <div class="tab-content">
-                                                <p>Tab 8 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="tab">
-                                        <input class="tab-radio" type="radio" id="tab-9" name="tab-group-3" checked>
-                                        <label class="tab-label" for="tab-9">Tab 9</label>
-                                        <div class="tab-panel">
-                                            <div class="tab-content">
-                                                <div class="row">
-                                                    <div class="small-6 columns">
-                                                        <p>Tab 9 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                    </div>
-                                                    <div class="small-6 columns">
-                                                        <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
+                            <p>
+                                <a href="javascript:" class="link"
+                                    data-anijs="if: click, do: $addClass open, to: #modal-2;">Open fixed height modal</a>
+                            </p>
+                            <p>
+                                <a href="javascript:" class="link"
+                                    data-anijs="if: click, do: $addClass open, to: #modal-3;">Open flexible height modal</a>
+                            </p>
+                            <p>
+                                <a href="javascript:" class="link"
+                                    data-anijs="if: click, do: $addClass open, to: #modal-4;">Open an alert overlay</a>
+                            </p>
                             <h3>
                                 <a name="tables" href="#tables" class="link jump"></a> Tables
                             </h3>
@@ -2785,10 +2523,377 @@
                                     </table>
                                 </form>
                             </div>
+                            <h3>
+                                <a name="accordions" href="#accordions" class="link jump"></a> Accordions
+                            </h3>
+                            <h4>
+                                Open/collapse multiple
+                            </h4>
+                            <div class="block">
+                                <ul class="accordions">
+                                    <li class="accordion">
+                                        <input id="accordion-1" type="checkbox" name="accordion-group-1">
+                                        <label for="accordion-1">Accordion 1</label>
+                                        <div class="accordion-panel">
+                                            <div class="row">
+                                                <div class="small-6 columns">
+                                                    <p>Accordion 1 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                </div>
+                                                <div class="small-6 columns">
+                                                    <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </li>
+                                    <li class="accordion">
+                                        <input id="accordion-2" type="checkbox" name="accordion-group-1">
+                                        <label for="accordion-2">Accordion 2</label>
+                                        <div class="accordion-panel">
+                                            <h5>
+                                                Accordion 2 content
+                                            </h5>
+                                            <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
+                                            <p>Woot!</p>
+                                        </div> 
+                                    </li>
+                                    <li class="accordion">
+                                        <input id="accordion-3" type="checkbox" name="accordion-group-1">
+                                        <label for="accordion-3">Accordion 3</label>
+                                        <div class="accordion-panel">
+                                            <p>Accordion 3 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
+                                        </div> 
+                                    </li>
+                                </ul>
+                            </div>
+                            <h4>
+                                Open one at a time
+                            </h4>
+                            <div class="block">
+                                <ul class="accordions">
+                                    <li class="accordion">
+                                        <input id="accordion-4" type="radio" name="accordion-group-2">
+                                        <label for="accordion-4">Accordion 4</label>
+                                        <div class="accordion-panel">
+                                            <h5>
+                                                Accordion 4 content
+                                            </h5>
+                                            <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
+                                            <p>Woot!</p>
+                                        </div> 
+                                    </li>
+                                    <li class="accordion">
+                                        <input id="accordion-5" type="radio" name="accordion-group-2">
+                                        <label for="accordion-5">Accordion 5</label>
+                                        <div class="accordion-panel">
+                                            <div class="row">
+                                                <div class="small-6 columns">
+                                                    <p>Accordion 5 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                </div>
+                                                <div class="small-6 columns">
+                                                    <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </li>
+                                    <li class="accordion">
+                                        <input id="accordion-6" type="radio" name="accordion-group-2" checked>
+                                        <label for="accordion-6">Accordion 6</label>
+                                        <div class="accordion-panel">
+                                            <p>Accordion 6 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
+                                        </div> 
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3>
+                                <a name="tabs" href="#tabs" class="link jump"></a> Tabs
+                            </h3>
+                            <p>
+                                A tab label should be short as 1 to 2 words. Long labels will break the layout for not so big screens. Consider screen size when using tabs.
+                            </p>
+                            <h4>
+                                Standard
+                            </h4>
+                            <div class="block">
+                                <div class="tabs">
+                                    <div class="tab">
+                                        <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked>
+                                        <label class="tab-label" for="tab-1">Tab 1</label>
+                                        <div class="tab-panel">
+                                            <div class="tab-content">
+                                                <div class="row">
+                                                    <div class="small-6 columns">
+                                                        <p>Tab 1 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                    </div>
+                                                    <div class="small-6 columns">
+                                                        <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="tab">
+                                        <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
+                                        <label class="tab-label" for="tab-2">Tab 2</label>
+                                        <div class="tab-panel">
+                                            <div class="tab-content">
+                                                <h5>
+                                                    Tab 2 content
+                                                </h5>
+                                                <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
+                                                <p>Woot!</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="tab">
+                                        <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
+                                        <label class="tab-label" for="tab-3">Tab 3</label>
+                                        <div class="tab-panel">
+                                            <div class="tab-content">
+                                                <p>Tab 3 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>
+                                Stack tabs on small screens
+                            </h4>
+                            <div class="block">
+                                <div class="tabs small-stack">
+                                    <div class="tab">
+                                        <input class="tab-radio" type="radio" id="tab-4" name="tab-group-2">
+                                        <label class="tab-label" for="tab-4">Tab 4</label>
+                                        <div class="tab-panel">
+                                            <div class="tab-content">
+                                                <h5>
+                                                    Tab 4 content
+                                                </h5>
+                                                <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
+                                                <p>Woot!</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="tab">
+                                        <input class="tab-radio" type="radio" id="tab-5" name="tab-group-2" checked>
+                                        <label class="tab-label" for="tab-5">Tab 5 Nunc Eu Ullamcorper Orci</label>
+                                        <div class="tab-panel">
+                                            <div class="tab-content">
+                                                <p>Tab 5 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="tab">
+                                        <input class="tab-radio" type="radio" id="tab-6" name="tab-group-2">
+                                        <label class="tab-label" for="tab-6">Tab 6</label>
+                                        <div class="tab-panel">
+                                            <div class="tab-content">
+                                                <div class="row">
+                                                    <div class="small-6 columns">
+                                                        <p>Tab 6 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                    </div>
+                                                    <div class="small-6 columns">
+                                                        <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>
+                                Borderless
+                            </h4>
+                            <div class="block">
+                                <div class="tabs borderless">
+                                    <div class="tab">
+                                        <input class="tab-radio" type="radio" id="tab-7" name="tab-group-3">
+                                        <label class="tab-label" for="tab-7">Tab 7</label>
+                                        <div class="tab-panel">
+                                            <div class="tab-content">
+                                                <h5>
+                                                    Tab 7 content
+                                                </h5>
+                                                <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</p>
+                                                <p>Woot!</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="tab">
+                                        <input class="tab-radio" type="radio" id="tab-8" name="tab-group-3">
+                                        <label class="tab-label" for="tab-8">Tab 8</label>
+                                        <div class="tab-panel">
+                                            <div class="tab-content">
+                                                <p>Tab 8 content. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh.</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="tab">
+                                        <input class="tab-radio" type="radio" id="tab-9" name="tab-group-3" checked>
+                                        <label class="tab-label" for="tab-9">Tab 9</label>
+                                        <div class="tab-panel">
+                                            <div class="tab-content">
+                                                <div class="row">
+                                                    <div class="small-6 columns">
+                                                        <p>Tab 9 content. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                    </div>
+                                                    <div class="small-6 columns">
+                                                        <p><em>Grid still works!</em> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </article>
             </main>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal-1" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="medium-6 small-12 small-centered column">
+                    <div class="reveal alert-box success">
+                        <header>
+                            Alert message with a header and actions
+                        </header>
+                        <p>
+                            Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                        </p>
+                        <ul class="actions">
+                            <li>
+                                <a href="javascript:"
+                                    data-anijs="if: click, do: $removeClass warning, to: #modal-1 .alert-box;
+                                                if: click, do: $removeClass info, to: #modal-1 .alert-box;
+                                                if: click, do: $removeClass standard, to: #modal-1 .alert-box;
+                                                if: click, do: $addClass success, to: #modal-1 .alert-box;">Success</a>
+                            </li>
+                            <li>
+                                <a href="javascript:"
+                                    data-anijs="if: click, do: $removeClass success, to: #modal-1 .alert-box;
+                                                if: click, do: $removeClass info, to: #modal-1 .alert-box;
+                                                if: click, do: $removeClass standard, to: #modal-1 .alert-box;
+                                                if: click, do: $addClass warning, to: #modal-1 .alert-box;">Warning</a>
+                            </li>
+                            <li>
+                                <a href="javascript:"
+                                    data-anijs="if: click, do: $removeClass success, to: #modal-1 .alert-box;
+                                                if: click, do: $removeClass warning, to: #modal-1 .alert-box;
+                                                if: click, do: $removeClass standard, to: #modal-1 .alert-box;
+                                                if: click, do: $addClass info, to: #modal-1 .alert-box;">Info</a>
+                            </li>
+                            <li>
+                                <a href="javascript:"
+                                    data-anijs="if: click, do: $removeClass success, to: #modal-1 .alert-box;
+                                                if: click, do: $removeClass warning, to: #modal-1 .alert-box;
+                                                if: click, do: $removeClass info, to: #modal-1 .alert-box;
+                                                if: click, do: $addClass standard, to: #modal-1 .alert-box;">Standard</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:" class="close"
+                            data-anijs="if: click, do: $removeClass open, to: #modal-1;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-2" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="medium-6 small-12 small-centered column">
+                    <div class="reveal basic">
+                        <header class="reveal-label">Fixed height content</header>
+                        <div class="scrollable">
+                            <div class="row">
+                                <div class="column">
+                                    <p>Some content. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris.</p>
+                                    <p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:" class="close"
+                            data-anijs="if: click, do: $removeClass open, to: #modal-2;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-3" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="medium-6 small-12 small-centered column">
+                    <div class="reveal basic">
+                        <header class="reveal-label">Flexible height content</header>
+                        <div class="row">
+                            <div class="column">
+                                <figure>
+                                    <div class="embed">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/c2OV_MtSn04" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                    <figcaption>
+                                        Youtube video
+                                    </figcaption>
+                                </figure>
+                                <p><strong>Video summary.</strong> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus.</p>
+                            </div>
+                        </div>
+                        <a href="javascript:" class="close"
+                            data-anijs="if: click, do: $removeClass open, to: #modal-3;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-4" class="overlay center" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="alert-box success">
+                <header>
+                    Fixed overlays
+                </header>
+                <p>
+                    Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante.
+                </p>
+                <ul class="actions">
+                    <li>
+                        <a href="javascript:"
+                            data-anijs="if: click, do: $removeClass center, to: #modal-4;
+                                        if: click, do: $removeClass bottom, to: #modal-4;
+                                        if: click, do: $removeClass flush-right, to: #modal-4;
+                                        if: click, do: $addClass top, to: #modal-4;
+                                        if: click, do: $addClass flush-left, to: #modal-4;">Top left</a>
+                    </li>
+                    <li>
+                        <a href="javascript:"
+                            data-anijs="if: click, do: $removeClass center, to: #modal-4;
+                                        if: click, do: $removeClass bottom, to: #modal-4;
+                                        if: click, do: $removeClass flush-left, to: #modal-4;
+                                        if: click, do: $addClass top, to: #modal-4;
+                                        if: click, do: $addClass flush-right, to: #modal-4;">Top right</a>
+                    </li>
+                    <li>
+                        <a href="javascript:"
+                            data-anijs="if: click, do: $removeClass center, to: #modal-4;
+                                        if: click, do: $removeClass top, to: #modal-4;
+                                        if: click, do: $removeClass flush-left, to: #modal-4;
+                                        if: click, do: $addClass bottom, to: #modal-4;
+                                        if: click, do: $addClass flush-right, to: #modal-4;">Bottom right</a>
+                    </li>
+                    <li>
+                        <a href="javascript:"
+                            data-anijs="if: click, do: $removeClass center, to: #modal-4;
+                                        if: click, do: $removeClass top, to: #modal-4;
+                                        if: click, do: $removeClass flush-right, to: #modal-4;
+                                        if: click, do: $addClass bottom, to: #modal-4;
+                                        if: click, do: $addClass flush-left, to: #modal-4;">Bottom left</a>
+                    </li>
+                    <li>
+                        <a href="javascript:" class="more"
+                            data-anijs="if: click, do: $removeClass top, to: #modal-4;
+                                        if: click, do: $removeClass flush-right, to: #modal-4;
+                                        if: click, do: $removeClass bottom, to: #modal-4;
+                                        if: click, do: $removeClass flush-left, to: #modal-4;
+                                        if: click, do: $addClass center, to: #modal-4;">Center</a>
+                    </li>
+                </ul>
+                <a href="javascript:" class="close"
+                    data-anijs="if: click, do: $removeClass open, to: #modal-4;"></a>
+            </div>
         </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

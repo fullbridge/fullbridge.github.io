@@ -74,16 +74,16 @@
 		{ 
 			text-align: right; 
 
-			&:first-child
+			[dir=rtl] &
 			{
 				text-align: left;
 			}
 
-			[dir=rtl] &
+			&:first-child
 			{
 				text-align: left;
 
-				&:first-child
+				[dir=rtl] &
 				{
 					text-align: right;
 				}

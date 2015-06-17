@@ -192,11 +192,8 @@ header hgroup
         border-width: 4px;
 
         @include font(heading, bold);
-    }
 
-    [dir=rtl] &
-    {
-        &:first-letter
+        [dir=rtl] &
         {
             float: right;
             margin-right: auto;
@@ -267,9 +264,16 @@ figure
 {
     text-align: center;
 
-    img
+    img,
+    video,
+    audio
     {
         width: 100%;
+    }
+
+    img,
+    video
+    {
         height: auto;
     }
 
@@ -338,24 +342,18 @@ blockquote
         &:before
         {
             content: '\201C';
+
+            [dir=rtl] &
+            {
+                content: '\201D';
+            }
         }
 
         &:after
         {
             content: '\201D';
-        }
-    }
 
-    [dir=rtl] &
-    {
-        > p
-        {
-            &:before
-            {
-                content: '\201D';
-            }
-
-            &:after
+            [dir=rtl] &
             {
                 content: '\201C';
             }
@@ -374,6 +372,12 @@ pre
 {
     border-left: 5px solid $gray-light;
 
+    [dir=rtl] &
+    {
+        border-right: 5px solid $gray-light;
+        border-left: none;
+    }
+
     code
     {
         display: block;
@@ -383,12 +387,6 @@ pre
         white-space: nowrap;
 
         @include horizontal-scroll;
-    }
-
-    [dir=rtl] &
-    {
-        border-right: 5px solid $gray-light;
-        border-left: none;
     }
 }
 
@@ -441,11 +439,8 @@ aside
         top: .3em;
         float: right;
         margin-left: 1em;
-    }
 
-    [dir=rtl] &
-    {
-        @include bp(desktop)
+        [dir=rtl] &
         {
             float: left;
             margin-right: 1em;
