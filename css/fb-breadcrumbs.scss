@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Breadcrumbs
+   ========================================================================== */
+
+.breadcrumbs
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: $light-divider;
+    border-radius: $border-radius;
+    background-color: $background-color;
+
+    @include clearfix;
+
+    > li
+    {
+        position: relative;
+        float: left;
+        margin: 0;
+        padding: 0 20px;
+        padding: 0 2rem;
+        font-size: 15px;
+        font-size: 1.5rem;
+
+        [dir=rtl] &
+        {
+            float: right;
+        }
+        
+        @include bp(small)
+        {
+            display: none;
+            padding: 0 10px;
+            padding: 0 1rem;
+        }
+
+        &:before,
+        &:after
+        {
+            position: absolute;
+
+            @include center(y);
+        }
+
+        &:before
+        {
+            right: -5px;
+            right: -.5rem;
+
+            @include triangle-right(1rem, 1rem, $gray-light);
+
+            [dir=rtl] &
+            {
+                right: auto;
+                left: -5px;
+                left: -.5rem;
+
+                @include triangle-left(1rem, 1rem, $gray-light);
+            }
+        }
+
+        &:after
+        {
+            right: -4px;
+            right: -.4rem;
+
+            @include triangle-right(1rem, 1rem, $background-color);
+
+            [dir=rtl] &
+            {
+                right: auto;
+                left: -4px;
+                left: -.4rem;
+
+                @include triangle-left(1rem, 1rem, $background-color);
+            }
+        }
+
+        > *
+        {
+            display: block;
+        }
+
+        a
+        {
+            display: block;
+            max-width: 16em;
+            height: 30px;
+            height: 3rem;
+            line-height: 30px;
+            line-height: 3rem;
+            text-decoration: none;
+
+            @include truncate;
+
+            html:not(.touch) &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+
+        &.back
+        {
+            display: none;
+        }
+
+        &.home,
+        &.back,
+        &.current
+        {
+            @include bp(small)
+            {
+                display: block;
+            }
+        }
+
+        &.home,
+        &.back 
+        {
+            @include bp(small)
+            {
+                border-right: $light-divider;
+
+                [dir=rtl] &
+                {
+                    border-right: none;
+                    border-left: $light-divider;
+                }
+
+                &:before,
+                &:after
+                {
+                    display: none;
+                }
+            }
+
+            a:before
+            {
+                @include font(icon,regular);
+            }
+        }
+
+        &.home a:before
+        {
+            color: $fb-red;
+            content: '\e615';
+        }
+
+        &.back a
+        {
+            @include transform(scaleX(-1));
+
+            [dir=rtl] &
+            {
+                @include transform(scaleX(1));
+            }
+
+            &:before
+            {
+                content: '\e600';
+            }
+        }
+
+        &.current
+        {
+            &:before, 
+            &:after
+            {
+                display: none;
+            } 
+
+            a
+            {
+                color: $heading-color;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+        }
+
+        &.unavailable a
+        {
+            color: $gray-regular;
+            cursor: not-allowed;
+
+            html:not(.touch) &:hover
+            {
+                text-decoration: none;
+            }
+        }
+    }
+}

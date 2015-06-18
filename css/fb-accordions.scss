@@ -79,7 +79,7 @@
                     overflow: visible;
                     visibility: visible;
 
-                    @include transition(top $timing);
+                    @include transition(top ease-out $timing);
                 }
             }
         }

@@ -29,7 +29,7 @@
 
         @include opacity(1);
         @include vertical-scroll;
-        @include transition(padding $timing);
+        @include transition(padding ease-out $timing);
     }
 
     .reveal
@@ -141,12 +141,12 @@
 
     &.center
     {
-        top: 25%;
+        top: 45%;
 
         &.open
         {
             @include center(xy);
-            @include transition(top $timing);
+            @include transition(top ease-out $timing);
         }
     }
 

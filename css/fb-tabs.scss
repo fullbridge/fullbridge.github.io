@@ -122,7 +122,7 @@
     {
         position: relative;
 
-        @include animation(tab 150ms ease);
+        @include animation(tab $timing ease-out);
     }
 
     &.borderless

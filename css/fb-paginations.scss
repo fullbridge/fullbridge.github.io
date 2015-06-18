@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Modals
+   ========================================================================== */
+
+.pagination
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include clearfix;
+
+    > li
+    {
+        float: left;
+        font-size: 15px;
+        font-size: 1.5rem;
+        border: $light-divider;
+
+        [dir=rtl] &
+        {
+            float: right;
+        }
+
+        & + li
+        {
+            border-left: 0;
+
+            [dir=rtl] &
+            {
+                border-right: 0;
+                border-left: $light-divider;
+            }
+        }
+
+        &:first-of-type
+        {
+            @include border-left-radius($border-radius);
+        }
+
+        &:last-of-type
+        {
+            @include border-right-radius($border-radius);
+        }
+
+        a
+        {
+            display: block;
+            height: 30px;
+            height: 3rem;
+            padding: 0 ($gutter/2);
+            line-height: 30px;
+            line-height: 3rem;
+            text-decoration: none;
+            white-space: nowrap;
+
+            html:not(.touch) &:hover
+            {
+                background-color: $hover-bg-color;
+
+                @include transition(background-color $timing);
+            }
+        }
+
+        &.current a
+        {
+            color: $heading-color;
+            font-weight: bold;
+            border-bottom: 2px solid $heading-color;
+        }
+
+        &.unavailable a
+        {
+            color: $gray-regular;
+            cursor: not-allowed;
+            background-color: transparent !important;
+        }
+    }
+}
