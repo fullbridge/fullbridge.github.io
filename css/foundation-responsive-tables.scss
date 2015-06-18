@@ -100,6 +100,39 @@
 	{
 		margin: 0 !important;
 	}
+
+	.column-title
+	{
+		cursor: pointer;
+
+		html:not(.touch) &:hover
+		{
+			text-decoration: underline;
+		}
+	}
+
+	th.sorted
+	{
+		.column-title
+		{
+			text-decoration: underline;
+		}
+
+		&:after
+		{
+			@include font(icon,regular);
+		}
+
+		&.ascending:after
+		{
+			content: '\e616';
+		}
+
+		&.descending:after
+		{
+			content: '\e617';
+		}
+	}
 }
 
 @include bp(small)

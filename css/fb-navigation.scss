@@ -192,6 +192,7 @@
                             {
                                 &:before
                                 {
+                                    color: $heading-color;
                                     content: '\e60b';
 
                                     [dir=rtl] &
