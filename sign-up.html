@@ -45,95 +45,200 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <!--<div class="row collapse">
-            <div class="column">
-                <div style="height: 3em; background:black;">Top nav</div>
-            </div>
-        </div>-->
 
         <div class="row">
-            <main class="large-4 medium-6 small-centered columns">
-                <article>
-                    <div class="alert-box warning validations hidden">
-                        <p>
+            <main class="large-5 medium-7 small-centered columns">
+                <div class="row section">
+                    <div class="column">
+                        <p><img src="img/logo-fullbridge.png" alt="Fullbridge" width="200"></p>
+                    </div>
+                </div>
+                <div class="row section">
+                    <div class="column">
+                        <div class="tabs">
+                            <div class="tab">
+                                <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked>
+                                <label class="tab-label" for="tab-1">Sign up</label>
+                                <div class="tab-panel">
+                                    <div class="tab-content">
+                                        <form class="form block" novalidate>
+                                            <fieldset>
+                                                <div class="row">
+                                                    <div class="medium-6 small-12 columns">
+                                                        <label class="label expand">
+                                                            <input type="text" placeholder="First name" required aria-required="true" autofocus>
+                                                            <div class="label-text">
+                                                                <span class="valid">Sweet first name</span>
+                                                                <span class="invalid">Please enter a name</span>
+                                                                <span class="default">First name</span>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="medium-6 small-12 columns">
+                                                        <label class="label expand">
+                                                            <input type="text" placeholder="Last name" required aria-required="true">
+                                                            <div class="label-text">
+                                                                <span class="valid">Sweet last name</span>
+                                                                <span class="invalid">Please enter a name</span>
+                                                                <span class="default">Last name</span>
+                                                            </div>
+                                                            <div class="alert-bubble validations hidden">
+                                                                <p>
+                                                                    Last name is required.
+                                                                </p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="column">
+                                                        <label class="label expand">
+                                                            <input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Must use valid email." required aria-required="true">
+                                                            <div class="label-text">
+                                                                <span class="valid">Hey, nice email</span>
+                                                                <span class="invalid">Hmm, that's not an email</span>
+                                                                <span class="default">Email</span>
+                                                            </div>
+                                                            <div class="alert-bubble validations hidden">
+                                                                <p>
+                                                                    There's already an account with this email. <a href="javascript:">Try signing in</a>
+                                                                </p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="column">
+                                                        <label class="label expand">
+                                                            <input type="password" placeholder="Password" pattern=".{8,}" title="Must enter 8 characters. Special characters are allowed." required aria-required="true">
+                                                            <div class="label-text">
+                                                                <span class="valid">Good password!</span>
+                                                                <span class="invalid">Too simple</span>
+                                                                <span class="default">Password</span>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset>
+                                                <legend>Account type</legend>
+                                                <div class="row">
+                                                    <div class="medium-6 columns">
+                                                        <label class="label expand">
+                                                            <input type="radio" name="rad-fancy" required>
+                                                            <div class="text">
+                                                                I'm a student
+                                                            </div>
+                                                            <div class="alert-bubble validations hidden">
+                                                                <p>
+                                                                    Please select an account type.
+                                                                </p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="medium-6 columns">
+                                                        <label class="label expand">
+                                                            <input type="radio" name="rad-fancy" required>
+                                                            <div class="text">
+                                                                I'm a coach
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <p>
+                                                <a href="javascript:" class="button primary large expand"
+                                                    data-anijs="if: click, do: $removeClass hidden, to: .validations;
+                                                                if: click, do: $addClass open, to: #modal-1;">
+                                                    Sign up now
+                                                </a>
+                                            </p>
+                                            <p><small>By creating a Fullbridge account, you agree to our <a href="javascript:" class="link">terms &amp; conditions</a>.</small></p>
+                                        </form>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="tab">
+                                <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
+                                <label class="tab-label" for="tab-2">Log in</label>
+                                <div class="tab-panel">
+                                    <div class="tab-content">
+                                        <form class="form block">
+                                            <fieldset>
+                                                <div class="row">
+                                                    <div class="column">
+                                                        <label class="label expand">
+                                                            <input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Must use valid email." required aria-required="true">
+                                                            <div class="label-text">
+                                                                <span class="valid">Hey, nice email</span>
+                                                                <span class="invalid">Hmm, that's not an email</span>
+                                                                <span class="default">Email</span>
+                                                            </div>
+                                                            <div class="alert-bubble validations hidden">
+                                                                <p>
+                                                                    There's already an account with this email. <a href="javascript:">Try signing in</a>
+                                                                </p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="column">
+                                                        <label class="label expand">
+                                                            <input type="password" placeholder="Password" pattern=".{8,}" title="Must enter 8 characters. Special characters are allowed." required aria-required="true">
+                                                            <div class="label-text">
+                                                                <span class="valid">Good password!</span>
+                                                                <span class="invalid">Too simple</span>
+                                                                <span class="default">Password</span>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="medium-6 small-12 columns">
+                                                        <label class="label expand">
+                                                            <input type="checkbox">
+                                                            <div class="text">
+                                                                Remember me
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="medium-6 small-12 columns">
+                                                        <p>
+                                                            <button type="submit" class="button primary expand">
+                                                                Log in
+                                                            </button>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                        <p><small><a href="javascript:" class="link">Forgot your password?</a></small></p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div id="modal-1" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="medium-6 small-12 small-centered column">
+                    <div class="reveal alert-box warning">
+                        <header>
                             There are something wrong with the following fields:
-                        </p>
+                        </header>
                         <ul>
                             <li>Last name</li>
                             <li>Email</li>
                         </ul>
-                        <a href="javascript:" class="close" data-anijs="if: click, do: $addClass hidden, to: .alert-box"></a>
+                        <a href="javascript:" class="close"
+                            data-anijs="if: click, do: $removeClass open, to: #modal-1;"></a>
                     </div>
-                    <h2>
-                        Sign up for Fullbridge
-                    </h2>
-                    <form class="form">
-                        <fieldset>
-                            <div class="row">
-                                <div class="medium-6 small-12 columns">
-                                    <label class="label expand">
-                                        <input type="text" placeholder="First name" required aria-required="true" autofocus>
-                                        <div class="label-text">
-                                            <span class="valid">Sweet first name</span>
-                                            <span class="invalid">Please enter a name</span>
-                                            <span class="default">First name</span>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="medium-6 small-12 columns">
-                                    <label class="label expand">
-                                        <input type="text" placeholder="Last name" required aria-required="true">
-                                        <div class="label-text">
-                                            <span class="valid">Sweet last name</span>
-                                            <span class="invalid">Please enter a name</span>
-                                            <span class="default">Last name</span>
-                                        </div>
-                                        <div class="alert-bubble validations hidden">
-                                            <p>
-                                                Last name is required.
-                                            </p>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="column">
-                                    <label class="label expand">
-                                        <input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Must use valid email." required aria-required="true">
-                                        <div class="label-text">
-                                            <span class="valid">Hey, nice email</span>
-                                            <span class="invalid">Hmm, that's not an email</span>
-                                            <span class="default">Email</span>
-                                        </div>
-                                        <div class="alert-bubble validations hidden">
-                                            <p>
-                                                There's already an account with this email. <a href="javascript:">Try signing in</a>
-                                            </p>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="column">
-                                    <label class="label expand">
-                                        <input type="password" placeholder="Password" pattern=".{8,}" title="Must enter 8 characters. Special characters are allowed." required aria-required="true">
-                                        <div class="label-text">
-                                            <span class="valid">Good password!</span>
-                                            <span class="invalid">Too simple</span>
-                                            <span class="default">Password</span>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <p>
-                            <button type="submit" class="button primary large expand" data-anijs="if: click, do: $removeClass hidden, to: .validations;">
-                                Sign up now
-                            </button>
-                        </p>
-                    </form>
-                </article>
-            </main>
+                </div>
+            </div>
         </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
