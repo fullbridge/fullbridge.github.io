@@ -56,7 +56,7 @@
                     <nav role="navigation" title="Style Guide navigation">
                         <ul>
                             <li>
-                                <a href="javascript:" class="current">Unit 1: Welcome</a><div class="arrow open"></div>
+                                <div class="arrow open"></div><a href="javascript:" class="current">Unit 1: Welcome</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="done">Welcome, Competencies, and Traits (25 minutes)</a>
@@ -65,29 +65,29 @@
                                         <a href="javascript:" class="active">Individual Exercise: Fullbridge Program Goals (30 minutes)</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:" class="">Individual Exercise: Knowing Your Style: MBTI (40 minutes)</a>
+                                        <a href="javascript:" class="unavailable">Individual Exercise: Knowing Your Style: MBTI (40 minutes)</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:" class="">Professionalism (25 minutes)</a>
+                                        <a href="javascript:" class="unavailable">Professionalism (25 minutes)</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:" class="">Unit 2: Self-Awareness and Communication</a><div class="arrow open"></div>
+                                <div class="arrow"></div><a href="javascript:" class="unavailable">Unit 2: Self-Awareness and Communication</a>
                                 <ul>
                                     <li>
-                                        <a href="javascript:" class="">Team Exercise: Self and Social Awareness (45 minutes)</a>
+                                        <a href="javascript:" class="unavailable">Team Exercise: Self and Social Awareness (45 minutes)</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:" class="">Individual Exercise: Communicating with Impact (45 minutes)</a>
+                                        <a href="javascript:" class="unavailable">Individual Exercise: Communicating with Impact (45 minutes)</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="divider"></li>
                             <input type="hidden" 
                                 data-anijs="if: click, on: .side-nav nav .arrow, do: $toggleClass open, to: target;
-                                            if: click, on: .side-nav nav a, do: $removeClass current, to: .side-nav nav a;
-                                            if: click, on: .side-nav nav a, do: $addClass current, to: target;">
+                                            if: click, on: .side-nav nav a:not(.unavailable), do: $removeClass current, to: .side-nav nav a;
+                                            if: click, on: .side-nav nav a:not(.unavailable), do: $addClass current, to: target;">
                         </ul>
                     </nav>
                     <footer>

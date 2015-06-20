@@ -170,8 +170,6 @@
                     {
                         color: $heading-color !important;
                         background-color: $background-color;
-                        text-decoration: underline;
-                        font-weight: bold;
 
                         &:before
                         {
@@ -197,6 +195,7 @@
                     line-height: 2;
                     text-align: center;
                     cursor: pointer;
+                    z-index: 1;
 
                     html:not(.touch) &:hover
                     {
@@ -215,12 +214,19 @@
                         content: '\e606';
                     }
 
-                    &.open + ul
+                    &.open ~ ul
                     {
                         display: block;
                         position: relative;
 
                         @include animation(open $timing ease-out);
+                    }
+
+                    &.open + a
+                    {
+                        color: $heading-color;
+                        text-decoration: underline;
+                        font-weight: bold;
                     }
                 }
             }
@@ -259,7 +265,7 @@
                             &.done:after,
                             &.active:after
                             {
-                                content: '\e61b';
+                                content: '\e60c';
                             }
 
                             &.active:after,
