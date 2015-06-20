@@ -149,11 +149,16 @@
                         width: 0;
                         content: '';
                         background-color: $heading-color;
+
+                        [dir=rtl] &
+                        {
+                            right: 0;
+                            left: auto;
+                        }
                     }
 
                     html:not(.touch) &:hover
                     {
-                        text-decoration: underline;
                         background-color: $hover-bg-color;
 
                         @include transition(background-color $timing);
@@ -197,6 +202,12 @@
                     cursor: pointer;
                     z-index: 1;
 
+                    [dir=rtl] &
+                    {
+                        right: .5em;
+                        left: auto;
+                    }
+
                     html:not(.touch) &:hover
                     {
                         background-color: $hover-bg-color;
@@ -204,14 +215,14 @@
 
                     &:before
                     {
-                        content: '\e608';
+                        content: '\e618';
 
                         @include font(icon,regular);
                     }
 
                     &.open:before
                     {
-                        content: '\e606';
+                        content: '\e619';
                     }
 
                     &.open ~ ul
@@ -241,6 +252,11 @@
                     padding: $row-spacing 1em $row-spacing 2.8em;
 
                     @include font(heading,regular);
+
+                    [dir=rtl] &
+                    {
+                        padding: $row-spacing 2.8em $row-spacing 1em;
+                    }
                 }
 
                 > ul
@@ -253,6 +269,11 @@
                         {
                             padding: $row-spacing 1em $row-spacing 3.1em;
 
+                            [dir=rtl] &
+                            {
+                                padding: $row-spacing 3.1em $row-spacing 1em;
+                            }
+
                             &:after
                             {
                                 position: absolute;
@@ -260,6 +281,12 @@
                                 left: 1.6em;
 
                                 @include font(icon,regular);
+
+                                [dir=rtl] &
+                                {
+                                    right: 1.6em;
+                                    left: auto;
+                                }
                             }
 
                             &.done:after,
