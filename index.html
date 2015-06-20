@@ -60,10 +60,24 @@
                     <nav role="navigation" title="Style Guide navigation">
                         <ul>
                             <li>
-                                <a href="#navigation" class="done">Navigation</a>
+                                <a href="javascript:" class="current">This is an unit</a><div class="arrow open"></div>
                                 <ul>
                                     <li>
-                                        <a href="#breadcrumbs" class="done active">Breadcrumbs</a>
+                                        <a href="javascript:" class="done">Section you finished</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="active">Section you haven't finished</a>
+                                    </li>
+                                    <li>
+                                        <a class="unavailable">Section you can't access yet</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#navigation" class="done">Navigation</a><div class="arrow"></div>
+                                <ul>
+                                    <li>
+                                        <a href="#breadcrumbs" class="done">Breadcrumbs</a>
                                     </li>
                                     <li>
                                         <a href="#paginations" class="done">Paginations</a>
@@ -71,7 +85,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#forms" class="done">Forms</a>
+                                <a href="#forms" class="done">Forms</a><div class="arrow"></div>
                                 <ul>
                                     <li>
                                         <a href="#form-fields" class="done">Form fields</a>
@@ -100,7 +114,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#alerts" class="done">Alerts</a>
+                                <a href="#alerts" class="done">Alerts</a><div class="arrow"></div>
                                 <ul>
                                     <li>
                                         <a href="#alert-boxes" class="done">Alert boxes</a>
@@ -111,7 +125,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#button-styles" class="done">Button styles</a>
+                                <a href="#button-styles" class="done">Button styles</a><div class="arrow"></div>
                                 <ul>
                                     <li>
                                         <a href="#links" class="done">Links</a>
@@ -131,7 +145,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#article-styles" class="done">Article styles</a>
+                                <a href="#article-styles" class="done">Article styles</a><div class="arrow"></div>
                                 <ul>
                                     <li>
                                         <a href="#kitchen-sink" class="done">Kitchen sink</a>
@@ -145,7 +159,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#misc" class="done">Misc</a>
+                                <a href="#misc" class="done">Misc</a><div class="arrow"></div>
                                 <ul>
                                     <li>
                                         <a href="#modals" class="done">Modals</a>
@@ -163,27 +177,32 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="javascript:" class="">Examples</a>
+                                <a href="#demos" class="">Demos</a><div class="arrow open"></div>
                                 <ul>
                                     <li>
                                         <a href="article.html" class="">Article/pod</a>
                                     </li>
                                     <li>
-                                        <a href="sign-up.html" class="">Sign up page</a>
+                                        <a href="sign-up.html" class="">Sign up/log in page</a>
                                     </li>
                                 </ul>
                             </li>
+                            <li class="divider"></li>
                             <input type="hidden" 
-                                data-anijs="if: click, on: .side-nav nav a, do: $removeClass active, to: .side-nav nav a;
-                                            if: click, on: .side-nav nav a, do: $addClass active, to: target;">
+                                data-anijs="if: click, on: .side-nav nav .arrow, do: $toggleClass open, to: target;
+                                            if: click, on: .side-nav nav a:not(.unavailable), do: $removeClass current, to: .side-nav nav a;
+                                            if: click, on: .side-nav nav a:not(.unavailable), do: $addClass current, to: target;">
                         </ul>
                     </nav>
+                    <footer>
+                        <p><small>&copy; Fullbridge tech team</small></p>
+                    </footer>
                 </div>
             </div>
             <main class="large-10 medium-9 columns">
                 <article>
                     <section class="row section">
-                        <div class="large-10 medium-12 large-centered columns">
+                        <div class="large-10 medium-11 small-centered columns">
                             <h2>
                                 <a name="navigation" href="#navigation" class="link jump"></a> Navigation
                             </h2>
@@ -222,7 +241,7 @@
                         </div>
                     </section>
                     <section class="row section">
-                        <div class="large-10 medium-12 large-centered columns">
+                        <div class="large-10 medium-11 small-centered columns">
                             <h2>
                                 <a name="forms" href="#forms" class="link jump"></a> Forms
                             </h2>
@@ -880,7 +899,7 @@
                         </div>
                     </section>
                     <section class="row section">
-                        <div class="large-10 medium-12 large-centered columns">
+                        <div class="large-10 medium-11 small-centered columns">
                             <h2>
                                 <a name="alerts" href="#alerts" class="link jump"></a> Alerts
                             </h2>
@@ -1513,7 +1532,7 @@
                         </div>
                     </section>
                     <section class="row section">
-                        <div class="large-10 medium-12 large-centered columns">
+                        <div class="large-10 medium-11 small-centered columns">
                             <h2>
                                 <a name="button-styles" href="#button-styles" class="link jump"></a> Button styles
                             </h2>
@@ -2017,7 +2036,7 @@
                         </div>
                     </section>
                     <section class="row section">
-                        <div class="large-10 medium-12 large-centered columns">
+                        <div class="large-10 medium-11 small-centered columns">
                             <div class="row">
                                 <div class="column">
                                     <h2>
@@ -2264,7 +2283,7 @@
                         </div>
                     </section>
                     <section class="row section">
-                        <div class="large-10 medium-12 large-centered columns">
+                        <div class="large-10 medium-11 small-centered columns">
                             <h2>
                                 <a name="misc" href="#misc" class="link jump"></a> Misc.
                             </h2>
@@ -2774,6 +2793,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <h3>
+                                <a name="demos" href="#demos" class="link jump"></a> Demos
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="article.html" class="link">Article/pod</a>
+                                </li>
+                                <li>
+                                    <a href="sign-up.html" class="link">Sign up/log in page</a>
+                                </li>
+                            </ul>
                         </div>
                     </section>
                 </article>

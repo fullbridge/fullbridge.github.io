@@ -40,7 +40,6 @@
                 height: 100%;
 
                 @include vertical-scroll;
-                @include visible-scrollbar;
             }
         }
     }
@@ -58,10 +57,23 @@
 
     @include font(body);
 
-    > header
+    > header,
+    > footer
     {
         margin: 0;
         padding: $row-spacing ($gutter/2);
+    }
+
+    > footer
+    {
+        @include bp(small)
+        {
+            display: none;
+        }
+    }
+
+    > header
+    {
         color: $heading-color;
 
         @include font(heading,bold);
@@ -71,7 +83,8 @@
             cursor: pointer;
         }
 
-        &.open + nav
+        &.open + nav,
+        &.open ~ footer
         {
             @include bp(small)
             {
@@ -87,119 +100,188 @@
             display: none;
         }
 
+        a
+        {
+            display: block;
+            position: relative;
+            color: $body-text-color;
+            text-decoration: none;
+        }
+
         ul
         {
             margin: 0;
             padding: 0;
 
-            > li
+            li
             {
-                margin: 0 auto;
+                position: relative;
+                margin: 0;
                 padding: 0;
-                line-height: 1;
-                text-transform: uppercase;
-                font-weight: bold;
+                line-height: 1.2;
+                font-size: .9em;
 
                 &.divider
                 {
                     margin: ($row-spacing*2) auto;
                     border-top: $light-divider;
+
+                    &:first-of-type
+                    {
+                        margin-top: 0;
+                    }
+
+                    &:last-of-type
+                    {
+                        margin-bottom: 0;
+                    }
                 }
-                
+
                 a
                 {
-                    display: block;
-                    margin: 0;
-                    padding: $row-spacing ($gutter/2);
-                    color: $heading-color;
-                    text-decoration: none;
-                    border: none !important;
-
-                    .text
+                    &:before
                     {
-                        font-size: .8em;
-                    }
-
-                    &.done
-                    {
-                        color: $gray-regular;
-                        background-color: transparent;
-                    }
-
-                    &.active
-                    {
-                        color: $heading-color;
-                        text-decoration: underline;
-                        font-weight: bold;
-                        background-color: $hover-bg-color;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        width: 0;
+                        content: '';
+                        background-color: $heading-color;
                     }
 
                     html:not(.touch) &:hover
                     {
-                        color: $heading-color;
+                        text-decoration: underline;
                         background-color: $hover-bg-color;
 
                         @include transition(background-color $timing);
+
+                        & + .arrow
+                        {
+                            background-color: rgba(black,.1);
+
+                            @include transition(background-color $timing);
+                        }
+                    }
+
+                    &.current
+                    {
+                        color: $heading-color !important;
+                        background-color: $background-color;
+                        text-decoration: underline;
+                        font-weight: bold;
+
+                        &:before
+                        {
+                            width: .3em;
+
+                            @include transition(width $timing);
+                        }
+                    }
+
+                    &.unavailable
+                    {
+                        color: $gray-regular;
+                        cursor: not-allowed;
                     }
                 }
 
-                ul
+                .arrow
                 {
-                    li
-                    {
-                        text-transform: none;
-                        font-size: 1em;
-                        font-weight: normal;
+                    position: absolute;
+                    top: .2em;
+                    left: .5em;
+                    width: 1.9em;
+                    line-height: 2;
+                    text-align: center;
+                    cursor: pointer;
 
+                    html:not(.touch) &:hover
+                    {
+                        background-color: $hover-bg-color;
+                    }
+
+                    &:before
+                    {
+                        content: '\e608';
+
+                        @include font(icon,regular);
+                    }
+
+                    &.open:before
+                    {
+                        content: '\e606';
+                    }
+
+                    &.open + ul
+                    {
+                        display: block;
+                        position: relative;
+
+                        @include animation(open $timing ease-out);
+                    }
+                }
+            }
+        }
+
+        > ul
+        {
+            > li
+            {
+                > a
+                {
+                    padding: $row-spacing 1em $row-spacing 2.8em;
+
+                    @include font(heading,regular);
+                }
+
+                > ul
+                {
+                    display: none;
+
+                    > li
+                    {
                         a
                         {
-                            color: $body-text-color;
+                            padding: $row-spacing 1em $row-spacing 3.1em;
 
-                            &.done,
-                            &.active
+                            &:after
                             {
-                                position: relative;
+                                position: absolute;
+                                top: $row-spacing;
+                                left: 1.6em;
 
-                                &:before
-                                {
-                                    position: absolute;
-                                    left: 2px;
-                                    left: .2rem;
-                                    font-size: .8em;
-
-                                    @include font(icon);
-                                    @include center(y);
-
-                                    [dir=rtl] &
-                                    {
-                                        left: auto;
-                                        right: 2px;
-                                        right: .2rem;
-                                    }
-                                }
+                                @include font(icon,regular);
                             }
 
-                            &.done
+                            &.done:after,
+                            &.active:after
                             {
-                                &:before
-                                {
-                                    color: $link-color;
-                                    content: '\e60c';
-                                }
+                                content: '\e61b';
                             }
 
-                            &.active
+                            &.active:after,
+                            &.unavailable:after
                             {
-                                &:before
-                                {
-                                    color: $heading-color;
-                                    content: '\e60b';
+                                color: $gray-light;
+                            }
 
-                                    [dir=rtl] &
-                                    {
-                                        content: '\e60a';
-                                    }
-                                }
+                            &.done:after
+                            {
+                                color: $link-color;
+                            }
+
+                            &.current:after
+                            {
+                                color: $heading-color;
+                                content: '\e60b';
+                            }
+
+                            &.unavailable:after
+                            {
+                                content: '\e601';
                             }
                         }
                     }

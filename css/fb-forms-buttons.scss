@@ -962,8 +962,8 @@
     {
         width: 100%;
         color: $heading-color;
-        font-size: 1.1em;
-        font-weight: bold;
+
+        @include font(body,bold);
     }
 
     .label
@@ -1086,91 +1086,23 @@
         font-weight: bold;
         border-radius: $border-radius;
         background-size: 3.5em 2em, 100% 100%, 100% 100%;
-        background-image:
-        -webkit-linear-gradient( 
-            135deg,
-            transparent,
-            transparent 33%,
-            rgba(white,.1) 33%,
-            rgba(white,.1) 66%,
-            transparent 66%),
-        -webkit-linear-gradient( 
-            top,
-            transparent,
-            $hover-bg-color),
-        -webkit-linear-gradient( 
-            left, 
-            $heading-color, 
-            $heading-color)
-        ;
-        background-image:
-        -moz-linear-gradient( 
-            135deg,
-            transparent,
-            transparent 33%,
-            rgba(white,.1) 33%,
-            rgba(white,.1) 66%,
-            transparent 66%),
-        -moz-linear-gradient( 
-            top,
-            transparent,
-            $hover-bg-color),
-        -moz-linear-gradient( 
-            left, 
-            $heading-color, 
-            $heading-color)
-        ;
-        background-image:
-        -o-linear-gradient( 
-            135deg,
-            transparent,
-            transparent 33%,
-            rgba(white,.1) 33%,
-            rgba(white,.1) 66%,
-            transparent 66%),
-        -o-linear-gradient( 
-            top,
-            transparent,
-            $hover-bg-color),
-        -o-linear-gradient( 
-            left, 
-            $heading-color, 
-            $heading-color)
-        ;
-        background-image:
-        -ms-linear-gradient( 
-            135deg,
-            transparent,
-            transparent 33%,
-            rgba(white,.1) 33%,
-            rgba(white,.1) 66%,
-            transparent 66%),
-        -ms-linear-gradient( 
-            top,
-            transparent,
-            $hover-bg-color),
-        -ms-linear-gradient( 
-            left, 
-            $heading-color, 
-            $heading-color)
-        ;
-        background-image:
-        linear-gradient( 
-            135deg,
-            transparent,
-            transparent 33%,
-            rgba(white,.1) 33%,
-            rgba(white,.1) 66%,
-            transparent 66%),
-        linear-gradient( 
-            top,
-            transparent,
-            $hover-bg-color),
-        linear-gradient( 
-            left, 
-            $heading-color, 
-            $heading-color)
-        ;
+
+        @include background-image(
+            linear-gradient( 
+                135deg,
+                transparent,
+                transparent 33%,
+                rgba(white,.1) 33%,
+                rgba(white,.1) 66%,
+                transparent 66%),
+            linear-gradient( 
+                top,
+                transparent,
+                $hover-bg-color),
+            linear-gradient( 
+                left, 
+                $heading-color, 
+                $heading-color));
 
         @include animation(progress-bar 2s linear infinite);
         @include transition(width .6s ease);
@@ -1207,6 +1139,8 @@
     border: none !important;
     border-radius: $border-radius;
     outline: none;
+
+    @include font(heading,regular);
 
     @include transition(background-color $timing);
 
@@ -2615,72 +2549,4 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover,
 html:not(.touch) .form input[type="file"]:disabled + .label-text:hover
 {
     background-color: $gray-regular !important;
-}
-
-/* ---------- */
-/* Animations */
-
-/* Button focus */
-
-@include keyframes(pulse-primary-button-bg) 
-{
-    0%   { background-color: $primary-button-color; }
-    50%  { background-color: lighten($primary-button-color,20%); }
-    100% { background-color: $primary-button-color; }
-}
-
-@include keyframes(pulse-secondary-button-bg)
-{
-    0%   { background-color: $secondary-button-color; }
-    50%  { background-color: lighten($secondary-button-color,20%); }
-    100% { background-color: $secondary-button-color; }
-}
-
-@include keyframes(pulse-special-button-bg)
-{
-    0%   { background-color: $special-button-color; }
-    50%  { background-color: lighten($special-button-color,20%); }
-    100% { background-color: $special-button-color; }
-}
-
-@include keyframes(pulse-alert-button-bg)
-{
-    0%   { background-color: $yellow-alert; }
-    50%  { background-color: lighten($yellow-alert,20%); }
-    100% { background-color: $yellow-alert; }
-}
-
-@include keyframes(pulse-success-button-bg)
-{
-    0%   { background-color: $green-success; }
-    50%  { background-color: lighten($green-success,20%); }
-    100% { background-color: $green-success; }
-}
-
-/* Progress */
-
-@include keyframes(progress-bar) 
-{
-    from 
-    {
-        background-position:3.5em 0;
-    }
-    to 
-    {
-        background-position:0 0;
-    }
-}
-
-@include keyframes(progress-bar-going) 
-{
-    from 
-    {
-        width: 0%; 
-        background-position:3.5em 0;
-    }
-    to 
-    {
-        width: 100%; 
-        background-position:0 0;
-    }
 }

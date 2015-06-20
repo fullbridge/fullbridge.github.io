@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+   
+/* ------------ */
+/* Button focus */
+
+@include keyframes(pulse-primary-button-bg) 
+{
+    0%   { background-color: $primary-button-color; }
+    50%  { background-color: lighten($primary-button-color,20%); }
+    100% { background-color: $primary-button-color; }
+}
+
+@include keyframes(pulse-secondary-button-bg)
+{
+    0%   { background-color: $secondary-button-color; }
+    50%  { background-color: lighten($secondary-button-color,20%); }
+    100% { background-color: $secondary-button-color; }
+}
+
+@include keyframes(pulse-special-button-bg)
+{
+    0%   { background-color: $special-button-color; }
+    50%  { background-color: lighten($special-button-color,20%); }
+    100% { background-color: $special-button-color; }
+}
+
+@include keyframes(pulse-alert-button-bg)
+{
+    0%   { background-color: $yellow-alert; }
+    50%  { background-color: lighten($yellow-alert,20%); }
+    100% { background-color: $yellow-alert; }
+}
+
+@include keyframes(pulse-success-button-bg)
+{
+    0%   { background-color: $green-success; }
+    50%  { background-color: lighten($green-success,20%); }
+    100% { background-color: $green-success; }
+}
+
+/* -------- */
+/* Progress */
+
+@include keyframes(progress-bar) 
+{
+    from 
+    {
+        background-position:3.5em 0;
+    }
+    to 
+    {
+        background-position:0 0;
+    }
+}
+
+@include keyframes(progress-bar-going) 
+{
+    from 
+    {
+        width: 0%; 
+        background-position:3.5em 0;
+    }
+    to 
+    {
+        width: 100%; 
+        background-position:0 0;
+    }
+}
+
+/* --------- */
+/* Animation */
+
+@include keyframes(open) 
+{
+    from 
+    {
+        top: -1em;
+
+        @include opacity(0);
+    }
+    to 
+    {
+        top: 0;
+
+        @include opacity(1);
+    }
+}
