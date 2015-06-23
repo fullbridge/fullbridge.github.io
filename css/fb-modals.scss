@@ -19,17 +19,18 @@
 {
     top: 0;
     left: 0;
-    background: url('../img/bg-disabled.png') center center repeat rgba(black,.3);
+    background-color: $background-color;
 
     &.open
     {
         width: 100%;
         height: 100%;
         padding: $gutter 0;
+        background: url('../img/bg-disabled.png') center center repeat rgba(black,.3);
 
         @include opacity(1);
         @include vertical-scroll;
-        @include transition(padding ease-out $timing);
+        @include transition(padding ease-out $timing, background ease-out $timing);
     }
 
     .reveal

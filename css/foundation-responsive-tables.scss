@@ -113,6 +113,8 @@
 
 	th.sorted
 	{
+		white-space: nowrap;
+		
 		.column-title
 		{
 			text-decoration: underline;
@@ -120,6 +122,8 @@
 
 		&:after
 		{
+			line-height: 1;
+
 			@include font(icon,regular);
 		}
 

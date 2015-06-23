@@ -108,7 +108,8 @@
             text-decoration: none;
         }
 
-        ul
+        ul,
+        ol
         {
             margin: 0;
             padding: 0;
@@ -225,7 +226,8 @@
                         content: '\e619';
                     }
 
-                    &.open ~ ul
+                    &.open ~ ul,
+                    &.open ~ ol
                     {
                         display: block;
                         position: relative;
@@ -243,7 +245,8 @@
             }
         }
 
-        > ul
+        > ul,
+        > ol
         {
             > li
             {
@@ -259,7 +262,8 @@
                     }
                 }
 
-                > ul
+                > ul,
+                > ol
                 {
                     display: none;
 
@@ -322,6 +326,78 @@
             }
         }
     }
+}
+
+.program-summary
+{
+    padding: ($row-spacing*2) ($gutter/2);
+    background-color: $gray-lightest;
+
+    >*:first-child
+    {
+        margin-top: 0;
+    }
+
+    >*:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+.units-list
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .unit-summary
+    {
+        .description
+        {
+            margin: $row-spacing 0;
+            padding: 2px 0;
+
+            >*:first-child
+            {
+                margin-top: 0;
+            }
+
+            >*:last-child
+            {
+                margin-bottom: 0;
+            }
+
+            h2
+            {
+                letter-spacing: 0;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    > li
+    {
+        margin: $row-spacing 0;
+        padding: 0;
+        border-top: $light-divider;
+        border-bottom: $light-divider;
+    }
+}
+
+
+.duration
+{
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    padding: 2px .4em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: .7em;
+    border-radius: $border-radius;
+    box-shadow: $input-border;
 }
 
 /*.menu-bar

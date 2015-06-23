@@ -34,9 +34,10 @@
             {
                 position: absolute;
                 right: ($gutter/2);
-                content: '+';
+                content: '\e606';
 
                 @include center(y);
+                @include font(icon,regular);
 
                 [dir=rtl] &
                 {
@@ -88,7 +89,7 @@
         {
             &:checked + label:after
             {
-                content: '–';
+                content: '\e609';
             }
         }
 

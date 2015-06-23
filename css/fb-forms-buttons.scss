@@ -1140,8 +1140,6 @@
     border-radius: $border-radius;
     outline: none;
 
-    @include font(heading,regular);
-
     @include transition(background-color $timing);
 
     [dir=rtl] &
