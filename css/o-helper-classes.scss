@@ -2,6 +2,22 @@
    Helper classes
    ========================================================================== */
 
+.block
+{
+    margin: $row-spacing auto;
+}
+
+.block.double
+{
+    margin: ($row-spacing*2) auto;
+}
+
+.block,
+.block.double
+{
+    display: block;
+}
+
 .placeholder
 {
     padding: 4em 0;

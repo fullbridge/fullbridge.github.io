@@ -6,21 +6,15 @@ $fb-red: #8E1A21;
 $fb-blue: #13a8e1;
 
 $yellow-alert: #FFEB3B;
-$green-success: #43AC6A;
-
-$cyan: #1FBDED;
-$magenta: #EF4987;
-$yellow: #F8981D;
-$black: darken(white,80%);
-$orange: #F8981D;
-$purple: #98489D;
-$green: #8DC73F;
+$green-success: #4CAF50;
+$off-white: #fffaef;
+$highlight-blue: #E1F5FE;
+$highlight-yellow: #FFF9C4;
+$highlight-red: #FFCDD2;
+$highlight-green: #E8F5E9;
 
 $facebook-blue: #3b5998;
 $twitter-blue: #03ABEA;
-$instagram-brown: #4C2500;
-$pinterest-red: #C92228;
-$soundcloud-orange: #f50;
 
 $gray-lightest: #f4f4f4;
 $gray-lighter: darken($gray-lightest,5%);
@@ -29,11 +23,6 @@ $gray-regular: darken($gray-lightest,35%);
 $gray-dark: darken($gray-lightest,60%);
 $gray-darker: darken($gray-lightest,70%);
 $gray-darkest: darken($gray-lightest,80%);
-$off-white: #fffaef;
-$highlight-blue: lighten($fb-blue,45%);
-$highlight-yellow: #fff4d8;
-$highlight-red: #ffdada;
-$highlight-green: #ecffd1;
 
 $primary-color: $gray-darkest;
 $secondary-color: $fb-red;

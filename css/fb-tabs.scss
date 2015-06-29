@@ -4,7 +4,6 @@
 
 .tabs 
 {
-    margin: 0;
     font-size: 0;
 
     &:after 
@@ -27,12 +26,13 @@
         margin-left: -1px;
         padding: $row-spacing ($gutter/2); 
         color: $heading-color;
+        text-align: center;
         vertical-align: bottom;
         cursor: pointer;
         border: $light-divider; 
-        background-color: $input-color; 
+        background-color: $input-color;
 
-        @include border-top-radius($border-radius);
+        @include font(heading,regular);
 
         @include bp(small)
         {
@@ -56,6 +56,25 @@
         {
             margin-right: 1px;
             margin-left: -2px;
+        }
+
+        [class^="icon-"], 
+        [class*=" icon-"]
+        {
+            display: inline-block;
+
+            & + .label-text
+            {
+                @include bp(small)
+                {
+                    display: none;
+                }
+
+                @include bp(desktop)
+                {
+                    display: inline-block;
+                }
+            }
         }
     }
 
@@ -111,6 +130,8 @@
         border-bottom-width: 0;
         background-color: $background-color;
         z-index: 1;
+
+        @include border-top-radius(3px);
     }
 
     .tab [type="radio"]:checked ~ .tab-panel 
@@ -136,14 +157,73 @@
         }
     }
 
+    &[class^="even-"], 
+    &[class*=" even-"]
+    {
+        > .tab > .tab-label
+        {
+            left: 0;
+            margin-left: 0;
+
+            [dir=rtl] &
+            {
+                right: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    &.even-6
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/6);
+        }
+    }
+
+    &.even-5
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/5);
+        }
+    }
+
+    &.even-4
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/4);
+        }
+    }
+
+    &.even-3
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/3);
+        }
+    }
+
+    &.even-2
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/2);
+        }
+    }
+
     &.small-stack
     {
         @include bp(small)
         {
-            .tab-label
+            > .tab > .tab-label
             {
-                width: 100%;
-                padding-right: 2em;
+                left: 0;
+                width: 100% !important;
+                margin-left: 0;
+                padding-right: 2em !important;
+                text-align: left;
                 border-radius: 0;
 
                 [dir=rtl] &
@@ -167,9 +247,14 @@
                         left: ($gutter/2);
                     }
                 }
+
+                .label-text
+                {
+                    display: inline-block;
+                }
             }
 
-            .tab
+            > .tab
             {
                 &:first-child .tab-label
                 {
@@ -183,18 +268,26 @@
 
                 [type="radio"]:checked + .tab-label 
                 {
-                    text-decoration: underline;
-
                     @include border-bottom-radius(0);
 
                     &:before
                     {
                         color: $gray-lighter;
                     }
+
+                    &:after
+                    {
+                        display: none;
+                    }
+
+                    .label-text
+                    {
+                        text-decoration: underline;
+                    }
                 }
             }
 
-            .tab-content
+            > .tab > .tab-panel > .tab-content
             {
                 padding-right: ($gutter/2);
                 padding-left: ($gutter/2);
@@ -202,6 +295,76 @@
                 border-bottom: $light-divider;
                 border-left: $light-divider;
             }
+        }
+    }
+
+    &.centered
+    {
+        text-align: center;
+
+        .tab-content
+        {
+            text-align: left;
+        }
+    }
+
+    .tabs
+    {
+        .tab-label
+        {
+            color: $body-text-color;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 0;
+            background-color: $background-color;
+
+            @include bp(small)
+            {
+                font-size: 10px;
+                font-size: 1rem;
+            }
+
+            @include bp(medium)
+            {
+                font-size: 12px;
+                font-size: 1.2rem;
+            }
+
+            @include bp(large)
+            {
+                font-size: 15px;
+                font-size: 1.5rem;
+            }
+        }
+
+        .tab [type="radio"]:checked + .tab-label 
+        {
+            position: relative;
+            padding: $row-spacing ($gutter/2); 
+            color: $heading-color;
+            border: $light-divider;
+            border-radius: $border-radius;
+
+            &:after
+            {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                content: '';
+                background-color: $heading-color;
+            }
+        }
+
+        .tab-content
+        {
+            margin-top: $row-spacing;
+            padding: 0;
+            border-right: 0;
+            border-bottom: 0;
+            border-left: 0;
+            background-color: transparent;
         }
     }
 }

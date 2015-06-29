@@ -132,7 +132,7 @@
 
             &:invalid
             {
-                background-color: lighten($yellow-alert,15%);
+                background-color: $highlight-yellow;
                 box-shadow: inset 0 0 1px darken($yellow-alert,35%);
 
                 &:focus + .label-text
@@ -1072,7 +1072,7 @@
     height: 1.6em;
     line-height: 1;
     border-radius: $border-radius;
-    background-color: $gray-lightest;
+    background-color: $hover-bg-color;
 
     .meter
     {
@@ -1082,6 +1082,7 @@
         line-height: 2;
         text-shadow: 0 0 1px black;
         text-indent: 1em;
+        white-space: nowrap;
         font-size: .8em;
         font-weight: bold;
         border-radius: $border-radius;
@@ -1104,7 +1105,6 @@
                 $heading-color, 
                 $heading-color));
 
-        @include animation(progress-bar 2s linear infinite);
         @include transition(width .6s ease);
 
         [dir=rtl] &
@@ -1118,9 +1118,14 @@
             background-color: $green-success;
         }
 
-        &.going
+        &.animated
         {
-            @include animation(progress-bar-going 3s ease-in infinite);
+            @include animation(progress-bar 2s linear infinite);
+        }
+
+        &.hanging
+        {
+            @include animation(progress-bar-hanging 3s ease-in infinite);
         }
     }
 }
@@ -1145,6 +1150,11 @@
     [dir=rtl] &
     {
         margin: 0 0 2px 0;
+    }
+
+    html:not(.touch) &:hover
+    {
+        background-image: none;
     }
 
     &:focus
@@ -1212,10 +1222,22 @@
             }
         }
     }
+
+    [class^="icon-"], 
+    [class*=" icon-"],
+    &[class^="icon-"]:before, 
+    &[class*=" icon-"]:before
+    {
+        display: inline-block;
+        line-height: 3;
+        vertical-align: top;
+    }
 }
 
 .button.secondary,
-.button.special
+.button.special,
+.button.alert,
+.button.success
 {
     html:not(.touch) &:hover,
     &:active,
@@ -1253,7 +1275,7 @@
     @include button-gradient(
         $secondary-button-color,
         $secondary-button-color,
-        darken($secondary-button-color,7%)
+        darken($secondary-button-color,5%)
     );
 
     html:not(.touch) &:hover
@@ -1418,7 +1440,9 @@
         }
     }
 
-    > .button
+    > .button,
+    > .link,
+    > .logo
     {
         cursor: pointer;
 
@@ -1431,6 +1455,32 @@
         text-decoration: none;
         cursor: help;
     }
+
+    &.short
+    {
+        .bubble
+        {
+            white-space: nowrap;
+        }
+    }
+
+    &.long
+    {
+        .bubble
+        {
+            white-space: normal;
+
+            @include bp(small)
+            {
+                width: 10.5em !important;
+            }
+
+            @include bp(desktop)
+            {
+                width: 14em !important;
+            }
+        }
+    }
 }
 
 .drop
@@ -1441,7 +1491,9 @@
         width: 0;
         overflow: hidden;
         margin: 0;
-        padding: $row-spacing ($gutter/2);
+        padding: 0 ($gutter/2);
+        color: $body-text-color;
+        line-height: 1.4;
         visibility: hidden;
         list-style: none;
         border-radius: $border-radius;
@@ -1473,9 +1525,9 @@
             position: absolute;
         }
 
-        li
+        > li
         {
-            margin: ($row-spacing/2) 0;
+            margin: $row-spacing 0;
             padding: 0;
 
             a
@@ -1484,13 +1536,6 @@
                 padding: 0;
                 color: $link-color;
                 text-decoration: none;
-                white-space: nowrap;
-
-                @include bp(small)
-                {
-                    width: 10.5em;
-                    white-space: normal;
-                }
 
                 html:not(.touch) &:hover
                 {
@@ -1507,33 +1552,45 @@
         visibility: visible;
     }
 
-    &.up.flush-left,
-    &.down.flush-left
+    &.flush-left
     {
         .bubble
         {
+            right: auto;
             left: 0;
         }
 
         .bubble:before,
         .bubble:after
         {
+            right: auto;
             left: calc(1em - 8px);
         }
     }
 
-    &.up.flush-right,
-    &.down.flush-right
+    &.flush-right
     {
         .bubble
         {
             right: 0;
+            left: auto;
         }
 
         .bubble:before,
         .bubble:after
         {
             right: calc(1em - 8px);
+            left: auto;
+        }
+    }
+
+    &.middle
+    {
+        .bubble,
+        .bubble:before,
+        .bubble:after
+        {
+            @include center(x);
         }
     }
 
@@ -1686,10 +1743,10 @@
         width: 0;
         overflow: hidden;
         margin: 0;
-        padding: 1px ($gutter/2);
+        padding: 0 .7em;
         visibility: hidden;
         color: white;
-        line-height: 1.4;
+        line-height: 1.2;
         border-radius: $border-radius;
         background-color: $heading-color;
         z-index: 1;
@@ -1741,11 +1798,13 @@
     {
         .bubble
         {
+            right: auto;
             left: calc(100% - 2em);
         }
 
         .bubble:before
         {
+            right: auto;
             left: 1em;
         }
     }
@@ -1755,11 +1814,13 @@
         .bubble
         {
             right: -.9em;
+            left: auto;
         }
 
         .bubble:before
         {
             right: 1em;
+            left: auto;
         }
     }
 
@@ -1817,32 +1878,6 @@
             @include transition(top $timing);
         }
     }
-
-    &.short
-    {
-        .bubble
-        {
-            white-space: nowrap;
-        }
-    }
-
-    &.long
-    {
-        .bubble
-        {
-            white-space: normal;
-
-            @include bp(small)
-            {
-                width: 10.5em !important;
-            }
-
-            @include bp(desktop)
-            {
-                width: 14em !important;
-            }
-        }
-    }
 }
 
 /* Using data-tip (can't contain link inside bubble) */
@@ -1858,6 +1893,14 @@
         text-decoration: none;
     }
 
+    &.button,
+    &.link,
+    &.logo
+    {
+        cursor: pointer;
+    }
+
+
     &:before,
     &:after
     {
@@ -1870,9 +1913,9 @@
     &:before 
     {
         margin: 0;
-        padding: ($gutter/2);
+        padding: .5em .7em;
         color: white;
-        line-height: 1.4;
+        line-height: 1.2;
         content: attr(data-tip);
         border-radius: $border-radius;
         background-color: $heading-color;
@@ -1913,11 +1956,13 @@
     {
         &:before
         {
+            right: auto;
             left: calc(100% - 1.9em);
         }
 
         &:after
         {
+            right: auto;
             left: calc(100% - .9em);
         }
     }
@@ -1927,11 +1972,13 @@
         &:before
         {
             right: -.9em;
+            left: auto;
         }
 
         &:after
         {
             right: .1em;
+            left: auto;
         }
     }
 
@@ -1953,7 +2000,7 @@
 
         &:after
         {
-            bottom: calc(100% + 1em);
+            bottom: 100%;
 
             @include triangle-down(8px, 8px, $heading-color);
         }
@@ -1984,7 +2031,7 @@
 
         &:after
         {
-            top: calc(100% + 1em);
+            top: 100%;
 
             @include triangle-up(8px, 8px, $heading-color);
         }
@@ -2339,7 +2386,7 @@
 
         > li
         {
-            width: 100%;
+            width: 100% !important;
             margin: 0 !important;
 
             .drop.up,
@@ -2398,7 +2445,7 @@
 
             > li
             {
-                width: 100%;
+                width: 100% !important;
                 margin: 0 !important;
 
                 .drop.up,
@@ -2543,8 +2590,9 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover,
     background-image: url('../img/bg-disabled.png') !important;
 }
 
+.button.disabled,
 .form input[type="file"]:disabled + .label-text,
 html:not(.touch) .form input[type="file"]:disabled + .label-text:hover
 {
-    background-color: $gray-regular !important;
+    background-color: $gray-light !important;
 }

@@ -14,7 +14,7 @@ h5,
 h6
 {
     margin-top: ($row-spacing*1.5);
-    margin-bottom: -.25em;
+    margin-bottom: 0;
     color: $heading-color;
     line-height: 1.25;
 
@@ -230,21 +230,9 @@ header,
 footer,
 hgroup,
 details,
-summary,
-.block
+summary
 {
     margin: $row-spacing auto;
-}
-
-.block-2
-{
-    margin: ($row-spacing*2) auto;
-}
-
-.block,
-.block-2
-{
-    display: block;
 }
 
 figure,
