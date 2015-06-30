@@ -320,7 +320,7 @@
 
         &::-webkit-slider-runnable-track 
         {
-            width: calc(100% - 2em);
+            width: calc(100% - $gutter);
             height: 1.2em;
             cursor: pointer;
             border: none !important;
@@ -388,7 +388,7 @@
 
         &::-ms-track 
         {
-            width: calc(100% - 2em);
+            width: calc(100% - $gutter);
             height: 1.2em;
             color: transparent;
             cursor: pointer;
@@ -1481,6 +1481,11 @@
             }
         }
     }
+
+    .bubble.collapse
+    {
+        padding: 0;
+    }
 }
 
 .drop
@@ -1564,7 +1569,7 @@
         .bubble:after
         {
             right: auto;
-            left: calc(1em - 8px);
+            left: calc(($gutter/2) - 8px);
         }
     }
 
@@ -1579,7 +1584,7 @@
         .bubble:before,
         .bubble:after
         {
-            right: calc(1em - 8px);
+            right: calc(($gutter/2) - 8px);
             left: auto;
         }
     }
@@ -1598,7 +1603,7 @@
     {
         .bubble
         {
-            bottom: calc(100% - 1em);
+            bottom: calc(100% - ($gutter/2));
 
             &:before
             {
@@ -1687,13 +1692,13 @@
         .bubble:before,
         .bubble:after
         {
-            right: calc(1em - 8px) !important;
+            right: calc(($gutter/2) - 8px) !important;
             left: auto !important;
 
             [dir=rtl] &
             {
                 right: auto !important;
-                left: calc(1em - 8px) !important;
+                left: calc(($gutter/2) - 8px) !important;
             }
         }
     }
@@ -1722,13 +1727,13 @@
             .bubble:before,
             .bubble:after
             {
-                right: calc(1em - 8px) !important;
+                right: calc(($gutter/2) - 8px) !important;
                 left: auto !important;
 
                 [dir=rtl] &
                 {
                     right: auto !important;
-                    left: calc(1em - 8px) !important;
+                    left: calc(($gutter/2) - 8px) !important;
                 }
             }
         }
@@ -1799,7 +1804,7 @@
         .bubble
         {
             right: auto;
-            left: calc(100% - 2em);
+            left: calc(100% - $gutter);
         }
 
         .bubble:before
@@ -1837,7 +1842,7 @@
     {
         .bubble
         {
-            bottom: calc(100% - 1em);
+            bottom: calc(100% - ($gutter/2));
 
             &:before
             {
@@ -1860,7 +1865,7 @@
     {
         .bubble
         {
-            top: calc(100% - 1em);
+            top: calc(100% - ($gutter/2));
 
             &:before
             {
@@ -1995,7 +2000,7 @@
     {
         &:before
         {
-            bottom: calc(100% - 1em);
+            bottom: calc(100% - ($gutter/2));
         }
 
         &:after
@@ -2026,7 +2031,7 @@
     {
         &:before
         {
-            top: calc(100% - 1em);
+            top: calc(100% - ($gutter/2));
         }
 
         &:after
@@ -2406,13 +2411,13 @@
                 .bubble:before,
                 .bubble:after
                 {
-                    right: calc(1em - 8px);
+                    right: calc(($gutter/2) - 8px);
                     left: auto;
 
                     [dir=rtl] &
                     {
                         right: auto;
-                        left: calc(1em - 8px);
+                        left: calc(($gutter/2) - 8px);
                     }
                 }
             }
@@ -2465,13 +2470,13 @@
                     .bubble:before,
                     .bubble:after
                     {
-                        right: calc(1em - 8px);
+                        right: calc(($gutter/2) - 8px);
                         left: auto;
 
                         [dir=rtl] &
                         {
                             right: auto;
-                            left: calc(1em - 8px);
+                            left: calc(($gutter/2) - 8px);
                         }
                     }
                 }

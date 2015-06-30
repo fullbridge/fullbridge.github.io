@@ -25,6 +25,8 @@
             cursor: pointer;
             background-color: $input-color;
 
+            @include font(heading,regular);
+
             [dir=rtl] &
             {
                 padding: $row-spacing ($gutter/2) $row-spacing $gutter;
