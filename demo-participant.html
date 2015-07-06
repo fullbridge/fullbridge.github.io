@@ -13,47 +13,92 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <meta http-equiv="cleartype" content="on">
 
-        <!-- SEO shit -->
+        <!-- SEO -->
         <meta name="author" content="Mike Mai Network">
         <meta name="description" content="Living style guide of the Fullbridge platform.">
         <meta property="og:title" content="Fullbridge Styleguide" />
         <meta property="og:description" content="Living style guide of the Fullbrige platform." />
         <meta property="og:type" content="website" />
-        <!--<meta property="og:image" content="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />-->
+        <meta property="og:image" content="img/ios/h/touch-icon-ipad-retina.png" />
         <meta property="og:url" content="http://fullbridge.com" />
         <meta property="og:site_name" content="Fullbridge Styleguide" />
-        <title>Program</title>
+        <title>Participant</title>
         <link rel="canonical" href="http://platform.fullbridge.com/styleguide">
 
         <!-- CSS for the site -->
         <link rel="stylesheet" href="css/main.css">
 
-        <!-- Thumbnail for social
-        <link rel="image_src" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" /> -->
+        <!-- Thumbnail for social -->
+        <link rel="image_src" href="img/ios/h/touch-icon-ipad-retina.png" />
 
-        <!-- Touch icons
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://s3.amazonaws.com/mikemai/assets/img/ios/m/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/mikemai/assets/img/ios/l/apple-touch-icon-precomposed.png">
-        <link rel="icon" href="https://s3.amazonaws.com/mikemai/assets/img/favicon.ico"> -->
+        <!-- Touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ios/h/touch-icon-ipad-retina.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ios/h/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ios/m/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" href="img/ios/l/apple-touch-icon-precomposed.png">
+        <link rel="icon" href="img/favicon.ico">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <!-- Tabs IE 8 and below compatible -->
-        <!--[if lt IE 9]><script>window.ltIE9=true</script><![endif]-->
     </head>
     <body>
         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <div id="modal-ie" class="overlay center open" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="alert-box warning">
+                <p>
+                    You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+                </p>
+                <a href="javascript:" class="close"
+                    data-anijs="if: click, do: $removeClass open, to: #modal-ie;"></a>
+            </div>
+        </div>
         <![endif]-->
 
-        <nav class="menu-bar">
-            <a href="javascript:" data-tip="Fullbridge" class="logo down flush-left short"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+        <nav class="menu-bar fixed">
+            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+            <div class="drop program-select">
+                <div class="drop down">
+                    <span class="button secondary">
+                        <span class="icon-sort"></span> Goodwin Procter: Business Fundamentals
+                    </span>
+                    <ul class="bubble collapse">
+                        <ol class="list">
+                            <li>
+                                <a href="javascript:" class="see-all">
+                                    My programs (4)
+                                </a>
+                                <a href="javascript:" class="mark-all">
+                                    Browse more
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:">
+                                    <span class="program-title">Getting Started with Fullbridge</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:">
+                                    <span class="program-title">Fullbridge Professional Edge at Holy Cross</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:">
+                                    <span class="program-title current">Goodwin Procter: Business Fundamentals</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:">
+                                    <span class="program-title">Washington &amp; Jefferson College: Entrepreneurship</span>
+                                </a>
+                            </li>
+                        </ol>
+                    </ul>
+                </div>
+            </div>
             <div class="utilities">
                 <ul class="button-group">
                     <li class="messages">
                         <div class="drop">
-                            <span class="button secondary icon-message"></span>
+                            <span class="button secondary icon-message"><span class="counter">1</span></span>
                             <div class="bubble collapse">
                                 <ol class="list">
                                     <li>
@@ -64,7 +109,7 @@
                                             Mark all as read
                                         </a>
                                     </li>
-                                    <li class="unread">
+                                    <li class="read">
                                         <a href="javascript:">
                                             <div class="sender"><span class="type">Coach</span> Mike Mai</div>
                                             <div class="date">9:11 AM</div>
@@ -72,7 +117,7 @@
                                             <div class="message">A pencil, a sketchbook, and your awesome attitude.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</div>
                                         </a>
                                     </li>
-                                    <li class="read">
+                                    <li class="unread">
                                         <a href="javascript:">
                                             <div class="sender">Rick O'Halloran</div>
                                             <div class="date">Yesterday</div>
@@ -110,7 +155,7 @@
                     </li>
                     <li class="notifications">
                         <div class="drop">
-                            <span class="button secondary icon-notifications"></span>
+                            <span class="button secondary icon-notifications"><span class="counter">2</span></span>
                             <div class="bubble collapse">
                                 <ol class="list">
                                     <li>
@@ -163,24 +208,371 @@
                     </li>
                     <li class="user-settings">
                         <div class="drop">
-                            <div class="button secondary user">
-                                <a href="javascript:" class="profile-photo"><img src="http://www.fillmurray.com/114/114" alt="Profile Photo"></a><span class="name">Hello, Bill Murray</span>
+                            <div class="button secondary">
+                                <label class="profile-photo-edit">
+                                    <input type="file">
+                                    <span class="photo"><img src="http://www.fillmurray.com/114/114" alt="Bill Murray"></span>
+                                </label>
+                                <span class="name">Hello, Bill Murray</span>
                             </div>
                             <ul class="bubble">
-                                <li><a href="javascript:">User profile</a></li>
-                                <li><a href="javascript:">Account settings</a></li>
-                                <li><a href="javascript:">Program payments</a></li>
-                                <li><a href="javascript:">Email notifications</a></li>
+                                <div class="mini-profile">
+                                    <div class="thumbnail">
+                                        <label class="profile-photo-edit">
+                                            <input type="file">
+                                            <span class="photo"><img src="http://www.fillmurray.com/114/114" alt="Bill Murray"></span>
+                                        </label>
+                                    </div>
+                                    <div class="description">
+                                        <h5>Bill Murray</h5>
+                                        <div class="involvements">
+                                            <span class="type">Participant</span>
+                                        </div>
+                                        <div class="email">
+                                            billmurray@ghostbusters.com
+                                        </div>
+                                    </div>
+                                </div>
+                                <li><span class="icon-person"></span> <a href="javascript:">User profile</a></li>
+                                <li><span class="icon-settings"></span> <a href="javascript:">Account settings</a></li>
+                                <li><span class="icon-wallet-giftcard"></span> <a href="javascript:">Payments</a></li>
+                                <li><span class="icon-exit-to-app"></span> <a href="javascript:">Log out</a></li>
                             </ul>
                         </div>
                     </li>
                 </ul>
             </div>
+            <div class="progress block">
+                <span class="meter success" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" style="width: 3%;">3% complete</span>
+            </div>
         </nav>
 
         <main class="content">
-            <div class="row section">
-                <div class="medium-11 small-centered columns">
+            <div class="row subnav fixed">
+                <nav class="medium-11 small-centered columns">
+                    <ul class="primary small-even-3">
+                        <li class="current">
+                            <a href="javascript:"><span class="icon-school"></span> <span class="label-text">Program</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:"><span class="icon-assignment-turned-in"></span> <span class="label-text">Grades</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:"><span class="icon-people"></span> <span class="label-text">Community</span></a>
+                        </li>
+                    </ul>
+                    <ul class="secondary">
+                        <li class="current"><a href="javascript:">Overview</a></li>
+                        <li><a href="javascript:">Calendar</a></li>
+                        <li><a href="javascript:">List</a></li>
+                        <li class="end"><a href="javascript:">Files</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="medium-10 small-centered columns">
+                    <div class="summary program">
+                        <div class="row">
+                            <div class="medium-3 small-4 columns thumbnail">
+                                <figure>
+                                    <img src="img/logo-goodwin-procter.jpg" alt="Fullbridge">
+                                </figure>
+                            </div>
+                            <div class="medium-9 small-12 columns description">
+                                <h1>Goodwin Procter: Business Fundamentals <span class="duration">10 hr 45 min</span></h1>
+                                <p>The Goodwin Procter program is intended for blah blah blah. More details in Greek mumble jumbles. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+                                <h6>What&rsquo;s for today?</h6>
+                                <p>Individual Exercise: Knowing Your Style: MBTI <span class="duration">40 min</span></p>
+                                <p><a href="javascript:" class="button primary">Resume</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <ol class="units-list">
+                                <li class="date-divider">
+                                    <span>Pre-work</span>
+                                </li>
+                                <li class="done">
+                                    <div class="summary unit row">
+                                        <div class="large-2 medium-2 small-3 columns thumbnail">
+                                            <figure>
+                                                <img src="http://www.fillmurray.com/500/500" alt="Fullbridge">
+                                            </figure>
+                                        </div>
+                                        <div class="large-6 medium-10 small-12 columns description">
+                                            <h2>Finance Diagnostic</h2>
+                                            <p>Complete this non-graded, non-scored exercise to help the Fullbridge Team get a better understanding of your current knowledge of financial analysis and Excel.</p>
+                                            <p><a href="javascript:" class="button success small"><span class="icon-check"></span> Finished</a></p>
+                                        </div>
+                                        <div class="large-4 medium-10 small-12 columns">
+                                            <div class="side-nav block">
+                                                <nav role="navigation" title="Unit 1">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="arrow open"></div><a href="javascript:" class="done">1 of 1 section complete</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="javascript:" class="done">Individual Exercise: Finance Diagnostic <span class="duration">90 min</span></a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                            <div class="block">
+                                                <div class="progress">
+                                                    <span class="meter success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="date-divider">
+                                    <span>Monday, May 15</span>
+                                </li>
+                                <li>
+                                    <div class="summary unit row">
+                                        <div class="large-2 medium-2 small-3 columns thumbnail">
+                                            <figure>
+                                                <img src="http://www.fillmurray.com/400/400" alt="Fullbridge">
+                                            </figure>
+                                        </div>
+                                        <div class="large-6 medium-10 small-12 columns description">
+                                            <h2>Welcome</h2>
+                                            <p>Welcome to the Fullbridge Program. This unit introduces you to the Fullbridge Program. Expectations and parameters are set, and you gain some experience in the Fullbridge style of working.</p>
+                                            <p><a href="javascript:" class="button primary small">Resume</a></p>
+                                        </div>
+                                        <div class="large-4 medium-10 small-12 columns">
+                                            <div class="side-nav block">
+                                                <nav role="navigation" title="Unit 1">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="arrow open"></div><a href="javascript:" class="">2 of 4 sections complete</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="javascript:" class="done">Welcome, Competencies, and Traits <span class="duration">25 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="done">Individual Exercise: Fullbridge Program Goals <span class="duration">30 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="">Individual Exercise: Knowing Your Style: MBTI <span class="duration">40 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Professionalism <span class="duration">25 min</span></a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                            <div class="block">
+                                                <div class="progress">
+                                                    <span class="meter success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="summary unit row">
+                                        <div class="large-2 medium-2 small-3 columns thumbnail">
+                                            <figure>
+                                                <img src="http://www.fillmurray.com/g/600/600" alt="Bill Murray!">
+                                            </figure>
+                                        </div>
+                                        <div class="large-6 medium-10 small-12 columns description">
+                                            <h2>Self-Awareness and Communication</h2>
+                                            <p>This unit introduces the program and sets expectations and goals. You start by focusing on self-awareness and then move into interpersonal emotional intelligence.</p>
+                                            <p><a href="javascript:" class="button disabled small">Start</a></p>
+                                        </div>
+                                        <div class="large-4 medium-10 small-12 columns">
+                                            <div class="side-nav block">
+                                                <nav role="navigation" title="Unit 1">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="arrow open"></div><a href="javascript:" class="unavailable">0 of 2 sections complete</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Team Exercise: Self and Social Awareness <span class="duration">45 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Individual Exercise: Communicating with Impact <span class="duration">45 min</span></a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="date-divider">
+                                    <span>Tuesday, May 16</span>
+                                </li>
+                                <li>
+                                    <div class="summary unit row">
+                                        <div class="large-2 medium-2 small-3 columns thumbnail">
+                                            <figure>
+                                                <img src="https://placekitten.com/g/600/600" alt="Kitten!">
+                                            </figure>
+                                        </div>
+                                        <div class="large-6 medium-10 small-12 columns description">
+                                            <h2>Intro to Effective Presentation</h2>
+                                            <p>In this unit, you will learn the art of effective presentations. The focus is on how to structure an argument, build a document, set up a productive meeting, and effectively communicate a message.</p>
+                                            <p><a href="javascript:" class="button disabled small">Start</a></p>
+                                        </div>
+                                        <div class="large-4 medium-10 small-12 columns">
+                                            <div class="side-nav block">
+                                                <nav role="navigation" title="Unit 1">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="arrow open"></div><a href="javascript:" class="unavailable">0 of 3 sections complete</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Team Exercise: Top Down Thinking <span class="duration">60 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Team Exercise: Structuring Your Thoughts <span class="duration">30 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Team Exercise: Email Communication in a Business Context <span class="duration">60 min</span></a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="date-divider">
+                                    <span>Wednesday, May 17</span>
+                                </li>
+                                <li>
+                                    <div class="summary unit row">
+                                        <div class="large-2 medium-2 small-3 columns thumbnail">
+                                            <figure>
+                                                <img src="https://placekitten.com/g/600/600" alt="Kitten!">
+                                            </figure>
+                                        </div>
+                                        <div class="large-6 medium-10 small-12 columns description">
+                                            <h2>Fullbridge Excel Tutorial</h2>
+                                            <p>This unit teaches you the basics of Excel, building a base for improving your mastery of this tool over the course of the Program.</p>
+                                            <p><a href="javascript:" class="button disabled small">Start</a></p>
+                                        </div>
+                                        <div class="large-4 medium-10 small-12 columns">
+                                            <div class="side-nav block">
+                                                <nav role="navigation" title="Unit 1">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="arrow open"></div><a href="javascript:" class="unavailable">0 of 5 sections complete</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Excel Basics <span class="duration">60 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Interactive Spreadsheet Practice I <span class="duration">30 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Formulas and Functions <span class="duration">60 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Charts in Excel <span class="duration">30 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Interactive Spreadsheet Practice II <span class="duration">60 min</span></a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="summary unit row">
+                                        <div class="large-2 medium-2 small-3 columns thumbnail">
+                                            <figure>
+                                                <img src="https://placekitten.com/g/600/600" alt="Kitten!">
+                                            </figure>
+                                        </div>
+                                        <div class="large-6 medium-10 small-12 columns description">
+                                            <h2>Effective Teamwork</h2>
+                                            <p>In this unit, you will continue to build emotional intelligence by exploring the process of building teams and working effectively within them. Your learning culminates in a team simulation exercise.</p>
+                                            <p><a href="javascript:" class="button disabled small">Start</a></p>
+                                        </div>
+                                        <div class="large-4 medium-10 small-12 columns">
+                                            <div class="side-nav block">
+                                                <nav role="navigation" title="Unit 1">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="arrow open"></div><a href="javascript:" class="unavailable">0 of 3 sections complete</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Team Exercise: Successful Teams <span class="duration">45 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Marooned Team Exercises: Interactive Simulation <span class="duration">120 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Becoming a Dynamic Team Member <span class="duration">60 min</span></a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="summary unit row">
+                                        <div class="large-2 medium-2 small-3 columns thumbnail">
+                                            <figure>
+                                                <img src="https://placekitten.com/g/600/600" alt="Kitten!">
+                                            </figure>
+                                        </div>
+                                        <div class="large-6 medium-10 small-12 columns description">
+                                            <h2>Presenting Your Ideas</h2>
+                                            <p>In this exercise-driven unit, you concentrate on building an argument using Top Down Thinking. The focus is on constructing powerful communications.</p>
+                                            <p><a href="javascript:" class="button disabled small">Start</a></p>
+                                        </div>
+                                        <div class="large-4 medium-10 small-12 columns">
+                                            <div class="side-nav block">
+                                                <nav role="navigation" title="Unit 1">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="arrow open"></div><a href="javascript:" class="unavailable">0 of 4 sections complete</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Presenting with PowerPoint <span class="duration">30 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Team Exercise: Showing Data Effectively <span class="duration">105 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Individual Exercise: Effective Oral Presentation <span class="duration">90 min</span></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Creating Engaging Communication <span class="duration">15 min</span></a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <input type="hidden" 
+                                    data-anijs="if: click, on: .side-nav nav .arrow, do: $toggleClass open, to: target;">
+                            </ol>
+                        </div>
+                    </div>
+                    <!--<div style="height:40em;"></div>
                     <div class="tabs small-even-3">
                         <div class="tab">
                             <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked>
@@ -196,19 +588,6 @@
                                                         <label class="tab-label" for="tab-4"><span class="label-text">Overview</span></label>
                                                         <div class="tab-panel">
                                                             <div class="tab-content">
-                                                                <!--<div class="block">
-                                                                    <fieldset>
-                                                                        <legend>Pick a calendar</legend>
-                                                                        <label class="label expand">
-                                                                            <div class="select">
-                                                                                <select>
-                                                                                    <option selected>Coach calendar</option>
-                                                                                    <option>Participant calendar</option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </label>
-                                                                    </fieldset>
-                                                                </div>-->
                                                                 <div class="summary program">
                                                                     <div class="row">
                                                                         <div class="medium-3 small-4 columns thumbnail">
@@ -219,8 +598,6 @@
                                                                         <div class="medium-9 small-12 columns description">
                                                                             <h1>Goodwin Procter: Business Fundamentals <span class="duration">10 hr 45 min</span></h1>
                                                                             <p>The Goodwin Procter program is intended for blah blah blah. More details in Greek mumble jumbles. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-                                                                            <!--<p><strong>Estimate time:</strong> 10 hr 45 min</p>
-                                                                            <p><a href="javascript:" class="button primary">Start the program</a></p>-->
                                                                             <div class="alert-box standard">
                                                                                 <header>What&rsquo;s for today?</header>
                                                                                 <p>Individual Exercise: Knowing Your Style: MBTI <span class="duration">40 min</span></p>
@@ -861,10 +1238,24 @@
                                 </div>
                             </div> 
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </main>
+
+        <!--<div class="block">
+            <fieldset>
+                <legend>Pick a calendar</legend>
+                <label class="label expand">
+                    <div class="select">
+                        <select>
+                            <option selected>Coach calendar</option>
+                            <option>Participant calendar</option>
+                        </select>
+                    </div>
+                </label>
+            </fieldset>
+        </div>-->
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>

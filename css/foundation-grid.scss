@@ -81,31 +81,6 @@
     }
 }
 
-/* ------------------- */
-/* not from Foundation */
-.row.section
-{
-    @include bp(small)
-    {
-        margin-top: $row-spacing*2.5;
-        margin-bottom: $row-spacing*2.5;
-    }
-
-    @include bp(medium)
-    {
-        margin-top: $row-spacing*3;
-        margin-bottom: $row-spacing*3;
-    }
-
-    @include bp(large)
-    {
-        margin-top: $row-spacing*3.5;
-        margin-bottom: $row-spacing*3.5;
-    }
-}
-/* not from Foundation */
-/* ------------------- */
-
 @media only screen {
   .small-push-0 {
     position: relative;

@@ -320,7 +320,7 @@
 
         &::-webkit-slider-runnable-track 
         {
-            width: calc(100% - $gutter);
+            width: calc(100% - 2em);
             height: 1.2em;
             cursor: pointer;
             border: none !important;
@@ -388,7 +388,7 @@
 
         &::-ms-track 
         {
-            width: calc(100% - $gutter);
+            width: calc(100% - 2em);
             height: 1.2em;
             color: transparent;
             cursor: pointer;
@@ -1076,11 +1076,11 @@
 
     .meter
     {
-        float: left;
+        display: inline-block;
         height: 100%;
         color: white;
         line-height: 2;
-        text-shadow: 0 0 1px black;
+        text-shadow: 0 0 2px black;
         text-indent: 1em;
         white-space: nowrap;
         font-size: .8em;
@@ -1275,12 +1275,12 @@
     @include button-gradient(
         $secondary-button-color,
         $secondary-button-color,
-        darken($secondary-button-color,5%)
+        darken($secondary-button-color,3%)
     );
 
     html:not(.touch) &:hover
     {
-        background-color: lighten($secondary-button-color,5%);
+        background-color: lighten($secondary-button-color,3%);
     }
 
     &:active
@@ -1302,17 +1302,17 @@
     @include button-gradient(
         $special-button-color,
         $special-button-color,
-        darken($special-button-color,5%)
+        darken($special-button-color,3%)
     );
 
     html:not(.touch) &:hover
     {
-        background-color: $special-button-color;
+        background-color: lighten($special-button-color,3%);
     }
 
     &:active
     {
-        background-color: darken($special-button-color,5%);
+        background-color: darken($special-button-color,7%);
     }
 
     &:focus
@@ -1391,17 +1391,17 @@
     @include button-gradient(
         $green-success,
         $green-success,
-        darken($green-success,5%)
+        darken($green-success,3%)
     );
 
     html:not(.touch) &:hover
     {
-        background-color: $green-success;
+        background-color: lighten($green-success,3%);
     }
 
     &:active
     {
-        background-color: darken($green-success,5%);
+        background-color: darken($green-success,7%);
     }
 
     &:focus
@@ -1479,6 +1479,11 @@
             {
                 width: 14em !important;
             }
+
+            > li > a
+            {
+                white-space: normal;
+            }
         }
     }
 
@@ -1532,19 +1537,44 @@
 
         > li
         {
+            position: relative;
             margin: $row-spacing 0;
             padding: 0;
 
             a
             {
-                display: block;
-                padding: 0;
                 color: $link-color;
                 text-decoration: none;
+                white-space: nowrap;
 
                 html:not(.touch) &:hover
                 {
                     text-decoration: underline;
+                }
+            }
+
+            [class^="icon-"], 
+            [class*=" icon-"]
+            {
+                position: absolute;
+                left: 0;
+                color: $heading-color;
+
+                [dir=rtl] &
+                {
+                    right: 0;
+                    left: auto;
+                }
+
+                & + a
+                {
+                    padding-left: 1.5em;
+
+                    [dir=rtl] &
+                    {
+                        padding-right: 1.5em;
+                        padding-left: 0;
+                    }
                 }
             }
         }
@@ -1569,7 +1599,7 @@
         .bubble:after
         {
             right: auto;
-            left: calc(($gutter/2) - 8px);
+            left: calc(1em - 8px);
         }
     }
 
@@ -1584,7 +1614,7 @@
         .bubble:before,
         .bubble:after
         {
-            right: calc(($gutter/2) - 8px);
+            right: calc(1em - 8px);
             left: auto;
         }
     }
@@ -1603,7 +1633,7 @@
     {
         .bubble
         {
-            bottom: calc(100% - ($gutter/2));
+            bottom: calc(100% - 1em);
 
             &:before
             {
@@ -1692,13 +1722,13 @@
         .bubble:before,
         .bubble:after
         {
-            right: calc(($gutter/2) - 8px) !important;
+            right: calc(1em - 8px) !important;
             left: auto !important;
 
             [dir=rtl] &
             {
                 right: auto !important;
-                left: calc(($gutter/2) - 8px) !important;
+                left: calc(1em - 8px) !important;
             }
         }
     }
@@ -1727,13 +1757,13 @@
             .bubble:before,
             .bubble:after
             {
-                right: calc(($gutter/2) - 8px) !important;
+                right: calc(1em - 8px) !important;
                 left: auto !important;
 
                 [dir=rtl] &
                 {
                     right: auto !important;
-                    left: calc(($gutter/2) - 8px) !important;
+                    left: calc(1em - 8px) !important;
                 }
             }
         }
@@ -1804,7 +1834,7 @@
         .bubble
         {
             right: auto;
-            left: calc(100% - $gutter);
+            left: calc(100% - 2em);
         }
 
         .bubble:before
@@ -1842,7 +1872,7 @@
     {
         .bubble
         {
-            bottom: calc(100% - ($gutter/2));
+            bottom: calc(100% - 1em);
 
             &:before
             {
@@ -1865,7 +1895,7 @@
     {
         .bubble
         {
-            top: calc(100% - ($gutter/2));
+            top: calc(100% - 1em);
 
             &:before
             {
@@ -2000,7 +2030,7 @@
     {
         &:before
         {
-            bottom: calc(100% - ($gutter/2));
+            bottom: calc(100% - 1em);
         }
 
         &:after
@@ -2031,7 +2061,7 @@
     {
         &:before
         {
-            top: calc(100% - ($gutter/2));
+            top: calc(100% - 1em);
         }
 
         &:after
@@ -2394,34 +2424,6 @@
             width: 100% !important;
             margin: 0 !important;
 
-            .drop.up,
-            .drop.down
-            {
-                .bubble
-                {
-                    right: 0;
-
-                    [dir=rtl] &
-                    {
-                        right: auto;
-                        left: 0;
-                    }
-                }
-            
-                .bubble:before,
-                .bubble:after
-                {
-                    right: calc(($gutter/2) - 8px);
-                    left: auto;
-
-                    [dir=rtl] &
-                    {
-                        right: auto;
-                        left: calc(($gutter/2) - 8px);
-                    }
-                }
-            }
-
             .button
             {
                 @include truncate;
@@ -2437,6 +2439,24 @@
             {
                 right: 0 !important;
                 left: 0 !important;
+
+                > li
+                {
+                    @include truncate;
+                }
+            
+                &:before,
+                &:after
+                {
+                    right: calc(1em - 8px);
+                    left: auto;
+
+                    [dir=rtl] &
+                    {
+                        right: auto;
+                        left: calc(1em - 8px);
+                    }
+                }
             }
         }
     }
@@ -2453,34 +2473,6 @@
                 width: 100% !important;
                 margin: 0 !important;
 
-                .drop.up,
-                .drop.down
-                {
-                    .bubble
-                    {
-                        right: 0;
-
-                        [dir=rtl] &
-                        {
-                            right: auto;
-                            left: 0;
-                        }
-                    }
-                
-                    .bubble:before,
-                    .bubble:after
-                    {
-                        right: calc(($gutter/2) - 8px);
-                        left: auto;
-
-                        [dir=rtl] &
-                        {
-                            right: auto;
-                            left: calc(($gutter/2) - 8px);
-                        }
-                    }
-                }
-
                 .button
                 {
                     @include truncate;
@@ -2496,6 +2488,24 @@
                 {
                     right: 0 !important;
                     left: 0 !important;
+
+                    > li
+                    {
+                        @include truncate;
+                    }
+            
+                    &:before,
+                    &:after
+                    {
+                        right: calc(1em - 8px);
+                        left: auto;
+
+                        [dir=rtl] &
+                        {
+                            right: auto;
+                            left: calc(1em - 8px);
+                        }
+                    }
                 }
             }
         }

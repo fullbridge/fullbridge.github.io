@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Timeline
+   ========================================================================== */
+
+.summary
+{
+    .thumbnail
+    {
+        figure
+        {
+            @include bp(small)
+            {
+                margin: 0;
+            }
+        }
+        
+        img
+        {
+            border: $light-divider;
+            border-radius: $border-radius;
+        }
+    }
+
+    .description
+    {
+        padding-top: $row-spacing;
+        padding-bottom: $row-spacing;
+
+        > *:first-child
+        {
+            margin-top: 0;
+        }
+
+        > *:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    &.program
+    {
+        padding: $row-spacing*3 0;
+        border-bottom: $light-divider;
+    }
+
+    &.unit
+    {
+        .description
+        {
+            h2
+            {
+                letter-spacing: 0;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    &.unit,
+    &.user
+    {
+        .thumbnail
+        {
+            img
+            {
+                border-radius: 100em;
+            }
+        }
+    }
+
+    &.user
+    {
+        padding: $row-spacing 0;
+        border-bottom: $light-divider;
+
+        @include bp(small)
+        {
+            text-align: center;
+        }
+
+        .involvements,
+        .current-programs
+        {
+            margin: .3em 0;
+        }
+
+        .current-programs
+        {
+            line-height: 1.2;
+            font-size: .8em;
+        }
+    }
+}
+
+.units-list
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li
+    {
+        position: relative;
+        margin: 0 0 -1px 0;
+        padding: $row-spacing*3 ($gutter/2);
+        border-top: $light-divider;
+
+        &.date-divider
+        {
+            margin-top: $row-spacing*6;
+            padding: 0;
+            line-height: 1;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: .6em;
+            font-weight: bold;
+            border-top: none;
+
+            span
+            {
+                display: inline-block;
+                padding: .5em;
+                color: $heading-color;
+                border: $light-divider;
+            }
+        }
+
+        &:first-of-type
+        {
+            border-top: none;
+        }
+
+        &.done
+        {
+            background-color: $highlight-green;
+        }
+    }
+}
+
+.duration
+{
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    padding: 2px .4em;
+    color: $body-text-color;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: .7em;
+    border-radius: $border-radius;
+    box-shadow: $input-border;
+}

@@ -13,49 +13,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <meta http-equiv="cleartype" content="on">
 
-        <!-- SEO shit -->
+        <!-- SEO -->
         <meta name="author" content="Mike Mai Network">
         <meta name="description" content="Living style guide of the Fullbridge platform.">
         <meta property="og:title" content="Fullbridge Styleguide" />
         <meta property="og:description" content="Living style guide of the Fullbrige platform." />
         <meta property="og:type" content="website" />
-        <!--<meta property="og:image" content="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />-->
+        <meta property="og:image" content="img/ios/h/touch-icon-ipad-retina.png" />
         <meta property="og:url" content="http://fullbridge.com" />
         <meta property="og:site_name" content="Fullbridge Styleguide" />
-        <title>Fullbridge Styleguide</title>
+        <title>Styleguide</title>
         <link rel="canonical" href="http://platform.fullbridge.com/styleguide">
 
         <!-- CSS for the site -->
         <link rel="stylesheet" href="css/main.css">
 
-        <!-- Thumbnail for social
-        <link rel="image_src" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" /> -->
+        <!-- Thumbnail for social -->
+        <link rel="image_src" href="img/ios/h/touch-icon-ipad-retina.png" />
 
-        <!-- Touch icons
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://s3.amazonaws.com/mikemai/assets/img/ios/m/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/mikemai/assets/img/ios/l/apple-touch-icon-precomposed.png">
-        <link rel="icon" href="https://s3.amazonaws.com/mikemai/assets/img/favicon.ico"> -->
+        <!-- Touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ios/h/touch-icon-ipad-retina.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ios/h/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ios/m/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" href="img/ios/l/apple-touch-icon-precomposed.png">
+        <link rel="icon" href="img/favicon.ico">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <!-- Tabs IE 8 and below compatible -->
-        <!--[if lt IE 9]><script>window.ltIE9=true</script><![endif]-->
     </head>
     <body>
         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <div id="modal-ie" class="overlay center open" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="alert-box warning">
+                <p>
+                    You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+                </p>
+                <a href="javascript:" class="close"
+                    data-anijs="if: click, do: $removeClass open, to: #modal-ie;"></a>
+            </div>
+        </div>
         <![endif]-->
-        <!--<div class="menu-bar">
-            <strong>Fullbridge</strong> &raquo; <strong>Design</strong>
-        </div>-->
 
         <div class="row content">
             <div class="large-2 medium-3 columns sidebar fixed">
                 <div class="side-nav">
-                    <header
-                        data-anijs="if: click, do: $toggleClass open;">
-                        UI Style Guide
+                    <header>
+                        <a href="javascript:" class="back"></a>
+                        <span
+                            data-anijs="if: click, do: $toggleClass open;">UI Style Guide</span>
                     </header>
                     <nav role="navigation" title="Style Guide navigation">
                         <ul>
@@ -66,16 +70,19 @@
                                         <a href="javascript:" class="done">Section you finished</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:" class="active">Section you haven't finished</a>
+                                        <a href="javascript:" class="">Section you haven't finished</a>
                                     </li>
                                     <li>
-                                        <a class="unavailable">Section you can't access yet</a>
+                                        <a href="javascript:" class="unavailable">Section you can't access yet</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
                                 <div class="arrow"></div><a href="#navigation" class="">Navigation</a>
                                 <ul>
+                                    <li>
+                                        <a href="#subnav" class="">Subnav</a>
+                                    </li>
                                     <li>
                                         <a href="#breadcrumbs" class="">Breadcrumbs</a>
                                     </li>
@@ -206,6 +213,227 @@
                             <h2>
                                 <a name="navigation" href="#navigation" class="link jump"></a> Navigation
                             </h2>
+                            <h3>
+                                <a name="menu-bar" href="#menu-bar" class="link jump"></a> Menu bar
+                            </h3>
+                            <div class="block">
+                                <nav class="menu-bar">
+                                    <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                                    <div class="drop program-select">
+                                        <div class="drop down">
+                                            <span class="button secondary">
+                                                <span class="icon-sort"></span> Goodwin Procter: Business Fundamentals
+                                            </span>
+                                            <ul class="bubble collapse">
+                                                <ol class="list">
+                                                    <li>
+                                                        <a href="javascript:" class="see-all">
+                                                            My programs (4)
+                                                        </a>
+                                                        <a href="javascript:" class="mark-all">
+                                                            Browse more
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:">
+                                                            <span class="program-title">Getting Started with Fullbridge</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:">
+                                                            <span class="program-title">Fullbridge Professional Edge at Holy Cross</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:">
+                                                            <span class="program-title current">Goodwin Procter: Business Fundamentals</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:">
+                                                            <span class="program-title">Washington &amp; Jefferson College: Entrepreneurship</span>
+                                                        </a>
+                                                    </li>
+                                                </ol>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="utilities">
+                                        <ul class="button-group">
+                                            <li class="messages">
+                                                <div class="drop">
+                                                    <span class="button secondary icon-message"><span class="counter">1</span></span>
+                                                    <div class="bubble collapse">
+                                                        <ol class="list">
+                                                            <li>
+                                                                <a href="javascript:" class="see-all">
+                                                                    Messages (1)
+                                                                </a>
+                                                                <a href="javascript:" class="mark-all">
+                                                                    Mark all as read
+                                                                </a>
+                                                            </li>
+                                                            <li class="read">
+                                                                <a href="javascript:">
+                                                                    <div class="sender"><span class="type">Coach</span> Mike Mai</div>
+                                                                    <div class="date">9:11 AM</div>
+                                                                    <div class="subject-line">What to bring on last day of Class</div>
+                                                                    <div class="message">A pencil, a sketchbook, and your awesome attitude.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed.</div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="unread">
+                                                                <a href="javascript:">
+                                                                    <div class="sender">Rick O'Halloran</div>
+                                                                    <div class="date">Yesterday</div>
+                                                                    <div class="subject-line">Are you going to class tomorrow?</div>
+                                                                    <div class="message">Aliquam tincidunt mauris eu risus.</div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="read">
+                                                                <a href="javascript:">
+                                                                    <div class="sender">Cori Allen</div>
+                                                                    <div class="date">05/21/15</div>
+                                                                    <div class="subject-line">Yo, can you do my homework?</div>
+                                                                    <div class="message">Vestibulum auctor dapibus neque.</div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="read">
+                                                                <a href="javascript:">
+                                                                    <div class="sender">Full Name</div>
+                                                                    <div class="date">03/21/15</div>
+                                                                    <div class="subject-line">Subject line</div>
+                                                                    <div class="message">Message body.</div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="read">
+                                                                <a href="javascript:">
+                                                                    <div class="sender">Show 5 messages max</div>
+                                                                    <div class="date">02/21/15</div>
+                                                                    <div class="subject-line">Subject line</div>
+                                                                    <div class="message">Message body.</div>
+                                                                </a>
+                                                            </li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="notifications">
+                                                <div class="drop">
+                                                    <span class="button secondary icon-notifications"><span class="counter">2</span></span>
+                                                    <div class="bubble collapse">
+                                                        <ol class="list">
+                                                            <li>
+                                                                <a href="javascript:" class="see-all">
+                                                                    Notifications (2)
+                                                                </a>
+                                                                <a href="javascript:" class="mark-all">
+                                                                    Mark all as read
+                                                                </a>
+                                                            </li>
+                                                            <li class="unread">
+                                                                <a href="javascript:">
+                                                                    <div class="action"><span class="type warning">To-do</span> Team Exercise: Self-Awareness and Communication is due today.</div>
+                                                                    <span class="date">8:00 AM</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="unread">
+                                                                <a href="javascript:">
+                                                                    <div class="action"><span class="type success">Accomplishment</span> Congrats, you have earned the Mark Zuckerberg badge!</div>
+                                                                    <span class="date">Yesterday</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="read">
+                                                                <a href="javascript:">
+                                                                    <div class="action"><span class="type success">Accomplishment</span> Nice, you finished Pre-work: Finance Diagnostic.</div>
+                                                                    <span class="date">Yesterday</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="read">
+                                                                <a href="javascript:">
+                                                                    <div class="action">Goodwin Procter: Business Fundamentals is starting today.</div>
+                                                                    <span class="date">02/23/15</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="read">
+                                                                <a href="javascript:">
+                                                                    <div class="action">Welcome to The Fullbridge Program, check out all the programs that are available to you.</div>
+                                                                    <span class="date">02/22/15</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="read">
+                                                                <a href="javascript:">
+                                                                    <div class="action">Show 5 notifications max.</div>
+                                                                    <span class="date">02/22/15</span>
+                                                                </a>
+                                                            </li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="user-settings">
+                                                <div class="drop">
+                                                    <div class="button secondary">
+                                                        <label class="profile-photo-edit">
+                                                            <input type="file">
+                                                            <span class="photo"><img src="http://www.fillmurray.com/114/114" alt="Bill Murray"></span>
+                                                        </label>
+                                                        <span class="name">Hello, Bill Murray</span>
+                                                    </div>
+                                                    <ul class="bubble">
+                                                        <div class="mini-profile">
+                                                            <div class="thumbnail">
+                                                                <label class="profile-photo-edit">
+                                                                    <input type="file">
+                                                                    <span class="photo"><img src="http://www.fillmurray.com/114/114" alt="Bill Murray"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="description">
+                                                                <h5>Bill Murray</h5>
+                                                                <div class="involvements">
+                                                                    <span class="type">Participant</span>
+                                                                </div>
+                                                                <div class="email">
+                                                                    billmurray@ghostbusters.com
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <li><span class="icon-person"></span> <a href="javascript:">User profile</a></li>
+                                                        <li><span class="icon-settings"></span> <a href="javascript:">Account settings</a></li>
+                                                        <li><span class="icon-wallet-giftcard"></span> <a href="javascript:">Payments</a></li>
+                                                        <li><span class="icon-exit-to-app"></span> <a href="javascript:">Log out</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <h3>
+                                <a name="subnav" href="#subnav" class="link jump"></a> Subnav
+                            </h3>
+                            <div class="block">
+                                <div class="row subnav">
+                                    <nav class="column">
+                                        <ul class="primary small-even-3">
+                                            <li class="current">
+                                                <a href="javascript:">1st level</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:">1st level</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:">1st level</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="secondary">
+                                            <li class="current"><a href="javascript:">2nd level</a></li>
+                                            <li><a href="javascript:">2nd level</a></li>
+                                            <li><a href="javascript:">2nd level</a></li>
+                                            <li class="end"><a href="javascript:">2nd level</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
                             <h3>
                                 <a name="breadcrumbs" href="#breadcrumbs" class="link jump"></a> Breadcrumbs
                             </h3>

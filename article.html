@@ -13,13 +13,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <meta http-equiv="cleartype" content="on">
 
-        <!-- SEO shit -->
+        <!-- SEO -->
         <meta name="author" content="Mike Mai Network">
         <meta name="description" content="Living style guide of the Fullbridge platform.">
         <meta property="og:title" content="Fullbridge Styleguide" />
         <meta property="og:description" content="Living style guide of the Fullbrige platform." />
         <meta property="og:type" content="website" />
-        <!--<meta property="og:image" content="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />-->
+        <meta property="og:image" content="img/ios/h/touch-icon-ipad-retina.png" />
         <meta property="og:url" content="http://fullbridge.com" />
         <meta property="og:site_name" content="Fullbridge Styleguide" />
         <title>Article</title>
@@ -28,21 +28,29 @@
         <!-- CSS for the site -->
         <link rel="stylesheet" href="css/main.css">
 
-        <!-- Thumbnail for social
-        <link rel="image_src" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" /> -->
+        <!-- Thumbnail for social -->
+        <link rel="image_src" href="img/ios/h/touch-icon-ipad-retina.png" />
 
-        <!-- Touch icons
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://s3.amazonaws.com/mikemai/assets/img/ios/m/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/mikemai/assets/img/ios/l/apple-touch-icon-precomposed.png">
-        <link rel="icon" href="https://s3.amazonaws.com/mikemai/assets/img/favicon.ico"> -->
+        <!-- Touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ios/h/touch-icon-ipad-retina.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ios/h/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ios/m/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" href="img/ios/l/apple-touch-icon-precomposed.png">
+        <link rel="icon" href="img/favicon.ico">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <div id="modal-ie" class="overlay center open" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="alert-box warning">
+                <p>
+                    You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+                </p>
+                <a href="javascript:" class="close"
+                    data-anijs="if: click, do: $removeClass open, to: #modal-ie;"></a>
+            </div>
+        </div>
         <![endif]-->
 
         <div class="row section">

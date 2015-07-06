@@ -70,7 +70,11 @@
             {
                 @include bp(small)
                 {
-                    display: none;
+                    display: block;
+                    width: 100%;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: .8em;
                 }
 
                 @include bp(desktop)
@@ -387,7 +391,7 @@
     {
         .tab-label
         {
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             border-radius: 0;
             background-color: $background-color;
@@ -396,18 +400,19 @@
             {
                 font-size: 10px;
                 font-size: 1rem;
+                border: none;
             }
 
             @include bp(medium)
             {
-                font-size: 12px;
-                font-size: 1.2rem;
+                font-size: 11px;
+                font-size: 1.1rem;
             }
 
             @include bp(large)
             {
-                font-size: 15px;
-                font-size: 1.5rem;
+                font-size: 12px;
+                font-size: 1.2rem;
             }
         }
 
@@ -418,6 +423,11 @@
             padding-bottom: $row-spacing; 
             border: $light-divider;
             border-radius: $border-radius;
+
+            @include bp(small)
+            {
+                border: none;
+            }
 
             &:after
             {

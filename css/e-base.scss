@@ -43,14 +43,6 @@ textarea
     resize: vertical;
 }
 
-.browsehappy
-{
-    margin: $row-spacing 0;
-    padding: ($gutter/2);
-    color: black;
-    background-color: $yellow-alert;
-}
-
 /* ==========================================================================
    Base
    ========================================================================== */
@@ -107,4 +99,53 @@ html,
 body
 {
     min-height: 100%;
+}
+
+.content
+{
+    overflow-x: hidden;
+}
+
+.row.section
+{
+    @include bp(small)
+    {
+        margin-top: $row-spacing*2.5;
+        margin-bottom: $row-spacing*2.5;
+    }
+
+    @include bp(medium)
+    {
+        margin-top: $row-spacing*3;
+        margin-bottom: $row-spacing*3;
+    }
+
+    @include bp(large)
+    {
+        margin-top: $row-spacing*3.5;
+        margin-bottom: $row-spacing*3.5;
+    }
+}
+
+.block
+{
+    display: block;
+    clear: both;
+    margin: $row-spacing auto;
+}
+
+.block.double
+{
+    @extend .block;
+
+    margin: ($row-spacing*2) auto;
+}
+
+.placeholder
+{
+    padding: 4em 0;
+    color: $gray-light;
+    text-align: center;
+    font-weight: bold;
+    background-color: $gray-lighter;
 }

@@ -1,24 +1,33 @@
-/* Form field validates after focus once */
+// Hide subnav on scroll down, show on scroll up (mobile needs improvement, it only functions when it completely stops scrolling, need re-factoring before production).
 
-$(':required').on('blur keydown', function() {
-    $(this).addClass('touched');
-});
+$(function(){
+    var nav = $(".subnav"),
+        state = "down", 
+        lastScrollTop = 0, delta = 200;
 
-/* Make label visible after value is entered */
+    $(window).scroll(function(event){
+      var st = $(this).scrollTop();
+       
+      if(Math.abs(lastScrollTop - st) <= delta){return};
 
-$('input,textarea,select').on('change', function() {
-    $(this).addClass('filled')
-})
-
-$(document).ready(function() {
-    $("input, textarea").each(function(i, element) {
-        if ($.trim($(element).val()) != "") {
-            $(element).addClass("filled");
+      if ((st > lastScrollTop) && (lastScrollTop>0)) {
+         // downscroll code
+         if(state == "up"){
+          nav.css("top","-100%");
+          state = "down";
         }
+      } else {
+        // upscroll code
+        if(state == "down"){
+        nav.css("top","auto");
+        state = "up";
+        }
+      }
+        lastScrollTop = st;
     });
 });
 
-/* Open split buttons and tooltips (doesn't always work on mobile, something is delaying the action) */
+// Open split buttons and tooltips (doesn't always work on mobile, something is delaying the action for anchor and button elements, need re-factoring before production).
 
 $(".drop, .tooltip").children(".link, .button, .tip").click(function(e) {
     $(".link, .button, .tip").not(this).removeClass("open")
@@ -30,7 +39,7 @@ $(document).find("[data-tip]").click(function(e) {
     $(this).toggleClass("open")
 })
 
-/* Close split buttons and tooltips when clicked outside (does not work on mobile, need re-factoring before production). http://stackoverflow.com/questions/1403615/use-jquery-to-hide-a-div-when-the-user-clicks-outside-of-it */
+// Close split buttons and tooltips when clicked outside (does not work on mobile, need re-factoring before production). http://stackoverflow.com/questions/1403615/use-jquery-to-hide-a-div-when-the-user-clicks-outside-of-it
 
 $(document).mouseup(function (e)
 {
@@ -41,6 +50,26 @@ $(document).mouseup(function (e)
     {
         container.children(".link, .button, .tip").removeClass("open");
     }
+});
+
+// Form field validates after focus once
+
+$(':required').on('blur keydown', function() {
+    $(this).addClass('touched');
+});
+
+// Make label visible after value is entered
+
+$('input,textarea,select').on('change', function() {
+    $(this).addClass('filled')
+})
+
+$(document).ready(function() {
+    $("input, textarea").each(function(i, element) {
+        if ($.trim($(element).val()) != "") {
+            $(element).addClass("filled");
+        }
+    });
 });
 
 // This makes the .tabs work in IE8 and below, add in HTML <head>:
@@ -61,9 +90,8 @@ $(document).mouseup(function (e)
   })(window.jQuery);
 } */
 
-/* Range input click to update output value (it only catches the first range input on the page, and it returns error when there's no range input on the page, need re-factoring before production).
-
-if (document.querySelector) {
+//Range input click to update output value (it only catches the first range input on the page, and it returns error when there's no range input on the page, need re-factoring before production).
+/* if (document.querySelector) {
     document.querySelector(".range").onchange = function(e) {
         e.target.nextElementSibling.innerText = e.target.value;
     }

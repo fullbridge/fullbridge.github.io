@@ -5,11 +5,11 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic|Roboto+Condensed:400,700|Amiri:400italic,700italic,400,700&subset=arabic,latin);
 
 @font-face {
-    src:url('../fonts/icomoon.eot?k4f8ra');
-    src:url('../fonts/icomoon.eot?#iefixk4f8ra') format('embedded-opentype'),
-        url('../fonts/icomoon.ttf?k4f8ra') format('truetype'),
-        url('../fonts/icomoon.woff?k4f8ra') format('woff'),
-        url('../fonts/icomoon.svg?k4f8ra#icomoon') format('svg');
+    src:url('../fonts/icomoon.eot?-t27z9g');
+    src:url('../fonts/icomoon.eot?#iefix-t27z9g') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?-t27z9g') format('truetype'),
+        url('../fonts/icomoon.woff?-t27z9g') format('woff'),
+        url('../fonts/icomoon.svg?-t27z9g#icomoon') format('svg');
 
     @include font(icon,regular);
 }
@@ -27,6 +27,9 @@
 .icon-assignment-turned-in:before {
     content: "\e602";
 }
+.icon-exit-to-app:before {
+    content: "\e626";
+}
 .icon-home:before {
     content: "\e615";
 }
@@ -39,8 +42,11 @@
 .icon-search:before {
     content: "\e605";
 }
-.icon-settings-power:before {
-    content: "\e611";
+.icon-settings:before {
+    content: "\e61e";
+}
+.icon-wallet-giftcard:before {
+    content: "\e623";
 }
 .icon-mic:before {
     content: "\e603";
@@ -60,6 +66,12 @@
 .icon-remove:before {
     content: "\e619";
 }
+.icon-sort:before {
+    content: "\e624";
+}
+.icon-insert-drive-file:before {
+    content: "\e625";
+}
 .icon-insert-invitation:before {
     content: "\e614";
 }
@@ -77,9 +89,6 @@
 }
 .icon-keyboard-arrow-up:before {
     content: "\e609";
-}
-.icon-add-to-photos:before {
-    content: "\e61c";
 }
 .icon-edit:before {
     content: "\e612";
