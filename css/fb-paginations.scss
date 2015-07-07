@@ -5,16 +5,16 @@
 .pagination
 {
     margin: 0;
-    padding: 0;
+    padding: 0 1px;
 
     @include clearfix;
 
     > *
     {
         float: left;
-        padding: 0 ($gutter/2);
         height: 30px;
         height: 3rem;
+        margin-left: -1px;
         line-height: 30px;
         line-height: 3rem;
         text-decoration: none;
@@ -23,9 +23,21 @@
         font-size: 1.5rem;
         border: $light-divider;
 
+        @include bp(small)
+        {
+            padding: 0 .5em;
+        }
+
+        @include bp(desktop)
+        {
+            padding: 0 ($gutter/2);
+        }
+
         [dir=rtl] &
         {
             float: right;
+            margin-right: -1px;
+            margin-left: 0;
         }
 
         html:not(.touch) &:hover
@@ -37,13 +49,6 @@
 
         & + *
         {
-            border-left: 0;
-
-            [dir=rtl] &
-            {
-                border-right: 0;
-                border-left: $light-divider;
-            }
         }
 
         &:first-of-type
@@ -74,6 +79,14 @@
         {
             color: $gray-regular;
             cursor: not-allowed;
+        }
+
+        .text
+        {
+            @include bp(small)
+            {
+                display: none;
+            }
         }
     }
 }

@@ -872,8 +872,8 @@
     #{$all-text-inputs},
     textarea
     {
-        & + .label-text + [class^="icon-"], 
-        & + .label-text + [class*=" icon-"]
+        & ~ [class^="icon-"], 
+        & ~ [class*=" icon-"]
         {
             position: absolute;
             right: ($gutter/2);
@@ -888,10 +888,38 @@
         }
     }
 
+    input[type="time"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="datetime"],
+    input[type="datetime-local"]
+    {
+        & ~ [class^="icon-"], 
+        & ~ [class*=" icon-"]
+        {
+            right: ($gutter/2);
+
+            [dir=rtl] &
+            {
+                right: ($gutter/2);
+                left: auto;
+            }
+        }
+
+        &:focus ~ [class^="icon-"], 
+        &:focus ~ [class*=" icon-"],
+        html:not(.touch) &:hover ~ [class^="icon-"], 
+        html:not(.touch) &:hover ~ [class*=" icon-"]
+        {
+            display: none;
+        }
+    }
+
     #{$all-text-inputs}
     {
-        & + .label-text + [class^="icon-"], 
-        & + .label-text + [class*=" icon-"]
+        & ~ [class^="icon-"], 
+        & ~ [class*=" icon-"]
         {
             @include center(y);
         }
@@ -899,8 +927,8 @@
 
     textarea
     {
-        & + .label-text + [class^="icon-"], 
-        & + .label-text + [class*=" icon-"]
+        & ~ [class^="icon-"], 
+        & ~ [class*=" icon-"]
         {
             top: 1em;
         }
@@ -910,8 +938,8 @@
     {
         cursor: text !important;
 
-        & + .label-text + [class^="icon-"], 
-        & + .label-text + [class*=" icon-"]
+        & ~ [class^="icon-"], 
+        & ~ [class*=" icon-"]
         {
             color: $gray-light !important;
         }
@@ -955,22 +983,6 @@
         {
             color: white;
             background-color: $gray-darkest;
-        }
-    }
-
-    input[type="time"],
-    input[type="date"],
-    input[type="month"],
-    input[type="week"],
-    input[type="datetime"],
-    input[type="datetime-local"]
-    {
-        &:focus ~ [class^="icon-"], 
-        &:focus ~ [class*=" icon-"],
-        html:not(.touch) &:hover ~ [class^="icon-"], 
-        html:not(.touch) &:hover ~ [class*=" icon-"]
-        {
-            display: none;
         }
     }
 
