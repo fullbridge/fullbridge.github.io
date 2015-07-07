@@ -393,6 +393,7 @@
         {
             letter-spacing: 2px;
             text-transform: uppercase;
+            border: none;
             border-radius: 0;
             background-color: $background-color;
 
@@ -421,8 +422,6 @@
             position: relative;
             padding-top: $row-spacing; 
             padding-bottom: $row-spacing; 
-            border: $light-divider;
-            border-radius: $border-radius;
 
             @include bp(small)
             {
@@ -443,7 +442,7 @@
 
         .tab-content
         {
-            margin-top: $row-spacing;
+            margin-top: 0;
             padding: 0;
             border-right: 0;
             border-bottom: 0;

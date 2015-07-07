@@ -81,6 +81,9 @@
                                 <div class="arrow"></div><a href="#navigation" class="">Navigation</a>
                                 <ul>
                                     <li>
+                                        <a href="#menu-bar" class="">Menu bar</a>
+                                    </li>
+                                    <li>
                                         <a href="#subnav" class="">Subnav</a>
                                     </li>
                                     <li>
@@ -192,6 +195,9 @@
                                     <li>
                                         <a href="sign-up.html" class="">Sign up/log in page</a>
                                     </li>
+                                    <li>
+                                        <a href="demo-navigations.html" class="">Navigations</a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="divider"></li>
@@ -219,7 +225,7 @@
                             <div class="block">
                                 <nav class="menu-bar">
                                     <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
-                                    <div class="drop program-select">
+                                    <div class="program-select">
                                         <div class="drop down">
                                             <span class="button secondary">
                                                 <span class="icon-sort"></span> Goodwin Procter: Business Fundamentals
@@ -454,15 +460,30 @@
                                 <a name="paginations" href="#paginations" class="link jump"></a> Paginations
                             </h3>
                             <div class="block">
-                                <ul class="pagination" role="menubar" aria-label="Pagination">
-                                    <li class="unavailable" aria-disabled="true"><a href="javascript:">&laquo; Previous</a></li>
-                                    <li class="current"><a href="javascript:">1</a></li>
-                                    <li><a href="javascript:">2</a></li>
-                                    <li class="unavailable" aria-disabled="true"><a href="javascript:">&hellip;</a></li>
-                                    <li><a href="javascript:">12</a></li>
-                                    <li><a href="javascript:">13</a></li>
-                                    <li><a href="javascript:">Next &raquo;</a></li>
-                                </ul>
+                                <div class="pagination" aria-label="Pagination">
+                                    <a rel="prev start" href="/en/library/resources?page=1">&laquo; Previous</a>
+                                    <a rel="prev start" href="/en/library/resources?page=1">1</a>
+                                    <em class="current">2</em>
+                                    <a rel="next" href="javascript:">3</a>
+                                    <a href="javascript:">4</a>
+                                    <a href="javascript:">5</a>
+                                    <a href="javascript:">6</a>
+                                    <a href="javascript:">7</a>
+                                    <a href="javascript:">8</a>
+                                    <a href="javascript:">9</a>
+                                    <span class="gap">&hellip;</span>
+                                    <a href="javascript:">963</a>
+                                    <a href="javascript:">964</a>
+                                    <a rel="next" href="javascript:">Next &raquo;</a>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="pagination" aria-label="Pagination">
+                                    <a class="disabled" rel="prev start" href="javascript:">&laquo; Previous</a>
+                                    <em class="current">1</em>
+                                    <a rel="next" href="javascript:">2</a>
+                                    <a rel="next" href="javascript:">Next &raquo;</a>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -600,30 +621,16 @@
                                     <div class="row">
                                         <div class="medium-6 columns">
                                             <label class="label expand">
-                                                <input type="text" name="text" placeholder="Start date">
-                                                <div class="label-text">Start date</div>
-                                                <div class="icon-insert-invitation"></div>
-                                            </label>
-                                        </div>
-                                        <div class="medium-6 columns">
-                                            <label class="label expand">
-                                                <input type="text" name="text" placeholder="End date">
-                                                <div class="label-text">End date</div>
-                                                <div class="icon-insert-invitation"></div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="medium-6 columns">
-                                            <label class="label expand">
                                                 <input type="time">
                                                 <div class="label-text">Time input</div>
+                                                <div class="icon-insert-invitation"></div>
                                             </label>
                                         </div>
                                         <div class="medium-6 columns">
                                             <label class="label expand">
                                                 <input type="date">
                                                 <div class="label-text">Date input</div>
+                                                <div class="icon-insert-invitation"></div>
                                             </label>
                                         </div>
                                     </div>
@@ -632,12 +639,14 @@
                                             <label class="label expand">
                                                 <input type="month">
                                                 <div class="label-text">Month input</div>
+                                                <div class="icon-insert-invitation"></div>
                                             </label>
                                         </div>
                                         <div class="medium-6 columns">
                                             <label class="label expand">
                                                 <input type="week">
                                                 <div class="label-text">Week input</div>
+                                                <div class="icon-insert-invitation"></div>
                                             </label>
                                         </div>
                                     </div>
@@ -646,6 +655,7 @@
                                             <label class="label expand">
                                                 <input type="datetime-local">
                                                 <div class="label-text">Datetime-local input</div>
+                                                <div class="icon-insert-invitation"></div>
                                             </label>
                                         </div>
                                     </div>

@@ -6,13 +6,19 @@
 {
     margin: 0;
     padding: 0;
-    list-style: none;
 
     @include clearfix;
 
-    > li
+    > *
     {
         float: left;
+        padding: 0 ($gutter/2);
+        height: 30px;
+        height: 3rem;
+        line-height: 30px;
+        line-height: 3rem;
+        text-decoration: none;
+        white-space: nowrap;
         font-size: 15px;
         font-size: 1.5rem;
         border: $light-divider;
@@ -22,7 +28,14 @@
             float: right;
         }
 
-        & + li
+        html:not(.touch) &:hover
+        {
+            background-color: $hover-bg-color;
+
+            @include transition(background-color $timing);
+        }
+
+        & + *
         {
             border-left: 0;
 
@@ -43,37 +56,24 @@
             @include border-right-radius($border-radius);
         }
 
-        a
+        &.gap,
+        &.current
         {
-            display: block;
-            height: 30px;
-            height: 3rem;
-            padding: 0 ($gutter/2);
-            line-height: 30px;
-            line-height: 3rem;
-            text-decoration: none;
-            white-space: nowrap;
-
-            html:not(.touch) &:hover
-            {
-                background-color: $hover-bg-color;
-
-                @include transition(background-color $timing);
-            }
+            background-color: transparent !important;
         }
 
-        &.current a
+        &.current
         {
             color: $heading-color;
             font-weight: bold;
-            border-bottom: 3px solid $heading-color;
+            font-style: normal;
+            border-bottom: 2px solid $heading-color;
         }
 
-        &.unavailable a
+        &.disabled
         {
             color: $gray-regular;
             cursor: not-allowed;
-            background-color: transparent !important;
         }
     }
 }

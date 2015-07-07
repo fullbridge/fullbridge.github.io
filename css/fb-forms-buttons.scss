@@ -958,6 +958,22 @@
         }
     }
 
+    input[type="time"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="datetime"],
+    input[type="datetime-local"]
+    {
+        &:focus ~ [class^="icon-"], 
+        &:focus ~ [class*=" icon-"],
+        html:not(.touch) &:hover ~ [class^="icon-"], 
+        html:not(.touch) &:hover ~ [class*=" icon-"]
+        {
+            display: none;
+        }
+    }
+
     legend
     {
         width: 100%;
@@ -1508,7 +1524,7 @@
         list-style: none;
         border-radius: $border-radius;
         background-color: $background-color;
-        z-index: 1;
+        z-index: ($modal-z - 1);
         box-shadow: $input-focus-border;
 
         @include bp(small)

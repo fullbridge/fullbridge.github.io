@@ -554,17 +554,18 @@
             float: right;
         }
 
+        .button
+        {
+            max-width: 100%;
+
+            @include font(heading,regular);
+            @include truncate;
+        }
+
         .drop
         {
             width: 100%;
             height: $menu-bar-height;
-
-            .button
-            {
-                text-align: left;
-
-                @include font(heading,regular);
-            }
 
             .bubble
             {
@@ -845,6 +846,18 @@
                     {
                         float: right;
                     }
+
+                    .profile-photo-edit
+                    {
+                        .photo
+                        {
+                            &:before,
+                            &:after
+                            {
+                                font-size: 2em;
+                            }
+                        }
+                    }
                 }
 
                 .description
@@ -886,7 +899,7 @@
         }
     }
 
-    .admin
+    .admin-select
     {
         float: left;
         height: $menu-bar-height;
@@ -1334,6 +1347,7 @@
         padding-bottom: 100%;
         border-radius: 100em;
         border: $transparent-light-divider;
+        background-color: $secondary-color;
 
         &:before,
         &:after
