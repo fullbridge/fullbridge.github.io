@@ -14,7 +14,7 @@
         <meta http-equiv="cleartype" content="on">
 
         <!-- SEO -->
-        <meta name="author" content="Mike Mai Network">
+        <meta name="author" content="Fullbridge Tech">
         <meta name="description" content="Living style guide of the Fullbridge platform.">
         <meta property="og:title" content="Fullbridge Styleguide" />
         <meta property="og:description" content="Living style guide of the Fullbrige platform." />
@@ -71,7 +71,7 @@
                                 <ol class="list">
                                     <li>
                                         <a href="javascript:" class="see-all">
-                                            Messages (1)
+                                            Messages <span class="counter follow">1</span>
                                         </a>
                                         <a href="javascript:" class="mark-all">
                                             Mark all as read
@@ -128,7 +128,7 @@
                                 <ol class="list">
                                     <li>
                                         <a href="javascript:" class="see-all">
-                                            Notifications (2)
+                                            Notifications <span class="counter follow">2</span>
                                         </a>
                                         <a href="javascript:" class="mark-all">
                                             Mark all as read
@@ -218,8 +218,7 @@
         <div class="row content">
             <div class="large-2 medium-3 columns sidebar fixed">
                 <div class="side-nav">
-                    <header
-                        data-anijs="if: click, do: $toggleClass open;">
+                    <header>
                         Goodwin Procter: Business Fundamentals
                     </header>
                     <nav role="navigation" title="Style Guide navigation">
@@ -354,26 +353,56 @@
                             <nav>
                                 <ul>
                                     <li class="done">
-                                        <a class="down flush-left short" data-tip="Reading: Pod 1 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 1 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
                                     </li>
-                                    <li class="done">
-                                        <a class="down flush-left short" data-tip="Video: Pod 2 Title" href="javascript:"><span class="icon-video-collection"></span></a>
+                                    <li class="done"
+                                        data-anijs="if: click, do: $removeClass hidden, to: .pod-1;
+                                                    if: click, do: $addClass hidden, to: .pod-2;">
+                                        <a class="down flush-left short" data-tip="Video &raquo; What Is Your Type?" href="javascript:"><span class="icon-video-collection"></span></a>
                                     </li>
-                                    <li class="current">
-                                        <a class="down flush-left short" data-tip="Exercise: Pod 3 Title" href="javascript:"><span class="icon-edit"></span></a>
+                                    <li class="current"
+                                        data-anijs="if: click, do: $removeClass hidden, to: .pod-2;
+                                                    if: click, do: $addClass hidden, to: .pod-1;">
+                                        <a class="down flush-left short" data-tip="Exercise &raquo; The MBTI Assessment: TypeCoach Verifier" href="javascript:"><span class="icon-edit"></span></a>
                                     </li>
                                     <li class="unavailable">
-                                        <a class="down flush-left short" data-tip="Reading: Pod 4 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 4 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
                                     </li>
+                                    <li class="unavailable">
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 5 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                    </li>
+                                    <li class="unavailable">
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 6 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                    </li>
+                                    <li class="unavailable">
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 7 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                    </li>
+                                    <li class="unavailable">
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 8 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                    </li>
+                                    <input type="hidden" 
+                                        data-anijs="if: click, on: .secondary-side-nav li:not(.unavailable), do: $removeClass current, to: .secondary-side-nav li;
+                                                    if: click, on: .secondary-side-nav li:not(.unavailable), do: $addClass current, to: target;">
                                 </ul>
                             </nav>
                         </div>
                         <article class="article">
                             <div class="row">
-                                <div class="medium-10 small-centered columns">
-                                    <h2>
-                                        The MBTI Assessment: TypeCoach Verifier
-                                    </h2>
+                                <div class="medium-10 small-centered columns pod-1 hidden">
+                                    <h2>What Is Your Type?</h2>
+                                    <figure>
+                                        <video id="video1" controls preload poster="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="640" height="360">
+                                            <source id="mp4" src="http://media.w3.org/2010/05/bunny/trailer.mp4" type="video/mp4">
+                                            <source id="ogv" src="http://media.w3.org/2010/05/bunny/trailer.ogv" type="video/ogg">
+                                            <p>Your user agent does not support the HTML5 Video element.</p>
+                                        </video>
+                                        <figcaption>
+                                            Credits: AP Videos
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="medium-10 small-centered columns pod-2">
+                                    <h2>The MBTI Assessment: TypeCoach Verifier</h2>
                                     <h3>You on Your Team</h3>
                                     <p>Throughout the Fullbridge Program, you will be asked to work as a member of a team. As you'll see firsthand, effective teamwork allows for the development of concepts and deliverables that could not have been created by a single individual.</p>
                                     <p>True teamwork requires significant effort and awareness on everyone's part. The Myers-Briggs Type Indicator, or MBTI, is one tool that many companies and individuals use to increase self-awareness. The MBTI offers useful information about how people perceive the world, absorb information, and make decisions.</p>
@@ -400,25 +429,151 @@
                                     <p>Please upload the PDF results of your MBTI assessment to the submissions system below.</p>
                                     <form class="form">
                                         <fieldset>
-                                            <legend>Upload PDF results</legend>
-                                            <small><p><em>Uploaded file:</em> <a href="javascript:" class="link">mike-mai-results.pdf</a></p></small>
-                                            <label class="label tiny">
-                                                <input type="file">
-                                                <div class="label-text">Upload</div>
-                                            </label>
+                                            <legend>Select your MBTI type</legend>
+                                            <div class="row">
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ISTJ
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ISFJ
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ISTP
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ISFP
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            INFJ
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            INTJ
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            INFP
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            INTP
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ESTP
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ESFP
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ESTJ
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ESFJ
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ENFP
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ENTP
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ENFJ
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="large-3 small-6 columns">
+                                                    <label class="label expand">
+                                                        <input type="radio" name="mbti-type">
+                                                        <div class="text">
+                                                            ENTJ
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </fieldset>
                                         <div class="alert-box info block">
                                             <p><span class="icon-info"></span> This is a Foundation Exercise. Please ensure you submit your answer before proceeding. This exercise does not contribute to any of your Competency Scores.</p>
-                                        </div>                            
+                                        </div>
                                         <div class="block">
                                             <ul class="button-group">
-                                                <li><a href="javascript:" class="button primary">&laquo;</a></li>
                                                 <li><a href="javascript:" class="button primary">Save</a></li>
+                                                <li><a href="javascript:" class="button primary">&laquo;</a></li>
                                                 <li><a href="javascript:" class="button primary">&raquo;</a></li>
                                                 <li class="end">
                                                     <a href="javascript:" class="button primary"
                                                         data-anijs="if: click, do: $removeClass primary;
-                                                                    if: click, do: $addClass success;"><span class="icon-check"></span> Complete</a>
+                                                                    if: click, do: $addClass success;
+                                                                    if: click, do: $addClass open, to: #modal-1;"><span class="icon-check"></span> Complete</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -427,6 +582,30 @@
                             </div>
                         </article>
                     </main>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal-1" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="medium-6 small-12 small-centered column">
+                    <div class="reveal alert-box success">
+                        <header>
+                            <span class="icon-check"></span> Congratulations!
+                        </header>
+                        <p>
+                            You've completed The MBTI Assessment: TypeCoach Verifier!
+                        </p>
+                        <ul class="actions">
+                            <li>
+                                <a href="javascript:"
+                                    data-anijs="if: click, do: $removeClass open, to: #modal-1;">Continue now</a>
+                            </li>
+                        </ul>
+                        <a href="javascript:" class="close"
+                            data-anijs="if: click, do: $removeClass open, to: #modal-1;"></a>
+                    </div>
                 </div>
             </div>
         </div>

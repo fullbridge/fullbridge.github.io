@@ -34,8 +34,8 @@ $(".drop, .tooltip").children(".link, .button, .tip").click(function(e) {
     $(this).toggleClass("open")
 })
 
-$(document).find("[data-tip]").click(function(e) {
-    $("[data-tip]").not(this).removeClass("open")
+$(document).find("[data-tip], .side-nav>header").click(function(e) {
+    $("[data-tip], .side-nav>header").not(this).removeClass("open")
     $(this).toggleClass("open")
 })
 

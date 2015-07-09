@@ -172,10 +172,19 @@ h6
     &.filled
     {
         position: relative;
-        padding: $row-spacing*6 ($gutter/2) $row-spacing ($gutter/2);
         color: white;
 
         @include background-size(cover);
+
+        @include bp(small)
+        {
+            padding: $row-spacing*2 ($gutter/2) $row-spacing ($gutter/2);
+        }
+
+        @include bp(desktop)
+        {
+            padding: $row-spacing*6 ($gutter/2) $row-spacing ($gutter/2);
+        }
 
         &:before
         {

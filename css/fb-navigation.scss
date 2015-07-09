@@ -5,6 +5,12 @@
 .column.sidebar,
 .columns.sidebar
 {
+    @include bp(small)
+    {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
     &.fixed
     {
         @include bp(desktop)
@@ -63,13 +69,51 @@
 
     > header
     {
+        position: relative;
         color: $heading-color;
 
         @include font(heading,bold);
 
         @include bp(small)
         {
+            padding-left: 2.5em;
             cursor: pointer;
+
+            [dir=rtl] &
+            {
+                padding-right: 2.5em;
+                padding-left: 0;
+            }
+        }
+
+        &:before
+        {
+            position: absolute;
+            left: ($gutter/2);
+            color: $link-color;
+
+            @include font(icon,regular);
+            @include center(y);
+
+            [dir=rtl] &
+            {
+                right: ($gutter/2);
+                left: auto;
+            }
+
+            @include bp(small)
+            {
+                content: '\e62a';
+            }
+        }
+
+        &.open:before
+        {
+            @include bp(small)
+            {
+                color: $heading-color;
+                content: '\e60d';
+            }
         }
 
         & + nav,
@@ -113,7 +157,11 @@
                 margin: 0;
                 padding: 0;
                 line-height: 1.2;
-                font-size: .9em;
+                
+                @include bp(desktop)
+                {
+                    font-size: .9em;
+                }
 
                 &.divider
                 {
@@ -205,22 +253,18 @@
                         }
                     }
 
-                    html:not(.touch) &:hover
-                    {
-                        background-color: $hover-bg-color;
-
-                        @include transition(background-color $timing);
-                    }
-
                     &.done
                     {
                         color: $green-success;
                     }
 
+                    html:not(.touch) &:hover,
                     &.current
                     {
                         color: $heading-color !important;
                         background-color: $background-color;
+
+                        @include transition(background-color $timing);
 
                         &:before
                         {
@@ -239,6 +283,8 @@
 
                 html:not(.touch) &:hover
                 {
+                    background-color: $background-color;
+
                     .arrow
                     {
                         color: white;
@@ -274,11 +320,11 @@
                     {
                         a
                         {
-                            padding: $row-spacing 1em $row-spacing 3.4em;
+                            padding: $row-spacing 1em $row-spacing 3.3em;
 
                             [dir=rtl] &
                             {
-                                padding: $row-spacing 3.4em $row-spacing 1em;
+                                padding: $row-spacing 3.3em $row-spacing 1em;
                             }
 
                             &:after
@@ -338,8 +384,11 @@
 
 .secondary-side-nav
 {
-    position: absolute;
-    z-index: 1;
+    @include bp(desktop)
+    {
+        position: absolute;
+        z-index: 1;
+    }
 
     &.fixed
     {
@@ -363,65 +412,129 @@
         }
     }
 
-    > nav
+    nav
     {
-        margin: $row-spacing*2 ($gutter/2);
+        @include bp(small)
+        {
+            margin: ($row-spacing/2) .5em;
+        }
+
+        @include bp(desktop)
+        {
+            margin: $row-spacing*2 ($gutter/2);
+        }
 
         > ul
         {
             margin: 0;
             padding: 0;
 
+            @include bp(small)
+            {
+                text-align: center;
+            }
+
             > li
             {
                 position: relative;
-                margin: 2em 0;
                 padding: 0;
+
+                @include bp(small)
+                {
+                    display: inline-block;
+                    margin: ($row-spacing/2) calc(.5em - 3px);
+                }
+
+                @include bp(desktop)
+                {
+                    margin: 2em 0;
+                }
 
                 &:before
                 {
                     position: absolute;
-                    top: -2em;
-                    width: 4px;
-                    height: 2em;
                     content: '';
                     background-color: $gray-lightest;
 
-                    @include center(x);
+                    @include bp(small)
+                    {
+                        left: -1em;
+                        width: 1em;
+                        height: 4px;
+                        z-index: -1;
+
+                        @include center(y);
+
+                        [dir=rtl] &
+                        {
+                            right: -1em;
+                            left: auto;
+                        }
+                    }
+
+                    @include bp(desktop)
+                    {
+                        top: -2em;
+                        width: 4px;
+                        height: 2em;
+
+                        @include center(x);
+                    }
                 }
 
                 &:after
                 {
-                    position: absolute;
-                    top: -.5em;
-                    left: -.5em;
-                    width: 1.8em;
-                    height: 1.8em;
-                    line-height: 1.7;
-                    text-align: center;
-                    font-size: .8em;
-                    border-radius: 100em;
+                    @include bp(desktop)
+                    {
+                        position: absolute;
+                        top: -.5em;
+                        left: -.5em;
+                        width: 1.8em;
+                        height: 1.8em;
+                        line-height: 1.7;
+                        text-align: center;
+                        font-size: .8em;
+                        border-radius: 100em;
 
-                    @include font(icon,regular);
+                        @include font(icon,regular);
+                    }
                 }
 
                 > a
                 {
                     display: block;
                     position: relative;
-                    width: $menu-bar-height;
-                    height: $menu-bar-height;
                     color: $body-text-color;
                     line-height: 1;
                     border-radius: 100em;
                     background-color: $gray-lightest;
 
+                    @include bp(small)
+                    {
+                        width: 1.5em;
+                        height: 1.5em;
+                    }
+
+                    @include bp(desktop)
+                    {
+                        width: $menu-bar-height;
+                        height: $menu-bar-height;
+                    }
+
                     [class^="icon-"], 
                     [class*=" icon-"]
                     {
-                        position: absolute;
+                        @include bp(small)
+                        {
+                            display: none;
+                        }
 
-                        @include center(xy);
+                        @include bp(desktop)
+                        {
+                            position: absolute;
+
+                            @include center(xy);
+                        }
                     }
                 }
 
@@ -440,10 +553,13 @@
 
                     &:after
                     {
-                        color: $background-color;
-                        content: '\e60c';
-                        border: 1px solid $background-color;
-                        background-color: $green-success;
+                        @include bp(desktop)
+                        {
+                            color: $background-color;
+                            content: '\e60c';
+                            border: 1px solid $background-color;
+                            background-color: $green-success;
+                        }
                     }
                 }
 
@@ -463,14 +579,17 @@
 
                     &:after
                     {
-                        color: $heading-color;
-                        content: '\e60b';
-                        border: 1px solid $heading-color;
-                        background-color: $background-color;
-
-                        [dir=rtl] &
+                        @include bp(desktop)
                         {
-                            content: '\e60a';
+                            color: $heading-color;
+                            content: '\e60b';
+                            border: 1px solid $heading-color;
+                            background-color: $background-color;
+
+                            [dir=rtl] &
+                            {
+                                content: '\e60a';
+                            }
                         }
                     }
                 }
@@ -485,16 +604,22 @@
 
                     &:after
                     {
-                        color: $gray-regular;
-                        content: '\e601';
-                        border: 1px solid $background-color;
-                        background-color: $gray-lighter;
+                        @include bp(desktop)
+                        {
+                            color: $gray-regular;
+                            content: '\e601';
+                            border: 1px solid $background-color;
+                            background-color: $gray-lighter;
+                        }
                     }
                 }
 
                 &:first-of-type
                 {
-                    margin-top: 0;
+                    @include bp(desktop)
+                    {
+                        margin-top: 0;
+                    }
 
                     &:before
                     {
@@ -551,6 +676,46 @@
             display: block;
             width: $menu-bar-height;
             height: $menu-bar-height;
+        }
+    }
+
+    .counter
+    {
+        display: block;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        min-width: 1.5em;
+        max-width: 2em;
+        height: 1.5em;
+        padding: 0 2px;
+        color: $background-color;
+        line-height: 1.5;
+        text-align: center;
+        font-size: .6em;
+        font-weight: bold;
+        border-radius: 100em;
+        background-color: $tertiary-color;
+
+        @include truncate;
+
+        [dir=rtl] &
+        {
+            right: auto;
+            left: 1em;
+        }
+
+        &.follow
+        {
+            right: -.5em;
+
+            @include center(y);
+
+            [dir=rtl] &
+            {
+                right: auto;
+                left: -.5em;
+            }
         }
     }
 
@@ -614,6 +779,7 @@
                 position: relative;
                 margin: 0;
                 padding: $row-spacing ($gutter/2);
+                color: $body-text-color;
                 text-decoration: none;
 
                 html:not(.touch) &:hover
@@ -708,6 +874,17 @@
                         color: $heading-color;
                         text-decoration: underline;
                         font-weight: bold;
+
+                        &:before
+                        {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            width: .3em;
+                            content: '';
+                            background-color: $heading-color;
+                        }
                     }
                 }
             }
@@ -856,24 +1033,6 @@
                         width: 48rem;
                     }
                 }
-            }
-
-            .counter
-            {
-                position: absolute;
-                top: 1em;
-                right: 1em;
-                min-width: 1.5em;
-                max-width: 2em;
-                height: 1.5em;
-                padding: 0 2px;
-                line-height: 1.5;
-                font-size: .6em;
-                font-weight: bold;
-                border-radius: 100em;
-                background-color: $tertiary-color;
-
-                @include truncate;
             }
         }
 
@@ -1114,7 +1273,7 @@
 
         &.participant + .content
         {
-            padding-top: ($menu-bar-height + 1.5em);
+            padding-top: ($menu-bar-height + 1.6em);
 
             .column.sidebar,
             .columns.sidebar
@@ -1123,7 +1282,7 @@
                 {
                     @include bp(desktop)
                     {
-                        height: calc(100% - 4.5em);
+                        height: calc(100% - 4.6em);
                     }
                 }
             }
