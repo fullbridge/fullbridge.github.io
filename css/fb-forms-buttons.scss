@@ -1100,7 +1100,7 @@
     height: 1.6em;
     line-height: 1;
     border-radius: $border-radius;
-    background-color: $hover-bg-color;
+    background-color: $gray-light;
 
     .meter
     {
@@ -1813,6 +1813,7 @@
         border-radius: $border-radius;
         background-color: $heading-color;
         z-index: 1;
+        box-shadow: $input-focus-border;
 
         @include font(body,regular);
 
@@ -1944,7 +1945,6 @@
 }
 
 /* Using data-tip (can't contain link inside bubble) */
-
 [data-tip]
 {
     position: relative;
@@ -1956,14 +1956,6 @@
         text-decoration: none;
     }
 
-    &.button,
-    &.link,
-    &.logo
-    {
-        cursor: pointer;
-    }
-
-
     &:before,
     &:after
     {
@@ -1971,6 +1963,7 @@
         width: 0;
         overflow: hidden;
         visibility: hidden;
+        z-index: 1;
     }
 
     &:before 
@@ -1982,7 +1975,7 @@
         content: attr(data-tip);
         border-radius: $border-radius;
         background-color: $heading-color;
-        z-index: 1;
+        box-shadow: $input-focus-border;
 
         @include font(body,regular);
 
@@ -2143,26 +2136,30 @@
     }
 }
 
+a[data-tip],
+button[data-tip],
+input[data-tip]
+{
+    cursor: pointer;
+}
+
 .link
 {
     color: $link-color;
     text-decoration: none;
-
-    &:link
-    {
-        border-bottom: 1px dotted $gray-regular;
-    }
+    border-bottom: 1px solid $gray-lightest;
+    box-shadow: 0 -.25em 0 $gray-lightest inset;
 
     &:visited
     {
-        color: $gray-regular;
-        border-bottom-color: $gray-regular;
+        color: $gray-regular !important;
     }
 
     html:not(.touch) &:hover
     {
         color: $link-color;
-        border-bottom-color: $body-text-color;
+        border-bottom: 1px solid $highlight-blue;
+        box-shadow: 0 -.25em 0 $highlight-blue inset;
     }
 
     &:active
@@ -2179,8 +2176,6 @@
     &.external
     {
         color: inherit !important;
-        border-bottom: 1px solid $gray-lightest !important;
-        box-shadow: 0 -.25em 0 $gray-lightest inset !important;
 
         html:not(.touch) &:hover
         {
@@ -2294,6 +2289,21 @@
             }
         }
 
+        &.end
+        {
+            float: right;
+
+            [dir=rtl] &
+            {
+                float: left;
+            }
+        }
+
+        &.expand
+        {
+            width: 100% !important;
+        }
+
         .button,
         .drop
         {
@@ -2334,21 +2344,6 @@
         {
             margin: 0 !important;
             padding: 0 1px;
-
-            &.end
-            {
-                float: right;
-
-                [dir=rtl] &
-                {
-                    float: left;
-                }
-
-                &.full
-                {
-                    width: 100%;
-                }
-            }
         }
     }
 
@@ -2629,6 +2624,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover,
 .form *:disabled + .text,
 .form *:disabled + .switch
 {
+    color: $gray-regular !important;
     cursor: not-allowed !important;
     background-image: url('../img/bg-disabled.png') !important;
 }

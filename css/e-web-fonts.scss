@@ -5,11 +5,11 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic|Roboto+Condensed:400,700|Amiri:400italic,700italic,400,700&subset=arabic,latin);
 
 @font-face {
-    src:url('../fonts/icomoon.eot?-t27z9g');
-    src:url('../fonts/icomoon.eot?#iefix-t27z9g') format('embedded-opentype'),
-        url('../fonts/icomoon.ttf?-t27z9g') format('truetype'),
-        url('../fonts/icomoon.woff?-t27z9g') format('woff'),
-        url('../fonts/icomoon.svg?-t27z9g#icomoon') format('svg');
+    src:url('../fonts/icomoon.eot?-o9qf4o');
+    src:url('../fonts/icomoon.eot?#iefix-o9qf4o') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?-o9qf4o') format('truetype'),
+        url('../fonts/icomoon.woff?-o9qf4o') format('woff'),
+        url('../fonts/icomoon.svg?-o9qf4o#icomoon') format('svg');
 
     @include font(icon,regular);
 }
@@ -45,11 +45,23 @@
 .icon-settings:before {
     content: "\e61e";
 }
+.icon-spellcheck:before {
+    content: "\e611";
+}
 .icon-wallet-giftcard:before {
     content: "\e623";
 }
 .icon-mic:before {
     content: "\e603";
+}
+.icon-my-library-books:before {
+    content: "\e61c";
+}
+.icon-play-arrow:before {
+    content: "\e622";
+}
+.icon-video-collection:before {
+    content: "\e627";
 }
 .icon-call-made:before {
     content: "\e600";
@@ -110,6 +122,12 @@
 }
 .icon-close:before {
     content: "\e60d";
+}
+.icon-more-horiz:before {
+    content: "\e628";
+}
+.icon-more-vert:before {
+    content: "\e629";
 }
 .icon-do-not-disturb:before {
     content: "\e60e";

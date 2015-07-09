@@ -140,14 +140,58 @@
 {
     display: inline-block;
     position: relative;
-    top: -2px;
-    padding: 2px .4em;
-    color: $body-text-color;
-    line-height: 1;
+    padding: 0 .3em;
+    color: inherit;
     text-transform: uppercase;
     white-space: nowrap;
     vertical-align: middle;
     font-size: .7em;
+    border: 1px solid;
     border-radius: $border-radius;
-    box-shadow: $input-border;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    .duration
+    {
+        top: -.1em;
+    }
+}
+
+.hero-heading
+{
+    padding: $row-spacing ($gutter/2);
+    text-align: center;
+    border-bottom: $light-divider;
+
+    &.filled
+    {
+        position: relative;
+        padding: $row-spacing*6 ($gutter/2) $row-spacing ($gutter/2);
+        color: white;
+
+        @include background-size(cover);
+
+        &:before
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+
+            @include background(linear-gradient(transparent, black) top);
+        }
+    }
+
+    .text
+    {
+        position: relative;
+    }
 }

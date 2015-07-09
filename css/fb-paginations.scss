@@ -5,15 +5,21 @@
 .pagination
 {
     margin: 0;
-    padding: 0 1px;
+    padding: 1px 0 0 1px;
 
     @include clearfix;
+
+    [dir=rtl] &
+    {
+        padding: 1px 1px 0 0;
+    }
 
     > *
     {
         float: left;
         height: 30px;
         height: 3rem;
+        margin-top: -1px;
         margin-left: -1px;
         line-height: 30px;
         line-height: 3rem;
@@ -25,7 +31,7 @@
 
         @include bp(small)
         {
-            padding: 0 .5em;
+            padding: 0 .8em;
         }
 
         @include bp(desktop)
@@ -45,10 +51,6 @@
             background-color: $hover-bg-color;
 
             @include transition(background-color $timing);
-        }
-
-        & + *
-        {
         }
 
         &:first-of-type
