@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.content
+{
+    overflow-x: hidden;
+    padding-bottom: $row-spacing*4;
+}
+
+.section
+{
+    @include bp(small)
+    {
+        margin-top: $row-spacing*2.5;
+        margin-bottom: $row-spacing*2.5;
+    }
+
+    @include bp(medium)
+    {
+        margin-top: $row-spacing*3;
+        margin-bottom: $row-spacing*3;
+    }
+
+    @include bp(large)
+    {
+        margin-top: $row-spacing*3.5;
+        margin-bottom: $row-spacing*3.5;
+    }
+}
+
+.golden-side
+{
+    @include bp(desktop)
+    {
+        width: $golden-side-width;
+    }
+
+    &.double
+    {
+        @include bp(desktop)
+        {
+            width: ($golden-side-width*2);
+        }
+    }
+}
+
+.golden-main
+{
+    @include bp(desktop)
+    {
+        width: $golden-main-width;
+    }
+
+    &.plus
+    {
+        @include bp(desktop)
+        {
+            width: ($golden-main-width + $golden-side-width);
+        }
+    }
+}
+
+.column.sidebar,
+.columns.sidebar
+{
+    @include bp(small)
+    {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    &.fixed
+    {
+        @include bp(desktop)
+        {
+            position: fixed;
+            height: 100%;
+            padding-right: ($gutter/2);
+            padding-left: 0;
+            
+            @include transform(translate(0%,0%));
+
+            [dir=rtl] &
+            {
+                left: auto;
+                right: 0;
+                padding-right: 0;
+                padding-left: ($gutter/2);
+            }
+        }
+
+        .side-nav
+        {
+            @include bp(desktop)
+            {
+                height: 100%;
+
+                @include vertical-scroll;
+            }
+        }
+    }
+
+    [dir=rtl] & + .column,
+    [dir=rtl] & + .columns
+    {
+        float: left;
+    }
+}
+
+.column.golden-side,
+.columns.golden-side
+{
+    @include bp(medium)
+    {
+        width: 320px;
+        width: 32rem;
+
+        & + .golden-main
+        {
+            width: calc(100% - 320px);
+            width: calc(100% - 32rem);
+        }
+    }
+}
+
+.block
+{
+    display: block;
+    clear: both;
+    margin: $row-spacing auto;
+    
+    &.double
+    {
+        margin: ($row-spacing*2) auto;
+    }
+}

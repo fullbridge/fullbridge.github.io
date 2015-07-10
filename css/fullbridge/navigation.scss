@@ -2,53 +2,6 @@
    Navigation
    ========================================================================== */
 
-.column.sidebar,
-.columns.sidebar
-{
-    @include bp(small)
-    {
-        padding-right: 0;
-        padding-left: 0;
-    }
-
-    &.fixed
-    {
-        @include bp(desktop)
-        {
-            position: fixed;
-            height: 100%;
-            padding-right: ($gutter/2);
-            padding-left: 0;
-            
-            @include transform(translate(0%,0%));
-
-            [dir=rtl] &
-            {
-                left: auto;
-                right: 0;
-                padding-right: 0;
-                padding-left: ($gutter/2);
-            }
-        }
-
-        .side-nav
-        {
-            @include bp(desktop)
-            {
-                height: 100%;
-
-                @include vertical-scroll;
-            }
-        }
-    }
-
-    [dir=rtl] & + .column,
-    [dir=rtl] & + .columns
-    {
-        float: left;
-    }
-}
-
 .side-nav
 {
     background-color: $hover-bg-color;
@@ -76,12 +29,12 @@
 
         @include bp(small)
         {
-            padding-left: 2.5em;
+            padding-left: 3.8em;
             cursor: pointer;
 
             [dir=rtl] &
             {
-                padding-right: 2.5em;
+                padding-right: 3.8em;
                 padding-left: 0;
             }
         }
@@ -89,11 +42,16 @@
         &:before
         {
             position: absolute;
+            top: .4em;
             left: ($gutter/2);
-            color: $link-color;
+            width: 2em;
+            height: 2em;
+            color: $heading-color;
+            line-height: 2;
+            text-align: center;
+            background-color: $hover-bg-color;
 
             @include font(icon,regular);
-            @include center(y);
 
             [dir=rtl] &
             {
@@ -111,7 +69,6 @@
         {
             @include bp(small)
             {
-                color: $heading-color;
                 content: '\e60d';
             }
         }
@@ -158,9 +115,14 @@
                 padding: 0;
                 line-height: 1.2;
                 
-                @include bp(desktop)
+                @include bp(medium)
                 {
                     font-size: .9em;
+                }
+                
+                @include bp(large)
+                {
+                    font-size: .85em;
                 }
 
                 &.divider
@@ -235,6 +197,13 @@
 
                 a
                 {
+                    .duration
+                    {
+                        position: absolute;
+                        top: 1.2em;
+                        right: 1em;
+                    }
+
                     &:before
                     {
                         display: block;
@@ -320,11 +289,11 @@
                     {
                         a
                         {
-                            padding: $row-spacing 1em $row-spacing 3.3em;
+                            padding: $row-spacing 4em $row-spacing 3.3em;
 
                             [dir=rtl] &
                             {
-                                padding: $row-spacing 3.3em $row-spacing 1em;
+                                padding: $row-spacing 3.3em $row-spacing 4em;
                             }
 
                             &:after
@@ -384,7 +353,7 @@
 
 .secondary-side-nav
 {
-    @include bp(desktop)
+    @include bp($min: 921px)
     {
         position: absolute;
         z-index: 1;
@@ -392,7 +361,7 @@
 
     &.fixed
     {
-        @include bp(desktop)
+        @include bp($min: 921px)
         {
             position: fixed;
         }
@@ -400,7 +369,7 @@
 
     & + .article
     {
-        @include bp(desktop)
+        @include bp($min: 921px)
         {
             margin-left: $menu-bar-height*2;
 
@@ -414,12 +383,12 @@
 
     nav
     {
-        @include bp(small)
+        @include bp($max: 920px)
         {
             margin: ($row-spacing/2) .5em;
         }
 
-        @include bp(desktop)
+        @include bp($min: 921px)
         {
             margin: $row-spacing*2 ($gutter/2);
         }
@@ -429,7 +398,7 @@
             margin: 0;
             padding: 0;
 
-            @include bp(small)
+            @include bp($max: 920px)
             {
                 text-align: center;
             }
@@ -439,13 +408,13 @@
                 position: relative;
                 padding: 0;
 
-                @include bp(small)
+                @include bp($max: 920px)
                 {
                     display: inline-block;
                     margin: ($row-spacing/2) calc(.5em - 3px);
                 }
 
-                @include bp(desktop)
+                @include bp($min: 921px)
                 {
                     margin: 2em 0;
                 }
@@ -456,7 +425,7 @@
                     content: '';
                     background-color: $gray-lightest;
 
-                    @include bp(small)
+                    @include bp($max: 920px)
                     {
                         left: -1em;
                         width: 1em;
@@ -472,7 +441,7 @@
                         }
                     }
 
-                    @include bp(desktop)
+                    @include bp($min: 921px)
                     {
                         top: -2em;
                         width: 4px;
@@ -484,7 +453,7 @@
 
                 &:after
                 {
-                    @include bp(desktop)
+                    @include bp($min: 921px)
                     {
                         position: absolute;
                         top: -.5em;
@@ -509,13 +478,13 @@
                     border-radius: 100em;
                     background-color: $gray-lightest;
 
-                    @include bp(small)
+                    @include bp($max: 920px)
                     {
                         width: 1.5em;
                         height: 1.5em;
                     }
 
-                    @include bp(desktop)
+                    @include bp($min: 921px)
                     {
                         width: $menu-bar-height;
                         height: $menu-bar-height;
@@ -524,12 +493,12 @@
                     [class^="icon-"], 
                     [class*=" icon-"]
                     {
-                        @include bp(small)
+                        @include bp($max: 920px)
                         {
                             display: none;
                         }
 
-                        @include bp(desktop)
+                        @include bp($min: 921px)
                         {
                             position: absolute;
 
@@ -553,7 +522,7 @@
 
                     &:after
                     {
-                        @include bp(desktop)
+                        @include bp($min: 921px)
                         {
                             color: $background-color;
                             content: '\e60c';
@@ -579,7 +548,7 @@
 
                     &:after
                     {
-                        @include bp(desktop)
+                        @include bp($min: 921px)
                         {
                             color: $heading-color;
                             content: '\e60b';
@@ -604,7 +573,7 @@
 
                     &:after
                     {
-                        @include bp(desktop)
+                        @include bp($min: 921px)
                         {
                             color: $gray-regular;
                             content: '\e601';
@@ -616,7 +585,7 @@
 
                 &:first-of-type
                 {
-                    @include bp(desktop)
+                    @include bp($min: 921px)
                     {
                         margin-top: 0;
                     }
@@ -635,7 +604,6 @@
 {
     position: relative;
     width: 100%;
-    height: $menu-bar-height;
     margin: 0;
     padding: 0;
     color: white;
@@ -1265,43 +1233,38 @@
     &.fixed
     {
         position: fixed;
-
-        & + .content
-        {
-            padding-top: $menu-bar-height;
-        }
-
-        &.participant + .content
-        {
-            padding-top: ($menu-bar-height + 1.6em);
-
-            .column.sidebar,
-            .columns.sidebar
-            {
-                &.fixed
-                {
-                    @include bp(desktop)
-                    {
-                        height: calc(100% - 4.6em);
-                    }
-                }
-            }
-        }
     }
 
     & + .content
     {
-        .column.sidebar,
-        .columns.sidebar
+        .sidebar.fixed
         {
-            &.fixed
+            @include bp(desktop)
             {
-                @include bp(desktop)
-                {
-                    height: calc(100% - 3em);
-                }
+                height: calc(100% - 3em);
             }
         }
+    }
+
+    &.with-progress + .content
+    {
+        .sidebar.fixed
+        {
+            @include bp(desktop)
+            {
+                height: calc(100% - 4.6em);
+            }
+        }
+    }
+
+    &.fixed + .content
+    {
+        padding-top: $menu-bar-height;
+    }
+
+    &.with-progress.fixed + .content
+    {
+        padding-top: ($menu-bar-height + 1.6em);
     }
 }
 

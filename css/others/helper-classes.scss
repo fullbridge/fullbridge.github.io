@@ -2,6 +2,15 @@
    Helper classes
    ========================================================================== */
 
+.placeholder
+{
+    padding: 4em 0;
+    color: $gray-light;
+    text-align: center;
+    font-weight: bold;
+    background-color: $gray-lighter;
+}
+
 .ir {
     background-color: transparent;
     border: 0;

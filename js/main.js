@@ -1,7 +1,7 @@
 // Hide subnav on scroll down, show on scroll up (mobile needs improvement, it only functions when it completely stops scrolling, need re-factoring before production).
 
 $(function(){
-    var nav = $(".subnav"),
+    var nav = $(".subnav.fixed"),
         state = "down", 
         lastScrollTop = 0, delta = 200;
 

@@ -7,26 +7,29 @@
 @import "_variables";
 @import "_mixins";
 
-/* Essentials */
-@import "e-web-fonts";
-@import "e-normalize";
-@import "e-base";
+/* Essential */
+@import "essential/web-fonts";
+@import "essential/normalize";
+@import "essential/base";
 
-/* Add-ons */
-@import "foundation-grid";
-@import "foundation-responsive-tables";
-@import "fb-article-styles";
-@import "fb-navigation";
-@import "fb-forms-buttons";
-@import "fb-alerts";
-@import "fb-tabs";
-@import "fb-accordions";
-@import "fb-modals";
-@import "fb-breadcrumbs";
-@import "fb-paginations";
-@import "fb-timeline";
-@import "fb-animations"; /* import this last */
+/* Foundation */
+@import "foundation/grid";
+@import "foundation/responsive-tables";
+
+/* Fullbridge customized */
+@import "fullbridge/article-styles";
+@import "fullbridge/navigation";
+@import "fullbridge/forms-buttons";
+@import "fullbridge/alerts";
+@import "fullbridge/tabs";
+@import "fullbridge/accordions";
+@import "fullbridge/modals";
+@import "fullbridge/breadcrumbs";
+@import "fullbridge/paginations";
+@import "fullbridge/timeline";
+@import "fullbridge/layout";
+@import "fullbridge/animations"; /* import this last */
 
 /* Others */
-@import "o-helper-classes";
-@import "o-print-styles";
+@import "others/helper-classes";
+@import "others/print-styles";
