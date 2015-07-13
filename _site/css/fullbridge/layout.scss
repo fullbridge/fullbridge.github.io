@@ -84,7 +84,15 @@
         {
             @include bp(desktop)
             {
-                height: calc(100% - 3em);
+                height: calc(100% - #{$menu-bar-height});
+            }
+        }
+
+        .sidebar.fixed.scrolled
+        {
+            @include bp(small)
+            {
+                @include transform(translateY(-$menu-bar-height));
             }
         }
     }
@@ -95,7 +103,15 @@
         {
             @include bp(desktop)
             {
-                height: calc(100% - 4.6em);
+                height: calc(100% - 1.6em - #{$menu-bar-height});
+            }
+        }
+
+        .sidebar.fixed.scrolled
+        {
+            @include bp(small)
+            {
+                @include transform(translateY((-1.6em - $menu-bar-height)));
             }
         }
     }
@@ -122,7 +138,7 @@
             @include bp(desktop)
             {
                 top: auto;
-                height: calc(100% - 3em);
+                height: calc(100% - #{$menu-bar-height});
             }
         }
     }
@@ -136,7 +152,7 @@
             @include bp(desktop)
             {
                 top: auto;
-                height: calc(100% - 4.6em);
+                height: calc(100% - 1.6em - #{$menu-bar-height});
             }
         }
     }
@@ -210,6 +226,16 @@
 
                 @include vertical-scroll;
             }
+        }
+    }
+
+    &.scrolled
+    {
+        @include bp(small)
+        {
+            position: fixed;
+            width: 100%;
+            z-index: ($modal-z - 1);
         }
     }
 }

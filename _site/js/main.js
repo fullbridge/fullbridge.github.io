@@ -27,6 +27,18 @@ $(function(){
     });
 });
 
+// Maximize sidebar when page is scrolled
+
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 100) {
+        $(".sidebar.fixed").addClass("scrolled");
+    } else {
+        $(".sidebar.fixed").removeClass("scrolled");
+    }
+});
+
 // Open split buttons and tooltips (doesn't always work on mobile, something is delaying the action for anchor and button elements, need re-factoring before production).
 
 $(".drop, .tooltip").children(".link, .button, .tip").click(function(e) {
@@ -52,6 +64,12 @@ $(document).mouseup(function (e)
     }
 });
 
+// Close reveal modals
+
+$(".reveal-modal, .overlay").find(".close").click(function(e) {
+    $(".reveal-modal, .overlay").removeClass("open")
+})
+
 // Form field validates after focus once
 
 $(':required').on('blur keydown', function() {
@@ -72,16 +90,24 @@ $(document).ready(function() {
     });
 });
 
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
+// truncate long text
+var boxContentFullText = [];
+var boxContentCutoffLength = 80;
 
-    if (scroll >= 100) {
-        $(".sidebar.fixed").addClass("scrolled");
-    } else {
-        $(".sidebar.fixed").removeClass("scrolled");
-    }
+
+function displayFullText(index) {
+       $(".truncate").html(boxContentFullText[index]);
+}
+
+$(document).ready(function() {
+       $.each($(".truncate"), function(index, el){
+               current = $(el);
+               if (current.html().length >  boxContentCutoffLength) {
+                       boxContentFullText[index] = current.html();
+                       current.html(current.html().substr(0,boxContentCutoffLength-1) + "&hellip; <small class='nowrap'><a href='javascript:displayFullText(" + index + ")';>show</a></small class='nowrap'>");
+               }
+       });
 });
-
 // This makes the .tabs work in IE8 and below, add in HTML <head>:
 // <!--[if lt IE 9]><script>window.ltIE9=true</script><![endif]-->
 /* if(window.ltIE9) {

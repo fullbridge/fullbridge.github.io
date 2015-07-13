@@ -567,14 +567,16 @@
                                         </div>
                                         <div class="block">
                                             <ul class="button-group">
-                                                <li><a href="javascript:" class="button primary">Save</a></li>
+                                                <li><a href="javascript:" class="button primary"
+                                                    data-anijs="if: click, do: $addClass open, to: #modal-saved;">Save</a></li>
                                                 <li><a href="javascript:" class="button primary">&laquo;</a></li>
-                                                <li><a href="javascript:" class="button primary">&raquo;</a></li>
+                                                <li><a href="javascript:" class="button primary"
+                                                    data-anijs="if: click, do: $addClass open, to: #modal-warning;">&raquo;</a></li>
                                                 <li class="end">
                                                     <a href="javascript:" class="button primary"
                                                         data-anijs="if: click, do: $removeClass primary;
                                                                     if: click, do: $addClass success;
-                                                                    if: click, do: $addClass open, to: #modal-1;"><span class="icon-check"></span> Complete</a>
+                                                                    if: click, do: $addClass open, to: #modal-success;"><span class="icon-check"></span> Complete</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -588,7 +590,7 @@
         </div>
 
         <!-- Modals -->
-        <div id="modal-1" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+        <div id="modal-success" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
             <div class="row">
                 <div class="medium-6 small-12 small-centered column">
                     <div class="reveal alert-box success">
@@ -600,14 +602,36 @@
                         </p>
                         <ul class="actions">
                             <li>
-                                <a href="javascript:"
-                                    data-anijs="if: click, do: $removeClass open, to: #modal-1;">Continue now</a>
+                                <a href="javascript:">Continue</a>
                             </li>
                         </ul>
-                        <a href="javascript:" class="close"
-                            data-anijs="if: click, do: $removeClass open, to: #modal-1;"></a>
+                        <a href="javascript:" class="close"></a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div id="modal-warning" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="medium-6 small-12 small-centered column">
+                    <div class="reveal alert-box warning">
+                        <header>
+                            <span class="icon-info"></span> Sorry, not yet.
+                        </header>
+                        <p>
+                            You have to finish the exercise before moving on.
+                        </p>
+                        <a href="javascript:" class="close"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-saved" class="overlay top flush-right" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="alert-box success">
+                <header>
+                    <span class="icon-check"></span> Exercise progress saved!
+                </header>
+                <a href="javascript:" class="close"
+                    data-anijs="if: click, do: $removeClass open, to: #modal-4;"></a>
             </div>
         </div>
 
