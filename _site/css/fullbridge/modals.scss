@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Modals
+   ========================================================================== */
+
+.reveal-modal,
+.overlay
+{
+    position: fixed;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: $modal-z;
+
+    @include opacity(0);
+}
+
+.reveal-modal
+{
+    top: 0;
+    left: 0;
+    background-color: $background-color;
+
+    &.open
+    {
+        width: 100%;
+        height: 100%;
+        padding: $gutter 0;
+        background: url('../img/bg-disabled.png') center center repeat rgba(black,.3);
+
+        @include opacity(1);
+        @include vertical-scroll;
+        @include transition(padding ease-out $timing, background ease-out $timing);
+    }
+
+    .reveal
+    {
+        position: relative;
+
+        &.basic
+        {
+            padding: $menu-bar-height ($gutter/2) 0 ($gutter/2);
+            background-color: $background-color;
+
+            .reveal-label
+            {
+                position: absolute;
+                top: 0;
+                right: ($menu-bar-height/1.1);
+                left: ($gutter/2/1.1);
+                font-size: 1.1em;
+
+                @include font(heading,bold);
+                @include truncate;
+
+                [dir=rtl] &
+                {
+                    right: ($gutter/2/1.1);
+                    left: ($menu-bar-height/1.1);
+                }
+
+                & + *
+                {
+                    border-top: $transparent-dark-divider;
+                }
+            }
+
+            .scrollable
+            {
+                @include visible-scrollbar;
+                @include vertical-scroll;
+
+                margin: 0 (-$gutter/2) !important;
+                padding: 0 ($gutter/2);
+
+                @include bp(small)
+                {
+                    max-height: 280px;
+                    max-height: 28rem;
+                }
+
+                @include bp(desktop)
+                {
+                    max-height: 480px;
+                    max-height: 48rem;
+                }
+
+                [dir=rtl] &
+                {
+                    margin: 0 (-$gutter/2) 0 (-$menu-bar-height) !important;
+                }
+
+                > *:first-child
+                {
+                    margin-top: 0;
+                }
+            }
+
+            .close
+            {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: $menu-bar-height;
+                height: $menu-bar-height;
+                color: $link-color;
+                line-height: 3;
+                text-align: center;
+                text-decoration: none;
+                font-size: 1em;
+
+                @include font(icon,regular);
+
+                [dir=rtl] &
+                {
+                    right: auto;
+                    left: 0;
+                }
+
+                &:before
+                {
+                    content: '\e60d';
+                }
+
+                &:focus
+                {
+                    outline: none;
+                    box-shadow: $input-focus-border;
+                }
+            }
+        }
+    }
+}
+
+.overlay
+{
+    > *
+    {
+        margin: 0;
+    }
+
+    &.center
+    {
+        top: 45%;
+
+        &.open
+        {
+            @include center(xy);
+            @include transition(top ease-out $timing);
+        }
+    }
+
+    &.top
+    {
+        @include bp(small)
+        {
+            top: -1em;
+        }
+
+        @include bp(desktop)
+        {
+            top: ($gutter/2);
+        }
+
+        &.open
+        {
+            @include bp(small)
+            {
+                top: 0;
+
+                @include transition(top $timing);
+            }
+        }
+    }
+
+    &.flush-right
+    {
+        right: 0;
+
+        &.open
+        {
+            @include bp(desktop)
+            {
+                right: ($gutter/2);
+
+                @include transition(right $timing);
+            }
+        }
+    }
+
+    &.bottom
+    {
+        @include bp(small)
+        {
+            bottom: -1em;
+        }
+
+        @include bp(desktop)
+        {
+            bottom: ($gutter/2);
+        }
+
+        &.open
+        {
+            @include bp(small)
+            {
+                bottom: 0;
+
+                @include transition(bottom $timing);
+            }
+        }
+    }
+
+    &.flush-left
+    {
+        left: 0;
+
+        &.open
+        {
+            @include bp(desktop)
+            {
+                left: ($gutter/2);
+
+                @include transition(left $timing);
+            }
+        }
+    }
+
+    &.open
+    {
+        height: auto;
+        overflow: visible;
+
+        @include opacity(1);
+
+        @include bp(small)
+        {
+            width: 100%;
+        }
+
+        @include bp(desktop)
+        {
+            width: auto;
+            max-width: 600px;
+            max-width: 60rem;
+        }
+    }
+}

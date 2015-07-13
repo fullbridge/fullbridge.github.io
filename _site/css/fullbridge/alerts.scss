@@ -1,0 +1,311 @@
+/* ==========================================================================
+   Alerts
+   ========================================================================== */
+
+.alert-box
+{
+    position: relative;
+    min-height: $menu-bar-height;
+    margin: $row-spacing auto;
+    padding: 1px $menu-bar-height 1px ($gutter/2);
+    color: $heading-color;
+    border-radius: $border-radius;
+    
+    [dir=rtl] &
+    {
+        padding: 1px ($gutter/2) 1px $menu-bar-height;
+    }
+
+    header
+    {
+        font-size: 1.1em;
+
+        @include font(heading,bold);
+    }
+
+    .close
+    {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: $menu-bar-height;
+        height: $menu-bar-height;
+        color: inherit;
+        line-height: 3;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1em;
+
+        @include font(icon,regular);
+
+        [dir=rtl] &
+        {
+            right: auto;
+            left: 0;
+        }
+
+        &:before
+        {
+            content: '\e60d';
+        }
+
+        &:focus
+        {
+            outline: none;
+            box-shadow: $input-focus-border;
+        }
+    }
+
+    .actions
+    {
+        margin-right: -2em;
+        margin-bottom: 0;
+        padding: 0;
+        list-style: none;
+
+        @include clearfix;
+
+        [dir=rtl] &
+        {
+            margin-right: 0;
+            margin-left: -2em;
+        }
+
+        li
+        {
+            float: left;
+            height: $menu-bar-height;
+            margin: 0 .8em 0 0;
+            padding: 1.1em 0;
+            color: inherit;
+
+            [dir=rtl] &
+            {
+                float: right;
+                margin: 0 0 0 .8em;
+            }
+
+            &.more
+            {
+                float: right;
+                margin: 0;
+
+                [dir=rtl] &
+                {
+                    float: left;
+                    margin: 0;
+                }
+            }
+        }
+
+        a,
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"]
+        {
+            display: block;
+            padding: 0;
+            color: inherit;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+            font-size: .8em;
+            border: none;
+            border-bottom: 1px dotted;
+            background-color: transparent;
+
+            &:disabled
+            {
+                @include opacity(.5);
+            }
+
+            &:focus
+            {
+                outline: none;
+                box-shadow: $input-focus-border;
+            }
+        }
+
+        &.stack
+        {
+            li
+            {
+                float: none;
+                height: auto;
+                margin: $row-spacing 0;
+                padding: 0;
+
+                [dir=rtl] &
+                {
+                    float: none;
+                    margin: $row-spacing 0;
+                }
+
+                a
+                {
+                    display: inline-block;
+                    vertical-align: top;
+                    white-space: normal;
+                }
+            }
+        }
+
+        &.small-stack
+        {
+            @include bp(small)
+            {
+                li
+                {
+                    float: none;
+                    height: auto;
+                    margin: $row-spacing 0;
+                    padding: 0;
+
+                    [dir=rtl] &
+                    {
+                        float: none;
+                        margin: $row-spacing 0;
+                    }
+
+                    a
+                    {
+                        display: inline-block;
+                        vertical-align: top;
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+    }
+
+    &.with-scrollbar
+    {
+        padding-top: $menu-bar-height;
+        padding-bottom: $menu-bar-height;
+
+        [dir=rtl] &
+        {
+            padding-top: $menu-bar-height;
+            padding-bottom: $menu-bar-height;
+        }
+
+        header
+        {
+            position: absolute;
+            top: 0;
+            right: ($menu-bar-height/1.1);
+            left: ($gutter/2/1.1);
+
+            @include truncate;
+
+            [dir=rtl] &
+            {
+                right: ($gutter/2/1.1);
+                left: ($menu-bar-height/1.1);
+            }
+        }
+
+        .scrollable
+        {
+            @include visible-scrollbar;
+            @include vertical-scroll;
+
+            max-height: 13em;
+            margin: 0 (-$menu-bar-height) 0 (-$gutter/2) !important;
+            padding: 0 ($gutter/2);
+            border-top: $transparent-dark-divider;
+            border-bottom: $transparent-dark-divider;
+
+            [dir=rtl] &
+            {
+                margin: 0 (-$gutter/2) 0 (-$menu-bar-height) !important;
+            }
+
+            > *:first-child
+            {
+                margin-top: 0;
+            }
+        }
+
+        .actions
+        {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0 ($gutter/2);
+
+            [dir=rtl] &
+            {
+                right: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &.success
+    {
+        color: white;
+    }
+
+    &.info
+    {
+        background-color: $highlight-blue;
+    }
+
+    &.success
+    {
+        background-color: $green-success;
+    }
+
+    &.warning
+    {
+        background-color: $yellow-alert;
+    }
+
+    &.standard
+    {
+        background-color: $gray-lightest;
+
+        a,
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"]
+        {
+            color: $link-color;
+        }
+    }
+}
+
+.alert-bubble
+{
+    position: relative;
+    margin: $row-spacing 0;
+    padding: 1px ($gutter/2);
+    color: $heading-color;
+    border-radius: $border-radius;
+    background-color: $yellow-alert;
+
+    &:before
+    {
+        position: absolute;
+
+        @include triangle-up(.5em, .5em, $yellow-alert);
+        @include transform(translateY(-100%));
+    }
+
+    > *
+    {
+        font-size: .8em;
+    }
+
+    a
+    {
+        color: $heading-color;
+        font-weight: bold;
+    }
+}

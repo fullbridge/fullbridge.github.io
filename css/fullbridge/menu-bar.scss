@@ -1,0 +1,743 @@
+/* ==========================================================================
+   Menu-bar
+   ========================================================================== */
+
+.menu-bar
+{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: rgba($secondary-color,.9);
+    z-index: ($modal-z - 1);
+    box-shadow: 0 0 2px white;
+
+    @include transform(translate(0%,0%));
+    @include clearfix;
+
+    @include button-gradient(
+        $secondary-button-color,
+        $secondary-button-color,
+        darken($secondary-button-color,3%)
+    );
+
+    .button
+    {
+        margin: 0;
+    }
+
+    .logo
+    {
+        float: left;
+        width: $menu-bar-height;
+        height: $menu-bar-height;
+        border-right: 2px solid $secondary-color;
+
+        [dir=rtl] &
+        {
+            float: right;
+            border-right: none;
+            border-left: 2px solid $secondary-color;
+        }
+
+        img
+        {
+            display: block;
+            width: $menu-bar-height;
+            height: $menu-bar-height;
+        }
+    }
+
+    .counter
+    {
+        display: block;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        min-width: 1.5em;
+        max-width: 2em;
+        height: 1.5em;
+        padding: 0 2px;
+        color: $background-color;
+        line-height: 1.5;
+        text-align: center;
+        font-size: .6em;
+        font-weight: bold;
+        border-radius: 100em;
+        background-color: $tertiary-color;
+
+        @include truncate;
+
+        [dir=rtl] &
+        {
+            right: auto;
+            left: 1em;
+        }
+
+        &.follow
+        {
+            right: -.5em;
+
+            @include center(y);
+
+            [dir=rtl] &
+            {
+                right: auto;
+                left: -.5em;
+            }
+        }
+    }
+
+    .list
+    {
+        margin: 0;
+        padding: 1px;
+        list-style: none;
+
+        > li
+        {
+            margin: 0;
+            padding: 0;
+
+            @include clearfix;
+
+            & + li
+            {
+                border-top: $light-divider;
+            }
+
+            &.unread
+            {
+                .sender,
+                .action
+                {
+                    color: $heading-color;
+                    font-weight: bold;
+                }
+
+                .type
+                {
+                    &.warning,
+                    &.success
+                    {
+                        font-weight: bold;
+                        border: none;
+                    }
+
+                    &.warning
+                    {
+                        background-color: $yellow-alert;
+                    }
+
+                    &.success
+                    {
+                        color: white;
+                        background-color: $green-success;
+                    }
+                }
+            }
+
+            &.read
+            {
+                background-color: $gray-lightest;
+            }
+
+            > a
+            {
+                display: block;
+                position: relative;
+                margin: 0;
+                padding: $row-spacing ($gutter/2);
+                color: $body-text-color;
+                text-decoration: none;
+
+                html:not(.touch) &:hover
+                {
+                    background-color: $hover-bg-color;
+
+                    @include transition(background-color $timing);
+                }
+
+                > *
+                {
+                    font-size: .8em;
+                    white-space: normal;
+                }
+
+                &.see-all,
+                &.mark-all
+                {
+                    color: $link-color;
+
+                    html:not(.touch) &:hover
+                    {
+                        text-decoration: underline;
+                        background-color: transparent;
+                    }
+                }
+
+                &.see-all
+                {
+                    float: left;
+
+                    [dir=rtl] &
+                    {
+                        float: right;
+                    }
+                }
+
+                &.mark-all
+                {
+                    float: right;
+
+                    [dir=rtl] &
+                    {
+                        float: left;
+                    }
+                }
+
+                .sender,
+                .subject-line,
+                .message
+                {
+                    @include truncate;
+                }
+
+                .sender
+                {
+                    width: 75%;
+                    font-size: 1em;
+                }
+
+                .date
+                {
+                    position: absolute;
+                    top: 1em;
+                    right: 1.2em;
+                    color: $gray-regular;
+
+                    [dir=rtl] &
+                    {
+                        right: auto;
+                        left: 1.2em;
+                    }
+                }
+
+                .subject-line,
+                .message
+                {
+                    margin: .2em 0;
+                }
+
+                .action
+                {
+                    width: 75%;
+                }
+
+                .program-title
+                {
+                    color: $body-text-color;
+
+                    &.current
+                    {
+                        color: $heading-color;
+                        text-decoration: underline;
+                        font-weight: bold;
+
+                        &:before
+                        {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            width: .3em;
+                            content: '';
+                            background-color: $heading-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .admin-select,
+    .program-select
+    {
+        .button
+        {
+            @include bp(small)
+            {
+                padding: 0 .4em;
+            }
+        }
+    }
+
+    .admin-select
+    {
+        float: left;
+        height: $menu-bar-height;
+        background-color: $secondary-color;
+
+        .button
+        {
+            @include font(heading,regular);
+        }
+    }
+
+    .program-select
+    {
+        float: left;
+        height: $menu-bar-height;
+
+        @include bp(small)
+        {
+            max-width: calc(100% - 12.5em);
+        }
+
+        @include bp(desktop)
+        {
+            max-width: calc(100% - 30em);
+        }
+
+        [dir=rtl] &
+        {
+            float: right;
+        }
+
+        .button
+        {
+            max-width: 100%;
+
+            @include font(heading,regular);
+            @include truncate;
+        }
+
+        .drop
+        {
+            width: 100%;
+            height: $menu-bar-height;
+
+            .bubble
+            {
+                left: -2.4em;
+
+                @include bp(small)
+                {
+                    width: 30rem !important;
+                }
+
+                @include bp(desktop)
+                {
+                    width: 48rem !important;
+                }
+
+                [dir=rtl] &
+                {
+                    right: -2.4em;
+                    left: auto;
+                }
+
+                &:before,
+                &:after
+                {
+                    left: 3.4em;
+
+                    [dir=rtl] &
+                    {
+                        right: 3.4em;
+                        left: auto;
+                    }
+                }
+
+                .list > li > a
+                {
+                    white-space: normal;
+
+                    html:not(.touch) &:hover
+                    {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .utilities
+    {
+        float: right;
+        padding-left: 2px;
+        height: $menu-bar-height;
+        background-color: $secondary-color;
+
+        [dir=rtl] &
+        {
+            float: left;
+            padding-right: 2px;
+            padding-left: 0;
+        }
+
+        .messages,
+        .notifications,
+        .user-settings
+        {
+            .drop
+            {
+                @extend .drop.down;
+                @extend .drop.flush-right;
+
+                [dir=rtl] &
+                {
+                    @extend .drop.flush-left;
+                }
+
+                .bubble
+                {
+                    @include bp(small)
+                    {
+                        width: 30rem;
+                    }
+
+                    @include bp(desktop)
+                    {
+                        width: 48rem;
+                    }
+                }
+            }
+        }
+
+        .messages
+        {
+            .drop .bubble
+            {
+                right: -5.55em !important;
+
+                [dir=rtl] &
+                {
+                    right: auto !important;
+                    left: -5.55em !important;
+                }
+            }
+
+            .drop .bubble:before,
+            .drop .bubble:after
+            {
+                right: 6.65em !important;
+
+                [dir=rtl] &
+                {
+                    right: auto !important;
+                    left: 6.65em !important;
+                }
+            }
+        }
+
+        .notifications
+        {
+            .drop .bubble
+            {
+                right: -2.45em !important;
+
+                [dir=rtl] &
+                {
+                    right: auto !important;
+                    left: -2.45em !important;
+                }
+            }
+
+            .drop .bubble:before,
+            .drop .bubble:after
+            {
+                right: 3.55em !important;
+
+                [dir=rtl] &
+                {
+                    right: auto !important;
+                    left: 3.55em !important;
+                }
+            }
+        }
+
+        .user-settings
+        {
+            .drop .bubble
+            {
+                right: .7em !important;
+
+                [dir=rtl] &
+                {
+                    right: auto !important;
+                    left: .7em !important;
+                }
+            }
+
+            .drop .bubble:before,
+            .drop .bubble:after
+            {
+                right: .4em !important;
+
+                [dir=rtl] &
+                {
+                    right: auto !important;
+                    left: .4em !important;
+                }
+            }
+
+            .button
+            {
+                &:after
+                {
+                    line-height: 3;
+                    content: '\e606';
+                    vertical-align: top;
+
+                    @include font(icon,regular);
+
+                    @include bp(desktop)
+                    {
+                        margin-left: .2em;
+
+                        [dir=rtl] &
+                        {
+                            margin-right: .2em;
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                &.open:after
+                {
+                    content: '\e609';
+                }
+
+                &:after,
+                &.open:after
+                {
+                    @include bp(small)
+                    {
+                        content: '\e620';
+                    }
+                }
+
+                .profile-photo-edit
+                {
+                    display: inline-block;
+                    width: 1.5em;
+                    vertical-align: top;
+
+                    @include bp(small)
+                    {
+                        display: none;
+                    }
+
+                    .photo
+                    {
+                        width: 1.5em;
+                        height: 1.5em;
+                        margin: .75em 0;
+                        padding-bottom: 0;
+                    }
+                }
+
+                .name
+                {
+                    display: inline-block;
+                    max-width: 15em;
+                    margin-left: .5em;
+                    vertical-align: top;
+
+                    @include font(heading,regular);
+                    @include truncate;
+
+                    @include bp(small)
+                    {
+                        display: none;
+                    }
+
+                    [dir=rtl] &
+                    {
+                        margin-right: .5em;
+                        margin-left: 0;
+                    }
+                }
+            }
+
+            .mini-profile
+            {
+                padding: $row-spacing 0;
+                border-bottom: $light-divider;
+
+                @include clearfix;
+
+                .thumbnail
+                {
+                    float: left;
+                    width: $golden-side-width;
+                    padding: $row-spacing 0;
+
+                    [dir=rtl] &
+                    {
+                        float: right;
+                    }
+
+                    .profile-photo-edit
+                    {
+                        .photo
+                        {
+                            &:before,
+                            &:after
+                            {
+                                font-size: 2em;
+                            }
+                        }
+                    }
+                }
+
+                .description
+                {
+                    float: right;
+                    width: ($golden-main-width + $golden-side-width);
+                    padding: $row-spacing 0 $row-spacing ($gutter/2);
+
+                    [dir=rtl] &
+                    {
+                        float: left;
+                        padding: $row-spacing ($gutter/2) $row-spacing 0;
+                    }
+
+                    > *:first-child
+                    {
+                        margin-top: 0;
+                    }
+
+                    > *:last-child
+                    {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .involvements,
+                .email
+                {
+                    margin: .1em 0;
+                }
+
+                .email
+                {
+                    font-size: .8em;
+
+                    @include truncate;
+                }
+            }
+        }
+    }
+
+    &.fixed
+    {
+        position: fixed;
+    }
+}
+
+.type
+{
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    margin-right: .3em;
+    padding: 2px .5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    font-size: .6em;
+    font-weight: normal;
+    border: $light-divider;
+    border-radius: $border-radius;
+    background-color: white;
+
+    [dir=rtl] &
+    {
+        margin-right: 0;
+        margin-left: .3em;
+    }
+}
+
+.profile-photo-edit
+{
+    display: block;
+    position: relative;
+    line-height: 1;
+    cursor: pointer;
+
+    input[type="file"]
+    {
+        @extend %visuallyhidden;
+        @include opacity(0);
+    }
+
+    .photo
+    {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        border-radius: 100em;
+        border: $transparent-light-divider;
+        background-color: $secondary-color;
+
+        &:before,
+        &:after
+        {
+            position: absolute;
+            color: rgba(white,.5);
+            line-height: 1;
+            font-size: .8em;
+
+            @include font(icon,regular);
+            @include center(xy);
+        }
+
+        &:before
+        {
+            content: '\e612';
+            z-index: -1;
+        }
+
+        &:after
+        {
+            content: '\e620';
+        }
+
+        img
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 100em;
+            z-index: 1;
+        }
+
+        html:not(.touch) &:hover
+        {
+            border: 1px solid white;
+            background-color: rgba(black,.8);
+
+            &:before
+            {
+                color: white;
+                z-index: 2;
+            }
+
+            &:after
+            {
+                display: none;
+            }
+
+            img
+            {
+                @include opacity(.5);
+            }
+        }
+    }
+}

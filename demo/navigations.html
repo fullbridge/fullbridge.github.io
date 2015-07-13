@@ -1,57 +1,10 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+---
+title: Navigations
+direction: 
+---
+    {% include head.html %}
 
-        <!-- Mobile view styles -->
-        <meta name="HandheldFriendly" content="True"> 
-        <meta name="MobileOptimized" content="320"/> 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <meta http-equiv="cleartype" content="on">
-
-        <!-- SEO -->
-        <meta name="author" content="Fullbridge Tech">
-        <meta name="description" content="Living style guide of the Fullbridge platform.">
-        <meta property="og:title" content="Fullbridge Styleguide" />
-        <meta property="og:description" content="Living style guide of the Fullbrige platform." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="img/ios/h/touch-icon-ipad-retina.png" />
-        <meta property="og:url" content="http://fullbridge.com" />
-        <meta property="og:site_name" content="Fullbridge Styleguide" />
-        <title>Navigation</title>
-        <link rel="canonical" href="http://platform.fullbridge.com/styleguide">
-
-        <!-- CSS for the site -->
-        <link rel="stylesheet" href="css/main.css">
-
-        <!-- Thumbnail for social -->
-        <link rel="image_src" href="img/ios/h/touch-icon-ipad-retina.png" />
-
-        <!-- Touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ios/h/touch-icon-ipad-retina.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ios/h/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ios/m/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" href="img/ios/l/apple-touch-icon-precomposed.png">
-        <link rel="icon" href="img/favicon.ico">
-
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-        <div id="modal-ie" class="overlay center open" aria-labelledby="Modal" aria-hidden="true" role="dialog">
-            <div class="alert-box warning">
-                <p>
-                    You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-                </p>
-                <a href="javascript:" class="close"
-                    data-anijs="if: click, do: $removeClass open, to: #modal-ie;"></a>
-            </div>
-        </div>
-        <![endif]-->
+        {% include outdated-browser.html %}
 
         <main class="content">
             <div class="row">
@@ -61,7 +14,7 @@
                     <h5>Library</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="admin-select">
                                 <div class="drop down flush-left short">
                                     <span class="button secondary">
@@ -141,7 +94,7 @@
                     <h5>Programs</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="admin-select">
                                 <div class="drop down flush-left short">
                                     <span class="button secondary">
@@ -222,7 +175,7 @@
                     <h5>Users</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="admin-select">
                                 <div class="drop down flush-left short">
                                     <span class="button secondary">
@@ -300,7 +253,7 @@
                     <h5>Programs</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="admin-select">
                                 <div class="drop down flush-left short">
                                     <span class="button secondary">
@@ -380,7 +333,7 @@
                     <h5>Looking at a specific program</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="admin-select">
                                 <a href="javascript:" class="button secondary">
                                     <span class="icon-close"></span> Exit program
@@ -435,7 +388,7 @@
                     <h5>Program</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="program-select">
                                 <div class="drop down">
                                     <span class="button secondary">
@@ -445,7 +398,7 @@
                                         <ol class="list">
                                             <li>
                                                 <a href="javascript:" class="see-all">
-                                                    My programs <span class="counter">4</span>
+                                                    My programs <span class="counter follow">4</span>
                                                 </a>
                                                 <a href="javascript:" class="mark-all">
                                                     Browse more
@@ -484,7 +437,7 @@
                                                 <ol class="list">
                                                     <li>
                                                         <a href="javascript:" class="see-all">
-                                                            Messages <span class="counter">1</span>
+                                                            Messages <span class="counter follow">1</span>
                                                         </a>
                                                         <a href="javascript:" class="mark-all">
                                                             Mark all as read
@@ -541,7 +494,7 @@
                                                 <ol class="list">
                                                     <li>
                                                         <a href="javascript:" class="see-all">
-                                                            Notifications <span class="counter">2</span>
+                                                            Notifications <span class="counter follow">2</span>
                                                         </a>
                                                         <a href="javascript:" class="mark-all">
                                                             Mark all as read
@@ -623,7 +576,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="progress block">
+                            <div class="progress">
                                 <span class="meter success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">10% complete</span>
                             </div>
                         </nav>
@@ -656,7 +609,7 @@
                     <h5>Grades</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="program-select">
                                 <div class="drop down">
                                     <span class="button secondary">
@@ -666,7 +619,7 @@
                                         <ol class="list">
                                             <li>
                                                 <a href="javascript:" class="see-all">
-                                                    My programs <span class="counter">4</span>
+                                                    My programs <span class="counter follow">4</span>
                                                 </a>
                                                 <a href="javascript:" class="mark-all">
                                                     Browse more
@@ -705,7 +658,7 @@
                                                 <ol class="list">
                                                     <li>
                                                         <a href="javascript:" class="see-all">
-                                                            Messages <span class="counter">1</span>
+                                                            Messages <span class="counter follow">1</span>
                                                         </a>
                                                         <a href="javascript:" class="mark-all">
                                                             Mark all as read
@@ -762,7 +715,7 @@
                                                 <ol class="list">
                                                     <li>
                                                         <a href="javascript:" class="see-all">
-                                                            Notifications <span class="counter">2</span>
+                                                            Notifications <span class="counter follow">2</span>
                                                         </a>
                                                         <a href="javascript:" class="mark-all">
                                                             Mark all as read
@@ -844,7 +797,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="progress block">
+                            <div class="progress">
                                 <span class="meter success" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;">33% complete</span>
                             </div>
                         </nav>
@@ -867,6 +820,7 @@
                                 <ul class="secondary">
                                     <li class="current"><a href="javascript:">Exercises</a></li>
                                     <li><a href="javascript:">Competencies</a></li>
+                                    <li><a href="javascript:">Badges</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -875,7 +829,7 @@
                     <h5>Community</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="program-select">
                                 <div class="drop down">
                                     <span class="button secondary">
@@ -885,7 +839,7 @@
                                         <ol class="list">
                                             <li>
                                                 <a href="javascript:" class="see-all">
-                                                    My programs <span class="counter">4</span>
+                                                    My programs <span class="counter follow">4</span>
                                                 </a>
                                                 <a href="javascript:" class="mark-all">
                                                     Browse more
@@ -924,7 +878,7 @@
                                                 <ol class="list">
                                                     <li>
                                                         <a href="javascript:" class="see-all">
-                                                            Messages <span class="counter">1</span>
+                                                            Messages <span class="counter follow">1</span>
                                                         </a>
                                                         <a href="javascript:" class="mark-all">
                                                             Mark all as read
@@ -981,7 +935,7 @@
                                                 <ol class="list">
                                                     <li>
                                                         <a href="javascript:" class="see-all">
-                                                            Notifications <span class="counter">2</span>
+                                                            Notifications <span class="counter follow">2</span>
                                                         </a>
                                                         <a href="javascript:" class="mark-all">
                                                             Mark all as read
@@ -1063,7 +1017,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="progress block">
+                            <div class="progress">
                                 <span class="meter success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75% complete</span>
                             </div>
                         </nav>
@@ -1095,7 +1049,7 @@
                     <h5>Grades</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="program-select">
                                 <div class="drop down">
                                     <span class="button secondary">
@@ -1105,7 +1059,7 @@
                                         <ol class="list">
                                             <li>
                                                 <a href="javascript:" class="see-all">
-                                                    My programs <span class="counter">2</span>
+                                                    My programs <span class="counter follow">2</span>
                                                 </a>
                                                 <a href="javascript:" class="mark-all">
                                                     Browse more
@@ -1234,7 +1188,7 @@
                     <h5>Program</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="program-select">
                                 <div class="drop down">
                                     <span class="button secondary">
@@ -1244,7 +1198,7 @@
                                         <ol class="list">
                                             <li>
                                                 <a href="javascript:" class="see-all">
-                                                    My programs <span class="counter">2</span>
+                                                    My programs <span class="counter follow">2</span>
                                                 </a>
                                                 <a href="javascript:" class="mark-all">
                                                     Browse more
@@ -1374,7 +1328,7 @@
                     <h5>Community</h5>
                     <div class="block">
                         <nav class="menu-bar">
-                            <a href="javascript:" class="logo"><img src="img/logo-fb-transparent.png" alt="Fullbridge"></a>
+                            <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
                             <div class="program-select">
                                 <div class="drop down">
                                     <span class="button secondary">
@@ -1384,7 +1338,7 @@
                                         <ol class="list">
                                             <li>
                                                 <a href="javascript:" class="see-all">
-                                                    My programs <span class="counter">2</span>
+                                                    My programs <span class="counter follow">2</span>
                                                 </a>
                                                 <a href="javascript:" class="mark-all">
                                                     Browse more
@@ -1527,11 +1481,4 @@
             </fieldset>
         </div>-->
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-        <script src="http://anijs.github.io/lib/anijs0.8.0/anijs.js"></script>
-        <script src="http://anijs.github.io/lib/anijs0.8.0/helpers/dom/anijs-helper-dom.js"></script>
-        <script src="js/vendor/foundation-responsive-tables.js"></script>
-        <script src="js/main.js"></script>
-    </body>
-</html>
+    {% include bottom.html %}

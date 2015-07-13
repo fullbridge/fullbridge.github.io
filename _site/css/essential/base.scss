@@ -1,0 +1,102 @@
+/* ==========================================================================
+   HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea
+{
+    color: $body-text-color;
+}
+
+::-moz-selection
+{
+    background: $highlight-blue;
+    text-shadow: none;
+}
+
+::selection
+{
+    background: $highlight-blue;
+    text-shadow: none;
+}
+
+audio,
+canvas,
+img,
+video
+{
+    vertical-align: middle;
+}
+
+fieldset
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea
+{
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+*,
+*:before,
+*:after
+{ 
+    @include antialiased;
+    @include kerning;
+    @include border-box;
+}
+
+html.touch *,
+html.touch *:before,
+html.touch *:after
+{
+    text-rendering: optimizeSpeed;
+}
+
+html
+{
+    font-size: 10px;
+}
+
+body
+{
+    color: $body-text-color;
+    line-height: 1.4;
+    background-color: $background-color;
+
+    @include font(body, regular);
+
+    @include bp(small)
+    {
+        font-size: 15px;
+        font-size: 1.5rem;
+    }
+
+    @include bp(medium)
+    {
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+
+    @include bp(large)
+    {
+        font-size: 22px;
+        font-size: 2.2rem;
+    }
+}
+
+html,
+body
+{
+    min-height: 100%;
+}

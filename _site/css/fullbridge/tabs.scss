@@ -1,0 +1,513 @@
+/* ==========================================================================
+   Tabs
+   ========================================================================== */
+
+.tabs 
+{
+    font-size: 0;
+
+    &:after 
+    {
+        display: table;
+        clear: both;
+        content: '';
+    }
+
+    .tab 
+    {
+        display: inline;
+    }
+
+    .tab-label 
+    {
+        display: inline-block;
+        position: relative;
+        left: 1px;
+        margin-left: -1px;
+        padding: $row-spacing ($gutter/2);
+        color: $body-text-color;
+        text-align: center;
+        vertical-align: bottom;
+        cursor: pointer;
+        border: $light-divider; 
+        background-color: $input-color;
+
+        @include font(heading,regular);
+
+        @include bp(small)
+        {
+            font-size: 15px;
+            font-size: 1.5rem;
+            padding: $row-spacing ($gutter/2);
+        }
+
+        @include bp(medium)
+        {
+            font-size: 18px;
+            font-size: 1.8rem;
+            padding: $row-spacing $gutter;
+        }
+
+        @include bp(large)
+        {
+            font-size: 20px;
+            font-size: 2rem;
+            padding: $row-spacing $gutter;
+        }
+
+        [dir=rtl] &
+        {
+            margin-right: 1px;
+            margin-left: -2px;
+        }
+
+        [class^="icon-"], 
+        [class*=" icon-"]
+        {
+            display: inline-block;
+
+            & + .label-text
+            {
+                @include bp(small)
+                {
+                    display: block;
+                    width: 100%;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: .8em;
+                }
+
+                @include bp(desktop)
+                {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .tab > [type="radio"] 
+    {
+        @extend %visuallyhidden;
+        @include opacity(0);
+    }
+
+    .tab-panel 
+    {
+        display: inline;
+        display: inline-block;
+        position: relative;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+
+    .tab-content 
+    {
+        display: block;
+        float: left;
+        width: 100%;
+        margin-top: -1px;
+        padding: 0 ($gutter/2);
+        border: $light-divider;
+        background-color: $background-color;
+
+        @include bp(small)
+        {
+            font-size: 15px;
+            font-size: 1.5rem;
+        }
+
+        @include bp(medium)
+        {
+            font-size: 18px;
+            font-size: 1.8rem;
+        }
+
+        @include bp(large)
+        {
+            font-size: 20px;
+            font-size: 2rem;
+        }
+    }
+
+    .tab [type="radio"]:checked + .tab-label 
+    {
+        padding-top: .8em;
+        padding-bottom: .8em;
+        color: $heading-color;
+        font-weight: bold;
+        border-bottom-width: 0;
+        background-color: $background-color;
+        z-index: 1;
+
+        @include border-top-radius(3px);
+    }
+
+    .tab [type="radio"]:checked ~ .tab-panel 
+    {
+        display: inline;
+    }
+
+    .tab [type="radio"]:checked ~ .tab-panel>.tab-content 
+    {
+        position: relative;
+
+        @include animation(open $timing ease-out);
+    }
+
+    &.borderless
+    {
+        .tab-content
+        {
+            padding: 0;
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+        }
+    }
+
+    &[class^="even-"], 
+    &[class*=" even-"],
+    &[class^="small-even-"], 
+    &[class*=" small-even-"]
+    {
+        > .tab > .tab-label
+        {
+            left: 0;
+            margin-left: 0;
+
+            [dir=rtl] &
+            {
+                right: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    &.even-6
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/6);
+        }
+    }
+
+    &.small-even-6
+    {
+        > .tab > .tab-label
+        {
+            @include bp(small)
+            {
+                width: (100%/6);
+            }
+        }
+    }
+
+    &.even-5
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/5);
+        }
+    }
+
+    &.small-even-5
+    {
+        > .tab > .tab-label
+        {
+            @include bp(small)
+            {
+                width: (100%/5);
+            }
+        }
+    }
+
+    &.even-4
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/4);
+        }
+    }
+
+    &.small-even-4
+    {
+        > .tab > .tab-label
+        {
+            @include bp(small)
+            {
+                width: (100%/4);
+            }
+        }
+    }
+
+    &.even-3
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/3);
+        }
+    }
+
+    &.small-even-3
+    {
+        > .tab > .tab-label
+        {
+            @include bp(small)
+            {
+                width: (100%/3);
+            }
+        }
+    }
+
+    &.even-2
+    {
+        > .tab > .tab-label
+        {
+            width: (100%/2);
+        }
+    }
+
+    &.small-even-2
+    {
+        > .tab > .tab-label
+        {
+            @include bp(small)
+            {
+                width: (100%/2);
+            }
+        }
+    }
+
+    &.small-stack
+    {
+        @include bp(small)
+        {
+            > .tab > .tab-label
+            {
+                left: 0;
+                width: 100% !important;
+                margin-left: 0;
+                padding-right: 2em !important;
+                text-align: left;
+                border-radius: 0;
+
+                [dir=rtl] &
+                {
+                    padding-right: ($gutter/2);
+                    padding-left: 2em;
+                }
+
+                &:before
+                {
+                    position: absolute;
+                    right: ($gutter/2);
+                    content: '\e606';
+
+                    @include center(y);
+                    @include font(icon,regular);
+
+                    [dir=rtl] &
+                    {
+                        right: auto;
+                        left: ($gutter/2);
+                    }
+                }
+
+                .label-text
+                {
+                    display: inline-block;
+                }
+            }
+
+            > .tab
+            {
+                &:first-child .tab-label
+                {
+                    @include border-top-radius($border-radius);
+                }
+
+                &:last-child .tab-label
+                {
+                    @include border-bottom-radius($border-radius);
+                }
+
+                [type="radio"]:checked + .tab-label 
+                {
+                    @include border-bottom-radius(0);
+
+                    &:before
+                    {
+                        color: $gray-lighter;
+                    }
+
+                    &:after
+                    {
+                        display: none;
+                    }
+
+                    .label-text
+                    {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            > .tab > .tab-panel > .tab-content
+            {
+                padding-right: ($gutter/2);
+                padding-left: ($gutter/2);
+                border-right: $light-divider;
+                border-bottom: $light-divider;
+                border-left: $light-divider;
+            }
+        }
+    }
+
+    &.centered
+    {
+        text-align: center;
+
+        .tab-content
+        {
+            text-align: left;
+        }
+    }
+
+    &.small-centered
+    {
+        @include bp(small)
+        {
+            text-align: center;
+
+            .tab-content
+            {
+                text-align: left;
+            }
+        }
+    }
+
+    .tabs
+    {
+        .tab-label
+        {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 0;
+            background-color: $background-color;
+
+            @include bp(small)
+            {
+                font-size: 10px;
+                font-size: 1rem;
+                border: none;
+            }
+
+            @include bp(medium)
+            {
+                font-size: 11px;
+                font-size: 1.1rem;
+            }
+
+            @include bp(large)
+            {
+                font-size: 12px;
+                font-size: 1.2rem;
+            }
+        }
+
+        .tab [type="radio"]:checked + .tab-label 
+        {
+            position: relative;
+            padding-top: $row-spacing; 
+            padding-bottom: $row-spacing; 
+
+            @include bp(small)
+            {
+                border: none;
+            }
+
+            &:after
+            {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                content: '';
+                background-color: $heading-color;
+            }
+        }
+
+        .tab-content
+        {
+            margin-top: 0;
+            padding: 0;
+            border-right: 0;
+            border-bottom: 0;
+            border-left: 0;
+            background-color: transparent;
+        }
+    }
+}
+
+/* ----------------------------- */
+/* INTERNET EXPLORER 8 and below */
+
+@media \0screen\,screen\9 {
+    /* IE7 and IE6 */
+    .tabs 
+    {
+        zoom: 1;
+    }
+
+    /* IE8 and below */
+    .tabs .tab .tab-radio 
+    {
+        z-index: -1;
+    }
+
+    /* IE7 and IE6 */
+    .tabs .tab .tab-panel 
+    {
+        display: none;
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* IE7 and IE6 */
+    .tabs .tab-content
+    {
+        float: none;
+        width: auto;
+        padding-bottom: 1px;
+        padding-top: 1px;
+    }
+
+    /* IE8 and below */
+    .tabs .checked label 
+    {
+        padding-top: .8em;
+        padding-bottom: .8em;
+        border-bottom-width: 0;
+        background-color: $background-color;
+        z-index: 1;        
+    }
+
+    /* IE8 */
+    .tabs .checked .tab-panel 
+    {
+        display: inline;
+    }
+
+    /* IE7 and IE6 */
+    .tabs .checked .tab-panel
+    {
+        display: inline;
+        float: left;
+        width: 100%;
+    }
+}
