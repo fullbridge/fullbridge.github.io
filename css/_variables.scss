@@ -1,6 +1,14 @@
+/* Fonts */
+
 $body-font: 'Source Sans Pro', 'Amiri', sans-serif;
 $heading-font: 'Roboto Condensed', 'Amiri', sans-serif;
 $icon-font: 'icomoon';
+
+/* Version Prefix */
+
+$v1: fv1-;
+
+/* Color */
 
 $fb-red: #af272f;
 $fb-blue: #13a8e1;
@@ -38,12 +46,14 @@ $link-color: $tertiary-color;
 $background-color: white;
 $hover-bg-color: rgba(black,.05);
 
-$timing: 150ms;
+/* Borders */
 
 $light-divider: 1px solid $gray-lighter;
 $dark-divider: 1px solid $gray-light;
 $transparent-dark-divider: 1px solid rgba(black,.05);
 $transparent-light-divider: 1px solid rgba(white,.2);
+
+/* Inputs */
 
 $input-color: $hover-bg-color;
 $input-focus-color: rgba(white,.2);
@@ -52,22 +62,24 @@ $input-focus-border: inset 0 0 1px $gray-darkest, 0 0 2px $link-color, 0 0 .3em 
 $placeholder-text-color: $gray-regular;
 $focus-bg-color: $highlight-blue;
 
-$border-radius: 1px;
-$box-shadow: 0 0 1em $gray-light;
-$menu-bar-height: 3em;
+/* Grids */
 
 $gutter: 2em;
 
 $golden-side-width: 21.6447%;
 $golden-main-width: (100% - ($golden-side-width*2));
 
-$wrapper: 8%;
 $small-max-width: 850px;
 $large-max-width: 1440px;
-
-$row-spacing: .7em;
 
 $small-screen: 768px;
 $medium-screen: 1440px;
 
+/* Misc */
+
+$border-radius: 1px;
+$box-shadow: 0 0 1em $gray-light;
+$menu-bar-height: 3em;
+$row-spacing: .7em;
+$timing: 150ms;
 $modal-z: 99999;

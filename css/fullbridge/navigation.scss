@@ -219,12 +219,6 @@
                         color: $green-success;
                     }
 
-                    &.unavailable
-                    {
-                        color: $gray-regular;
-                        cursor: not-allowed;
-                    }
-
                     &.open
                     {
                         color: $heading-color;
@@ -291,6 +285,12 @@
                             [dir=rtl] &
                             {
                                 padding: $row-spacing 3.5em $row-spacing 4em;
+                            }
+
+                            &.unavailable
+                            {
+                                color: $gray-regular;
+                                cursor: not-allowed;
                             }
 
                             html:not(.touch) &:hover,

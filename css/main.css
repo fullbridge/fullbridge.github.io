@@ -2,6 +2,13 @@
    Fullbridge styles. Designer/coder: Mike Mai.
    ========================================================================== */
 /* Sass */
+/* Fonts */
+/* Version Prefix */
+/* Color */
+/* Borders */
+/* Inputs */
+/* Grids */
+/* Misc */
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic|Roboto+Condensed:400,700|Amiri:400italic,700italic,400,700&subset=arabic,latin);
 .profile-photo-edit input[type="file"], .form input[type="file"], .form input[type="radio"],
 .form input[type="checkbox"], .tabs .tab > [type="radio"], .accordions .accordion input[type="checkbox"],
@@ -262,35 +269,6 @@ a:hover {
 /* ==========================================================================
    Typography
    ========================================================================== */
-/**
- * Address font sizes and margins set differently in IE 6/7.
- * Address font sizes within `section` and `article` in Firefox 4+, Safari 5,
- * and Chrome.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
-h2 {
-  font-size: 1.5em;
-  margin: 0.83em 0; }
-
-h3 {
-  font-size: 1.17em;
-  margin: 1em 0; }
-
-h4 {
-  font-size: 1em;
-  margin: 1.33em 0; }
-
-h5 {
-  font-size: 0.83em;
-  margin: 1.67em 0; }
-
-h6 {
-  font-size: 0.67em;
-  margin: 2.33em 0; }
-
 /**
  * Address styling not present in IE 7/8/9, Safari 5, and Chrome.
  */
@@ -3240,10 +3218,6 @@ summary {
       .side-nav > nav ul li a.done,
       .side-nav > nav ol li a.done {
         color: #4CAF50; }
-      .side-nav > nav ul li a.unavailable,
-      .side-nav > nav ol li a.unavailable {
-        color: #9b9b9b;
-        cursor: not-allowed; }
       .side-nav > nav ul li a.open,
       .side-nav > nav ol li a.open {
         color: #282828;
@@ -3291,6 +3265,12 @@ summary {
       .side-nav > nav > ol > li > ul > li a, [dir=rtl]
       .side-nav > nav > ol > li > ol > li a {
         padding: 0.7em 3.5em 0.7em 4em; }
+      .side-nav > nav > ul > li > ul > li a.unavailable,
+      .side-nav > nav > ul > li > ol > li a.unavailable,
+      .side-nav > nav > ol > li > ul > li a.unavailable,
+      .side-nav > nav > ol > li > ol > li a.unavailable {
+        color: #9b9b9b;
+        cursor: not-allowed; }
       html:not(.touch) .side-nav > nav > ul > li > ul > li a:hover, .side-nav > nav > ul > li > ul > li a.current, html:not(.touch)
       .side-nav > nav > ul > li > ol > li a:hover,
       .side-nav > nav > ul > li > ol > li a.current, html:not(.touch)
@@ -3705,20 +3685,14 @@ summary {
   margin: 0;
   padding: 0;
   color: white;
-  background-color: rgba(175, 39, 47, 0.9);
+  background-color: #282828;
   z-index: 99998;
   -webkit-transform: translate(0%, 0%);
   -moz-transform: translate(0%, 0%);
   -ms-transform: translate(0%, 0%);
   -o-transform: translate(0%, 0%);
   transform: translate(0%, 0%);
-  *zoom: 1;
-  background-color: #af272f;
-  background-image: -webkit-linear-gradient(top, #af272f, #a2242c);
-  background-image: -moz-linear-gradient(top, #af272f, #a2242c);
-  background-image: -o-linear-gradient(top, #af272f, #a2242c);
-  background-image: -ms-linear-gradient(top, #af272f, #a2242c);
-  background-image: linear-gradient(top, #af272f, #a2242c); }
+  *zoom: 1; }
   .menu-bar:before, .menu-bar:after {
     content: ' ';
     display: table; }
@@ -3730,7 +3704,7 @@ summary {
     float: left;
     width: 3em;
     height: 3em;
-    border-right: 2px solid #af272f; }
+    background-color: #af272f; }
     [dir=rtl] .menu-bar .logo {
       float: right;
       border-right: none;
@@ -3754,7 +3728,7 @@ summary {
     font-size: .6em;
     font-weight: bold;
     border-radius: 100em;
-    background-color: #13a8e1;
+    background-color: #af272f;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
@@ -3924,13 +3898,9 @@ summary {
             text-decoration: underline; }
   .menu-bar .utilities {
     float: right;
-    padding-left: 2px;
-    height: 3em;
-    background-color: #af272f; }
+    height: 3em; }
     [dir=rtl] .menu-bar .utilities {
-      float: left;
-      padding-right: 2px;
-      padding-left: 0; }
+      float: left; }
     @media only screen and (max-width: 768px) {
       .menu-bar .utilities .messages .drop .bubble,
       .menu-bar .utilities .notifications .drop .bubble,
@@ -4103,9 +4073,10 @@ summary {
     position: relative;
     width: 100%;
     padding-bottom: 100%;
+    overflow: hidden;
     border-radius: 100em;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: #af272f; }
+    background-color: #9b9b9b; }
     .profile-photo-edit .photo:before, .profile-photo-edit .photo:after {
       position: absolute;
       color: rgba(255, 255, 255, 0.5);
@@ -4134,7 +4105,6 @@ summary {
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 100em;
       z-index: 1; }
     html:not(.touch) .profile-photo-edit .photo:hover {
       border: 1px solid white;
@@ -5286,14 +5256,14 @@ html:not(.touch) .button.secondary:hover, html:not(.touch) .form input[type="fil
 .form input[type="file"] + .success.label-text:focus {
   background-image: none !important; }
 
-.button.primary, .form input[type="file"] + .label-text {
+.button.primary, .menu-bar .button, .form .menu-bar input[type="file"] + .label-text, .form input[type="file"] + .label-text {
   color: white !important;
   background-color: #282828; }
-  html:not(.touch) .button.primary:hover, html:not(.touch) .form input[type="file"] + .label-text:hover, .form html:not(.touch) input[type="file"] + .label-text:hover {
+  html:not(.touch) .button.primary:hover, html:not(.touch) .menu-bar .button:hover, .menu-bar html:not(.touch) .button:hover, html:not(.touch) .form .menu-bar input[type="file"] + .label-text:hover, html:not(.touch) .form input[type="file"] + .label-text:hover, .form html:not(.touch) input[type="file"] + .label-text:hover {
     background-color: #424242; }
-  .button.primary:active, .form input[type="file"] + .label-text:active {
+  .button.primary:active, .menu-bar .button:active, .form .menu-bar input[type="file"] + .label-text:active, .form input[type="file"] + .label-text:active {
     background-color: #282828; }
-  .button.primary:focus, .form input[type="file"] + .label-text:focus {
+  .button.primary:focus, .menu-bar .button:focus, .form .menu-bar input[type="file"] + .label-text:focus, .form input[type="file"] + .label-text:focus {
     -webkit-animation: pulse-primary-button-bg 2s ease-in-out infinite;
     -moz-animation: pulse-primary-button-bg 2s ease-in-out infinite;
     animation: pulse-primary-button-bg 2s ease-in-out infinite; }

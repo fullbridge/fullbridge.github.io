@@ -9,21 +9,17 @@
     margin: 0;
     padding: 0;
     color: white;
-    background-color: rgba($secondary-color,.9);
+    background-color: $heading-color;
     z-index: ($modal-z - 1);
 
     @include transform(translate(0%,0%));
     @include clearfix;
 
-    @include button-gradient(
-        $secondary-button-color,
-        $secondary-button-color,
-        darken($secondary-button-color,3%)
-    );
-
     .button
     {
         margin: 0;
+
+        @extend .button.primary;
     }
 
     .logo
@@ -31,7 +27,7 @@
         float: left;
         width: $menu-bar-height;
         height: $menu-bar-height;
-        border-right: 2px solid $secondary-color;
+        background-color: $secondary-color;
 
         [dir=rtl] &
         {
@@ -64,7 +60,7 @@
         font-size: .6em;
         font-weight: bold;
         border-radius: 100em;
-        background-color: $tertiary-color;
+        background-color: $secondary-color;
 
         @include truncate;
 
@@ -365,15 +361,11 @@
     .utilities
     {
         float: right;
-        padding-left: 2px;
         height: $menu-bar-height;
-        background-color: $secondary-color;
 
         [dir=rtl] &
         {
             float: left;
-            padding-right: 2px;
-            padding-left: 0;
         }
 
         .messages,
@@ -690,9 +682,10 @@
         position: relative;
         width: 100%;
         padding-bottom: 100%;
+        overflow: hidden;
         border-radius: 100em;
         border: $transparent-light-divider;
-        background-color: $secondary-color;
+        background-color: $gray-regular;
 
         &:before,
         &:after
@@ -724,7 +717,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 100em;
             z-index: 1;
         }
 
