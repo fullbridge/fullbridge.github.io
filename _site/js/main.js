@@ -1,9 +1,13 @@
-// Hide subnav on scroll down, show on scroll up (mobile needs improvement, it only functions when it completely stops scrolling, need re-factoring before production).
+// Fast detect scroll on mobile.
+
+$(document).on('touchstart touchend touchmove', function(){ $(window).trigger('scroll'); });
+
+// Hide subnav on scroll down, show on scroll up.
 
 $(function(){
     var nav = $(".subnav.fixed"),
         state = "down", 
-        lastScrollTop = 0, delta = 200;
+        lastScrollTop = 0, delta = 100;
 
     $(window).scroll(function(event){
       var st = $(this).scrollTop();
@@ -13,13 +17,13 @@ $(function(){
       if ((st > lastScrollTop) && (lastScrollTop>0)) {
          // downscroll code
          if(state == "up"){
-          nav.css("top","-100%");
+          $(".subnav.fixed").addClass("scrolled");
           state = "down";
         }
       } else {
         // upscroll code
         if(state == "down"){
-        nav.css("top","auto");
+        $(".subnav.fixed").removeClass("scrolled");
         state = "up";
         }
       }
@@ -27,12 +31,12 @@ $(function(){
     });
 });
 
-// Maximize sidebar when page is scrolled
+// Maximize sidebar when page is scrolled.
 
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 100) {
+    if (scroll >= 50) {
         $(".sidebar.fixed").addClass("scrolled");
     } else {
         $(".sidebar.fixed").removeClass("scrolled");
@@ -64,19 +68,19 @@ $(document).mouseup(function (e)
     }
 });
 
-// Close reveal modals
+// Close reveal modals.
 
 $(".reveal-modal, .overlay").find(".close").click(function(e) {
     $(".reveal-modal, .overlay").removeClass("open")
 })
 
-// Form field validates after focus once
+// Form field validates after focus once.
 
 $(':required').on('blur keydown', function() {
     $(this).addClass('touched');
 });
 
-// Make label visible after value is entered
+// Make label visible after value is entered.
 
 $('input,textarea,select').on('change', function() {
     $(this).addClass('filled')
@@ -90,7 +94,8 @@ $(document).ready(function() {
     });
 });
 
-// truncate long text
+// truncate long text.
+
 var boxContentFullText = [];
 var boxContentCutoffLength = 80;
 
@@ -108,6 +113,7 @@ $(document).ready(function() {
                }
        });
 });
+
 // This makes the .tabs work in IE8 and below, add in HTML <head>:
 // <!--[if lt IE 9]><script>window.ltIE9=true</script><![endif]-->
 /* if(window.ltIE9) {

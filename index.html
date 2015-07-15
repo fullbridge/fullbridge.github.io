@@ -1,5 +1,7 @@
 ---
 title: Style Guide
+description: Living style guide of the Fullbrige platform.
+canonical: http://platform.fullbridge.com/styleguide
 direction: 
 ---
     {% include head.html %}
@@ -14,8 +16,9 @@ direction:
                     </header>
                     <nav role="navigation" title="Style Guide navigation">
                         <ul>
+                            <li class="divider"></li>
                             <li>
-                                <div class="arrow open"></div><a href="javascript:" class="current">This is an unit</a>
+                                <a href="javascript:" class="open"><div class="arrow"></div> This is an unit</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="done">Section you finished</a>
@@ -29,10 +32,10 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="#navigation" class="">Navigation</a>
+                                <a href="javascript:" class=""><div class="arrow"></div> Navigation</a>
                                 <ul>
                                     <li>
-                                        <a href="#menu-bar" class="">Menu bar</a>
+                                        <a href="#menu-bar" class="current">Menu bar</a>
                                     </li>
                                     <li>
                                         <a href="#subnav" class="">Subnav</a>
@@ -46,7 +49,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="#forms" class="">Forms</a>
+                                <a href="javascript:" class=""><div class="arrow"></div> Forms</a>
                                 <ul>
                                     <li>
                                         <a href="#form-fields" class="">Form fields</a>
@@ -75,7 +78,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="#alerts" class="">Alerts</a>
+                                <a href="javascript:" class=""><div class="arrow"></div> Alerts</a>
                                 <ul>
                                     <li>
                                         <a href="#alert-boxes" class="">Alert boxes</a>
@@ -86,7 +89,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="#button-styles" class="">Button styles</a>
+                                <a href="javascript:" class=""><div class="arrow"></div> Button styles</a>
                                 <ul>
                                     <li>
                                         <a href="#links" class="">Links</a>
@@ -106,7 +109,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="#article-styles" class="">Article styles</a>
+                                <a href="javascript:" class=""><div class="arrow"></div> Article styles</a>
                                 <ul>
                                     <li>
                                         <a href="#kitchen-sink" class="">Kitchen sink</a>
@@ -120,7 +123,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="#misc" class="">Misc</a>
+                                <a href="javascript:" class=""><div class="arrow"></div> Misc</a>
                                 <ul>
                                     <li>
                                         <a href="#modals" class="">Modals</a>
@@ -138,7 +141,7 @@ direction:
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <div class="arrow open"></div><a href="#demos" class="">Demos</a>
+                                <a href="javascript:" class=""><div class="arrow"></div> Demos</a>
                                 <ul>
                                     <li>
                                         <a href="/demo/article.html" class="">Article/pod</a>
@@ -153,7 +156,7 @@ direction:
                             </li>
                             <li class="divider"></li>
                             <input type="hidden" 
-                                data-anijs="if: click, on: .side-nav nav .arrow, do: $toggleClass open, to: target;
+                                data-anijs="if: click, on: .side-nav nav>ul>li>a, do: $toggleClass open, to: target;
                                             if: click, on: .side-nav nav a:not(.unavailable), do: $removeClass current, to: .side-nav nav a;
                                             if: click, on: .side-nav nav a:not(.unavailable), do: $addClass current, to: target;">
                         </ul>
@@ -3076,8 +3079,7 @@ direction:
                                                 if: click, do: $addClass standard, to: #modal-1 .alert-box;">Standard</a>
                             </li>
                         </ul>
-                        <a href="javascript:" class="close"
-                            data-anijs="if: click, do: $removeClass open, to: #modal-1;"></a>
+                        <a href="javascript:" class="close"></a>
                     </div>
                 </div>
             </div>
@@ -3095,8 +3097,7 @@ direction:
                                 </div>
                             </div>
                         </div>
-                        <a href="javascript:" class="close"
-                            data-anijs="if: click, do: $removeClass open, to: #modal-2;"></a>
+                        <a href="javascript:" class="close"></a>
                     </div>
                 </div>
             </div>
@@ -3119,8 +3120,7 @@ direction:
                                 <p><strong>Video summary.</strong> Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus.</p>
                             </div>
                         </div>
-                        <a href="javascript:" class="close"
-                            data-anijs="if: click, do: $removeClass open, to: #modal-3;"></a>
+                        <a href="javascript:" class="close"></a>
                     </div>
                 </div>
             </div>
@@ -3175,8 +3175,7 @@ direction:
                                         if: click, do: $addClass center, to: #modal-4;">Center</a>
                     </li>
                 </ul>
-                <a href="javascript:" class="close"
-                    data-anijs="if: click, do: $removeClass open, to: #modal-4;"></a>
+                <a href="javascript:" class="close"></a>
             </div>
         </div>
 

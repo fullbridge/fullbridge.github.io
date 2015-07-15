@@ -155,7 +155,7 @@
     {
         @include bp(small)
         {
-            top: -1em;
+            top: (-$gutter/2);
         }
 
         @include bp(desktop)
@@ -193,7 +193,7 @@
     {
         @include bp(small)
         {
-            bottom: -1em;
+            bottom: (-$gutter/2);
         }
 
         @include bp(desktop)

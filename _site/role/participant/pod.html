@@ -15,15 +15,15 @@
 
         <!-- SEO -->
         <meta name="author" content="Fullbridge Tech">
-        <meta name="description" content="Living style guide of the Fullbridge platform.">
-        <meta property="og:title" content="Pod" />
-        <meta property="og:description" content="Living style guide of the Fullbrige platform." />
+        <meta name="description" content="">
+        <meta property="og:title" content="Participant Pod" />
+        <meta property="og:description" content="" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="img/ios/h/touch-icon-ipad-retina.png" />
-        <meta property="og:url" content="http://fullbridge.com" />
-        <meta property="og:site_name" content="Fullbridge Styleguide" />
-        <title>Pod</title>
-        <link rel="canonical" href="http://platform.fullbridge.com/styleguide">
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="Participant Pod" />
+        <title>Participant Pod</title>
+        <link rel="canonical" href="">
 
         <!-- CSS for the site -->
         <link rel="stylesheet" href="/css/main.css">
@@ -54,7 +54,7 @@
         </div>
         <![endif]-->
 
-        <nav class="menu-bar with-progress">
+        <nav class="menu-bar">
             <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
             <div class="program-select">
                 <div class="drop down">
@@ -211,13 +211,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="progress">
-                <span class="meter success" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" style="width: 3%;">3% complete</span>
-            </div>
         </nav>
 
         <div class="content">
             <div class="sidebar fixed">
+                <div class="progress">
+                    <span class="meter success" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" style="width: 3%;">3% complete</span>
+                </div>
                 <div class="side-nav">
                     <header>
                         Goodwin Procter: Business Fundamentals
@@ -226,7 +226,7 @@
                         <ul>
                             <li class="divider"></li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="done">Pre-work: Finance Diagnostic</a>
+                                <a href="javascript:" class="done"><div class="arrow"></div> Pre-work: Finance Diagnostic</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="done">Finance Diagnostic <span class="duration">90 min</span></a>
@@ -234,7 +234,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow open"></div><a href="javascript:" class="">Welcome</a>
+                                <a href="javascript:" class="open"><div class="arrow"></div> Welcome</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="done">Welcome, Competencies, and Traits <span class="duration">25 min</span></a>
@@ -251,7 +251,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Self-Awareness and Communication</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Self-Awareness and Communication</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Self and Social Awareness <span class="duration">45 min</span></a>
@@ -262,7 +262,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Intro to Effective Presentation</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Intro to Effective Presentation</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Top Down Thinking <span class="duration">60 min</span></a>
@@ -276,7 +276,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Fullbridge Excel Tutorial</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Fullbridge Excel Tutorial</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Excel Basics <span class="duration">60 min</span></a>
@@ -296,7 +296,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Effective Teamwork</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Effective Teamwork</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Successful Teams <span class="duration">45 min</span></a>
@@ -310,7 +310,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Presenting Your Ideas</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Presenting Your Ideas</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Presenting with PowerPoint <span class="duration">30 min</span></a>
@@ -328,7 +328,7 @@
                             </li>
                             <li class="divider"></li>
                             <input type="hidden" 
-                                data-anijs="if: click, on: .side-nav nav .arrow, do: $toggleClass open, to: target;
+                                data-anijs="if: click, on: .side-nav nav>ul>li>a, do: $toggleClass open, to: target;
                                             if: click, on: .side-nav nav a:not(.unavailable), do: $removeClass current, to: .side-nav nav a;
                                             if: click, on: .side-nav nav a:not(.unavailable), do: $addClass current, to: target;">
                         </ul>
@@ -595,7 +595,7 @@
                 <div class="medium-6 small-12 small-centered column">
                     <div class="reveal alert-box success">
                         <header>
-                            <span class="icon-check"></span> Congratulations!
+                            <span class="icon-check"></span> Congratulations
                         </header>
                         <p>
                             You've completed The MBTI Assessment: TypeCoach Verifier!
@@ -615,7 +615,7 @@
                 <div class="medium-6 small-12 small-centered column">
                     <div class="reveal alert-box warning">
                         <header>
-                            <span class="icon-info"></span> Sorry, not yet.
+                            <span class="icon-info"></span> Sorry, not yet
                         </header>
                         <p>
                             You have to finish the exercise before moving on.
@@ -628,7 +628,7 @@
         <div id="modal-saved" class="overlay top flush-right" aria-labelledby="Modal" aria-hidden="true" role="dialog">
             <div class="alert-box success">
                 <header>
-                    <span class="icon-check"></span> Exercise progress saved!
+                    <span class="icon-check"></span> Exercise progress saved
                 </header>
                 <a href="javascript:" class="close"
                     data-anijs="if: click, do: $removeClass open, to: #modal-4;"></a>

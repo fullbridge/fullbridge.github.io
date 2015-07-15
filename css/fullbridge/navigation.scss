@@ -4,9 +4,17 @@
 
 .side-nav
 {
-    background-color: $gray-lightest;
-
     @include font(body);
+
+    @include bp(small)
+    {
+        background-color: $gray-lightest;
+    }
+
+    @include bp(desktop)
+    {
+        background-color: $hover-bg-color;
+    }
 
     &.transparent
     {
@@ -46,7 +54,6 @@
             left: ($gutter/2);
             width: 2em;
             height: 2em;
-            color: $heading-color;
             line-height: 2;
             text-align: center;
             background-color: $hover-bg-color;
@@ -172,27 +179,6 @@
 
                         @include font(icon,regular);
                     }
-
-                    &.open:before
-                    {
-                        content: '\e619';
-                    }
-
-                    &.open ~ ul,
-                    &.open ~ ol
-                    {
-                        display: block;
-                        position: relative;
-
-                        @include animation(open $timing ease-out);
-                    }
-
-                    &.open + a
-                    {
-                        color: $heading-color;
-                        text-decoration: underline;
-                        font-weight: bold;
-                    }
                 }
 
                 a
@@ -201,12 +187,12 @@
                     {
                         position: absolute;
                         top: 1.2em;
-                        right: 1em;
+                        right: ($gutter/2);
 
                         [dir=rtl] &
                         {
                             right: auto;
-                            left: 1em;
+                            left: ($gutter/2);
                         }
                     }
 
@@ -233,26 +219,31 @@
                         color: $green-success;
                     }
 
-                    html:not(.touch) &:hover,
-                    &.current
-                    {
-                        color: $heading-color !important;
-                        background-color: $background-color;
-
-                        @include transition(background-color $timing);
-
-                        &:before
-                        {
-                            width: .3em;
-
-                            @include transition(width $timing);
-                        }
-                    }
-
                     &.unavailable
                     {
                         color: $gray-regular;
                         cursor: not-allowed;
+                    }
+
+                    &.open
+                    {
+                        color: $heading-color;
+                        text-decoration: underline;
+                        font-weight: bold;
+
+                        & .arrow:before
+                        {
+                            content: '\e619';
+                        }
+
+                        & + ul,
+                        & + ol
+                        {
+                            display: block;
+                            position: relative;
+
+                            @include animation(open $timing ease-out);
+                        }
                     }
                 }
 
@@ -276,13 +267,13 @@
             {
                 > a
                 {
-                    padding: $row-spacing 1em $row-spacing 3em;
+                    padding: $row-spacing ($gutter/2) $row-spacing 3em;
 
                     @include font(heading,regular);
 
                     [dir=rtl] &
                     {
-                        padding: $row-spacing 3em $row-spacing 1em;
+                        padding: $row-spacing 3em $row-spacing ($gutter/2);
                     }
                 }
 
@@ -300,6 +291,22 @@
                             [dir=rtl] &
                             {
                                 padding: $row-spacing 3.5em $row-spacing 4em;
+                            }
+
+                            html:not(.touch) &:hover,
+                            &.current
+                            {
+                                color: $heading-color !important;
+                                background-color: $background-color;
+
+                                @include transition(background-color $timing);
+
+                                &:before
+                                {
+                                    width: .3em;
+
+                                    @include transition(width $timing);
+                                }
                             }
 
                             &:after
@@ -422,7 +429,7 @@
 
                 @include bp($min: 921px)
                 {
-                    margin: 2em 0;
+                    margin: $gutter 0;
                 }
 
                 &:before
@@ -433,7 +440,7 @@
 
                     @include bp($max: 920px)
                     {
-                        left: -1em;
+                        left: (-$gutter/2);
                         width: 1em;
                         height: 4px;
                         z-index: -1;
@@ -442,14 +449,14 @@
 
                         [dir=rtl] &
                         {
-                            right: -1em;
+                            right: (-$gutter/2);
                             left: auto;
                         }
                     }
 
                     @include bp($min: 921px)
                     {
-                        top: -2em;
+                        top: (-$gutter);
                         width: 4px;
                         height: 2em;
 
@@ -608,8 +615,6 @@
 
 .subnav
 {
-    @include transition(top $timing);
-
     background-color: $background-color;
 
     ul
@@ -955,18 +960,29 @@
     &.fixed
     {
         position: fixed;
+        top: auto;
         left: 0;
         right: 0;
         z-index: ($modal-z - 2);
+        box-shadow: 0 1em 1em white;
+
+        @include transition(top $timing);
 
         & + *
         {
-            margin-top: ($row-spacing*4 + 6em);
+            margin-top: ($row-spacing*3 + 6em);
         }
+    }
+
+    &.scrolled
+    {
+        top: -100%;
+
+        @include transition(top $timing);
     }
 
     .content > &:first-child
     {
-        padding-top: $row-spacing*4;
+        padding-top: $row-spacing*3;
     }
 }

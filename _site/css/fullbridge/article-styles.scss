@@ -246,7 +246,7 @@ pre
 ul:not([class]),
 ol:not([class])
 {
-    padding: 0 2em;
+    padding: 0 $gutter;
 }
 
 figure
@@ -371,7 +371,7 @@ pre
     {
         display: block;
         margin: 0;
-        padding: .5em 1em;
+        padding: .5em ($gutter/2);
         font-size: .7em;
         white-space: nowrap;
 
@@ -427,12 +427,12 @@ aside
         position: relative;
         top: .3em;
         float: right;
-        margin-left: 1em;
+        margin-left: ($gutter/2);
 
         [dir=rtl] &
         {
             float: left;
-            margin-right: 1em;
+            margin-right: ($gutter/2);
             margin-left: 0;
         }
     }

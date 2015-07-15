@@ -204,6 +204,11 @@
 
     &.fixed
     {
+        @include bp(small)
+        {
+            z-index: ($modal-z - 1);
+        }
+
         @include bp(desktop)
         {
             position: fixed;
@@ -226,6 +231,18 @@
 
                 @include vertical-scroll;
             }
+
+            > header,
+            > footer
+            {
+                position: relative;
+                z-index: 1;
+
+                @include bp(small)
+                {
+                    box-shadow: $box-shadow;
+                }
+            }
         }
     }
 
@@ -235,7 +252,37 @@
         {
             position: fixed;
             width: 100%;
-            z-index: ($modal-z - 1);
+        }
+
+        .side-nav
+        {
+            > header
+            {
+                @include bp(small)
+                {
+                    color: $background-color;
+                    background-color: $heading-color;
+                }
+
+                &:before
+                {
+                    @include bp(small)
+                    {
+                        background-color: rgba(white,.1);
+                    }
+                }
+
+                &.open + nav
+                {
+                    @include bp(small)
+                    {
+                        max-height: 300px;
+
+                        @include vertical-scroll;
+                        @include visible-scrollbar;
+                    }
+                }
+            }
         }
     }
 }

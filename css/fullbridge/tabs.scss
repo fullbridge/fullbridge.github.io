@@ -288,14 +288,14 @@
                 left: 0;
                 width: 100% !important;
                 margin-left: 0;
-                padding-right: 2em !important;
+                padding-right: $gutter !important;
                 text-align: left;
                 border-radius: 0;
 
                 [dir=rtl] &
                 {
                     padding-right: ($gutter/2);
-                    padding-left: 2em;
+                    padding-left: $gutter;
                 }
 
                 &:before

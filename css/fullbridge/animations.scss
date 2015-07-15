@@ -69,14 +69,14 @@
     }
 }
 
-/* --------- */
-/* Animation */
+/* ----------- */
+/* Open panels */
 
 @include keyframes(open) 
 {
     from 
     {
-        top: -1em;
+        top: (-$gutter/2);
 
         @include opacity(0);
     }

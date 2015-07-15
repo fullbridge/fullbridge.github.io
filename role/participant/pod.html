@@ -1,12 +1,14 @@
 ---
-title: Pod
+title: Participant Pod
+description: 
+canonical: 
 direction: 
 ---
     {% include head.html %}
 
         {% include outdated-browser.html %}
 
-        <nav class="menu-bar with-progress">
+        <nav class="menu-bar">
             <a href="javascript:" class="logo"><img src="/img/logo-fb-transparent.png" alt="Fullbridge"></a>
             <div class="program-select">
                 <div class="drop down">
@@ -163,13 +165,13 @@ direction:
                     </li>
                 </ul>
             </div>
-            <div class="progress">
-                <span class="meter success" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" style="width: 3%;">3% complete</span>
-            </div>
         </nav>
 
         <div class="content">
             <div class="sidebar fixed">
+                <div class="progress">
+                    <span class="meter success" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" style="width: 3%;">3% complete</span>
+                </div>
                 <div class="side-nav">
                     <header>
                         Goodwin Procter: Business Fundamentals
@@ -178,7 +180,7 @@ direction:
                         <ul>
                             <li class="divider"></li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="done">Pre-work: Finance Diagnostic</a>
+                                <a href="javascript:" class="done"><div class="arrow"></div> Pre-work: Finance Diagnostic</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="done">Finance Diagnostic <span class="duration">90 min</span></a>
@@ -186,7 +188,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow open"></div><a href="javascript:" class="">Welcome</a>
+                                <a href="javascript:" class="open"><div class="arrow"></div> Welcome</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="done">Welcome, Competencies, and Traits <span class="duration">25 min</span></a>
@@ -203,7 +205,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Self-Awareness and Communication</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Self-Awareness and Communication</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Self and Social Awareness <span class="duration">45 min</span></a>
@@ -214,7 +216,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Intro to Effective Presentation</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Intro to Effective Presentation</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Top Down Thinking <span class="duration">60 min</span></a>
@@ -228,7 +230,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Fullbridge Excel Tutorial</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Fullbridge Excel Tutorial</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Excel Basics <span class="duration">60 min</span></a>
@@ -248,7 +250,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Effective Teamwork</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Effective Teamwork</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Successful Teams <span class="duration">45 min</span></a>
@@ -262,7 +264,7 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <div class="arrow"></div><a href="javascript:" class="unavailable">Presenting Your Ideas</a>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Presenting Your Ideas</a>
                                 <ul>
                                     <li>
                                         <a href="javascript:" class="unavailable">Presenting with PowerPoint <span class="duration">30 min</span></a>
@@ -280,7 +282,7 @@ direction:
                             </li>
                             <li class="divider"></li>
                             <input type="hidden" 
-                                data-anijs="if: click, on: .side-nav nav .arrow, do: $toggleClass open, to: target;
+                                data-anijs="if: click, on: .side-nav nav>ul>li>a, do: $toggleClass open, to: target;
                                             if: click, on: .side-nav nav a:not(.unavailable), do: $removeClass current, to: .side-nav nav a;
                                             if: click, on: .side-nav nav a:not(.unavailable), do: $addClass current, to: target;">
                         </ul>
@@ -547,7 +549,7 @@ direction:
                 <div class="medium-6 small-12 small-centered column">
                     <div class="reveal alert-box success">
                         <header>
-                            <span class="icon-check"></span> Congratulations!
+                            <span class="icon-check"></span> Congratulations
                         </header>
                         <p>
                             You've completed The MBTI Assessment: TypeCoach Verifier!
@@ -567,7 +569,7 @@ direction:
                 <div class="medium-6 small-12 small-centered column">
                     <div class="reveal alert-box warning">
                         <header>
-                            <span class="icon-info"></span> Sorry, not yet.
+                            <span class="icon-info"></span> Sorry, not yet
                         </header>
                         <p>
                             You have to finish the exercise before moving on.
@@ -580,7 +582,7 @@ direction:
         <div id="modal-saved" class="overlay top flush-right" aria-labelledby="Modal" aria-hidden="true" role="dialog">
             <div class="alert-box success">
                 <header>
-                    <span class="icon-check"></span> Exercise progress saved!
+                    <span class="icon-check"></span> Exercise progress saved
                 </header>
                 <a href="javascript:" class="close"
                     data-anijs="if: click, do: $removeClass open, to: #modal-4;"></a>

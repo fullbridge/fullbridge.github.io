@@ -158,7 +158,7 @@ $font-stack:
     /* Track */
     &::-webkit-scrollbar-track 
     {
-        background-color: transparent;
+        background-color: $hover-bg-color;
     }
      
     /* Handle */
@@ -179,7 +179,7 @@ $font-stack:
 
     &::-webkit-scrollbar-corner 
     {
-        background-color: transparent;
+        background-color: $hover-bg-color;
     }
 }
 

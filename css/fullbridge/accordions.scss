@@ -52,7 +52,7 @@
         .accordion-panel
         {
             position: relative;
-            top: -1em;
+            top: (-$gutter/2);
             width: 0;
             height: 0;
             padding: 0 ($gutter/2);
