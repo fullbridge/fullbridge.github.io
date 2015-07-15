@@ -4073,7 +4073,6 @@ summary {
     position: relative;
     width: 100%;
     padding-bottom: 100%;
-    overflow: hidden;
     border-radius: 100em;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: #9b9b9b; }
@@ -4105,6 +4104,7 @@ summary {
       left: 0;
       width: 100%;
       height: 100%;
+      border-radius: 100em;
       z-index: 1; }
     html:not(.touch) .profile-photo-edit .photo:hover {
       border: 1px solid white;
