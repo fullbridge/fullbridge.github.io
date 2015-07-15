@@ -43,6 +43,18 @@ $(window).scroll(function() {
     }
 });
 
+// Maximize sidebar when page is scrolled.
+
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 600) {
+        $(".secondary-side-nav").addClass("scrolled");
+    } else {
+        $(".secondary-side-nav").removeClass("scrolled");
+    }
+});
+
 // Open split buttons and tooltips (doesn't always work on mobile, something is delaying the action for anchor and button elements, need re-factoring before production).
 
 $(".drop, .tooltip").children(".link, .button, .tip").click(function(e) {

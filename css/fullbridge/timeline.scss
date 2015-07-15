@@ -165,21 +165,18 @@ h6
 
 .hero-heading
 {
-    padding: $row-spacing ($gutter/2);
+    padding: $row-spacing*2 ($gutter/2) $row-spacing ($gutter/2);
     text-align: center;
     border-bottom: $light-divider;
+    background-image: url('../img/bg-polygon.jpg');
+    background-position: center center;
+
+    @include background-size(cover);
 
     &.filled
     {
         position: relative;
         color: white;
-
-        @include background-size(cover);
-
-        @include bp(small)
-        {
-            padding: $row-spacing*2 ($gutter/2) $row-spacing ($gutter/2);
-        }
 
         @include bp(desktop)
         {
@@ -195,7 +192,7 @@ h6
             left: 0;
             content: '';
 
-            @include background(linear-gradient(transparent, black) top);
+            @include background(linear-gradient(rgba(black,.1), rgba(black,.8)) top);
         }
     }
 

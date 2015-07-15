@@ -372,14 +372,6 @@
         z-index: 1;
     }
 
-    &.fixed
-    {
-        @include bp($min: 921px)
-        {
-            position: fixed;
-        }
-    }
-
     & + .article
     {
         @include bp($min: 921px)
@@ -549,9 +541,8 @@
                 {
                     > a
                     {
-                        color: $heading-color;
-                        border: 1px solid $heading-color;
-                        background-color: $background-color;
+                        color: white;
+                        background-color: $heading-color;
                     }
 
                     &:before
@@ -606,6 +597,108 @@
                     &:before
                     {
                         display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.scrolled
+    {
+        position: fixed;
+        background-color: white;
+        z-index: ($modal-z - 1);
+
+        @include bp(small)
+        {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-top: $light-divider;
+        }
+
+        @include bp(desktop)
+        {
+            top: 0;
+            right: 0;
+            border-bottom: $light-divider;
+        }
+
+        @include bp(medium)
+        {
+            width: calc(100% - 320px + (#{$gutter}/2));
+            width: calc(100% - 32rem + (#{$gutter}/2));
+        }
+
+        @include bp(large)
+        {
+            width: calc(#{$golden-main-width} + #{$golden-side-width} + (#{$gutter}/2));
+        }
+
+        nav
+        {
+            margin: .2em 0;
+
+            > ul
+            {
+                text-align: center;
+
+                > li
+                {
+                    display: inline-block;
+                    margin: ($row-spacing/2) calc(.5em - 3px);
+
+                    &:before
+                    {
+                        top: auto;
+                        left: (-$gutter/2);
+                        width: 1em;
+                        height: 4px;
+                        z-index: -1;
+
+                        @include center(y);
+
+                        [dir=rtl] &
+                        {
+                            right: (-$gutter/2);
+                            left: auto;
+                        }
+                    }
+
+                    > a
+                    {
+                        width: 1.5em;
+                        height: 1.5em;
+
+                        [class^="icon-"], 
+                        [class*=" icon-"]
+                        {
+                            display: none;
+                        }
+                    }
+
+                    &.done
+                    {
+                        &:after
+                        {
+                            display: none;
+                        }
+                    }
+
+                    &.current
+                    {
+                        &:after
+                        {
+                            display: none;
+                        }
+                    }
+
+                    &.unavailable
+                    {
+                        &:after
+                        {
+                            display: none;
+                        }
                     }
                 }
             }

@@ -60,7 +60,7 @@
         font-size: .6em;
         font-weight: bold;
         border-radius: 100em;
-        background-color: $secondary-color;
+        background-color: $fb-red;
 
         @include truncate;
 
@@ -265,6 +265,12 @@
             {
                 padding: 0 .4em;
             }
+        }
+
+        .counter
+        {
+            color: $body-text-color;
+            background-color: $hover-bg-color;
         }
     }
 
