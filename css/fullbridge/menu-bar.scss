@@ -15,6 +15,11 @@
     @include transform(translate(0%,0%));
     @include clearfix;
 
+    > .progress
+    {
+        display: none;
+    }
+
     .button
     {
         margin: 0;
@@ -42,45 +47,12 @@
             width: $menu-bar-height;
             height: $menu-bar-height;
         }
-    }
 
-    .counter
-    {
-        display: block;
-        position: absolute;
-        top: ($gutter/2);
-        right: ($gutter/2);
-        min-width: 1.5em;
-        max-width: 2em;
-        height: 1.5em;
-        padding: 0 2px;
-        color: $background-color;
-        line-height: 1.5;
-        text-align: center;
-        font-size: .6em;
-        font-weight: bold;
-        border-radius: 100em;
-        background-color: $fb-red;
-
-        @include truncate;
-
-        [dir=rtl] &
+        &[data-tip]
         {
-            right: auto;
-            left: ($gutter/2);
-        }
-
-        &.follow
-        {
-            right: -.5em;
-
-            @include center(y);
-
-            [dir=rtl] &
-            {
-                right: auto;
-                left: -.5em;
-            }
+            @extend [data-tip].down;
+            @extend [data-tip].flush-left;
+            @extend [data-tip].short;
         }
     }
 
@@ -135,7 +107,7 @@
 
             &.read
             {
-                background-color: $gray-lightest;
+                background-color: $hover-bg-color;
             }
 
             > a
@@ -314,10 +286,17 @@
             @include truncate;
         }
 
+        .exit
+        {
+            display: none;
+        }
+
         .drop
         {
             width: 100%;
             height: $menu-bar-height;
+
+            @extend .drop.down;
 
             .bubble
             {
@@ -360,6 +339,19 @@
                         text-decoration: underline;
                     }
                 }
+            }
+        }
+
+        &.exit-mode
+        {
+            .exit
+            {
+                display: block;
+            }
+
+            .drop
+            {
+                display: none;
             }
         }
     }
@@ -644,6 +636,14 @@
         @include transition(top $timing);
     }
 
+    &.with-progress
+    {
+        .progress
+        {
+            display: block;
+        }
+    }
+
 }
 
 .type
@@ -666,6 +666,47 @@
     {
         margin-right: 0;
         margin-left: .3em;
+    }
+}
+
+.counter
+{
+    display: block;
+    position: absolute;
+    top: $row-spacing;
+    right: $row-spacing;
+    min-width: 1.5em;
+    max-width: 2em;
+    height: 1.5em;
+    padding: 0 2px;
+    color: $background-color;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0;
+    font-size: .7em;
+    border-radius: 100em;
+    background-color: $fb-red;
+
+    @include truncate;
+    @include font(body,bold);
+
+    [dir=rtl] &
+    {
+        right: auto;
+        left: ($gutter/2);
+    }
+
+    &.follow
+    {
+        right: -.5em;
+
+        @include center(y);
+
+        [dir=rtl] &
+        {
+            right: auto;
+            left: -.5em;
+        }
     }
 }
 

@@ -140,6 +140,8 @@
 {
     display: inline-block;
     position: relative;
+    top: -1px;
+    margin-left: .2em;
     padding: 0 .3em;
     color: inherit;
     text-transform: uppercase;
@@ -199,5 +201,74 @@ h6
     .text
     {
         position: relative;
+    }
+}
+
+.plain-list
+{
+    ol
+    {
+        margin: 0;
+        padding-right: 0;
+    }
+
+    a
+    {
+        display: inline-block;
+        position: relative;
+        padding: .5em 0 .5em 1.5em;
+        color: $body-text-color;
+        font-size: .8em;
+
+        html:not(.touch) &:hover
+        {
+            text-decoration: underline;
+        }
+
+        &:before
+        {
+            position: absolute;
+            left: .2em;
+
+            @include font(icon,regular);
+            @include center(y);
+        }
+
+        &.done
+        {
+            color: $green-success;
+
+            &:before
+            {
+                content: '\e60c';
+            }
+        }
+
+        &.unavailable
+        {
+            color: $gray-regular;
+            cursor: not-allowed;
+
+            &:before
+            {
+                content: '\e601';
+            }
+        }
+
+        &.current
+        {
+            color: $heading-color;
+            font-weight: bold;
+
+            &:before
+            {
+                content: '\e60b';
+            }
+        }
+    }
+
+    .duration
+    {
+        color: $gray-regular;
     }
 }

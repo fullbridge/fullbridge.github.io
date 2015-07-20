@@ -21,11 +21,26 @@
         background-color: transparent;
     }
 
+    > .progress
+    {
+        @include bp(small)
+        {
+            height: 5px;
+            overflow: hidden;
+        }
+    }
+
     > header,
     > footer
     {
         margin: 0;
         padding: $row-spacing ($gutter/2);
+
+        @include bp(small)
+        {
+            border-top: $light-divider;
+            border-bottom: $light-divider;
+        }
     }
 
     > header
@@ -44,6 +59,11 @@
             {
                 padding-right: 3.8em;
                 padding-left: 0;
+            }
+
+            @include bp(small)
+            {
+                @include truncate;
             }
         }
 
@@ -72,11 +92,19 @@
             }
         }
 
-        &.open:before
+        &.open
         {
             @include bp(small)
             {
-                content: '\e60d';
+                white-space: normal;
+            }
+
+            &:before
+            {
+                @include bp(small)
+                {
+                    content: '\e60d';
+                }
             }
         }
 
@@ -136,6 +164,11 @@
                 {
                     margin: ($row-spacing*2) auto;
                     border-top: $light-divider;
+
+                    @include bp(small)
+                    {
+                        display: none;
+                    }
 
                     &:first-of-type
                     {
@@ -364,7 +397,7 @@
     }
 }
 
-.secondary-side-nav
+.steps-nav
 {
     @include bp($min: 921px)
     {
@@ -383,6 +416,15 @@
                 margin-right: $menu-bar-height*2;
                 margin-left: 0;
             }
+        }
+    }
+
+    [data-tip]:before,
+    [data-tip]:after
+    {
+        @include bp(small)
+        {
+            display: none;
         }
     }
 
@@ -541,8 +583,9 @@
                 {
                     > a
                     {
-                        color: white;
-                        background-color: $heading-color;
+                        color: $heading-color;
+                        border: 1px solid $heading-color;
+                        background-color: $background-color;
                     }
 
                     &:before
@@ -554,10 +597,9 @@
                     {
                         @include bp($min: 921px)
                         {
-                            color: $heading-color;
+                            color: $background-color;
                             content: '\e60b';
-                            border: 1px solid $heading-color;
-                            background-color: $background-color;
+                            background-color: $heading-color;
 
                             [dir=rtl] &
                             {
@@ -605,23 +647,19 @@
 
     &.scrolled
     {
-        position: fixed;
-        background-color: white;
-        z-index: ($modal-z - 1);
-
-        @include bp(small)
-        {
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            border-top: $light-divider;
-        }
-
         @include bp(desktop)
         {
-            top: 0;
+            position: fixed;
             right: 0;
             border-bottom: $light-divider;
+            background-color: white;
+            z-index: ($modal-z - 1);
+
+            [dir=rtl] &
+            {
+                right: auto;
+                left: 0;
+            }
         }
 
         @include bp(medium)
@@ -710,6 +748,15 @@
 {
     background-color: $background-color;
 
+    @extend .row;
+
+    nav
+    {
+        @extend .columns;
+        @extend .medium-11;
+        @extend .columns.small-centered;
+    }
+
     ul
     {
         @include clearfix;
@@ -789,6 +836,16 @@
                     color: $heading-color;
                     font-weight: bold;
                     background-color: white;
+                }
+            }
+
+            &.view-toggle
+            {
+                @include bp(small)
+                {
+                    width: 100% !important;
+                    padding: 5px 0;
+                    background-color: $background-color;
                 }
             }
         }
@@ -1073,9 +1130,9 @@
 
         @include transition(top $timing);
     }
+}
 
-    .content > &:first-child
-    {
-        padding-top: $row-spacing*3;
-    }
+.content > .subnav:first-child
+{
+    padding-top: $row-spacing*3;
 }

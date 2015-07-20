@@ -36,7 +36,7 @@ $(function(){
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 50) {
+    if (scroll >= 1) {
         $(".sidebar.fixed").addClass("scrolled");
     } else {
         $(".sidebar.fixed").removeClass("scrolled");
@@ -49,9 +49,9 @@ $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
     if (scroll >= 600) {
-        $(".secondary-side-nav").addClass("scrolled");
+        $(".steps-nav").addClass("scrolled");
     } else {
-        $(".secondary-side-nav").removeClass("scrolled");
+        $(".steps-nav").removeClass("scrolled");
     }
 });
 

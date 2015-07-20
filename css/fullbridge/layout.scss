@@ -2,14 +2,6 @@
    Layout
    ========================================================================== */
 
-.content
-{
-    overflow-x: hidden;
-    padding-bottom: $row-spacing*4;
-
-    @include clearfix;
-}
-
 .section
 {
     @include bp(small)
@@ -31,51 +23,6 @@
     }
 }
 
-.golden-side
-{
-    @include bp(desktop)
-    {
-        width: $golden-side-width;
-    }
-
-    &.double
-    {
-        @include bp(desktop)
-        {
-            width: ($golden-side-width*2);
-        }
-    }
-}
-
-.golden-main
-{
-    @include bp(desktop)
-    {
-        width: $golden-main-width;
-    }
-
-    &.plus
-    {
-        @include bp(desktop)
-        {
-            width: ($golden-main-width + $golden-side-width);
-        }
-    }
-}
-
-.outer-chapter
-{
-    @include bp(desktop)
-    {
-        float: right;
-        
-        [dir=rtl] &
-        {
-            float: left;
-        }
-    }
-}
-
 .menu-bar
 {
     & + .content
@@ -93,6 +40,14 @@
             @include bp(small)
             {
                 @include transform(translateY(-$menu-bar-height));
+            }
+        }
+
+        .steps-nav.scrolled
+        {
+            @include bp(desktop)
+            {
+                top: 0;
             }
         }
     }
@@ -135,10 +90,23 @@
 
         .sidebar.fixed.scrolled
         {
+            @include bp(small)
+            {
+                @include transform(translateY(0%));
+            }
+
             @include bp(desktop)
             {
                 top: auto;
                 height: calc(100% - #{$menu-bar-height});
+            }
+        }
+
+        .steps-nav.scrolled
+        {
+            @include bp(desktop)
+            {
+                top: $menu-bar-height;
             }
         }
     }
@@ -154,6 +122,39 @@
                 top: auto;
                 height: calc(100% - 1.6em - #{$menu-bar-height});
             }
+        }
+    }
+}
+
+.content
+{
+    overflow-x: hidden;
+    padding-bottom: $row-spacing*4;
+
+    @include clearfix;
+}
+
+.content-header
+{
+    @extend .row;
+
+    .wrapper
+    {
+        @extend .columns;
+        @extend .medium-11;
+        @extend .columns.small-centered;
+    }
+}
+
+.outer-chapter
+{
+    @include bp(desktop)
+    {
+        float: right;
+        
+        [dir=rtl] &
+        {
+            float: left;
         }
     }
 }
@@ -204,14 +205,17 @@
 
     &.fixed
     {
+        position: fixed;
+
         @include bp(small)
         {
+            top: $menu-bar-height;
+            width: 100%;
             z-index: ($modal-z - 1);
         }
 
         @include bp(desktop)
         {
-            position: fixed;
             height: 100%;
             
             @include transform(translate(0%,0%));
@@ -220,6 +224,14 @@
             {
                 left: auto;
                 right: 0;
+            }
+        }
+
+        & + .outer-chapter
+        {
+            @include bp(small)
+            {
+                padding-top: $menu-bar-height;
             }
         }
 
@@ -237,41 +249,16 @@
             {
                 position: relative;
                 z-index: 1;
-
-                @include bp(small)
-                {
-                    box-shadow: $box-shadow;
-                }
             }
         }
     }
 
     &.scrolled
     {
-        @include bp(small)
-        {
-            position: fixed;
-            width: 100%;
-        }
-
         .side-nav
         {
             > header
             {
-                @include bp(small)
-                {
-                    color: $background-color;
-                    background-color: $heading-color;
-                }
-
-                &:before
-                {
-                    @include bp(small)
-                    {
-                        background-color: rgba(white,.1);
-                    }
-                }
-
                 &.open + nav
                 {
                     @include bp(small)
@@ -285,6 +272,15 @@
             }
         }
     }
+}
+
+.footer
+{
+    clear: both;
+    margin: 0;
+    padding: ($row-spacing*2) 0;
+    text-align: center;
+    background-color: $gray-lightest;
 }
 
 .block

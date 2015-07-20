@@ -2148,8 +2148,8 @@ input[data-tip]
 {
     color: $link-color;
     text-decoration: none;
-    border-bottom: 1px solid $gray-lightest;
-    box-shadow: 0 -.25em 0 $gray-lightest inset;
+    border-bottom: 1px solid $hover-bg-color;
+    box-shadow: 0 -.25em 0 $hover-bg-color inset;
 
     &:visited
     {
@@ -2578,6 +2578,11 @@ input[data-tip]
             margin-right: 0 !important;
             margin-left: 0 !important;
         }
+    }
+
+    &.collapse
+    {
+        margin: 0 !important;
     }
 }
 
