@@ -210,11 +210,45 @@ h6
     {
         margin: 0;
         padding-right: 0;
+        counter-reset: item;
+        list-style: none;
+
+        [dir=rtl] &
+        {
+            padding-right: $gutter;
+            padding-left: 0;
+        }
+
+        li
+        {
+            border-top: $light-divider;
+
+            &:before 
+            { 
+                position: relative;
+                top: .5em;
+                color: $gray-regular;
+                content: counters(item, ".") " "; 
+                counter-increment: item;
+                vertical-align: top;
+                font-size: .8em;
+            }
+        }
+    }
+
+    > ol
+    {
+        padding: 0;
+
+        > li:before
+        {
+            content: counters(item, "") ". "; 
+        }
     }
 
     .divider
     {
-        margin: ($row-spacing*3) 0 $row-spacing -2em;
+        margin: ($row-spacing*3) 0 -1px 0;
         line-height: 1;
 
         span
@@ -238,6 +272,11 @@ h6
         color: $body-text-color;
         font-size: .8em;
 
+        [dir=rtl] &
+        {
+            padding: .5em 1.5em .5em 0;
+        }
+
         html:not(.touch) &:hover
         {
             text-decoration: underline;
@@ -246,10 +285,16 @@ h6
         &:before
         {
             position: absolute;
+            top: .5em;
             left: .2em;
 
             @include font(icon,regular);
-            @include center(y);
+
+            [dir=rtl] &
+            {
+                right: .2em;
+                left: auto;
+            }
         }
 
         &.done
@@ -281,6 +326,11 @@ h6
             &:before
             {
                 content: '\e60b';
+
+                [dir=rtl] &
+                {
+                    content: '\e60a';
+                }
             }
         }
     }

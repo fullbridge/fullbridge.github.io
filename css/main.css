@@ -7469,9 +7469,28 @@ h6 .duration {
 
 .plain-list ol {
   margin: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  counter-reset: item;
+  list-style: none; }
+  [dir=rtl] .plain-list ol {
+    padding-right: 2em;
+    padding-left: 0; }
+  .plain-list ol li {
+    border-top: 1px solid #e7e7e7; }
+    .plain-list ol li:before {
+      position: relative;
+      top: .5em;
+      color: #9b9b9b;
+      content: counters(item,".") " ";
+      counter-increment: item;
+      vertical-align: top;
+      font-size: .8em; }
+.plain-list > ol {
+  padding: 0; }
+  .plain-list > ol > li:before {
+    content: counters(item,"") ". "; }
 .plain-list .divider {
-  margin: 2.1em 0 0.7em -2em;
+  margin: 2.1em 0 -1px 0;
   line-height: 1; }
   .plain-list .divider span {
     display: inline-block;
@@ -7488,21 +7507,20 @@ h6 .duration {
   padding: .5em 0 .5em 1.5em;
   color: #5b5b5b;
   font-size: .8em; }
+  [dir=rtl] .plain-list a {
+    padding: .5em 1.5em .5em 0; }
   html:not(.touch) .plain-list a:hover {
     text-decoration: underline; }
   .plain-list a:before {
     position: absolute;
+    top: .5em;
     left: .2em;
     font-family: "icomoon";
     font-weight: 400;
-    font-style: normal;
-    top: 50%;
-    bottom: auto;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    font-style: normal; }
+    [dir=rtl] .plain-list a:before {
+      right: .2em;
+      left: auto; }
   .plain-list a.done {
     color: #4CAF50; }
     .plain-list a.done:before {
@@ -7517,6 +7535,8 @@ h6 .duration {
     font-weight: bold; }
     .plain-list a.current:before {
       content: '\e60b'; }
+      [dir=rtl] .plain-list a.current:before {
+        content: '\e60a'; }
 .plain-list .duration {
   color: #9b9b9b; }
 

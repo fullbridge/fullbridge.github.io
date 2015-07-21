@@ -135,7 +135,7 @@ nav-program-exit: exit-mode
                     </nav>
                     <footer>
                         <p><small>2015 &copy; Fullbridge Program<br>
-                        <a class="link" href="javascript:">Documentations</a></small></p>
+                        <a class="link" href="javascript:">Help Center</a></small></p>
                     </footer>
                 </div>
             </div>
@@ -369,14 +369,20 @@ nav-program-exit: exit-mode
                                         <div class="block">
                                             <ul class="button-group">
                                                 <li><a href="javascript:" class="button primary"
-                                                    data-anijs="if: click, do: $addClass open, to: #modal-saved;">Save</a></li>
+                                                    data-anijs="if: click, do: $removeClass open, to: .reveal-modal;
+                                                                if: click, do: $removeClass open, to: .overlay;
+                                                                if: click, do: $addClass open, to: #modal-saved;">Save</a></li>
                                                 <li><a href="javascript:" class="button primary">&laquo;</a></li>
                                                 <li><a href="javascript:" class="button primary"
-                                                    data-anijs="if: click, do: $addClass open, to: #modal-warning;">&raquo;</a></li>
+                                                    data-anijs="if: click, do: $removeClass open, to: .reveal-modal;
+                                                                if: click, do: $removeClass open, to: .overlay;
+                                                                if: click, do: $addClass open, to: #modal-warning;">&raquo;</a></li>
                                                 <li class="end">
                                                     <a href="javascript:" class="button primary"
                                                         data-anijs="if: click, do: $removeClass primary;
                                                                     if: click, do: $addClass success;
+                                                                    if: click, do: $removeClass open, to: .reveal-modal;
+                                                                    if: click, do: $removeClass open, to: .overlay;
                                                                     if: click, do: $addClass open, to: #modal-success;"><span class="icon-check"></span> Complete</a>
                                                 </li>
                                             </ul>
