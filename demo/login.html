@@ -1,0 +1,100 @@
+---
+title: Log in to Fullbridge
+description: 
+canonical: 
+direction: 
+---
+    {% include head.html %}
+
+        {% include outdated-browser.html %}
+
+        <main class="row content">
+            <div class="large-5 medium-7 small-centered columns">
+                <div class="section">
+                    <a href="http://fullbridge.com"><img src="/img/logo-fullbridge.png" alt="Fullbridge" width="200"></a>
+                </div>
+                <div class="section">
+                    <div class="tabs">
+                        <div class="tab">
+                            <input class="tab-radio" type="radio" id="login" name="fb-login" checked>
+                            <label class="tab-label" for="login">Log in</label>
+                            <div class="tab-panel">
+                                <div class="tab-content">
+                                    <form class="form block">
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="column">
+                                                    <label class="label expand">
+                                                        <input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Must use valid email." required aria-required="true">
+                                                        <div class="label-text">
+                                                            <span class="valid">Hey, nice email</span>
+                                                            <span class="invalid">Hmm, that's not an email</span>
+                                                            <span class="default">Email</span>
+                                                        </div>
+                                                        <div class="alert-bubble validations hidden">
+                                                            <p>
+                                                                There's already an account with this email. <a href="javascript:">Try signing in</a>
+                                                            </p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="column">
+                                                    <label class="label expand">
+                                                        <input type="password" placeholder="Password" pattern=".{8,}" title="Must enter 8 characters. Special characters are allowed." required aria-required="true">
+                                                        <div class="label-text">
+                                                            <span class="valid">Good password!</span>
+                                                            <span class="invalid">Too simple</span>
+                                                            <span class="default">Password</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="medium-6 small-12 columns">
+                                                    <label class="label expand">
+                                                        <input type="checkbox">
+                                                        <div class="text">
+                                                            Remember me
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="medium-6 small-12 columns">
+                                                    <p>
+                                                        <a href="/role/participant/program.html" class="button primary expand">
+                                                            Log in
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                    <p><small><a href="javascript:" class="link">Forgot your password?</a></small></p>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="modal-1" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="medium-6 small-12 small-centered column">
+                    <div class="reveal alert-box warning">
+                        <header>
+                            There is something wrong with the following fields:
+                        </header>
+                        <ul>
+                            <li>Last name</li>
+                            <li>Email</li>
+                        </ul>
+                        <a href="javascript:" class="close"
+                            data-anijs="if: click, do: $removeClass open, to: #modal-1;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    {% include bottom.html %}
