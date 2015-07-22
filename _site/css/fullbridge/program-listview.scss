@@ -1,0 +1,141 @@
+/* ==========================================================================
+   Program list view
+   ========================================================================== */
+
+.units-list
+{
+    ol
+    {
+        margin: 0;
+        padding-right: 0;
+        counter-reset: item;
+        list-style: none;
+
+        [dir=rtl] &
+        {
+            padding-right: $gutter;
+            padding-left: 0;
+        }
+
+        li
+        {
+            border-top: $light-divider;
+
+            &:before 
+            { 
+                position: relative;
+                top: .5em;
+                color: $gray-regular;
+                content: counters(item, ".") " "; 
+                counter-increment: item;
+                vertical-align: top;
+                font-size: .8em;
+            }
+        }
+    }
+
+    > ol
+    {
+        padding: 0;
+
+        > li:before
+        {
+            content: counters(item, "") ". "; 
+        }
+    }
+
+    .divider
+    {
+        margin-top: ($row-spacing*3);
+        line-height: 1;
+
+        span
+        {
+            display: inline-block;
+            padding: .5em;
+            color: $heading-color;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: .6em;
+            font-weight: bold;
+            border: $light-divider;
+            border-bottom: none;
+        }
+    }
+
+    a
+    {
+        display: inline-block;
+        position: relative;
+        padding: .5em 0 .5em 1.5em;
+        color: $body-text-color;
+        font-size: .8em;
+
+        [dir=rtl] &
+        {
+            padding: .5em 1.5em .5em 0;
+        }
+
+        html:not(.touch) &:hover
+        {
+            text-decoration: underline;
+        }
+
+        &:before
+        {
+            position: absolute;
+            top: .5em;
+            left: .2em;
+
+            @include font(icon,regular);
+
+            [dir=rtl] &
+            {
+                right: .2em;
+                left: auto;
+            }
+        }
+
+        &.done
+        {
+            color: $green-success;
+
+            &:before
+            {
+                content: '\e60c';
+            }
+        }
+
+        &.unavailable
+        {
+            color: $gray-regular;
+            cursor: not-allowed;
+
+            &:before
+            {
+                content: '\e601';
+            }
+        }
+
+        &.current
+        {
+            color: $heading-color;
+            font-weight: bold;
+
+            &:before
+            {
+                content: '\e60b';
+
+                [dir=rtl] &
+                {
+                    content: '\e60a';
+                }
+            }
+        }
+    }
+
+    .duration
+    {
+        color: $gray-regular;
+    }
+}

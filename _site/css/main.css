@@ -3191,7 +3191,8 @@ aside {
       position: relative;
       top: .3em;
       float: right;
-      margin-left: 1em; }
+      margin-left: 1em;
+      font-size: .8em; }
       [dir=rtl] aside {
         float: left;
         margin-right: 1em;
@@ -4520,6 +4521,34 @@ summary {
   margin: 0.7em auto; }
   .block.double {
     margin: 1.4em auto; }
+
+.hero-heading {
+  padding: 1.4em 1em 0.7em 1em;
+  text-align: center;
+  border-bottom: 1px solid #e7e7e7;
+  background-image: url("../img/bg-polygon.jpg");
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  .hero-heading.filled {
+    position: relative;
+    color: white; }
+    @media only screen and (min-width: 769px) {
+      .hero-heading.filled {
+        padding: 4.2em 1em 0.7em 1em; } }
+    .hero-heading.filled:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      background: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)) top;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)) top; }
+  .hero-heading .text {
+    position: relative; }
 
 /* ==========================================================================
    Forms and buttons
@@ -7353,7 +7382,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
         display: none; } }
 
 /* ==========================================================================
-   Timeline
+   Program overview
    ========================================================================== */
 @media only screen and (max-width: 768px) {
   .summary .thumbnail figure {
@@ -7389,16 +7418,16 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
     line-height: 1.2;
     font-size: .8em; }
 
-.units-list {
+.units-overview {
   margin: 0;
   padding: 0;
   list-style: none; }
-  .units-list > li {
+  .units-overview > li {
     position: relative;
     margin: 0 0 -1px 0;
     padding: 2.1em 1em;
     border-top: 1px solid #e7e7e7; }
-    .units-list > li.divider {
+    .units-overview > li.divider {
       margin-top: 4.2em;
       padding: 0;
       line-height: 1;
@@ -7407,14 +7436,14 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
       font-size: .6em;
       font-weight: bold;
       border-top: none; }
-      .units-list > li.divider span {
+      .units-overview > li.divider span {
         display: inline-block;
         padding: .5em;
         color: #282828;
         border: 1px solid #e7e7e7; }
-    .units-list > li:first-of-type {
+    .units-overview > li:first-of-type {
       border-top: none; }
-    .units-list > li.done {
+    .units-overview > li.done {
       background-color: #E8F5E9; }
 
 .duration {
@@ -7439,45 +7468,20 @@ h5 .duration,
 h6 .duration {
   top: -.1em; }
 
-.hero-heading {
-  padding: 1.4em 1em 0.7em 1em;
-  text-align: center;
-  border-bottom: 1px solid #e7e7e7;
-  background-image: url("../img/bg-polygon.jpg");
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-  .hero-heading.filled {
-    position: relative;
-    color: white; }
-    @media only screen and (min-width: 769px) {
-      .hero-heading.filled {
-        padding: 4.2em 1em 0.7em 1em; } }
-    .hero-heading.filled:before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      content: '';
-      background: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)) top;
-      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)) top; }
-  .hero-heading .text {
-    position: relative; }
-
-.plain-list ol {
+/* ==========================================================================
+   Program list view
+   ========================================================================== */
+.units-list ol {
   margin: 0;
   padding-right: 0;
   counter-reset: item;
   list-style: none; }
-  [dir=rtl] .plain-list ol {
+  [dir=rtl] .units-list ol {
     padding-right: 2em;
     padding-left: 0; }
-  .plain-list ol li {
+  .units-list ol li {
     border-top: 1px solid #e7e7e7; }
-    .plain-list ol li:before {
+    .units-list ol li:before {
       position: relative;
       top: .5em;
       color: #9b9b9b;
@@ -7485,14 +7489,14 @@ h6 .duration {
       counter-increment: item;
       vertical-align: top;
       font-size: .8em; }
-.plain-list > ol {
+.units-list > ol {
   padding: 0; }
-  .plain-list > ol > li:before {
+  .units-list > ol > li:before {
     content: counters(item,"") ". "; }
-.plain-list .divider {
+.units-list .divider {
   margin-top: 2.1em;
   line-height: 1; }
-  .plain-list .divider span {
+  .units-list .divider span {
     display: inline-block;
     padding: .5em;
     color: #282828;
@@ -7502,43 +7506,43 @@ h6 .duration {
     font-weight: bold;
     border: 1px solid #e7e7e7;
     border-bottom: none; }
-.plain-list a {
+.units-list a {
   display: inline-block;
   position: relative;
   padding: .5em 0 .5em 1.5em;
   color: #5b5b5b;
   font-size: .8em; }
-  [dir=rtl] .plain-list a {
+  [dir=rtl] .units-list a {
     padding: .5em 1.5em .5em 0; }
-  html:not(.touch) .plain-list a:hover {
+  html:not(.touch) .units-list a:hover {
     text-decoration: underline; }
-  .plain-list a:before {
+  .units-list a:before {
     position: absolute;
     top: .5em;
     left: .2em;
     font-family: "icomoon";
     font-weight: 400;
     font-style: normal; }
-    [dir=rtl] .plain-list a:before {
+    [dir=rtl] .units-list a:before {
       right: .2em;
       left: auto; }
-  .plain-list a.done {
+  .units-list a.done {
     color: #4CAF50; }
-    .plain-list a.done:before {
+    .units-list a.done:before {
       content: '\e60c'; }
-  .plain-list a.unavailable {
+  .units-list a.unavailable {
     color: #9b9b9b;
     cursor: not-allowed; }
-    .plain-list a.unavailable:before {
+    .units-list a.unavailable:before {
       content: '\e601'; }
-  .plain-list a.current {
+  .units-list a.current {
     color: #282828;
     font-weight: bold; }
-    .plain-list a.current:before {
+    .units-list a.current:before {
       content: '\e60b'; }
-      [dir=rtl] .plain-list a.current:before {
+      [dir=rtl] .units-list a.current:before {
         content: '\e60a'; }
-.plain-list .duration {
+.units-list .duration {
   color: #9b9b9b; }
 
 /* ==========================================================================

@@ -11,7 +11,7 @@ nav-program-exit: exit-mode
 
         {% include outdated-browser.html %}
 
-        {% include nav-participant.html %}
+        {% include menu-bar-participant.html %}
 
         <main class="content">
             <div class="sidebar fixed">
@@ -202,6 +202,20 @@ nav-program-exit: exit-mode
                                             Credits: AP Videos
                                         </figcaption>
                                     </figure>
+                                    <div class="block">
+                                        <ul class="button-group">
+                                            <li><a href="javascript:" class="button primary">&laquo;</a></li>
+                                            <li><a href="javascript:" class="button primary">&raquo;</a></li>
+                                            <li class="end">
+                                                <a href="javascript:" class="button primary"
+                                                    data-anijs="if: click, do: $removeClass primary;
+                                                                if: click, do: $addClass success;
+                                                                if: click, do: $removeClass open, to: .reveal-modal;
+                                                                if: click, do: $removeClass open, to: .overlay;
+                                                                if: click, do: $addClass open, to: #modal-success;"><span class="icon-check"></span> Complete</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="medium-10 small-centered columns pod-2">
                                     <h2>The MBTI Assessment: TypeCoach Verifier</h2>
@@ -209,6 +223,10 @@ nav-program-exit: exit-mode
                                     <p>Throughout the Fullbridge Program, you will be asked to work as a member of a team. As you'll see firsthand, effective teamwork allows for the development of concepts and deliverables that could not have been created by a single individual.</p>
                                     <p>True teamwork requires significant effort and awareness on everyone's part. The Myers-Briggs Type Indicator, or MBTI, is one tool that many companies and individuals use to increase self-awareness. The MBTI offers useful information about how people perceive the world, absorb information, and make decisions.</p>
                                     <p>You will now take the MBTI assessment online, using an interactive tool called the TypeCoach Verifier. Please follow the instructions in the column to the right.</p>
+                                    <figure>
+                                        <img src="http://d2xhwju6fvossd.cloudfront.net/cf/images/fcefe9d0856511e4ad10bfcbd2708139/950_self_awareness_02022012_cm.jpg" alt="">
+                                        <figcaption>Image caption</figcaption>
+                                    </figure>
                                     <h3>MBTI Assessment</h3>
                                     <p>Your MBTI Verifier results will provide you with insight into your personal style preferences, how those preferences influence your approach to information and interactions, and how other people might experience working with you. This assessment also provides a framework for thinking about the preferred styles of others. There are no correct or incorrect answers or good or bad "scores," and this assessment does not measure abilities or intelligence. It contains no value judgments about preferred styles, nor is it a psychological test that can reveal private aspects of your personality.</p>
                                     <h5>Instructions</h5>
@@ -402,14 +420,14 @@ nav-program-exit: exit-mode
                 <div class="medium-6 small-12 small-centered column">
                     <div class="reveal alert-box success">
                         <header>
-                            <span class="icon-check"></span> Congratulations
+                            Congratulations
                         </header>
                         <p>
-                            You've completed The MBTI Assessment: TypeCoach Verifier!
+                            <span class="icon-check"></span> You've completed The MBTI Assessment: TypeCoach Verifier!
                         </p>
                         <ul class="actions">
                             <li>
-                                <a href="javascript:">Continue</a>
+                                <a href="javascript:">Continue in 10 seconds</a>
                             </li>
                         </ul>
                         <a href="javascript:" class="close"></a>
@@ -422,7 +440,7 @@ nav-program-exit: exit-mode
                 <div class="medium-6 small-12 small-centered column">
                     <div class="reveal alert-box warning">
                         <header>
-                            <span class="icon-info"></span> Sorry, not yet
+                            <span class="icon-info"></span> Uh oh
                         </header>
                         <p>
                             You have to finish the exercise before moving on.
@@ -435,8 +453,9 @@ nav-program-exit: exit-mode
         <div id="modal-saved" class="overlay top flush-right" aria-labelledby="Modal" aria-hidden="true" role="dialog">
             <div class="alert-box success">
                 <header>
-                    <span class="icon-check"></span> Exercise progress saved
+                    Saved!
                 </header>
+                <p>Your progress has been saved.</p>
                 <a href="javascript:" class="close"
                     data-anijs="if: click, do: $removeClass open, to: #modal-4;"></a>
             </div>

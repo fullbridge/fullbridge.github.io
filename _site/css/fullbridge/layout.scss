@@ -294,3 +294,42 @@
         margin: ($row-spacing*2) auto;
     }
 }
+
+.hero-heading
+{
+    padding: $row-spacing*2 ($gutter/2) $row-spacing ($gutter/2);
+    text-align: center;
+    border-bottom: $light-divider;
+    background-image: url('../img/bg-polygon.jpg');
+    background-position: center center;
+
+    @include background-size(cover);
+
+    &.filled
+    {
+        position: relative;
+        color: white;
+
+        @include bp(desktop)
+        {
+            padding: $row-spacing*6 ($gutter/2) $row-spacing ($gutter/2);
+        }
+
+        &:before
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+
+            @include background(linear-gradient(rgba(black,.1), rgba(black,.8)) top);
+        }
+    }
+
+    .text
+    {
+        position: relative;
+    }
+}
