@@ -2174,6 +2174,14 @@ input[data-tip]
         word-break: break-all;
     }
 
+    &.plain
+    {
+        color: inherit !important;
+        text-decoration: inherit !important;
+        border-bottom: inherit !important;
+        box-shadow: inherit !important;
+    }
+
     &.external
     {
         color: inherit !important;

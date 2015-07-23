@@ -1,0 +1,47 @@
+---
+title: Calendar view
+description: 
+canonical: 
+direction: 
+nav-position: fixed
+nav-progress: with-progress
+nav-program-exit: 
+subnav-position: fixed
+pin-program: current
+pin-program-calendar: current
+---
+    {% include head.html %}
+
+        {% include outdated-browser.html %}
+
+        {% include menu-bar-participant.html %}
+
+        <main class="content">
+            {% include subnav-participant.html %}
+            <div class="content-body">
+                <div class="wrapper">
+                    <div class="block double">
+                        <div class="row">
+                            <div class="medium-4 medium-push-8 columns">
+                                <div class="mini-calendar form">
+                                    <header>
+                                        <div class="row">
+                                            <div class="medium-4 columns"></div>
+                                            <div class="medium-4 columns"></div>
+                                            <div class="medium-4 columns"></div>
+                                        </div>
+                                    </header>
+                                </div>
+                            </div>
+                            <div class="medium-8 medium-pull-4 columns">
+                                Now and upcoming
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        {% include footer.html %}
+
+    {% include bottom.html %}

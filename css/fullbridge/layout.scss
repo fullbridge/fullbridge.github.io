@@ -29,6 +29,11 @@
     {
         .sidebar.fixed
         {
+            @include bp(small)
+            {
+                top: $menu-bar-height;
+            }
+
             @include bp(desktop)
             {
                 height: calc(100% - #{$menu-bar-height});
@@ -134,7 +139,8 @@
     @include clearfix;
 }
 
-.content-header
+.content-header,
+.content-body
 {
     @extend .row;
 
@@ -209,7 +215,6 @@
 
         @include bp(small)
         {
-            top: $menu-bar-height;
             width: 100%;
             z-index: ($modal-z - 1);
         }
