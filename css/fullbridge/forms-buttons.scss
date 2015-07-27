@@ -192,7 +192,7 @@
                 [dir=rtl] &
                 {
                     margin-right: .5em;
-                    content: '\e604';
+                    content: '\e0fe';
                     
                     @include font(icon,regular);
                 }
@@ -201,7 +201,7 @@
             &:after
             {
                 margin-left: .5em;
-                content: '\e604';
+                content: '\e0fe';
                 
                 @include font(icon,regular);
 
@@ -681,7 +681,7 @@
                 width: 50%;
                 color: $gray-light;
                 line-height: 3;
-                content: '\e60d';
+                content: '\e209';
                 text-align: center;
 
                 @include font(icon,regular);
@@ -702,7 +702,7 @@
                 right: auto;
                 left: 0;
                 color: rgba(white,.5);
-                content: '\e60c';
+                content: '\e206';
             }
         }
 
@@ -1209,7 +1209,7 @@
             width: ($menu-bar-height*2/3);
             height: $menu-bar-height;
             color: white;
-            content: '\e606';
+            content: '\e10f';
             line-height: 3;
             text-indent: 0;
             text-align: center;
@@ -1385,7 +1385,7 @@
         height: 1em;
         color: darken($yellow-alert,50%);
         line-height: 1;
-        content: '\e60f';
+        content: '\e22a';
 
         @include font(icon,regular);
 
@@ -1463,7 +1463,7 @@
             {
                 &:after
                 {
-                    content: '\e60d';
+                    content: '\e209';
                 }
             }
         }
@@ -2197,7 +2197,7 @@ input[data-tip]
             {
                 margin-right: .2em;
                 color: $link-color;
-                content: '\e600';
+                content: '\e041';
                 font-size: .8em;
 
                 @include font(icon, regular);
@@ -2208,7 +2208,7 @@ input[data-tip]
         {
             margin-left: .2em;
             color: $link-color;
-            content: '\e600';
+            content: '\e041';
             font-size: .8em;
 
             @include font(icon, regular);
@@ -2243,7 +2243,7 @@ input[data-tip]
             [dir=rtl] &
             {
                 line-height: 1;
-                content: '\e606';
+                content: '\e10f';
                 font-size: .8em;
 
                 @include font(icon,regular);
@@ -2253,7 +2253,7 @@ input[data-tip]
         &:after
         {
             line-height: 1;
-            content: '\e606';
+            content: '\e10f';
             font-size: .8em;
 
             @include font(icon,regular);

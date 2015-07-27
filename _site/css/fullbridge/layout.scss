@@ -255,13 +255,7 @@
                 position: relative;
                 z-index: 1;
             }
-        }
-    }
 
-    &.scrolled
-    {
-        .side-nav
-        {
             > header
             {
                 &.open + nav

@@ -32,27 +32,10 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:" class="open"><div class="arrow"></div> Navigation</a>
+                                <a href="javascript:" class="open"><div class="arrow"></div> Forms</a>
                                 <ul>
                                     <li>
-                                        <a href="#menu-bar" class="current">Menu bar</a>
-                                    </li>
-                                    <li>
-                                        <a href="#subnav" class="">Subnav</a>
-                                    </li>
-                                    <li>
-                                        <a href="#breadcrumbs" class="">Breadcrumbs</a>
-                                    </li>
-                                    <li>
-                                        <a href="#paginations" class="">Paginations</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:" class=""><div class="arrow"></div> Forms</a>
-                                <ul>
-                                    <li>
-                                        <a href="#form-fields" class="">Form fields</a>
+                                        <a href="#form-fields" class="current">Form fields</a>
                                     </li>
                                     <li>
                                         <a href="#switches" class="">Switches</a>
@@ -109,6 +92,23 @@ direction:
                                 </ul>
                             </li>
                             <li>
+                                <a href="javascript:" class=""><div class="arrow"></div> Navigation</a>
+                                <ul>
+                                    <li>
+                                        <a href="#menu-bar" class="">Menu bar</a>
+                                    </li>
+                                    <li>
+                                        <a href="#subnav" class="">Subnav</a>
+                                    </li>
+                                    <li>
+                                        <a href="#breadcrumbs" class="">Breadcrumbs</a>
+                                    </li>
+                                    <li>
+                                        <a href="#paginations" class="">Paginations</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a href="javascript:" class=""><div class="arrow"></div> Article styles</a>
                                 <ul>
                                     <li>
@@ -161,132 +161,11 @@ direction:
                                             if: click, on: .side-nav nav>ul>li>ul>li>a:not(.unavailable), do: $addClass current, to: target;">
                         </ul>
                     </nav>
-                    <footer>
-                        <p><small>&copy; Fullbridge tech team</small></p>
-                    </footer>
+                    {% include footer.html %}
                 </div>
             </div>
             <div class="outer-chapter">
                 <article>
-                    <section class="row section">
-                        <div class="large-10 medium-11 small-centered columns">
-                            <h2>
-                                <a name="navigation" href="#navigation" class="link jump"></a> Navigation
-                            </h2>
-                            <h3>
-                                <a name="menu-bar" href="#menu-bar" class="link jump"></a> Menu bar
-                            </h3>
-                            <div class="block">
-                                {% include menu-bar-participant.html %}
-                            </div>
-                            <h3>
-                                <a name="subnav" href="#subnav" class="link jump"></a> Subnav
-                            </h3>
-                            <div class="block">
-                                <div class="subnav">
-                                    <div class="column"> <!-- use <nav> in production -->
-                                        <ul class="primary small-even-3">
-                                            <li class="current">
-                                                <a href="javascript:">1st level</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:">1st level</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:">1st level</a>
-                                            </li>
-                                        </ul>
-                                        <ul class="secondary">
-                                            <li class="current"><a href="javascript:">2nd level</a></li>
-                                            <li><a href="javascript:">2nd level</a></li>
-                                            <li><a href="javascript:">2nd level</a></li>
-                                            <li class="end"><a href="javascript:">2nd level</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>
-                                <a name="breadcrumbs" href="#breadcrumbs" class="link jump"></a> Breadcrumbs
-                            </h3>
-                            <div class="block">
-                                <ul class="breadcrumbs">
-                                    <li class="home"><a href="javascript:"></a></li>
-                                    <li class="back"><a href="javascript:"></a></li>
-                                    <li><a href="javascript:">Program</a></li>
-                                    <li><a href="javascript:">Unit</a></li>
-                                    <li><a href="javascript:">Section</a></li>
-                                    <li><a href="javascript:">Pod</a></li>
-                                    <li><a href="javascript:">Something very long Ut In Nulla Enim Phasellus Molestie Magna Non Es</a></li>
-                                    <li class="unavailable"><a href="javascript:">Unavailable</a></li>
-                                    <li class="current"><a href="javascript:">Current</a></li>
-                                </ul>
-                            </div>
-                            <h3>
-                                <a name="paginations" href="#paginations" class="link jump"></a> Paginations
-                            </h3>
-                            <div class="block">
-                                <div class="pagination" aria-label="Pagination">
-                                    <a class="disabled" rel="prev start" href="javascript:">&laquo; <span class="text">Previous</span></a>
-                                    <em class="current">1</em>
-                                    <a rel="next" href="javascript:">2</a>
-                                    <a href="javascript:">3</a>
-                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
-                                </div>
-                            </div>
-                            <div class="block">
-                                <div class="pagination" aria-label="Pagination">
-                                    <a rel="prev start" href="javascript:">&laquo; <span class="text">Previous</span></a>
-                                    <a rel="prev start" href="javascript:">1</a>
-                                    <em class="current">2</em>
-                                    <a rel="next" href="javascript:">3</a>
-                                    <a href="javascript:">4</a>
-                                    <a href="javascript:">5</a>
-                                    <span class="gap">&hellip;</span>
-                                    <a href="javascript:">964</a>
-                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
-                                </div>
-                            </div>
-                            <div class="block">
-                                <div class="pagination" aria-label="Pagination">
-                                    <a rel="prev" href="javascript:">&laquo; <span class="text">Previous</span></a>
-                                    <a rel="start" href="javascript:">1</a>
-                                    <span class="gap">&hellip;</span>
-                                    <a rel="prev" href="javascript:">5</a>
-                                    <em class="current">6</em>
-                                    <a rel="next" href="javascript:">7</a>
-                                    <span class="gap">&hellip;</span>
-                                    <a href="javascript:">964</a>
-                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
-                                </div>
-                            </div>
-                            <div class="block">
-                                <div class="pagination" aria-label="Pagination">
-                                    <a rel="prev" href="javascript:">&laquo; <span class="text">Previous</span></a>
-                                    <a rel="start" href="javascript:">1</a>
-                                    <span class="gap">&hellip;</span>
-                                    <a rel="prev" href="javascript:">959</a>
-                                    <em class="current">960</em>
-                                    <a rel="next" href="javascript:">961</a>
-                                    <span class="gap">&hellip;</span>
-                                    <a href="javascript:">964</a>
-                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
-                                </div>
-                            </div>
-                            <div class="block">
-                                <div class="pagination" aria-label="Pagination">
-                                    <a rel="prev" href="javascript:">&laquo; <span class="text">Previous</span></a>
-                                    <a rel="start" href="javascript:">1</a>
-                                    <span class="gap">&hellip;</span>
-                                    <a href="javascript:">961</a>
-                                    <a href="javascript:">962</a>
-                                    <a href="javascript:">963</a>
-                                    <a rel="prev" href="javascript:">964</a>
-                                    <em class="current">965</em>
-                                    <a class="disabled" rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                     <section class="row section">
                         <div class="large-10 medium-11 small-centered columns">
                             <h2>
@@ -423,14 +302,14 @@ direction:
                                             <label class="label expand">
                                                 <input type="time">
                                                 <div class="label-text">Time input</div>
-                                                <div class="icon-insert-invitation"></div>
+                                                <div class="icon-date"></div>
                                             </label>
                                         </div>
                                         <div class="medium-6 columns">
                                             <label class="label expand">
                                                 <input type="date">
                                                 <div class="label-text">Date input</div>
-                                                <div class="icon-insert-invitation"></div>
+                                                <div class="icon-date"></div>
                                             </label>
                                         </div>
                                     </div>
@@ -439,14 +318,14 @@ direction:
                                             <label class="label expand">
                                                 <input type="month">
                                                 <div class="label-text">Month input</div>
-                                                <div class="icon-insert-invitation"></div>
+                                                <div class="icon-date"></div>
                                             </label>
                                         </div>
                                         <div class="medium-6 columns">
                                             <label class="label expand">
                                                 <input type="week">
                                                 <div class="label-text">Week input</div>
-                                                <div class="icon-insert-invitation"></div>
+                                                <div class="icon-date"></div>
                                             </label>
                                         </div>
                                     </div>
@@ -455,7 +334,7 @@ direction:
                                             <label class="label expand">
                                                 <input type="datetime-local">
                                                 <div class="label-text">Datetime-local input</div>
-                                                <div class="icon-insert-invitation"></div>
+                                                <div class="icon-date"></div>
                                             </label>
                                         </div>
                                     </div>
@@ -930,6 +809,125 @@ direction:
                             <div class="block">
                                 <div class="progress">
                                     <span class="meter success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row section">
+                        <div class="large-10 medium-11 small-centered columns">
+                            <h2>
+                                <a name="navigation" href="#navigation" class="link jump"></a> Navigation
+                            </h2>
+                            <h3>
+                                <a name="menu-bar" href="#menu-bar" class="link jump"></a> Menu bar
+                            </h3>
+                            <div class="block">
+                                {% include menu-bar-participant.html %}
+                            </div>
+                            <h3>
+                                <a name="subnav" href="#subnav" class="link jump"></a> Subnav
+                            </h3>
+                            <div class="block">
+                                <div class="subnav">
+                                    <div class="column"> <!-- use <nav> in production -->
+                                        <ul class="primary small-even-3">
+                                            <li class="current">
+                                                <a href="javascript:">1st level</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:">1st level</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:">1st level</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="secondary">
+                                            <li class="current"><a href="javascript:">2nd level</a></li>
+                                            <li><a href="javascript:">2nd level</a></li>
+                                            <li><a href="javascript:">2nd level</a></li>
+                                            <li class="end"><a href="javascript:">2nd level</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>
+                                <a name="breadcrumbs" href="#breadcrumbs" class="link jump"></a> Breadcrumbs
+                            </h3>
+                            <div class="block">
+                                <ul class="breadcrumbs">
+                                    <li class="home"><a href="javascript:"></a></li>
+                                    <li class="back"><a href="javascript:"></a></li>
+                                    <li><a href="javascript:">Program</a></li>
+                                    <li><a href="javascript:">Unit</a></li>
+                                    <li><a href="javascript:">Section</a></li>
+                                    <li><a href="javascript:">Pod</a></li>
+                                    <li><a href="javascript:">Something very long Ut In Nulla Enim Phasellus Molestie Magna Non Es</a></li>
+                                    <li class="unavailable"><a href="javascript:">Unavailable</a></li>
+                                    <li class="current"><a href="javascript:">Current</a></li>
+                                </ul>
+                            </div>
+                            <h3>
+                                <a name="paginations" href="#paginations" class="link jump"></a> Paginations
+                            </h3>
+                            <div class="block">
+                                <div class="pagination" aria-label="Pagination">
+                                    <a class="disabled" rel="prev start" href="javascript:">&laquo; <span class="text">Previous</span></a>
+                                    <em class="current">1</em>
+                                    <a rel="next" href="javascript:">2</a>
+                                    <a href="javascript:">3</a>
+                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="pagination" aria-label="Pagination">
+                                    <a rel="prev start" href="javascript:">&laquo; <span class="text">Previous</span></a>
+                                    <a rel="prev start" href="javascript:">1</a>
+                                    <em class="current">2</em>
+                                    <a rel="next" href="javascript:">3</a>
+                                    <a href="javascript:">4</a>
+                                    <a href="javascript:">5</a>
+                                    <span class="gap">&hellip;</span>
+                                    <a href="javascript:">964</a>
+                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="pagination" aria-label="Pagination">
+                                    <a rel="prev" href="javascript:">&laquo; <span class="text">Previous</span></a>
+                                    <a rel="start" href="javascript:">1</a>
+                                    <span class="gap">&hellip;</span>
+                                    <a rel="prev" href="javascript:">5</a>
+                                    <em class="current">6</em>
+                                    <a rel="next" href="javascript:">7</a>
+                                    <span class="gap">&hellip;</span>
+                                    <a href="javascript:">964</a>
+                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="pagination" aria-label="Pagination">
+                                    <a rel="prev" href="javascript:">&laquo; <span class="text">Previous</span></a>
+                                    <a rel="start" href="javascript:">1</a>
+                                    <span class="gap">&hellip;</span>
+                                    <a rel="prev" href="javascript:">959</a>
+                                    <em class="current">960</em>
+                                    <a rel="next" href="javascript:">961</a>
+                                    <span class="gap">&hellip;</span>
+                                    <a href="javascript:">964</a>
+                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="pagination" aria-label="Pagination">
+                                    <a rel="prev" href="javascript:">&laquo; <span class="text">Previous</span></a>
+                                    <a rel="start" href="javascript:">1</a>
+                                    <span class="gap">&hellip;</span>
+                                    <a href="javascript:">961</a>
+                                    <a href="javascript:">962</a>
+                                    <a href="javascript:">963</a>
+                                    <a rel="prev" href="javascript:">964</a>
+                                    <em class="current">965</em>
+                                    <a class="disabled" rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
                                 </div>
                             </div>
                         </div>

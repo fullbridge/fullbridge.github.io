@@ -26,150 +26,6 @@
 /* ==========================================================================
    Web fonts
    ========================================================================== */
-@font-face {
-  src: url("../fonts/icomoon.eot?88f6qa");
-  src: url("../fonts/icomoon.eot?#iefix88f6qa") format("embedded-opentype"), url("../fonts/icomoon.ttf?88f6qa") format("truetype"), url("../fonts/icomoon.woff?88f6qa") format("woff"), url("../fonts/icomoon.svg?88f6qa#icomoon") format("svg");
-  font-family: "icomoon";
-  font-weight: 400;
-  font-style: normal; }
-[class^="icon-"], [class*=" icon-"] {
-  speak: none;
-  text-transform: none;
-  vertical-align: bottom;
-  font-variant: normal;
-  font-family: "icomoon";
-  font-weight: 400;
-  font-style: normal; }
-
-.icon-assignment-turned-in:before {
-  content: "\e602"; }
-
-.icon-exit-to-app:before {
-  content: "\e626"; }
-
-.icon-home:before {
-  content: "\e615"; }
-
-.icon-info:before {
-  content: "\e613"; }
-
-.icon-lock-outline:before {
-  content: "\e601"; }
-
-.icon-search:before {
-  content: "\e605"; }
-
-.icon-settings:before {
-  content: "\e61e"; }
-
-.icon-spellcheck:before {
-  content: "\e611"; }
-
-.icon-view-list:before {
-  content: "\e62a"; }
-
-.icon-wallet-giftcard:before {
-  content: "\e623"; }
-
-.icon-mic:before {
-  content: "\e603"; }
-
-.icon-my-library-books:before {
-  content: "\e61c"; }
-
-.icon-play-arrow:before {
-  content: "\e622"; }
-
-.icon-video-collection:before {
-  content: "\e627"; }
-
-.icon-call-made:before {
-  content: "\e600"; }
-
-.icon-dialpad:before {
-  content: "\e610"; }
-
-.icon-message:before {
-  content: "\e61a"; }
-
-.icon-add:before {
-  content: "\e618"; }
-
-.icon-remove:before {
-  content: "\e619"; }
-
-.icon-sort:before {
-  content: "\e624"; }
-
-.icon-insert-drive-file:before {
-  content: "\e625"; }
-
-.icon-insert-invitation:before {
-  content: "\e614"; }
-
-.icon-cloud-upload:before {
-  content: "\e604"; }
-
-.icon-keyboard-arrow-down:before {
-  content: "\e606"; }
-
-.icon-keyboard-arrow-left:before {
-  content: "\e607"; }
-
-.icon-keyboard-arrow-right:before {
-  content: "\e608"; }
-
-.icon-keyboard-arrow-up:before {
-  content: "\e609"; }
-
-.icon-edit:before {
-  content: "\e612"; }
-
-.icon-arrow-back:before {
-  content: "\e60a"; }
-
-.icon-arrow-drop-down:before {
-  content: "\e616"; }
-
-.icon-arrow-drop-up:before {
-  content: "\e617"; }
-
-.icon-arrow-forward:before {
-  content: "\e60b"; }
-
-.icon-check:before {
-  content: "\e60c"; }
-
-.icon-close:before {
-  content: "\e60d"; }
-
-.icon-more-horiz:before {
-  content: "\e628"; }
-
-.icon-more-vert:before {
-  content: "\e629"; }
-
-.icon-do-not-disturb:before {
-  content: "\e60e"; }
-
-.icon-sms-failed:before {
-  content: "\e60f"; }
-
-.icon-notifications:before {
-  content: "\e61b"; }
-
-.icon-people:before {
-  content: "\e61f"; }
-
-.icon-person:before {
-  content: "\e620"; }
-
-.icon-school:before {
-  content: "\e621"; }
-
-.icon-check-box:before {
-  content: "\e61d"; }
-
 /*! normalize.css v1.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -654,7 +510,7 @@ body {
   color: #5b5b5b;
   line-height: 1.4;
   background-color: white;
-  font-family: "Source Sans Pro", "Amiri", sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: 400;
   font-style: normal; }
   @media only screen and (max-width: 768px) {
@@ -3078,7 +2934,7 @@ body {
   .table tfoot {
     color: #282828;
     background-color: rgba(0, 0, 0, 0.05);
-    font-family: "Roboto Condensed", "Amiri", sans-serif;
+    font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
     font-weight: 700;
     font-style: normal; }
   .table th,
@@ -3133,9 +2989,9 @@ body {
       font-weight: 400;
       font-style: normal; }
     .table th.sorted.ascending:after {
-      content: '\e616'; }
+      content: '\e201'; }
     .table th.sorted.descending:after {
-      content: '\e617'; }
+      content: '\e203'; }
 
 @media only screen and (max-width: 768px) {
   table.responsive {
@@ -3222,7 +3078,7 @@ h6 {
   margin-bottom: 0;
   color: #282828;
   line-height: 1.25;
-  font-family: "Roboto Condensed", "Amiri", sans-serif;
+  font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: 700;
   font-style: normal; }
 
@@ -3302,7 +3158,7 @@ header hgroup h1 + h2 {
   color: #9b9b9b;
   text-transform: uppercase;
   letter-spacing: .25em;
-  font-family: "Source Sans Pro", "Amiri", sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: normal; }
   @media only screen and (max-width: 768px) {
     header hgroup h1 + h2 {
@@ -3327,7 +3183,7 @@ header hgroup h1 + h2 {
     border: 1px solid #e7e7e7;
     border-style: double;
     border-width: 4px;
-    font-family: "Roboto Condensed", "Amiri", sans-serif;
+    font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
     font-weight: 700;
     font-style: normal; }
     [dir=rtl] .opening:first-letter {
@@ -3347,7 +3203,7 @@ textarea,
 select,
 option,
 optgroup {
-  font-family: "Source Sans Pro", "Amiri", sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: 400;
   font-style: normal; }
 
@@ -3496,7 +3352,7 @@ summary {
    Navigation
    ========================================================================== */
 .side-nav {
-  font-family: "Source Sans Pro", "Amiri", sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: 400;
   font-style: normal; }
   @media only screen and (max-width: 768px) {
@@ -3514,7 +3370,8 @@ summary {
   .side-nav > header,
   .side-nav > footer {
     margin: 0;
-    padding: 0.7em 1em; }
+    padding-top: 0.7em;
+    padding-bottom: 0.7em; }
     @media only screen and (max-width: 768px) {
       .side-nav > header,
       .side-nav > footer {
@@ -3522,8 +3379,9 @@ summary {
         border-bottom: 1px solid #e7e7e7; } }
   .side-nav > header {
     position: relative;
+    padding: 0.7em 1em;
     color: #282828;
-    font-family: "Roboto Condensed", "Amiri", sans-serif;
+    font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
     font-weight: 700;
     font-style: normal; }
     @media only screen and (max-width: 768px) {
@@ -3556,13 +3414,13 @@ summary {
         left: auto; }
       @media only screen and (max-width: 768px) {
         .side-nav > header:before {
-          content: '\e62a'; } }
+          content: '\e0bc'; } }
     @media only screen and (max-width: 768px) {
       .side-nav > header.open {
         white-space: normal; } }
     @media only screen and (max-width: 768px) {
       .side-nav > header.open:before {
-        content: '\e60d'; } }
+        content: '\e209'; } }
     @media only screen and (max-width: 768px) {
       .side-nav > header + nav, .side-nav > header ~ footer {
         display: none; } }
@@ -3628,7 +3486,7 @@ summary {
           background-color: rgba(0, 0, 0, 0.05); }
         .side-nav > nav ul li .arrow:before,
         .side-nav > nav ol li .arrow:before {
-          content: '\e618';
+          content: '\e069';
           font-family: "icomoon";
           font-weight: 400;
           font-style: normal; }
@@ -3665,7 +3523,7 @@ summary {
         font-weight: bold; }
         .side-nav > nav ul li a.open .arrow:before,
         .side-nav > nav ol li a.open .arrow:before {
-          content: '\e619'; }
+          content: '\e07f'; }
         .side-nav > nav ul li a.open + ul, .side-nav > nav ul li a.open + ol,
         .side-nav > nav ol li a.open + ul,
         .side-nav > nav ol li a.open + ol {
@@ -3684,7 +3542,7 @@ summary {
   .side-nav > nav > ul > li > a,
   .side-nav > nav > ol > li > a {
     padding: 0.7em 1em 0.7em 3em;
-    font-family: "Roboto Condensed", "Amiri", sans-serif;
+    font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
     font-weight: 400;
     font-style: normal; }
     [dir=rtl] .side-nav > nav > ul > li > a, [dir=rtl]
@@ -3762,29 +3620,29 @@ summary {
       .side-nav > nav > ul > li > ol > li a.active:after,
       .side-nav > nav > ol > li > ul > li a.active:after,
       .side-nav > nav > ol > li > ol > li a.active:after {
-        content: '\e60c'; }
+        content: '\e206'; }
       .side-nav > nav > ul > li > ul > li a.done:after,
       .side-nav > nav > ul > li > ol > li a.done:after,
       .side-nav > nav > ol > li > ul > li a.done:after,
       .side-nav > nav > ol > li > ol > li a.done:after {
-        content: '\e60c';
+        content: '\e206';
         color: #4CAF50; }
       .side-nav > nav > ul > li > ul > li a.current:after,
       .side-nav > nav > ul > li > ol > li a.current:after,
       .side-nav > nav > ol > li > ul > li a.current:after,
       .side-nav > nav > ol > li > ol > li a.current:after {
         color: #282828;
-        content: '\e60b'; }
+        content: '\e204'; }
         [dir=rtl] .side-nav > nav > ul > li > ul > li a.current:after, [dir=rtl]
         .side-nav > nav > ul > li > ol > li a.current:after, [dir=rtl]
         .side-nav > nav > ol > li > ul > li a.current:after, [dir=rtl]
         .side-nav > nav > ol > li > ol > li a.current:after {
-          content: '\e60a'; }
+          content: '\e200'; }
       .side-nav > nav > ul > li > ul > li a.unavailable:after,
       .side-nav > nav > ul > li > ol > li a.unavailable:after,
       .side-nav > nav > ol > li > ul > li a.unavailable:after,
       .side-nav > nav > ol > li > ol > li a.unavailable:after {
-        content: '\e601'; }
+        content: '\e2ad'; }
 
 @media (min-width: 921px) {
   .steps-nav {
@@ -3908,7 +3766,7 @@ summary {
     @media (min-width: 921px) {
       .steps-nav nav > ul > li.done:after {
         color: white;
-        content: '\e60c';
+        content: '\e206';
         border: 1px solid white;
         background-color: #4CAF50; } }
     .steps-nav nav > ul > li.current > a {
@@ -3920,17 +3778,17 @@ summary {
     @media (min-width: 921px) {
       .steps-nav nav > ul > li.current:after {
         color: white;
-        content: '\e60b';
+        content: '\e204';
         background-color: #282828; }
         [dir=rtl] .steps-nav nav > ul > li.current:after {
-          content: '\e60a'; } }
+          content: '\e200'; } }
     .steps-nav nav > ul > li.unavailable > a {
       color: #9b9b9b;
       cursor: not-allowed; }
     @media (min-width: 921px) {
       .steps-nav nav > ul > li.unavailable:after {
         color: #9b9b9b;
-        content: '\e601';
+        content: '\e2ad';
         border: 1px solid white;
         background-color: #e7e7e7; } }
     @media (min-width: 921px) {
@@ -4005,7 +3863,7 @@ summary {
     .subnav ul:after {
       clear: both; }
     .subnav ul > li {
-      font-family: "Roboto Condensed", "Amiri", sans-serif;
+      font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
       font-weight: 400;
       font-style: normal;
       position: relative;
@@ -4321,7 +4179,7 @@ summary {
     height: 3em;
     background-color: #af272f; }
     .menu-bar .admin-select .button, .menu-bar .admin-select .form input[type="file"] + .label-text, .form .menu-bar .admin-select input[type="file"] + .label-text {
-      font-family: "Roboto Condensed", "Amiri", sans-serif;
+      font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
       font-weight: 400;
       font-style: normal; }
   .menu-bar .program-select {
@@ -4337,7 +4195,7 @@ summary {
       float: right; }
     .menu-bar .program-select .button, .menu-bar .program-select .form input[type="file"] + .label-text, .form .menu-bar .program-select input[type="file"] + .label-text {
       max-width: 100%;
-      font-family: "Roboto Condensed", "Amiri", sans-serif;
+      font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
       font-weight: 400;
       font-style: normal;
       overflow: hidden;
@@ -4425,7 +4283,7 @@ summary {
         left: .4em !important; }
     .menu-bar .utilities .user-settings .button:after, .menu-bar .utilities .user-settings .form input[type="file"] + .label-text:after, .form .menu-bar .utilities .user-settings input[type="file"] + .label-text:after {
       line-height: 3;
-      content: '\e606';
+      content: '\e10f';
       vertical-align: top;
       font-family: "icomoon";
       font-weight: 400;
@@ -4437,10 +4295,10 @@ summary {
             margin-right: .2em;
             margin-left: 0; } }
     .menu-bar .utilities .user-settings .button.open:after, .menu-bar .utilities .user-settings .form input[type="file"] + .open.label-text:after, .form .menu-bar .utilities .user-settings input[type="file"] + .open.label-text:after {
-      content: '\e609'; }
+      content: '\e112'; }
     @media only screen and (max-width: 768px) {
       .menu-bar .utilities .user-settings .button:after, .menu-bar .utilities .user-settings .form input[type="file"] + .label-text:after, .form .menu-bar .utilities .user-settings input[type="file"] + .label-text:after, .menu-bar .utilities .user-settings .button.open:after, .menu-bar .utilities .user-settings .form input[type="file"] + .open.label-text:after, .form .menu-bar .utilities .user-settings input[type="file"] + .open.label-text:after {
-        content: '\e620'; } }
+        content: '\e253'; } }
     .menu-bar .utilities .user-settings .button .profile-photo-edit, .menu-bar .utilities .user-settings .form input[type="file"] + .label-text .profile-photo-edit, .form .menu-bar .utilities .user-settings input[type="file"] + .label-text .profile-photo-edit {
       display: inline-block;
       width: 1.5em;
@@ -4458,7 +4316,7 @@ summary {
       max-width: 15em;
       margin-left: .5em;
       vertical-align: top;
-      font-family: "Roboto Condensed", "Amiri", sans-serif;
+      font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
       font-weight: 400;
       font-style: normal;
       overflow: hidden;
@@ -4557,7 +4415,7 @@ summary {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-family: "Source Sans Pro", "Amiri", sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: 700;
   font-style: normal; }
   [dir=rtl] .counter {
@@ -4610,10 +4468,10 @@ summary {
       -o-transform: translateX(-50%) translateY(-50%);
       transform: translateX(-50%) translateY(-50%); }
     .profile-photo-edit .photo:before {
-      content: '\e612';
+      content: '\e15e';
       z-index: -1; }
     .profile-photo-edit .photo:after {
-      content: '\e620'; }
+      content: '\e253'; }
     .profile-photo-edit .photo img {
       position: absolute;
       top: 0;
@@ -4774,30 +4632,30 @@ summary {
   .sidebar.fixed .side-nav > footer {
     position: relative;
     z-index: 1; }
-@media only screen and (max-width: 768px) {
-  .sidebar.scrolled .side-nav > header.open + nav {
-    max-height: 300px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    /* Let's get this party started */
-    /* Track */
-    /* Handle */
-    /*
-    &::-webkit-scrollbar-thumb:window-inactive 
-    {} */ }
-    .sidebar.scrolled .side-nav > header.open + nav::-webkit-scrollbar {
-      width: 6px; }
-    .sidebar.scrolled .side-nav > header.open + nav::-webkit-scrollbar-track {
-      background-color: rgba(0, 0, 0, 0.05); }
-    .sidebar.scrolled .side-nav > header.open + nav::-webkit-scrollbar-thumb {
-      background: rgba(0, 0, 0, 0.1); }
-    .sidebar.scrolled .side-nav > header.open + nav::-webkit-scrollbar-button {
-      display: none;
-      width: 0;
-      height: 0; }
-    .sidebar.scrolled .side-nav > header.open + nav::-webkit-scrollbar-corner {
-      background-color: rgba(0, 0, 0, 0.05); } }
+  @media only screen and (max-width: 768px) {
+    .sidebar.fixed .side-nav > header.open + nav {
+      max-height: 300px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      /* Let's get this party started */
+      /* Track */
+      /* Handle */
+      /*
+      &::-webkit-scrollbar-thumb:window-inactive 
+      {} */ }
+      .sidebar.fixed .side-nav > header.open + nav::-webkit-scrollbar {
+        width: 6px; }
+      .sidebar.fixed .side-nav > header.open + nav::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.05); }
+      .sidebar.fixed .side-nav > header.open + nav::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.1); }
+      .sidebar.fixed .side-nav > header.open + nav::-webkit-scrollbar-button {
+        display: none;
+        width: 0;
+        height: 0; }
+      .sidebar.fixed .side-nav > header.open + nav::-webkit-scrollbar-corner {
+        background-color: rgba(0, 0, 0, 0.05); } }
 
 .footer {
   clear: both;
@@ -5031,13 +4889,13 @@ summary {
     cursor: pointer; }
     [dir=rtl] .form input[type="file"] + .label-text:before {
       margin-right: .5em;
-      content: '\e604';
+      content: '\e0fe';
       font-family: "icomoon";
       font-weight: 400;
       font-style: normal; }
     .form input[type="file"] + .label-text:after {
       margin-left: .5em;
-      content: '\e604';
+      content: '\e0fe';
       font-family: "icomoon";
       font-weight: 400;
       font-style: normal; }
@@ -5348,7 +5206,7 @@ summary {
     width: 50%;
     color: #dbdbdb;
     line-height: 3;
-    content: '\e60d';
+    content: '\e209';
     text-align: center;
     font-family: "icomoon";
     font-weight: 400;
@@ -5361,7 +5219,7 @@ summary {
     right: auto;
     left: 0;
     color: rgba(255, 255, 255, 0.5);
-    content: '\e60c'; }
+    content: '\e206'; }
 .form input[type="checkbox"]:focus + .switch {
   box-shadow: inset 0 0 1px #282828, 0 0 2px #13a8e1, 0 0 0.3em #13a8e1; }
 .form .select {
@@ -5612,7 +5470,7 @@ summary {
 .form legend {
   width: 100%;
   color: #282828;
-  font-family: "Source Sans Pro", "Amiri", sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: 700;
   font-style: normal; }
 .form .label {
@@ -5750,7 +5608,7 @@ summary {
       width: 2em;
       height: 3em;
       color: white;
-      content: '\e606';
+      content: '\e10f';
       line-height: 3;
       text-indent: 0;
       text-align: center;
@@ -5869,7 +5727,7 @@ html:not(.touch) .button.secondary:hover, html:not(.touch) .form input[type="fil
     height: 1em;
     color: #3b3500;
     line-height: 1;
-    content: '\e60f';
+    content: '\e22a';
     font-family: "icomoon";
     font-weight: 400;
     font-style: normal; }
@@ -5919,7 +5777,7 @@ html:not(.touch) .button.secondary:hover, html:not(.touch) .form input[type="fil
   .tooltip > .button.open.split:after,
   .form .tooltip > input[type="file"] + .open.split.label-text:after,
   .tooltip > .link.open.split:after {
-    content: '\e60d'; }
+    content: '\e209'; }
   .drop > .button, .form .drop > input[type="file"] + .label-text,
   .drop > .link,
   .drop > .logo,
@@ -6178,7 +6036,7 @@ html:not(.touch) .button.secondary:hover, html:not(.touch) .form input[type="fil
   background-color: #282828;
   z-index: 1;
   box-shadow: inset 0 0 1px #282828, 0 0 2px #13a8e1, 0 0 0.3em #13a8e1;
-  font-family: "Source Sans Pro", "Amiri", sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: 400;
   font-style: normal; }
   @media only screen and (max-width: 768px) {
@@ -6278,7 +6136,7 @@ html:not(.touch) .tooltip.down:hover .bubble, html.touch .tooltip.down .open + .
     border-radius: 1px;
     background-color: #282828;
     box-shadow: inset 0 0 1px #282828, 0 0 2px #13a8e1, 0 0 0.3em #13a8e1;
-    font-family: "Source Sans Pro", "Amiri", sans-serif;
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
     font-weight: 400;
     font-style: normal; }
     @media only screen and (max-width: 768px) {
@@ -6403,7 +6261,7 @@ input[data-tip] {
     [dir=rtl] .link.external:before {
       margin-right: .2em;
       color: #13a8e1;
-      content: '\e600';
+      content: '\e041';
       font-size: .8em;
       font-family: "icomoon";
       font-weight: 400;
@@ -6411,7 +6269,7 @@ input[data-tip] {
     .link.external:after {
       margin-left: .2em;
       color: #13a8e1;
-      content: '\e600';
+      content: '\e041';
       font-size: .8em;
       font-family: "icomoon";
       font-weight: 400;
@@ -6434,14 +6292,14 @@ input[data-tip] {
       transform: translateX(110%); }
   [dir=rtl] .link.split:before {
     line-height: 1;
-    content: '\e606';
+    content: '\e10f';
     font-size: .8em;
     font-family: "icomoon";
     font-weight: 400;
     font-style: normal; }
   .link.split:after {
     line-height: 1;
-    content: '\e606';
+    content: '\e10f';
     font-size: .8em;
     font-family: "icomoon";
     font-weight: 400;
@@ -6716,7 +6574,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
     padding: 1px 1em 1px 3em; }
   .alert-box header {
     font-size: 1.1em;
-    font-family: "Roboto Condensed", "Amiri", sans-serif;
+    font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
     font-weight: 700;
     font-style: normal; }
   .alert-box .close {
@@ -6738,7 +6596,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
       right: auto;
       left: 0; }
     .alert-box .close:before {
-      content: '\e60d'; }
+      content: '\e209'; }
     .alert-box .close:focus {
       outline: none;
       box-shadow: inset 0 0 1px #282828, 0 0 2px #13a8e1, 0 0 0.3em #13a8e1; }
@@ -6950,7 +6808,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
     cursor: pointer;
     border: 1px solid #e7e7e7;
     background-color: rgba(0, 0, 0, 0.05);
-    font-family: "Roboto Condensed", "Amiri", sans-serif;
+    font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
     font-weight: 400;
     font-style: normal; }
     @media only screen and (max-width: 768px) {
@@ -7083,7 +6941,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
       .tabs.small-stack > .tab > .tab-label:before {
         position: absolute;
         right: 1em;
-        content: '\e606';
+        content: '\e10f';
         top: 50%;
         bottom: auto;
         -webkit-transform: translateY(-50%);
@@ -7234,7 +7092,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
       color: #282828;
       cursor: pointer;
       background-color: rgba(0, 0, 0, 0.05);
-      font-family: "Roboto Condensed", "Amiri", sans-serif;
+      font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
       font-weight: 400;
       font-style: normal; }
       [dir=rtl] .accordions .accordion label {
@@ -7242,7 +7100,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
       .accordions .accordion label:after {
         position: absolute;
         right: 1em;
-        content: '\e606';
+        content: '\e10f';
         top: 50%;
         bottom: auto;
         -webkit-transform: translateY(-50%);
@@ -7280,7 +7138,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
       -moz-transition: top ease-out 150ms;
       transition: top ease-out 150ms; }
     .accordions .accordion input[type="checkbox"]:checked + label:after {
-      content: '\e609'; }
+      content: '\e112'; }
     .accordions .accordion input[type="radio"]:checked + label:after {
       color: #e7e7e7; }
   .accordions .accordion + .accordion {
@@ -7328,7 +7186,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
         right: 2.72727em;
         left: 0.90909em;
         font-size: 1.1em;
-        font-family: "Roboto Condensed", "Amiri", sans-serif;
+        font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
         font-weight: 700;
         font-style: normal;
         overflow: hidden;
@@ -7394,7 +7252,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
           right: auto;
           left: 0; }
         .reveal-modal .reveal.basic .close:before {
-          content: '\e60d'; }
+          content: '\e209'; }
         .reveal-modal .reveal.basic .close:focus {
           outline: none;
           box-shadow: inset 0 0 1px #282828, 0 0 2px #13a8e1, 0 0 0.3em #13a8e1; }
@@ -7587,7 +7445,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
       font-style: normal; }
     .breadcrumbs > li.home a:before {
       color: #af272f;
-      content: '\e615'; }
+      content: '\e29e'; }
     .breadcrumbs > li.back a {
       -webkit-transform: scaleX(-1);
       -moz-transform: scaleX(-1);
@@ -7601,7 +7459,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
         -o-transform: scaleX(1);
         transform: scaleX(1); }
       .breadcrumbs > li.back a:before {
-        content: '\e600'; }
+        content: '\e041'; }
     .breadcrumbs > li.current:before, .breadcrumbs > li.current:after {
       display: none; }
     .breadcrumbs > li.current a {
@@ -7825,19 +7683,19 @@ h6 .duration {
   .units-list a.done {
     color: #4CAF50; }
     .units-list a.done:before {
-      content: '\e60c'; }
+      content: '\e206'; }
   .units-list a.unavailable {
     color: #9b9b9b;
     cursor: not-allowed; }
     .units-list a.unavailable:before {
-      content: '\e601'; }
+      content: '\e2ad'; }
   .units-list a.current {
     color: #282828;
     font-weight: bold; }
     .units-list a.current:before {
-      content: '\e60b'; }
+      content: '\e204'; }
       [dir=rtl] .units-list a.current:before {
-        content: '\e60a'; }
+        content: '\e200'; }
 .units-list .duration {
   color: #9b9b9b; }
 

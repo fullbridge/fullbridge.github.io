@@ -27,6 +27,7 @@
 
         <!-- CSS for the site -->
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="https://i.icomoon.io/public/537c602365/Fullbridgeplatform/style.css"><!-- Change to Cloudfront link in production -->
 
         <!-- Thumbnail for social -->
         <link rel="image_src" href="/img/ios/h/touch-icon-ipad-retina.png" />
@@ -371,10 +372,14 @@
                                             if: click, on: .side-nav nav>ul>li>ul>li>a:not(.unavailable), do: $addClass current, to: target;">
                         </ul>
                     </nav>
-                    <footer>
-                        <p><small>2015 &copy; Fullbridge Program<br>
-                        <a class="link" href="javascript:">Help Center</a></small></p>
-                    </footer>
+                    <footer class="footer">
+    <div class="row">
+        <div class="column">
+            <p><small>2015 <a href="javascript:" class="link plain">&copy;</a> Fullbridge Program<br>
+            <a class="link" href="javascript:">Help Center</a></small></p>
+        </div>
+    </div>
+</footer>
                 </div>
             </div>
             <div class="outer-chapter">
@@ -393,12 +398,12 @@
                             <nav>
                                 <ul>
                                     <li class="done">
-                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 1 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 1 Title" href="javascript:"><span class="icon-reading"></span></a>
                                     </li>
                                     <li class="done"
                                         data-anijs="if: click, do: $removeClass hidden, to: .pod-1;
                                                     if: click, do: $addClass hidden, to: .pod-2;">
-                                        <a class="down flush-left short" data-tip="Video &raquo; What Is Your Type?" href="javascript:"><span class="icon-video-collection"></span></a>
+                                        <a class="down flush-left short" data-tip="Video &raquo; What Is Your Type?" href="javascript:"><span class="icon-video"></span></a>
                                     </li>
                                     <li class="current"
                                         data-anijs="if: click, do: $removeClass hidden, to: .pod-2;
@@ -406,19 +411,19 @@
                                         <a class="down flush-left short" data-tip="Exercise &raquo; The MBTI Assessment: TypeCoach Verifier" href="javascript:"><span class="icon-edit"></span></a>
                                     </li>
                                     <li class="unavailable">
-                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 4 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 4 Title" href="javascript:"><span class="icon-reading"></span></a>
                                     </li>
                                     <li class="unavailable">
-                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 5 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 5 Title" href="javascript:"><span class="icon-reading"></span></a>
                                     </li>
                                     <li class="unavailable">
-                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 6 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 6 Title" href="javascript:"><span class="icon-reading"></span></a>
                                     </li>
                                     <li class="unavailable">
-                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 7 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 7 Title" href="javascript:"><span class="icon-reading"></span></a>
                                     </li>
                                     <li class="unavailable">
-                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 8 Title" href="javascript:"><span class="icon-my-library-books"></span></a>
+                                        <a class="down flush-left short" data-tip="Reading &raquo; Pod 8 Title" href="javascript:"><span class="icon-reading"></span></a>
                                     </li>
                                     <input type="hidden" 
                                         data-anijs="if: click, on: .steps-nav li:not(.unavailable), do: $removeClass current, to: .steps-nav li;

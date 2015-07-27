@@ -477,7 +477,7 @@
                 &:after
                 {
                     line-height: 3;
-                    content: '\e606';
+                    content: '\e10f';
                     vertical-align: top;
 
                     @include font(icon,regular);
@@ -496,7 +496,7 @@
 
                 &.open:after
                 {
-                    content: '\e609';
+                    content: '\e112';
                 }
 
                 &:after,
@@ -504,7 +504,7 @@
                 {
                     @include bp(small)
                     {
-                        content: '\e620';
+                        content: '\e253';
                     }
                 }
 
@@ -747,13 +747,13 @@
 
         &:before
         {
-            content: '\e612';
+            content: '\e15e';
             z-index: -1;
         }
 
         &:after
         {
-            content: '\e620';
+            content: '\e253';
         }
 
         img

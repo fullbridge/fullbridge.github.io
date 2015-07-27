@@ -102,7 +102,7 @@
 
             &:before
             {
-                content: '\e60c';
+                content: '\e206';
             }
         }
 
@@ -113,7 +113,7 @@
 
             &:before
             {
-                content: '\e601';
+                content: '\e2ad';
             }
         }
 
@@ -124,11 +124,11 @@
 
             &:before
             {
-                content: '\e60b';
+                content: '\e204';
 
                 [dir=rtl] &
                 {
-                    content: '\e60a';
+                    content: '\e200';
                 }
             }
         }
