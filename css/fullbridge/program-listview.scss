@@ -38,9 +38,17 @@
     {
         padding: 0;
 
-        > li:before
+        > li
         {
-            content: counters(item, "") ". "; 
+            &:before
+            {
+                content: counters(item, "") ". ";
+            }
+
+            &:first-child
+            {
+                margin-top: ($row-spacing*3);
+            }
         }
     }
 

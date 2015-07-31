@@ -104,6 +104,16 @@
         padding: $row-spacing*3 ($gutter/2);
         border-top: $light-divider;
 
+        &:first-of-type
+        {
+            border-top: none;
+        }
+
+        &:first-child
+        {
+            margin-top: ($row-spacing*6);
+        }
+
         &.divider
         {
             margin-top: $row-spacing*6;
@@ -122,11 +132,6 @@
                 color: $heading-color;
                 border: $light-divider;
             }
-        }
-
-        &:first-of-type
-        {
-            border-top: none;
         }
 
         &.done

@@ -3,7 +3,6 @@
    ========================================================================== */
 /* Sass */
 /* Fonts */
-/* Version Prefix */
 /* Color */
 /* Borders */
 /* Inputs */
@@ -7585,6 +7584,10 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
     margin: 0 0 -1px 0;
     padding: 2.1em 1em;
     border-top: 1px solid #e7e7e7; }
+    .units-overview > li:first-of-type {
+      border-top: none; }
+    .units-overview > li:first-child {
+      margin-top: 4.2em; }
     .units-overview > li.divider {
       margin-top: 4.2em;
       padding: 0;
@@ -7599,8 +7602,6 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
         padding: .5em;
         color: #282828;
         border: 1px solid #e7e7e7; }
-    .units-overview > li:first-of-type {
-      border-top: none; }
     .units-overview > li.done {
       background-color: #E8F5E9; }
 
@@ -7651,6 +7652,8 @@ h6 .duration {
   padding: 0; }
   .units-list > ol > li:before {
     content: counters(item,"") ". "; }
+  .units-list > ol > li:first-child {
+    margin-top: 2.1em; }
 .units-list .divider {
   margin-top: 2.1em;
   line-height: 1; }
@@ -7714,6 +7717,25 @@ h6 .duration {
   font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: 700;
   font-style: normal; }
+
+.calendar-week {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  *zoom: 1; }
+  .calendar-week:before, .calendar-week:after {
+    content: ' ';
+    display: table; }
+  .calendar-week:after {
+    clear: both; }
+  .calendar-week > li {
+    float: left;
+    width: 14.28571%;
+    min-height: 5em;
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.05); }
 
 /* ==========================================================================
    Animations
