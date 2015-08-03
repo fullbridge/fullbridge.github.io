@@ -34,3 +34,78 @@
         background-color: $hover-bg-color;
     }
 }
+
+.calendar-month
+{
+    .week
+    {
+        position: relative;
+        margin: 0 -1px;
+
+        @include clearfix;
+
+        .day
+        {
+            position: relative;
+            float: left;
+            width: (100%/7);
+            margin: 0;
+            padding-bottom: (100%/7);
+            cursor: pointer;
+            border: 1px solid $background-color;
+            background-color: $hover-bg-color;
+
+            .number
+            {
+                position: absolute;
+                top: .5em;
+                right: .5em;
+                color: $gray-regular;
+                line-height: 1;
+            }
+
+            .units
+            {
+                position: absolute;
+                top: 2em;
+                right: .5em;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                @include clearfix;
+
+                li
+                {
+                    float: left;
+                    margin: 0 0 0 2px;
+                    padding: 0;
+                    border-radius: 100em;
+                    background-color: $heading-color;
+
+                    @include bp(small)
+                    {
+                        width: 3px;
+                        height: 3px;
+                    }
+
+                    @include bp(desktop)
+                    {
+                        width: .5em;
+                        height: .5em;
+                    }
+                }
+            }
+        }
+
+        .events-list
+        {
+            display: none;
+            position: relative;
+            padding-top: (100%/7);
+            z-index: 0;
+
+            @include animation(open $timing ease-out);
+        }
+    }
+}

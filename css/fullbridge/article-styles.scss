@@ -439,8 +439,26 @@ aside
     }
 }
 
+details
+{
+    padding-left: ($gutter/2);
+    
+    [dir=rtl] &
+    {
+        padding-right: ($gutter/2);
+        padding-left: 0;
+    }
+}
+
 summary
 {
+    margin-left: (-$gutter/2);
     cursor: pointer;
     outline: none;
+    
+    [dir=rtl] &
+    {
+        margin-right: ($gutter/2);
+        margin-left: 0;
+    }
 }

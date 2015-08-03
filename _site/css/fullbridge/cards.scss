@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.profile-photo
+{
+    display: block;
+    position: relative;
+    line-height: 1;
+
+    .photo
+    {
+        display: block;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 100%;
+        border-radius: 100em;
+        border: $transparent-light-divider;
+        background-color: $gray-regular;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        @include background-size(cover);
+
+        &.missing
+        {
+            background-image: url('../img/svg/person.svg');
+
+            @include background-size(50%);
+        }
+    }
+}

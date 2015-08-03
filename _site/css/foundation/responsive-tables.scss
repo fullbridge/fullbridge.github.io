@@ -141,7 +141,7 @@
 	}
 }
 
-@include bp(small)
+@include bp($max: 3000px)
 {
 	table.responsive 
 	{ 
@@ -206,6 +206,7 @@
 	div.table-wrapper div.scrollable 
 	{ 
 		margin-left: 35%;
+		background-color: $gray-lighter;
 
 		[dir=rtl] &
 		{

@@ -153,8 +153,8 @@
 
         &:focus
         {
-            background-color: $input-focus-color !important;
-            box-shadow: $input-focus-border;
+            background-color: $input-focus-color;
+            box-shadow: $input-focus-border !important;
 
             & + .label-text
             {
