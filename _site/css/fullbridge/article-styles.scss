@@ -1,6 +1,71 @@
 /* ==========================================================================
    Article styles
    ========================================================================== */
+
+.block
+{
+    display: block;
+    clear: both;
+    margin: $row-spacing auto;
+    
+    &.double
+    {
+        margin: ($row-spacing*2) auto;
+    }
+
+    &.heading
+    {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6
+        {
+            margin: 0;
+        }
+    }
+}
+
+.hero-heading
+{
+    padding: ($row-spacing*2) ($gutter/2) $row-spacing ($gutter/2);
+    text-align: center;
+    border-bottom: $light-divider;
+    background-image: url('../img/bg-polygon.jpg');
+    background-position: center center;
+
+    @include background-size(cover);
+
+    &.filled
+    {
+        position: relative;
+        color: white;
+
+        @include bp(desktop)
+        {
+            padding: ($row-spacing*6) ($gutter/2) $row-spacing ($gutter/2);
+        }
+
+        &:before
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+
+            @include background(linear-gradient(rgba(black,.1), rgba(black,.8)) top);
+        }
+    }
+
+    .text
+    {
+        position: relative;
+    }
+}
+
 a
 {
     color: $link-color;
@@ -21,6 +86,22 @@ h6
 
     @include font(heading, bold);
 
+    & + p,
+    & + ol,
+    & + ul,
+    & + details,
+    & + summary,
+    & + .block
+    {
+        margin-top: ($row-spacing/2);
+    }
+
+    & + figure,
+    & + blockquote,
+    & + pre
+    {
+        margin: ($row-spacing*.9) auto;
+    }
 }
 
 h1
@@ -240,7 +321,7 @@ figure,
 blockquote,
 pre
 {
-    margin: $row-spacing*1.4 auto;
+    margin: ($row-spacing*1.4) auto;
 }
 
 ul:not([class]),

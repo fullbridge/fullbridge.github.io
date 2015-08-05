@@ -36,7 +36,8 @@
 
     > ol
     {
-        padding: 0;
+        margin: 0;
+        padding: 0 !important;
 
         > li
         {
@@ -44,17 +45,12 @@
             {
                 content: counters(item, "") ". ";
             }
-
-            &:first-child
-            {
-                margin-top: ($row-spacing*3);
-            }
         }
     }
 
     .divider
     {
-        margin-top: ($row-spacing*3);
+        margin-top: $row-spacing;
         line-height: 1;
 
         span

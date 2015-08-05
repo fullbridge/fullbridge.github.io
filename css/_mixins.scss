@@ -72,10 +72,11 @@ $font-stack:
 {
     *zoom: 1;
 
-    &:before, &:after 
+    &:before,
+    &:after 
     {
-        content: ' ';
         display: table;
+        content: ' ';
     }
     
     &:after 
@@ -298,9 +299,20 @@ $font-stack:
     position: absolute;
     width: 1px;
     height: 1px;
+    overflow: hidden;
     margin: -1px;
     padding: 0;
-    overflow: hidden;
+    border: 0;
     clip: rect(0 0 0 0);
-    clip: rect(0, 0, 0, 0);
+
+    &.focusable:active,
+    &.focusable:focus 
+    {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
 }
