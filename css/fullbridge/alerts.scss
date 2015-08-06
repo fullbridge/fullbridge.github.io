@@ -4,6 +4,7 @@
 
 .alert-box
 {
+    display: block;
     position: relative;
     min-height: $menu-bar-height;
     margin: $row-spacing auto;
@@ -180,6 +181,17 @@
         }
     }
 
+    &.no-close
+    {
+        padding-right: ($gutter/2);
+
+        [dir=rtl] &
+        {
+            padding-right: ($gutter/2);
+            padding-left: ($gutter/2);
+        }
+    }
+
     &.with-scrollbar
     {
         padding-top: $menu-bar-height;
@@ -246,11 +258,6 @@
         }
     }
 
-    &.success
-    {
-        color: white;
-    }
-
     &.info
     {
         background-color: $highlight-blue;
@@ -258,12 +265,27 @@
 
     &.success
     {
+        color: $background-color;
         background-color: $green-success;
+
+        .link
+        {
+            color: $background-color !important;
+            border-bottom: 1px dotted !important;
+            box-shadow: none !important;
+        }
     }
 
     &.warning
     {
         background-color: $yellow-alert;
+
+        .link
+        {
+            color: $heading-color !important;
+            border-bottom: 1px dotted !important;
+            box-shadow: none !important;
+        }
     }
 
     &.standard

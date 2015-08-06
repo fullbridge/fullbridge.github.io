@@ -1116,7 +1116,7 @@
         left: 0;
         right: 0;
         z-index: ($modal-z - 2);
-        box-shadow: 0 1em 1em white;
+        box-shadow: 0 .5em 1em white;
 
         @include transition(top $timing);
 

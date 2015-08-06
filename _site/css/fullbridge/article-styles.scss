@@ -66,6 +66,59 @@
     }
 }
 
+.intro
+{
+    margin-top: 0;
+    color: $gray-regular;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    
+    @include font(body,regular);
+
+    @include bp(small)
+    {
+        font-size: .7em;
+    }
+
+    @include bp(medium)
+    {
+        font-size: .8em;
+    }
+
+    @include bp(large)
+    {
+        font-size: .9em;
+    }
+}
+
+.opening
+{
+    font-size: 1.2em;
+
+    &:first-letter
+    {
+        float: left;
+        margin-right: .15em;
+        padding: 0 .2em;
+        color: $heading-color;
+        line-height: 1.1;
+        text-transform: uppercase;
+        font-size: 3.4em;
+        border: $light-divider;
+        border-style: double;
+        border-width: 4px;
+
+        @include font(heading, bold);
+
+        [dir=rtl] &
+        {
+            float: right;
+            margin-right: auto;
+            margin-left: .15em;
+        }
+    }
+}
+
 a
 {
     color: $link-color;
@@ -91,6 +144,7 @@ h6
     & + ul,
     & + details,
     & + summary,
+    & + dl,
     & + .block
     {
         margin-top: ($row-spacing/2);
@@ -232,55 +286,7 @@ header hgroup
 {
     h1 + h2
     {
-        margin-top: 0;
-        color: $gray-regular;
-        text-transform: uppercase;
-        letter-spacing: .25em;
-        font-family: $body-font;
-        font-weight: normal;
-
-        @include bp(small)
-        {
-            font-size: .7em;
-        }
-
-        @include bp(medium)
-        {
-            font-size: .8em;
-        }
-
-        @include bp(large)
-        {
-            font-size: .9em;
-        }
-    }
-}
-
-.opening
-{
-    font-size: 1.2em;
-
-    &:first-letter
-    {
-        float: left;
-        margin-right: .15em;
-        padding: 0 .2em;
-        color: $heading-color;
-        line-height: 1.1;
-        text-transform: uppercase;
-        font-size: 3.4em;
-        border: $light-divider;
-        border-style: double;
-        border-width: 4px;
-
-        @include font(heading, bold);
-
-        [dir=rtl] &
-        {
-            float: right;
-            margin-right: auto;
-            margin-left: .15em;
-        }
+        @extend .intro
     }
 }
 
@@ -312,7 +318,8 @@ header,
 footer,
 hgroup,
 details,
-summary
+summary,
+dl
 {
     margin: $row-spacing auto;
 }
@@ -541,5 +548,40 @@ summary
     {
         margin-right: ($gutter/2);
         margin-left: 0;
+    }
+}
+
+dl
+{
+    @include clearfix;
+
+    dt,
+    dd
+    {
+        float: left;
+        margin: 0;
+
+        [dir=rtl] &
+        {
+            float: right;
+        }
+    }
+
+    dt
+    {
+        width: $golden-side-width;
+        font-weight: bold;
+    }
+
+    dd
+    {
+        width: ($golden-main-width + $golden-side-width);
+        padding-left: ($gutter/2);
+
+        [dir=rtl] &
+        {
+            padding-right: ($gutter/2);
+            padding-left: 0;
+        }
     }
 }

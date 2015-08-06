@@ -173,37 +173,31 @@
                                     </li>
                                     <li class="unread">
                                         <a href="javascript:">
-                                            <div class="action"><span class="type warning">To-do</span> Team Exercise: Self-Awareness and Communication is due today.</div>
+                                            <div class="action"><span class="type warning">To-do</span> <span class="highlighted">Team Exercise: Self-Awareness and Communication</span> is due today.</div>
                                             <span class="date">8:00 AM</span>
                                         </a>
                                     </li>
                                     <li class="unread">
                                         <a href="javascript:">
-                                            <div class="action"><span class="type success">Accomplishment</span> Congrats, you have earned the Mark Zuckerberg badge!</div>
+                                            <div class="action"><span class="type success">Accomplishment</span> Congrats, you have earned the <span class="highlighted">Mark Zuckerberg badge</span>!</div>
                                             <span class="date">Yesterday</span>
                                         </a>
                                     </li>
-                                    <li class="read">
+                                    <li class="unread">
                                         <a href="javascript:">
-                                            <div class="action"><span class="type success">Accomplishment</span> Nice, you finished Pre-work: Finance Diagnostic.</div>
+                                            <div class="action"><span class="type success">Accomplishment</span> Nice, you finished <span class="highlighted">Pre-work: Finance Diagnostic</span>.</div>
                                             <span class="date">Yesterday</span>
                                         </a>
                                     </li>
-                                    <li class="read">
+                                    <li class="unread">
                                         <a href="javascript:">
-                                            <div class="action">Goodwin Procter: Business Fundamentals is starting today.</div>
+                                            <div class="action"><span class="highlighted">Goodwin Procter: Business Fundamentals</span> is starting today.</div>
                                             <span class="date">02/23/15</span>
                                         </a>
                                     </li>
-                                    <li class="read">
+                                    <li class="unread">
                                         <a href="javascript:">
                                             <div class="action">Welcome to The Fullbridge Program, check out all the programs that are available to you.</div>
-                                            <span class="date">02/22/15</span>
-                                        </a>
-                                    </li>
-                                    <li class="read">
-                                        <a href="javascript:">
-                                            <div class="action">Show 5 notifications max.</div>
                                             <span class="date">02/22/15</span>
                                         </a>
                                     </li>
@@ -253,7 +247,7 @@
         </nav>
 
         <main class="content">
-                        <div class="subnav fixed">
+                        <div class="subnav ">
                 <nav role="navigation" title="Secondary navigation">
                     <ul class="primary small-even-3">
                         <li class="current">
@@ -270,7 +264,7 @@
                         <li class=""><a href="program.html">Overview</a></li>
                         <li class=""><a href="program-list.html">List</a></li>
                         <li class="current"><a href="program-calendar.html">Calendar</a></li>
-                        <li class=" end"><a href="javascript:">Files</a></li>
+                        <li class=" end"><a href="program-files.html">Files</a></li>
                     </ul>
                 </nav>
             </div>
@@ -281,30 +275,40 @@
                             <div class="pull-0 column">
                                 <div class="pagination small" aria-label="Pagination">
                                     <a rel="prev" href="javascript:">&laquo;</a>
-                                    <em class="current">July</em>
+                                    <div class="drop down middle short">
+                                        <a href="javascript:" class="link split">
+                                            JUL 2015
+                                        </a>
+                                        <ul class="bubble">
+                                            <li><a href="javascript:">Go to today</a></li>
+                                            <li><a href="javascript:">JUN 2015</a></li>
+                                            <li><a href="javascript:" class="disabled">JUL 2015</a></li>
+                                            <li><a href="javascript:">AUG 2015</a></li>
+                                        </ul>
+                                    </div>
                                     <a rel="next" href="javascript:">&raquo;</a>
                                 </div>
                             </div>
                             <div class="push-0 column">
-                                <ul class="button-group">
-                                    <li><a href="javascript:" class="button primary small">Today</a></li>
-                                    <li>
-                                        <div class="drop down flush-right short">
-                                            <a href="javascript:" class="button primary split small">
-                                                Add
-                                            </a>
-                                            <ul class="bubble">
-                                                <li><a href="javascript:">Meeting</a></li>
-                                                <li><a href="javascript:">Reminder</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <div class="drop down flush-right">
+                                    <a href="javascript:" class="button primary split small">
+                                        More
+                                    </a>
+                                    <ul class="bubble">
+                                        <li>
+                                            <a href="javascript:"
+                                                data-anijs="if: click, do: $addClass open, to: #add-reminder;">Add a reminder</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:">Export calendar</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="column">
-                                <div class="block double">
+                                <div class="block">
                                     <div class="calendar-month">
                                         <header class="titles">
                                             <ul class="day-of-week">
@@ -318,23 +322,31 @@
                                             </ul>
                                         </header>
                                         <div class="week">
-                                            <div class="day previous-month">
-                                                <div class="number">31</div>
+                                            <div class="day previous-month"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='june-30'];">
+                                                <div class="number">30</div>
                                             </div>
-                                            <div class="day today">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-1'];">
                                                 <div class="number">1</div>
                                                 <ol class="units">
                                                     <li></li>
                                                 </ol>
                                             </div>
-                                            <div class="day current">
+                                            <div class="day today current reminder"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-2'];">
                                                 <div class="number">2</div>
                                                 <ol class="units">
                                                     <li></li>
                                                     <li></li>
                                                 </ol>
                                             </div>
-                                            <div class="day">
+                                            <div class="day reminder"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-3'];">
                                                 <div class="number">3</div>
                                                 <ol class="units">
                                                     <li></li>
@@ -342,7 +354,9 @@
                                                     <li></li>
                                                 </ol>
                                             </div>
-                                            <div class="day">
+                                            <div class="day reminder"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-4'];">
                                                 <div class="number">4</div>
                                                 <ol class="units">
                                                     <li></li>
@@ -350,7 +364,9 @@
                                                     <li></li>
                                                 </ol>
                                             </div>
-                                            <div class="day">
+                                            <div class="day reminder"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-5'];">
                                                 <div class="number">5</div>
                                                 <ol class="units">
                                                     <li></li>
@@ -386,17 +402,58 @@
                                                     <li></li>
                                                 </ol>
                                             </div>
-                                            <div class="day">
+                                            <div class="day reminder"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-6'];">
                                                 <div class="number">6</div>
                                             </div>
                                         </div>
-                                        <div class="events-today">
+                                        <div class="events-today hidden" rel="june-30">
+                                            <div class="row">
+                                                <div class="column">
+                                                    <h6>To-do 06/30/15</h6>
+                                                    <small>
+                                                        <p>No classes are scheduled for the day.</p>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-1">
+                                            <div class="row">
+                                                <div class="column">
+                                                    <h6>To-do 07/01/15</h6>
+                                                    <div class="block">
+                                                        <div class="units-list">
+                                                            <ol>
+                                                                <div class="divider">
+                                                                    <span>9:00 AM</span>
+                                                                </div>
+                                                                <li>
+                                                                    <a href="javascript:" class="done">Finance Diagnostic</a>
+                                                                    <ol>
+                                                                        <li>
+                                                                            <a href="javascript:" class="done">Finance Diagnostic <span class="duration">90 min</span></a>
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                            </ol>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today" rel="july-2">
                                             <div class="row">
                                                 <div class="medium-8 columns">
-                                                    <h6>To-do</h6>
+                                                    <h6>To-do 07/02/15</h6>
                                                     <div class="block">
                                                         <div class="units-list">
                                                             <ol style="counter-reset: item+1;">
+                                                                <div class="divider">
+                                                                    <span>9:00 AM</span>
+                                                                </div>
                                                                 <li>
                                                                     <a href="pod.html" class="current">Welcome</a>
                                                                     <ol>
@@ -414,6 +471,9 @@
                                                                         </li>
                                                                     </ol>
                                                                 </li>
+                                                                <div class="divider">
+                                                                    <span>10:00 AM</span>
+                                                                </div>
                                                                 <li>
                                                                     <a href="javascript:" class="unavailable">Self-Awareness and Communication</a>
                                                                     <ol>
@@ -431,61 +491,465 @@
                                                 </div>
                                                 <div class="medium-4 columns">
                                                     <h6>Reminders</h6>
-                                                    <ul>
-                                                        <li><strong>Due at 9:00 AM:</strong> Pre-work</li>
-                                                    </ul>
+                                                    <small class="alert-box warning no-close">
+                                                        <dl>
+                                                            <dt>9:00 AM</dt>
+                                                            <dd><a href="javascript:" class="link">Finance Diagnostic</a> is due.</dd>
+                                                        </dl>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-3">
+                                            <div class="row">
+                                                <div class="medium-8 columns">
+                                                    <h6>To-do 07/03/15</h6>
+                                                    <div class="block">
+                                                        <div class="units-list">
+                                                            <ol style="counter-reset: item+3;">
+                                                                <div class="divider">
+                                                                    <span>9:00 AM</span>
+                                                                </div>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Unit</a>
+                                                                    <ol>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Pre-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Class <span class="duration">2 hr</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Post-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                            </ol>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="medium-4 columns">
+                                                    <h6>Reminders</h6>
+                                                    <small class="alert-box warning no-close">
+                                                        <dl>
+                                                            <dt>9:00 AM</dt>
+                                                            <dd><a href="javascript:" class="link">Class Title</a> and <a href="javascript:" class="link">Another Class Title</a> are due.</dd>
+                                                        </dl>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-4">
+                                            <div class="row">
+                                                <div class="medium-8 columns">
+                                                    <h6>To-do 07/04/15</h6>
+                                                    <div class="block">
+                                                        <div class="units-list">
+                                                            <ol style="counter-reset: item+4;">
+                                                                <div class="divider">
+                                                                    <span>9:00 AM</span>
+                                                                </div>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Unit</a>
+                                                                    <ol>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Pre-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Class <span class="duration">2 hr</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Post-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                            </ol>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="medium-4 columns">
+                                                    <h6>Reminders</h6>
+                                                    <small class="alert-box warning no-close">
+                                                        <dl>
+                                                            <dt>9:00 AM</dt>
+                                                            <dd><a href="javascript:" class="link">Class Title</a> and <a href="javascript:" class="link">Another Class Title</a> are due.</dd>
+                                                        </dl>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-5">
+                                            <div class="row">
+                                                <div class="medium-8 columns">
+                                                    <h6>To-do 07/05/15</h6>
+                                                    <div class="block">
+                                                        <div class="units-list">
+                                                            <ol style="counter-reset: item+5;">
+                                                                <div class="divider">
+                                                                    <span>9:00 AM</span>
+                                                                </div>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Unit</a>
+                                                                    <ol>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Pre-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Class <span class="duration">2 hr</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Post-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                                <div class="divider">
+                                                                    <span>9:00 AM</span>
+                                                                </div>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Unit</a>
+                                                                    <ol>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Pre-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Class <span class="duration">2 hr</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Post-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                                <div class="divider">
+                                                                    <span>1:00 PM</span>
+                                                                </div>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Unit</a>
+                                                                    <ol>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Pre-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Class <span class="duration">2 hr</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Post-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                                <div class="divider">
+                                                                    <span>3:00 PM</span>
+                                                                </div>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Unit</a>
+                                                                    <ol>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Pre-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Class <span class="duration">2 hr</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Post-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                                <div class="divider">
+                                                                    <span>4:00 PM</span>
+                                                                </div>
+                                                                <li>
+                                                                    <a href="javascript:" class="unavailable">Unit</a>
+                                                                    <ol>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Pre-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Class <span class="duration">2 hr</span></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:" class="unavailable">Post-class <span class="duration">30 min</span></a>
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                            </ol>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="medium-4 columns">
+                                                    <h6>Reminders</h6>
+                                                    <small class="alert-box warning no-close">
+                                                        <dl>
+                                                            <dt>9:00 AM</dt>
+                                                            <dd><a href="javascript:" class="link">Class Title</a> and <a href="javascript:" class="link">Another Class Title</a> are due.</dd>
+                                                        </dl>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-6">
+                                            <div class="row">
+                                                <div class="medium-8 columns">
+                                                    <h6>To-do 07/06/15</h6>
+                                                    <small>
+                                                        <p>No classes are scheduled for the day.</p>
+                                                    </small>
+                                                </div>
+                                                <div class="medium-4 columns">
+                                                    <h6>Reminders</h6>
+                                                    <small class="alert-box warning no-close">
+                                                        <dl>
+                                                            <dt>5:00 PM</dt>
+                                                            <dd>Meeting with coach <em>Mike Mai</em></dd>
+                                                        </dl>
+                                                    </small>
                                                 </div>
                                                 <a class="close" href="javascript:"></a>
                                             </div>
                                         </div>
                                         <div class="week">
-                                            <div class="day">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-7'];">
                                                 <div class="number">7</div>
                                             </div>
-                                            <div class="day">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-8'];">
                                                 <div class="number">8</div>
-                                                <ol class="units">
-                                                    <li></li>
-                                                </ol>
                                             </div>
-                                            <div class="day">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-9'];">
                                                 <div class="number">9</div>
-                                                <ol class="units">
-                                                    <li></li>
-                                                    <li></li>
-                                                    <li></li>
-                                                </ol>
                                             </div>
-                                            <div class="day">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-10'];">
                                                 <div class="number">10</div>
-                                                <ol class="units">
-                                                    <li></li>
-                                                    <li></li>
-                                                    <li></li>
-                                                </ol>
                                             </div>
-                                            <div class="day">
+                                            <div class="day reminder"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-11'];">
                                                 <div class="number">11</div>
-                                                <ol class="units">
-                                                    <li></li>
-                                                    <li></li>
-                                                    <li></li>
-                                                </ol>
                                             </div>
-                                            <div class="day">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-12'];">
                                                 <div class="number">12</div>
-                                                <ol class="units">
-                                                    <li></li>
-                                                    <li></li>
-                                                    <li></li>
-                                                </ol>
                                             </div>
-                                            <div class="day">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-13'];">
                                                 <div class="number">13</div>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-7">
+                                            <div class="row">
+                                                <div class="column">
+                                                    <h6>To-do 07/07/15</h6>
+                                                    <small>
+                                                        <p>No classes are scheduled for the day.</p>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-8">
+                                            <div class="row">
+                                                <div class="column">
+                                                    <h6>To-do 07/08/15</h6>
+                                                    <small>
+                                                        <p>No classes are scheduled for the day.</p>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-9">
+                                            <div class="row">
+                                                <div class="column">
+                                                    <h6>To-do 07/09/15</h6>
+                                                    <small>
+                                                        <p>No classes are scheduled for the day.</p>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-10">
+                                            <div class="row">
+                                                <div class="column">
+                                                    <h6>To-do 07/10/15</h6>
+                                                    <small>
+                                                        <p>No classes are scheduled for the day.</p>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-11">
+                                            <div class="row">
+                                                <div class="medium-8 columns">
+                                                    <h6>To-do 07/11/15</h6>
+                                                    <small>
+                                                        <p>No classes are scheduled for the day.</p>
+                                                    </small>
+                                                </div>
+                                                <div class="medium-4 columns">
+                                                    <h6>Reminders</h6>
+                                                    <small class="alert-box warning no-close">
+                                                        <dl>
+                                                            <dt>1:00 PM</dt>
+                                                            <dd>Program ends. Final presentation is due.</dd>
+                                                        </dl>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-12">
+                                            <div class="row">
+                                                <div class="column">
+                                                    <h6>To-do 07/12/15</h6>
+                                                    <small>
+                                                        <p>No classes are scheduled for the day.</p>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="events-today hidden" rel="july-13">
+                                            <div class="row">
+                                                <div class="column">
+                                                    <h6>To-do 07/13/15</h6>
+                                                    <small>
+                                                        <p>No classes are scheduled for the day.</p>
+                                                    </small>
+                                                </div>
+                                                <a class="close" href="javascript:"></a>
+                                            </div>
+                                        </div>
+                                        <div class="week">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-14'];">
+                                                <div class="number">14</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-15'];">
+                                                <div class="number">15</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-16'];">
+                                                <div class="number">16</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-17'];">
+                                                <div class="number">17</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-18'];">
+                                                <div class="number">18</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-19'];">
+                                                <div class="number">19</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-20'];">
+                                                <div class="number">20</div>
+                                            </div>
+                                        </div>
+                                        <div class="week">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-21'];">
+                                                <div class="number">21</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-22'];">
+                                                <div class="number">22</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-23'];">
+                                                <div class="number">23</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-24'];">
+                                                <div class="number">24</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-25'];">
+                                                <div class="number">25</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-26'];">
+                                                <div class="number">26</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-27'];">
+                                                <div class="number">27</div>
+                                            </div>
+                                        </div>
+                                        <div class="week">
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-28'];">
+                                                <div class="number">28</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-29'];">
+                                                <div class="number">29</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-30'];">
+                                                <div class="number">30</div>
+                                            </div>
+                                            <div class="day"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='july-31'];">
+                                                <div class="number">31</div>
+                                            </div>
+                                            <div class="day next-month"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='august-1'];">
+                                                <div class="number">1</div>
+                                            </div>
+                                            <div class="day next-month"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='august-2'];">
+                                                <div class="number">2</div>
+                                            </div>
+                                            <div class="day next-month"
+                                                data-anijs="if: click, do: $addClass hidden, to: .events-today;
+                                                            if: click, do: $removeClass hidden, to: [rel='august-3'];">
+                                                <div class="number">3</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" 
+                                    data-anijs="if: click, on: .week .day, do: $removeClass current, to: .week .day;
+                                                if: click, on: .week .day, do: $addClass current, to: target;
+                                                if: click, on: .events-today .close, do: $addClass hidden, to: .events-today;
+                                                if: click, on: .events-today .close, do: $removeClass current, to: .week .day;">
                             </div>
                         </div>
                     </div>
@@ -501,6 +965,61 @@
         </div>
     </div>
 </footer>
+
+        <div id="add-reminder" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="medium-6 small-12 small-centered column">
+                    <div class="reveal basic">
+                        <header class="reveal-label">Add a reminder</header>
+                        <div class="row">
+                            <div class="column">
+                                <form class="form block">
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="column">
+                                                <div class="block">
+                                                    <label class="label expand">
+                                                        <input type="datetime-local" required aria-required="true">
+                                                        <div class="label-text">
+                                                            <span class="valid">Date and time</span>
+                                                            <span class="invalid">Please enter date and time</span>
+                                                            <span class="default">Date and time</span>
+                                                        </div>
+                                                        <div class="icon-date"></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="column">
+                                                <div class="block">
+                                                    <label class="label expand">
+                                                        <input type="text" placeholder="Enter title" required aria-required="true">
+                                                        <div class="label-text">
+                                                            <span class="valid">Title</span>
+                                                            <span class="invalid">Please enter a title</span>
+                                                            <span class="default">Title</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="column">
+                                                <p>
+                                                    <input type="submit" class="button primary expand" value="Create">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <a href="javascript:" class="close"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>

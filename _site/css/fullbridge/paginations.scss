@@ -90,6 +90,12 @@
         }
     }
 
+    .link
+    {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
     &.tiny > *
     {
         text-transform: uppercase;

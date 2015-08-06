@@ -13,7 +13,6 @@
             margin: 0;
             padding: 0;
             list-style: none;
-            border-top: $light-divider;
 
             @include clearfix;
 
@@ -34,7 +33,6 @@
     .week
     {
         position: relative;
-        margin: 0 -1px;
         z-index: 1;
 
         @include clearfix;
@@ -45,25 +43,46 @@
             float: left;
             width: (100%/7);
             margin: 0;
-            padding-bottom: (100%/7);
+            color: $gray-regular;
             cursor: pointer;
             border: 1px solid $background-color;
             background-color: $hover-bg-color;
 
+            @include bp(small)
+            {
+                padding-bottom: (100%/7);
+            }
+
+            @include bp(desktop)
+            {
+                padding-bottom: (100%/12);
+            }
+
+            &.previous-month,
+            &.next-month
+            {
+                color: $gray-light;
+            }
+
             &.today
             {
-                background-color: rgba($yellow-alert,.15);
-                box-shadow: inset 0 0 2px darken($yellow-alert,15%);
+                color: $heading-color;
+                background-color: $highlight-blue;
+                box-shadow: inset 0 0 5px $link-color;
 
                 .number
                 {
-                    color: $heading-color;
+                    font-weight: bold;
                 }
             }
 
             &.current
             {
+                color: $heading-color;
+                border-right: $light-divider;
+                border-left: $light-divider;
                 background-color: $background-color;
+                box-shadow: none;
 
                 &:before
                 {
@@ -75,29 +94,69 @@
                     background-color: $heading-color;
                 }
 
-                .number
+                &.reminder:after
                 {
                     color: $heading-color;
+                }
+
+                .number
+                {
                     text-decoration: underline;
-                    font-weight: bold;
+                }
+
+                .units li
+                {
+                    background-color: $heading-color;
+                }
+
+            }
+
+            &.reminder
+            {
+                &:after
+                {
+                    position: absolute;
+                    color: $gray-regular;
+                    content: '\e26a';
+                    font-size: .8em;
+
+                    @include font(icon,regular);
+
+                    @include bp(small)
+                    {
+                        top: 5px;
+                        left: 3px;
+                    }
+
+                    @include bp(desktop)
+                    {
+                        top: .5em;
+                        left: .5em;
+                    }
                 }
             }
 
             .number
             {
                 position: absolute;
-                top: .5em;
-                right: .5em;
-                color: $gray-regular;
                 line-height: 1;
+
+                @include bp(small)
+                {
+                    top: 5px;
+                    right: 3px;
+                }
+
+                @include bp(desktop)
+                {
+                    top: .5em;
+                    right: .5em;
+                }
             }
 
             .units
             {
                 position: absolute;
-                top: 2em;
-                right: .5em;
-                left: .5em;
                 overflow: hidden;
                 margin: 0;
                 padding: 0;
@@ -107,12 +166,18 @@
 
                 @include bp(small)
                 {
+                    top: 1.8em;
+                    right: 3px;
+                    left: 3px;
                     height: 3px;
                 }
 
                 @include bp(desktop)
                 {
-                    height: .5em;
+                    top: 2em;
+                    right: .5em;
+                    left: .5em;
+                    height: 1.1em;
                 }
 
                 li
@@ -121,7 +186,7 @@
                     margin: 0 0 2px 2px;
                     padding: 0;
                     border-radius: 100em;
-                    background-color: $heading-color;
+                    background-color: $gray-regular;
 
                     @include bp(small)
                     {
@@ -152,8 +217,7 @@
     .events-today
     {
         position: relative;
-        padding: 0 ($gutter/2);
-        box-shadow: $box-shadow;
+        padding: $row-spacing ($gutter/2);
 
         @include animation(open $timing ease-out);
 
@@ -164,7 +228,7 @@
             right: 0;
             width: 2em;
             height: 2em;
-            color: $link-color;
+            color: $heading-color;
             line-height: 2;
             text-align: center;
             

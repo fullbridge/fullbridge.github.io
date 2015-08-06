@@ -80,6 +80,11 @@
                 .action
                 {
                     color: $heading-color;
+                }
+
+                .sender,
+                .action .highlighted
+                {
                     font-weight: bold;
                 }
 

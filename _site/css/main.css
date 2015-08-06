@@ -2942,6 +2942,7 @@ body {
    Responsive tables from Zurb
    ========================================================================== */
 .table {
+  width: 100%;
   margin: 0;
   border: 1px solid #e7e7e7;
   border-radius: 1px;
@@ -3131,6 +3132,45 @@ body {
   .hero-heading .text {
     position: relative; }
 
+.intro, header hgroup h1 + h2 {
+  margin-top: 0;
+  color: #9b9b9b;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
+  font-weight: 400;
+  font-style: normal; }
+  @media only screen and (max-width: 768px) {
+    .intro, header hgroup h1 + h2 {
+      font-size: .7em; } }
+  @media only screen and (min-width: 769px) and (max-width: 1440px) {
+    .intro, header hgroup h1 + h2 {
+      font-size: .8em; } }
+  @media only screen and (min-width: 1441px) {
+    .intro, header hgroup h1 + h2 {
+      font-size: .9em; } }
+
+.opening {
+  font-size: 1.2em; }
+  .opening:first-letter {
+    float: left;
+    margin-right: .15em;
+    padding: 0 .2em;
+    color: #282828;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-size: 3.4em;
+    border: 1px solid #e7e7e7;
+    border-style: double;
+    border-width: 4px;
+    font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
+    font-weight: 700;
+    font-style: normal; }
+    [dir=rtl] .opening:first-letter {
+      float: right;
+      margin-right: auto;
+      margin-left: .15em; }
+
 a {
   color: #13a8e1;
   text-decoration: none; }
@@ -3148,36 +3188,41 @@ h6 {
   font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
   font-weight: 700;
   font-style: normal; }
-  h1 + p, h1 + ol, h1 + ul, h1 + details, h1 + summary, h1 + .block,
+  h1 + p, h1 + ol, h1 + ul, h1 + details, h1 + summary, h1 + dl, h1 + .block,
   h2 + p,
   h2 + ol,
   h2 + ul,
   h2 + details,
   h2 + summary,
+  h2 + dl,
   h2 + .block,
   h3 + p,
   h3 + ol,
   h3 + ul,
   h3 + details,
   h3 + summary,
+  h3 + dl,
   h3 + .block,
   h4 + p,
   h4 + ol,
   h4 + ul,
   h4 + details,
   h4 + summary,
+  h4 + dl,
   h4 + .block,
   h5 + p,
   h5 + ol,
   h5 + ul,
   h5 + details,
   h5 + summary,
+  h5 + dl,
   h5 + .block,
   h6 + p,
   h6 + ol,
   h6 + ul,
   h6 + details,
   h6 + summary,
+  h6 + dl,
   h6 + .block {
     margin-top: 0.35em; }
   h1 + figure, h1 + blockquote, h1 + pre,
@@ -3269,44 +3314,6 @@ h6 {
   h2 {
     letter-spacing: -2px; } }
 
-header hgroup h1 + h2 {
-  margin-top: 0;
-  color: #9b9b9b;
-  text-transform: uppercase;
-  letter-spacing: .25em;
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
-  font-weight: normal; }
-  @media only screen and (max-width: 768px) {
-    header hgroup h1 + h2 {
-      font-size: .7em; } }
-  @media only screen and (min-width: 769px) and (max-width: 1440px) {
-    header hgroup h1 + h2 {
-      font-size: .8em; } }
-  @media only screen and (min-width: 1441px) {
-    header hgroup h1 + h2 {
-      font-size: .9em; } }
-
-.opening {
-  font-size: 1.2em; }
-  .opening:first-letter {
-    float: left;
-    margin-right: .15em;
-    padding: 0 .2em;
-    color: #282828;
-    line-height: 1.1;
-    text-transform: uppercase;
-    font-size: 3.4em;
-    border: 1px solid #e7e7e7;
-    border-style: double;
-    border-width: 4px;
-    font-family: "Roboto Condensed", "Helvetica Neue", Arial, "Amiri", sans-serif;
-    font-weight: 700;
-    font-style: normal; }
-    [dir=rtl] .opening:first-letter {
-      float: right;
-      margin-right: auto;
-      margin-left: .15em; }
-
 @-moz-document url-prefix() {
   .opening:first-letter {
     padding: .2em; } }
@@ -3330,7 +3337,8 @@ header,
 footer,
 hgroup,
 details,
-summary {
+summary,
+dl {
   margin: 0.7em auto; }
 
 figure,
@@ -3472,6 +3480,30 @@ summary {
   [dir=rtl] summary {
     margin-right: 1em;
     margin-left: 0; }
+
+dl {
+  *zoom: 1; }
+  dl:before, dl:after {
+    display: table;
+    content: ' '; }
+  dl:after {
+    clear: both; }
+  dl dt,
+  dl dd {
+    float: left;
+    margin: 0; }
+    [dir=rtl] dl dt, [dir=rtl]
+    dl dd {
+      float: right; }
+  dl dt {
+    width: 21.6447%;
+    font-weight: bold; }
+  dl dd {
+    width: 78.3553%;
+    padding-left: 1em; }
+    [dir=rtl] dl dd {
+      padding-right: 1em;
+      padding-left: 0; }
 
 /* global styles */
 /* ==========================================================================
@@ -4143,7 +4175,7 @@ summary {
     left: 0;
     right: 0;
     z-index: 99997;
-    box-shadow: 0 1em 1em white;
+    box-shadow: 0 .5em 1em white;
     -webkit-transition: top 150ms;
     -moz-transition: top 150ms;
     transition: top 150ms; }
@@ -4214,7 +4246,9 @@ summary {
         border-top: 1px solid #e7e7e7; }
       .menu-bar .list > li.unread .sender,
       .menu-bar .list > li.unread .action {
-        color: #282828;
+        color: #282828; }
+      .menu-bar .list > li.unread .sender,
+      .menu-bar .list > li.unread .action .highlighted {
         font-weight: bold; }
       .menu-bar .list > li.unread .type.warning, .menu-bar .list > li.unread .type.success {
         font-weight: bold;
@@ -5314,6 +5348,7 @@ summary {
   display: inline-block;
   position: relative;
   padding: 0;
+  vertical-align: middle;
   background-color: transparent; }
   .form .select select {
     width: 100%;
@@ -5564,7 +5599,8 @@ summary {
 .form .label {
   display: inline-block;
   position: relative;
-  margin: 0 2em 0 0; }
+  margin: 0 2em 0 0;
+  vertical-align: middle; }
   [dir=rtl] .form .label {
     margin: 0 0 0 2em; }
   .form .label input[type="color"], .form .label input[type="date"], .form .label input[type="datetime"], .form .label input[type="datetime-local"], .form .label input[type="email"], .form .label input[type="month"], .form .label input[type="number"], .form .label input[type="password"], .form .label input[type="search"], .form .label input[type="tel"], .form .label input[type="text"], .form .label input[type="time"], .form .label input[type="url"], .form .label input[type="week"], .form .label textarea,
@@ -5638,6 +5674,7 @@ summary {
     text-shadow: 0 0 2px black;
     text-indent: 1em;
     white-space: nowrap;
+    vertical-align: middle;
     font-size: .8em;
     font-weight: bold;
     border-radius: 1px;
@@ -5664,12 +5701,13 @@ summary {
 .button, .form input[type="file"] + .label-text {
   display: inline-block;
   height: 3em;
-  margin: 0 0 2px 0;
+  margin: 0;
   padding: 0 1em;
   line-height: 3;
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
+  vertical-align: middle;
   font-size: 1em;
   border: none !important;
   border-radius: 1px;
@@ -5849,7 +5887,8 @@ html:not(.touch) .button.secondary:hover, html:not(.touch) .form input[type="fil
 .tooltip {
   display: inline-block;
   position: relative;
-  white-space: nowrap; }
+  white-space: nowrap;
+  vertical-align: middle; }
   .drop > .button, .form .drop > input[type="file"] + .label-text,
   .drop > .link,
   .drop > .tip,
@@ -6511,6 +6550,7 @@ input[data-tip] {
       width: 100% !important;
       margin: 0 !important; }
       .button-group.stack > li .button, .button-group.stack > li .form input[type="file"] + .label-text, .form .button-group.stack > li input[type="file"] + .label-text {
+        margin: 0 0 2px 0;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis; }
@@ -6538,6 +6578,7 @@ input[data-tip] {
         width: 100% !important;
         margin: 0 !important; }
         .button-group.small-stack > li .button, .button-group.small-stack > li .form input[type="file"] + .label-text, .form .button-group.small-stack > li input[type="file"] + .label-text {
+          margin: 0 0 2px 0;
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis; }
@@ -6651,6 +6692,7 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
    Alerts
    ========================================================================== */
 .alert-box {
+  display: block;
   position: relative;
   min-height: 3em;
   margin: 0.7em auto;
@@ -6770,6 +6812,11 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
           display: inline-block;
           vertical-align: top;
           white-space: normal; } }
+  .alert-box.no-close {
+    padding-right: 1em; }
+    [dir=rtl] .alert-box.no-close {
+      padding-right: 1em;
+      padding-left: 1em; }
   .alert-box.with-scrollbar {
     padding-top: 3em;
     padding-bottom: 3em; }
@@ -6828,14 +6875,21 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
       [dir=rtl] .alert-box.with-scrollbar .actions {
         right: 0;
         left: 0; }
-  .alert-box.success {
-    color: white; }
   .alert-box.info {
     background-color: #E1F5FE; }
   .alert-box.success {
+    color: white;
     background-color: #4CAF50; }
+    .alert-box.success .link {
+      color: white !important;
+      border-bottom: 1px dotted !important;
+      box-shadow: none !important; }
   .alert-box.warning {
     background-color: #FFEB3B; }
+    .alert-box.warning .link {
+      color: #282828 !important;
+      border-bottom: 1px dotted !important;
+      box-shadow: none !important; }
   .alert-box.standard {
     background-color: #f4f4f4; }
     .alert-box.standard a,
@@ -7618,6 +7672,9 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
     @media only screen and (max-width: 768px) {
       .pagination > * .text {
         display: none; } }
+  .pagination .link {
+    border: none !important;
+    box-shadow: none !important; }
   .pagination.tiny > * {
     text-transform: uppercase;
     font-size: .6em;
@@ -7832,7 +7889,6 @@ h6 .duration {
     margin: 0;
     padding: 0;
     list-style: none;
-    border-top: 1px solid #e7e7e7;
     *zoom: 1; }
     .calendar-month .titles .day-of-week:before, .calendar-month .titles .day-of-week:after {
       display: table;
@@ -7851,7 +7907,6 @@ h6 .duration {
       font-weight: bold; }
 .calendar-month .week {
   position: relative;
-  margin: 0 -1px;
   z-index: 1;
   *zoom: 1; }
   .calendar-month .week:before, .calendar-month .week:after {
@@ -7864,17 +7919,30 @@ h6 .duration {
     float: left;
     width: 14.28571%;
     margin: 0;
-    padding-bottom: 14.28571%;
+    color: #9b9b9b;
     cursor: pointer;
     border: 1px solid white;
     background-color: rgba(0, 0, 0, 0.05); }
+    @media only screen and (max-width: 768px) {
+      .calendar-month .week .day {
+        padding-bottom: 14.28571%; } }
+    @media only screen and (min-width: 769px) {
+      .calendar-month .week .day {
+        padding-bottom: 8.33333%; } }
+    .calendar-month .week .day.previous-month, .calendar-month .week .day.next-month {
+      color: #dbdbdb; }
     .calendar-month .week .day.today {
-      background-color: rgba(255, 235, 59, 0.15);
-      box-shadow: inset 0 0 2px #eed500; }
+      color: #282828;
+      background-color: #E1F5FE;
+      box-shadow: inset 0 0 5px #13a8e1; }
       .calendar-month .week .day.today .number {
-        color: #282828; }
+        font-weight: bold; }
     .calendar-month .week .day.current {
-      background-color: white; }
+      color: #282828;
+      border-right: 1px solid #e7e7e7;
+      border-left: 1px solid #e7e7e7;
+      background-color: white;
+      box-shadow: none; }
       .calendar-month .week .day.current:before {
         position: absolute;
         top: 0;
@@ -7882,21 +7950,41 @@ h6 .duration {
         height: 4px;
         content: '';
         background-color: #282828; }
+      .calendar-month .week .day.current.reminder:after {
+        color: #282828; }
       .calendar-month .week .day.current .number {
-        color: #282828;
-        text-decoration: underline;
-        font-weight: bold; }
+        text-decoration: underline; }
+      .calendar-month .week .day.current .units li {
+        background-color: #282828; }
+    .calendar-month .week .day.reminder:after {
+      position: absolute;
+      color: #9b9b9b;
+      content: '\e26a';
+      font-size: .8em;
+      font-family: "icomoon";
+      font-weight: 400;
+      font-style: normal; }
+      @media only screen and (max-width: 768px) {
+        .calendar-month .week .day.reminder:after {
+          top: 5px;
+          left: 3px; } }
+      @media only screen and (min-width: 769px) {
+        .calendar-month .week .day.reminder:after {
+          top: .5em;
+          left: .5em; } }
     .calendar-month .week .day .number {
       position: absolute;
-      top: .5em;
-      right: .5em;
-      color: #9b9b9b;
       line-height: 1; }
+      @media only screen and (max-width: 768px) {
+        .calendar-month .week .day .number {
+          top: 5px;
+          right: 3px; } }
+      @media only screen and (min-width: 769px) {
+        .calendar-month .week .day .number {
+          top: .5em;
+          right: .5em; } }
     .calendar-month .week .day .units {
       position: absolute;
-      top: 2em;
-      right: .5em;
-      left: .5em;
       overflow: hidden;
       margin: 0;
       padding: 0;
@@ -7909,16 +7997,22 @@ h6 .duration {
         clear: both; }
       @media only screen and (max-width: 768px) {
         .calendar-month .week .day .units {
+          top: 1.8em;
+          right: 3px;
+          left: 3px;
           height: 3px; } }
       @media only screen and (min-width: 769px) {
         .calendar-month .week .day .units {
-          height: .5em; } }
+          top: 2em;
+          right: .5em;
+          left: .5em;
+          height: 1.1em; } }
       .calendar-month .week .day .units li {
         float: right;
         margin: 0 0 2px 2px;
         padding: 0;
         border-radius: 100em;
-        background-color: #282828; }
+        background-color: #9b9b9b; }
         @media only screen and (max-width: 768px) {
           .calendar-month .week .day .units li {
             width: 3px;
@@ -7937,8 +8031,7 @@ h6 .duration {
     animation: open 150ms ease-out; }
 .calendar-month .events-today {
   position: relative;
-  padding: 0 1em;
-  box-shadow: 0 0 1em #dbdbdb;
+  padding: 0.7em 1em;
   -webkit-animation: open 150ms ease-out;
   -moz-animation: open 150ms ease-out;
   animation: open 150ms ease-out; }
@@ -7948,7 +8041,7 @@ h6 .duration {
     right: 0;
     width: 2em;
     height: 2em;
-    color: #13a8e1;
+    color: #282828;
     line-height: 2;
     text-align: center; }
     .calendar-month .events-today .close:before {
