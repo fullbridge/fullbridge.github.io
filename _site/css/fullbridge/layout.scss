@@ -216,7 +216,7 @@
         @include bp(small)
         {
             width: 100%;
-            z-index: ($modal-z - 1);
+            z-index: ($modal-z - 2);
         }
 
         @include bp(desktop)

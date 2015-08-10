@@ -28,6 +28,14 @@
             height: 5px;
             overflow: hidden;
         }
+
+        .meter
+        {
+            @include bp(small)
+            {
+                height: auto;
+            }
+        }
     }
 
     > header,
@@ -1079,7 +1087,7 @@
                     font-size: .8em;
                 }
 
-                &:after
+                &:before
                 {
                     position: absolute;
                     bottom: 0;
@@ -1090,6 +1098,12 @@
 
                     @include transition(height $timing);
                 }
+
+                &.link
+                {
+                    border: none;
+                    box-shadow: none;
+                }
             }
 
             &.current,
@@ -1099,7 +1113,7 @@
                 {
                     color: $heading-color;
 
-                    &:after
+                    &:before
                     {
                         height: 4px;
                         background-color: $heading-color;
