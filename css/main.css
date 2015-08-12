@@ -2947,6 +2947,9 @@ body {
   border: 1px solid #e7e7e7;
   border-radius: 1px;
   background-color: white;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   	/* Use if need to alternate row styling
   	tbody tr.even,
   	tbody tr.alt 
@@ -4033,7 +4036,8 @@ dl {
       padding: 0; }
       [dir=rtl] .subnav ul > li {
         float: right; }
-      .subnav ul > li > a {
+      .subnav ul > li > a,
+      .subnav ul > li > .drop .link {
         display: block;
         padding-top: 0.7em;
         padding-bottom: 0.7em;
@@ -4042,15 +4046,18 @@ dl {
         white-space: nowrap;
         background-color: #f4f4f4; }
         @media only screen and (max-width: 768px) {
-          .subnav ul > li > a {
+          .subnav ul > li > a,
+          .subnav ul > li > .drop .link {
             padding-right: 1em;
             padding-left: 1em; } }
         @media only screen and (min-width: 769px) {
-          .subnav ul > li > a {
+          .subnav ul > li > a,
+          .subnav ul > li > .drop .link {
             padding-right: 2em;
             padding-left: 2em; } }
         @media only screen and (max-width: 768px) {
-          .subnav ul > li > a .label-text {
+          .subnav ul > li > a .label-text,
+          .subnav ul > li > .drop .link .label-text {
             display: block;
             width: 100%;
             line-height: 1.1;
@@ -4146,18 +4153,22 @@ dl {
     .subnav .secondary > li {
       display: inline-block;
       float: none; } }
-  .subnav .secondary > li > a {
+  .subnav .secondary > li > a,
+  .subnav .secondary > li > .drop .link {
     letter-spacing: 2px;
     text-transform: uppercase;
     border-radius: 0;
     background-color: transparent; }
     @media only screen and (max-width: 768px) {
-      .subnav .secondary > li > a {
+      .subnav .secondary > li > a,
+      .subnav .secondary > li > .drop .link {
         font-size: .6em; } }
     @media only screen and (min-width: 769px) {
-      .subnav .secondary > li > a {
+      .subnav .secondary > li > a,
+      .subnav .secondary > li > .drop .link {
         font-size: .8em; } }
-    .subnav .secondary > li > a:before {
+    .subnav .secondary > li > a:before,
+    .subnav .secondary > li > .drop .link:before {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -4167,12 +4178,26 @@ dl {
       -webkit-transition: height 150ms;
       -moz-transition: height 150ms;
       transition: height 150ms; }
-    .subnav .secondary > li > a.link {
-      border: none;
-      box-shadow: none; }
-  .subnav .secondary > li.current > a, html:not(.touch) .subnav .secondary > li:hover > a {
+  .subnav .secondary > li .link {
+    color: #5b5b5b;
+    border: none !important;
+    box-shadow: none !important; }
+  .subnav .secondary > li .bubble li {
+    float: none; }
+    .subnav .secondary > li .bubble li a {
+      padding: 0;
+      text-align: left;
+      background-color: transparent;
+      font-family: "Source Sans Pro", "Helvetica Neue", Arial, "Amiri", sans-serif;
+      font-weight: 400;
+      font-style: normal; }
+  .subnav .secondary > li.current > a,
+  .subnav .secondary > li.current > .drop .link, html:not(.touch) .subnav .secondary > li:hover > a,
+  html:not(.touch) .subnav .secondary > li:hover > .drop .link {
     color: #282828; }
-    .subnav .secondary > li.current > a:before, html:not(.touch) .subnav .secondary > li:hover > a:before {
+    .subnav .secondary > li.current > a:before,
+    .subnav .secondary > li.current > .drop .link:before, html:not(.touch) .subnav .secondary > li:hover > a:before,
+    html:not(.touch) .subnav .secondary > li:hover > .drop .link:before {
       height: 4px;
       background-color: #282828; }
   .subnav.fixed {
@@ -4811,7 +4836,8 @@ dl {
       &::-webkit-scrollbar-thumb:window-inactive 
       {} */ }
       .sidebar.fixed .side-nav > header.open + nav::-webkit-scrollbar {
-        width: 6px; }
+        width: 6px;
+        height: 6px; }
       .sidebar.fixed .side-nav > header.open + nav::-webkit-scrollbar-track {
         background-color: rgba(0, 0, 0, 0.05); }
       .sidebar.fixed .side-nav > header.open + nav::-webkit-scrollbar-thumb {
@@ -5448,7 +5474,8 @@ dl {
     -moz-transition: background-color 150ms;
     transition: background-color 150ms; }
     .form .select-multiple select::-webkit-scrollbar {
-      width: 6px; }
+      width: 6px;
+      height: 6px; }
     .form .select-multiple select::-webkit-scrollbar-track {
       background-color: rgba(0, 0, 0, 0.05); }
     .form .select-multiple select::-webkit-scrollbar-thumb {
@@ -5752,17 +5779,6 @@ dl {
         left: 0;
         border-right: 1px solid rgba(255, 255, 255, 0.2);
         border-left: none; }
-  .button.stack, .form input[type="file"] + .stack.label-text {
-    width: 100%;
-    margin: 0; }
-    .button.stack + .stack, .form input[type="file"] + .stack.label-text + .stack {
-      margin: 0.7em 0 0 0; }
-  @media only screen and (max-width: 768px) {
-    .button.small-stack, .form input[type="file"] + .small-stack.label-text {
-      width: 100%;
-      margin: 0; }
-      .button.small-stack + .small-stack, .form input[type="file"] + .small-stack.label-text + .small-stack {
-        margin: 0.7em 0 0 0; } }
   .button [class^="icon-"], .form input[type="file"] + .label-text [class^="icon-"],
   .button [class*=" icon-"],
   .form input[type="file"] + .label-text [class*=" icon-"], .button[class^="icon-"]:before, .form input[type="file"] + [class^="icon-"].label-text:before, .button[class*=" icon-"]:before, .form input[type="file"] + [class*=" icon-"].label-text:before {
@@ -6435,6 +6451,8 @@ input[data-tip] {
     font-style: normal; }
     [dir=rtl] .link.split:after {
       display: none; }
+  .link .highlighted {
+    font-weight: bold; }
 
 .button-group {
   width: 100%;
@@ -6624,6 +6642,33 @@ input[data-tip] {
 .drop.large,
 .tooltip.large {
   font-size: 1.2em; }
+.form .label.stack,
+.button.stack,
+.form input[type="file"] + .stack.label-text,
+.drop.stack,
+.tooltip.stack {
+  width: 100%;
+  margin: 0; }
+  .form .label.stack + .stack,
+  .button.stack + .stack,
+  .form input[type="file"] + .stack.label-text + .stack,
+  .drop.stack + .stack,
+  .tooltip.stack + .stack {
+    margin: 0.7em 0 0 0; }
+@media only screen and (max-width: 768px) {
+  .form .label.small-stack,
+  .button.small-stack,
+  .form input[type="file"] + .small-stack.label-text,
+  .drop.small-stack,
+  .tooltip.small-stack {
+    width: 100%;
+    margin: 0; }
+    .form .label.small-stack + .small-stack,
+    .button.small-stack + .small-stack,
+    .form input[type="file"] + .small-stack.label-text + .small-stack,
+    .drop.small-stack + .small-stack,
+    .tooltip.small-stack + .small-stack {
+      margin: 0.7em 0 0 0; } }
 .form .label.expand,
 .button.expand,
 .form input[type="file"] + .expand.label-text,
@@ -6853,7 +6898,8 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
       border-top: 1px solid rgba(0, 0, 0, 0.05);
       border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
       .alert-box.with-scrollbar .scrollable::-webkit-scrollbar {
-        width: 6px; }
+        width: 6px;
+        height: 6px; }
       .alert-box.with-scrollbar .scrollable::-webkit-scrollbar-track {
         background-color: rgba(0, 0, 0, 0.05); }
       .alert-box.with-scrollbar .scrollable::-webkit-scrollbar-thumb {
@@ -7354,7 +7400,8 @@ html:not(.touch) .form input[type="file"]:disabled + .label-text:hover {
         margin: 0 -1em !important;
         padding: 0 1em; }
         .reveal-modal .reveal.basic .scrollable::-webkit-scrollbar {
-          width: 6px; }
+          width: 6px;
+          height: 6px; }
         .reveal-modal .reveal.basic .scrollable::-webkit-scrollbar-track {
           background-color: rgba(0, 0, 0, 0.05); }
         .reveal-modal .reveal.basic .scrollable::-webkit-scrollbar-thumb {
@@ -7967,14 +8014,6 @@ h6 .duration {
       transition: height 150ms; }
     .calendar-month .week .day.previous-month, .calendar-month .week .day.next-month {
       color: #dbdbdb; }
-    .calendar-month .week .day.today {
-      position: relative;
-      color: #282828;
-      border: none;
-      box-shadow: inset 0 0 1px #282828, 0 0 2px #13a8e1, 0 0 0.3em #13a8e1;
-      z-index: 1; }
-      .calendar-month .week .day.today .number {
-        font-weight: bold; }
     html:not(.touch) .calendar-month .week .day:hover:before, .calendar-month .week .day.current:before {
       height: 4px; }
     .calendar-month .week .day.current {
@@ -7989,6 +8028,15 @@ h6 .duration {
       .calendar-month .week .day.current .number {
         text-decoration: underline; }
       .calendar-month .week .day.current .units li {
+        background-color: #282828; }
+    .calendar-month .week .day.today {
+      color: white; }
+      .calendar-month .week .day.today .number {
+        width: 1.2em;
+        padding: 1px 1px 2px 1px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 100em;
         background-color: #282828; }
     .calendar-month .week .day.reminder:after {
       position: absolute;
@@ -8281,6 +8329,31 @@ h6 .duration {
 
 .centered-text {
   text-align: center; }
+
+.horizontal-scroll {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  /* Let's get this party started */
+  /* Track */
+  /* Handle */
+  /*
+  &::-webkit-scrollbar-thumb:window-inactive 
+  {} */ }
+  .horizontal-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px; }
+  .horizontal-scroll::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.05); }
+  .horizontal-scroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1); }
+  .horizontal-scroll::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0; }
+  .horizontal-scroll::-webkit-scrollbar-corner {
+    background-color: rgba(0, 0, 0, 0.05); }
 
 .ir {
   background-color: transparent;

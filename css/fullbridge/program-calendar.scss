@@ -77,20 +77,6 @@
                 color: $gray-light;
             }
 
-            &.today
-            {
-                position: relative;
-                color: $heading-color;
-                border: none;
-                box-shadow: $input-focus-border;
-                z-index: 1;
-
-                .number
-                {
-                    font-weight: bold;
-                }
-            }
-
             html:not(.touch) &:hover,
             &.current
             {
@@ -124,6 +110,21 @@
                     background-color: $heading-color;
                 }
 
+            }
+
+            &.today
+            {
+                color: $background-color;
+
+                .number
+                {
+                    width: 1.2em;
+                    padding: 1px 1px 2px 1px;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 100em;
+                    background-color: $heading-color;
+                }
             }
 
             &.reminder

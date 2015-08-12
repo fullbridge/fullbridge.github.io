@@ -790,7 +790,8 @@
                 float: right;
             }
 
-            > a
+            > a,
+            > .drop .link
             {
                 display: block;
                 padding-top: $row-spacing;
@@ -1070,7 +1071,8 @@
                 float: none;
             }
 
-            > a
+            > a,
+            > .drop .link
             {
                 letter-spacing: 2px;
                 text-transform: uppercase;
@@ -1098,18 +1100,37 @@
 
                     @include transition(height $timing);
                 }
+            }
 
-                &.link
+            .link
+            {
+                color: $body-text-color;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            .bubble
+            {
+                li
                 {
-                    border: none;
-                    box-shadow: none;
+                    float: none;
+
+                    a
+                    {
+                        padding: 0;
+                        text-align: left;
+                        background-color: transparent;
+
+                        @include font(body,regular);
+                    }
                 }
             }
 
             &.current,
             html:not(.touch) &:hover
             {
-                > a
+                > a,
+                > .drop .link
                 {
                     color: $heading-color;
 

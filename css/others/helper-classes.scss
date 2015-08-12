@@ -21,6 +21,14 @@
     text-align: center;
 }
 
+.horizontal-scroll
+{
+    width: 100%;
+
+    @include horizontal-scroll;
+    @include visible-scrollbar;
+}
+
 .ir {
     background-color: transparent;
     border: 0;

@@ -1191,7 +1191,16 @@
                                             <li class="current"><a href="javascript:">2nd level</a></li>
                                             <li><a href="javascript:">2nd level</a></li>
                                             <li><a href="javascript:">2nd level</a></li>
-                                            <li class="end"><a href="javascript:">2nd level</a></li>
+                                            <li class="end">
+                                                <div class="drop down flush-right long">
+                                                    <a href="javascript:" class="link split">2nd level</a>
+                                                    <ul class="bubble">
+                                                        <li><a href="javascript:">3rd level</a></li>
+                                                        <li><a href="javascript:">3rd level</a></li>
+                                                        <li><a href="javascript:">3rd level</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1450,8 +1459,12 @@
                                     <h3>
                                         <a href="#columns" name="columns" class="link jump"></a> Columns
                                     </h3>
+                                    <div class="alert-box warning">
+                                        <p>When using columns, make sure to use the modifiers in this order: <code>small-*</code>, <code>medium-*</code>, <code>large-*</code>. The easy way to remember this is to think <em>mobile first</em>!</p>
+                                    </div>
+                                    <hr>
                                 </div>
-                                <div class="medium-8 small-12 columns">
+                                <div class="small-12 medium-8 columns">
                                     <p>
                                         <strong>8 columns</strong>. Molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum.
                                     </p>
@@ -1462,14 +1475,14 @@
                                         Consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo.
                                     </p>
                                 </div>
-                                <div class="medium-4 small-12 columns">
+                                <div class="small-12 medium-4 columns">
                                     <p>
                                         <strong>4 Columns</strong>. Sagittis ante a urna. Morbi a est quis orci consequat rutrum. Nullam egestas feugiat felis. Integer adipiscing semper ligula. Nunc molestie, nisl sit amet cursus convallis, sapien lectus pretium metus, vitae pretium enim wisi id lectus. Donec vestibulum. Etiam vel nibh. Nulla facilisi. Mauris pharetra. Donec augue. Fusce ultrices, neque id dignissim ultrices, tellus mauris dictum elit, vel lacinia enim metus eu nunc. Proin at.
                                     </p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="medium-4 small-12 columns">
+                                <div class="small-12 medium-4 columns">
                                     <h4>
                                         Column heading
                                     </h4>
@@ -1483,7 +1496,7 @@
                                         <strong>4 Columns</strong>. Molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum.
                                     </p>
                                 </div>
-                                <div class="medium-4 small-12 columns">
+                                <div class="small-12 medium-4 columns">
                                     <h4>
                                         Column heading
                                     </h4>
@@ -1494,7 +1507,7 @@
                                         Consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo.
                                     </p>
                                 </div>
-                                <div class="medium-4 small-12 columns">
+                                <div class="small-12 medium-4 columns">
                                     <h4>
                                         Column heading
                                     </h4>
@@ -1513,7 +1526,7 @@
                                     <h3>
                                         <a href="#block-grid" name="block-grid" class="link jump"></a> Block grid
                                     </h3>
-                                    <ul class="large-block-grid-6 medium-block-grid-3 small-block-grid-2">
+                                    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-6">
                                         <li><div class="placeholder">6 to 3 to 2</div></li>
                                         <li><div class="placeholder">6 to 3 to 2</div></li>
                                         <li><div class="placeholder">6 to 3 to 2</div></li>
@@ -3044,6 +3057,50 @@
                                         </tbody>
                                     </table>
                                 </form>
+                            </div>
+                            <h4>
+                                Horizontal scroll (wrap inside <code>horizontal-scroll</code>)
+                            </h4>
+                            <p>Use a <code>div.horizontal-scroll</code> to wrap the <code>table.table</code>.</p>
+                            <div class="block horizontal-scroll">
+                                <table class="table small">
+                                    <thead>
+                                        <tr>
+                                            <th width="200" class="sorted descending"><span class="column-title">Table Header</span></th>
+                                            <th><span class="column-title">Table Header</span></th>
+                                            <th width="150"><span class="column-title">Table Header</span></th>
+                                            <th width="150"><span class="column-title">Table Header</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="nowrap">Too much content Goes Here</td>
+                                            <td class="nowrap">This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                                            <td class="nowrap">Too much content Goes Here</td>
+                                            <td class="nowrap">Too much content Goes Here</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nowrap">Too much content Goes Here</td>
+                                            <td class="nowrap">This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                            <td class="nowrap">Too much content Goes Here</td>
+                                            <td class="nowrap">Too much content Goes Here</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nowrap">Too much content Goes Here</td>
+                                            <td class="nowrap">This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                            <td class="nowrap">Too much content Goes Here</td>
+                                            <td class="nowrap">Too much content Goes Here</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Table footer</td>
+                                            <td>Table footer</td>
+                                            <td>Table footer</td>
+                                            <td>Table footer</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
                             </div>
                             <h3>
                                 <a name="accordions" href="#accordions" class="link jump"></a> Accordions
