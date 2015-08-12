@@ -233,7 +233,7 @@
     .events-today
     {
         position: relative;
-        padding: $row-spacing ($gutter/2);
+        padding: ($row-spacing*2) ($gutter/2);
 
         @include animation(open $timing ease-out);
 

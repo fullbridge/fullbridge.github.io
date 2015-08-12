@@ -4,61 +4,55 @@
 
 .row 
 {
-    margin: 0 auto;
-    width: 100%; 
+  margin: 0 auto;
+  width: 100%; 
 
-    @include clearfix;
+  @include clearfix;
 }
   
 .row.collapse > .column,
 .row.collapse > .columns 
 {
-    padding-left: 0;
-    padding-right: 0; 
+  padding-left: 0;
+  padding-right: 0; 
 }
 
 .row.collapse .row 
 {
-    margin-left: 0;
-    margin-right: 0; 
+  margin-left: 0;
+  margin-right: 0; 
 }
 
 .row .row 
 {
-    margin: 0 (-$gutter/2);
-    max-width: none;
-    width: auto;
+  margin: 0 (-$gutter/2);
+  max-width: none;
+  width: auto;
 
-    @include clearfix;
+  @include clearfix;
 }
 
 .row .row.collapse 
 {
-    margin: 0;
-    max-width: none;
-    width: auto;
+  margin: 0;
+  max-width: none;
+  width: auto;
 
-    @include clearfix; 
+  @include clearfix; 
 }
 
 .column,
 .columns 
 {
-    padding-left: ($gutter/2);
-    padding-right: ($gutter/2);
-    width: 100%;
-    float: left;
+  padding-left: ($gutter/2);
+  padding-right: ($gutter/2);
+  width: 100%;
+  float: left;
 
-    [dir=rtl] &
-    {
-      float: right;
-    }
-
-    &.push-0,
-    &.pull-0
-    {
-      width: auto;
-    }
+  [dir=rtl] &
+  {
+    float: right;
+  }
 }
 
 .column + .column:last-child,
@@ -66,12 +60,12 @@
 .column + .columns:last-child,
 .columns + .columns:last-child
 {
-    float: right;
+  float: right;
 
-    [dir=rtl] &
-    {
-      float: left;
-    }
+  [dir=rtl] &
+  {
+    float: left;
+  }
 }
 
 .column + .column.end,
@@ -79,12 +73,24 @@
 .column + .columns.end,
 .columns + .columns.end
 {
-    float: left;
+  float: left;
 
-    [dir=rtl] &
-    {
-      float: right;
-    }
+  [dir=rtl] &
+  {
+    float: right;
+  }
+}
+
+.push-0,
+.pull-0,
+.small-push-0,
+.small-pull-0,
+.medium-push-0,
+.medium-pull-0,
+.large-push-0,
+.large-pull-0
+{
+  width: auto;
 }
 
 @media only screen {

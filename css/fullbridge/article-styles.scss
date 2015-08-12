@@ -585,3 +585,49 @@ dl
         }
     }
 }
+
+.minimal-3level-list
+{
+    ul
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li
+        {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    > ul
+    {   
+        > li
+        {
+            margin: $row-spacing 0;
+            font-weight: bold;
+
+            > ul
+            {
+                font-weight: normal;
+
+                > li
+                {
+                    font-style: italic;
+
+                    > ul
+                    {
+                        padding-left: ($gutter/2);
+                        font-style: normal;
+
+                        > li
+                        {
+                            margin: .3em 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
