@@ -621,6 +621,12 @@ dl
                         padding-left: ($gutter/2);
                         font-style: normal;
 
+                        [dir=rtl] &
+                        {
+                            padding-right: ($gutter/2);
+                            padding-left: 0;
+                        }
+
                         > li
                         {
                             margin: .3em 0;

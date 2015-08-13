@@ -3525,6 +3525,9 @@ dl {
       .minimal-3level-list > ul > li > ul > li > ul {
         padding-left: 1em;
         font-style: normal; }
+        [dir=rtl] .minimal-3level-list > ul > li > ul > li > ul {
+          padding-right: 1em;
+          padding-left: 0; }
         .minimal-3level-list > ul > li > ul > li > ul > li {
           margin: .3em 0; }
 
