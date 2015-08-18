@@ -359,6 +359,19 @@
                 display: none;
             }
         }
+
+        &.no-message
+        {
+            @include bp(small)
+            {
+                max-width: calc(100% - 9.5em);
+            }
+
+            @include bp(desktop)
+            {
+                max-width: calc(100% - 27em);
+            }
+        }
     }
 
     .utilities

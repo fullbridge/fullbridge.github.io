@@ -1,0 +1,233 @@
+---
+title: Client dashboard
+description: 
+canonical: 
+direction: 
+nav-position: fixed
+nav-progress: 
+nav-program-select: no-message
+subnav-position: 
+pin-program: current
+pin-program-dashboard: current
+---
+    {% include head.html %}
+
+        {% include outdated-browser.html %}
+
+        {% include menu-bar-client.html %}
+
+        <main class="content">
+            <div class="sidebar fixed">
+                <div class="side-nav">
+                    <header>
+                        Program Dashboard
+                    </header>
+                    <nav role="navigation" title="Style Guide navigation">
+                        <ul>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="javascript:" class="done"><div class="arrow"></div> Pre-work: Finance Diagnostic</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:" class="done">Finance Diagnostic <span class="duration">90 min</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="open"><div class="arrow"></div> Welcome</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:" class="done">Welcome, Competencies, and Traits <span class="duration">25 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="done">Fullbridge Program Goals <span class="duration">30 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="current">Knowing Your Style: MBTI <span class="duration">40 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Professionalism <span class="duration">25 min</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Self-Awareness and Communication</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Self and Social Awareness <span class="duration">45 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Communicating with Impact <span class="duration">45 min</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Intro to Effective Presentation</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Top Down Thinking <span class="duration">60 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Structuring Your Thoughts <span class="duration">30 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Email Communication in a Business Context <span class="duration">60 min</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Fullbridge Excel Tutorial</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Excel Basics <span class="duration">60 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Interactive Spreadsheet Practice I <span class="duration">30 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Formulas and Functions <span class="duration">60 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Charts in Excel <span class="duration">30 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Interactive Spreadsheet Practice II <span class="duration">60 min</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Effective Teamwork</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Successful Teams <span class="duration">45 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Marooned Team Exercises: Interactive Simulation <span class="duration">120 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Becoming a Dynamic Team Member <span class="duration">60 min</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="unavailable"><div class="arrow"></div> Presenting Your Ideas</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Presenting with PowerPoint <span class="duration">30 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Showing Data Effectively <span class="duration">105 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Effective Oral Presentation <span class="duration">90 min</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:" class="unavailable">Creating Engaging Communication <span class="duration">15 min</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <input type="hidden" 
+                                data-anijs="if: click, on: .side-nav nav>ul>li>a, do: $toggleClass open, to: target;
+                                            if: click, on: .side-nav nav>ul>li>ul>li>a:not(.unavailable), do: $removeClass current, to: .side-nav nav>ul>li>ul>li>a;
+                                            if: click, on: .side-nav nav>ul>li>ul>li>a:not(.unavailable), do: $addClass current, to: target;">
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="outer-chapter">
+                Some stuff
+            </div>
+        </main>
+<!--
+        <main class="content">
+            {% include subnav-client.html %}
+            <div class="content-body">
+                <div class="wrapper">
+                    <div class="block double">
+                        Some stuff
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% include footer.html %}
+-->
+
+        <!-- Modals -->
+        <div id="modal-1" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="small-centered small-12 medium-10 columns">
+                    <div class="reveal basic">
+                        <header class="reveal-label">My programs</header>
+                        <div class="row">
+                            <div class="column">
+                                <div class="block">
+                                    <small>
+                                        <div class="row">
+                                            <div class="small-pull-0 column">
+                                                <div class="pagination" aria-label="Pagination">
+                                                    <a class="disabled" rel="prev start" href="javascript:">&laquo; <span class="text">Previous</span></a>
+                                                    <em class="current">1</em>
+                                                    <a rel="next" href="javascript:">2</a>
+                                                    <a href="javascript:">3</a>
+                                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
+                                                </div>
+                                            </div>
+                                            <div class="small-push-0 column">
+                                                <div class="drop down flush-right">
+                                                    <p>
+                                                        1&ndash;10 of 23
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </small>
+                                </div>
+                                <div class="block horizontal-scroll">
+                                    <table class="table small">
+                                        <thead>
+                                            <tr>
+                                                <th width="200" class="sorted descending"><span class="column-title">Table Header</span></th>
+                                                <th><span class="column-title">Table Header</span></th>
+                                                <th width="150"><span class="column-title">Table Header</span></th>
+                                                <th width="150"><span class="column-title">Table Header</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Content Goes Here</td>
+                                                <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                                                <td>Content Goes Here</td>
+                                                <td>Content Goes Here</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Content Goes Here</td>
+                                                <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                                <td>Content Goes Here</td>
+                                                <td>Content Goes Here</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Content Goes Here</td>
+                                                <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                                <td>Content Goes Here</td>
+                                                <td>Content Goes Here</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td>Table footer</td>
+                                                <td>Table footer</td>
+                                                <td>Table footer</td>
+                                                <td>Table footer</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:" class="close"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% include bottom.html %}
