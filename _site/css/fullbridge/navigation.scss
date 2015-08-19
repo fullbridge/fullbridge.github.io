@@ -794,8 +794,8 @@
             > .drop .link
             {
                 display: block;
-                padding-top: $row-spacing;
-                padding-bottom: $row-spacing;
+                padding-top: .5em;
+                padding-bottom: .5em;
                 color: $body-text-color;
                 text-decoration: none;
                 white-space: nowrap;
@@ -1040,8 +1040,8 @@
 
                     @include bp(desktop)
                     {
-                        padding-top: calc(.7em + 2px);
-                        padding-bottom: calc(.7em + 1px);
+                        padding-top: calc(.5em + 2px);
+                        padding-bottom: calc(.5em + 1px);
                     }
                 }
             }
@@ -1058,19 +1058,8 @@
 
     .secondary
     {
-        @include bp(small)
-        {
-            text-align: center;
-        }
-
         > li
         {
-            @include bp(small)
-            {
-                display: inline-block;
-                float: none;
-            }
-
             > a,
             > .drop .link
             {
@@ -1142,7 +1131,65 @@
                 }
             }
         }
+
+        & + .tertiary
+        {
+            margin-top: $row-spacing;
+        }
     }
+
+    .tertiary
+    {
+        > li
+        {
+            > a
+            {
+                padding: .5em ($gutter/2);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: .6em;
+                border-radius: 100em;
+                background-color: transparent;
+
+                @include font(body,regular);
+
+                html:not(.touch) &:hover
+                {
+                    color: $heading-color;
+                    text-decoration: underline;
+                }
+            }
+
+            &.current
+            {
+                > a
+                {
+                    color: $background-color !important;
+                    text-decoration: none !important;
+                    background-color: $heading-color;
+                }
+            }
+        }
+    }
+
+    .secondary,
+    .tertiary
+    {
+        @include bp(small)
+        {
+            text-align: center;
+        }
+
+        > li
+        {
+            @include bp(small)
+            {
+                display: inline-block;
+                float: none;
+            }
+        }
+    }
+
 
     &.fixed
     {
