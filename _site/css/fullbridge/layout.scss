@@ -157,6 +157,7 @@
     @include bp(desktop)
     {
         float: right;
+        padding: 0 ($gutter/2);
         
         [dir=rtl] &
         {
@@ -167,35 +168,25 @@
 
 .sidebar
 {
-    @include bp(small)
-    {
-        padding-right: 0;
-        padding-left: 0;
-    }
-
     @include bp(desktop)
     {
         float: left;
-        padding-right: ($gutter/2);
-        padding-left: 0;
 
         [dir=rtl] &
         {
             float: right;
-            padding-right: 0;
-            padding-left: ($gutter/2);
         }
     }
 
     @include bp(medium)
     {
-        width: 320px;
-        width: 32rem;
+        width: 300px;
+        width: 30rem;
 
         & + .outer-chapter
         {
-            width: calc(100% - 320px);
-            width: calc(100% - 32rem);
+            width: calc(100% - 300px);
+            width: calc(100% - 30rem);
         }
     }
 
@@ -279,5 +270,5 @@
     margin: 0;
     padding: $row-spacing 0;
     text-align: center;
-    background-color: $gray-lightest;
+    border-top: $light-divider;
 }

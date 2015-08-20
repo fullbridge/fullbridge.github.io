@@ -441,6 +441,7 @@ blockquote
 code
 {
     padding: .1em .5em;
+    color: $heading-color;
     font-size: .9em;
     background-color: $hover-bg-color;
 }
@@ -460,8 +461,8 @@ pre
         display: block;
         margin: 0;
         padding: .5em ($gutter/2);
-        font-size: .7em;
         white-space: nowrap;
+        font-size: .7em;
 
         @include horizontal-scroll;
     }

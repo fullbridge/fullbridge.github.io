@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   // Fast detect scroll on mobile.
   $(document).on('touchstart touchend touchmove', function(){ $(window).trigger('scroll'); });

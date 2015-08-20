@@ -1,6 +1,6 @@
 ---
 title: Style Guide
-description: Living style guide of the Fullbrige platform.
+description: Living style guide of the Fullbridge platform.
 canonical: http://platform.fullbridge.com/styleguide
 direction: 
 ---
@@ -32,10 +32,21 @@ direction:
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:" class="open"><div class="arrow"></div> Forms</a>
+                                <a href="javascript:" class="open"><div class="arrow"></div> Colors</a>
                                 <ul>
                                     <li>
-                                        <a href="#form-fields" class="current">Form fields</a>
+                                        <a href="#brand-colors" class="current">Brand</a>
+                                    </li>
+                                    <li>
+                                        <a href="#gray-colors" class="">Grays</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:" class=""><div class="arrow"></div> Forms</a>
+                                <ul>
+                                    <li>
+                                        <a href="#form-fields">Form fields</a>
                                     </li>
                                     <li>
                                         <a href="#switches" class="">Switches</a>
@@ -164,11 +175,142 @@ direction:
                                             if: click, on: .side-nav nav>ul>li>ul>li>a:not(.unavailable), do: $addClass current, to: target;">
                         </ul>
                     </nav>
-                    {% include footer.html %}
                 </div>
             </div>
             <div class="outer-chapter">
                 <article>
+                    <section class="row section">
+                        <div class="large-10 medium-11 small-centered columns">
+                            <h2><a name="colors" href="#colors" class="link jump"></a> Colors</h2>
+                            <h3><a name="brand-colors" href="#brand-colors" class="link jump"></a> Brand</h3>
+                            <small class="block">
+                                <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+                                    <li>
+                                        <div style="padding: 1em; color: white; background-color: #af272f;">
+                                            <p>
+                                                <strong>
+                                                    Fullbridge Red
+                                                </strong>
+                                                <br>
+                                                #af272f
+                                                <br>
+                                                $secondary-color
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="padding: 1em; color: white; background-color: #13a8e1;">
+                                            <p>
+                                                <strong>
+                                                    Fullbridge Blue
+                                                </strong>
+                                                <br>
+                                                #13a8e1
+                                                <br>
+                                                $tertiary-color
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </small>
+                            <h3><a name="gray-colors" href="#gray-colors" class="link jump"></a> Grays</h3>
+                            <small class="block">
+                                <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+                                    <li>
+                                        <div style="padding: 1em; color: white; background-color: #282828;">
+                                            <p>
+                                                <strong>
+                                                    Gray Darkest
+                                                </strong>
+                                                <br>
+                                                #282828
+                                                <br>
+                                                $gray-darkest
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="padding: 1em; color: white; background-color: #424242;">
+                                            <p>
+                                                <strong>
+                                                    Gray Darker
+                                                </strong>
+                                                <br>
+                                                #424242
+                                                <br>
+                                                $gray-darker
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="padding: 1em; color: white; background-color: #5b5b5b;">
+                                            <p>
+                                                <strong>
+                                                    Gray Dark
+                                                </strong>
+                                                <br>
+                                                #5b5b5b
+                                                <br>
+                                                $gray-dark
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="padding: 1em; color: white; background-color: #9b9b9b;">
+                                            <p>
+                                                <strong>
+                                                    Gray Regular
+                                                </strong>
+                                                <br>
+                                                #9b9b9b
+                                                <br>
+                                                $gray-regular
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="padding: 1em; color: #282828; background-color: #dbdbdb;">
+                                            <p>
+                                                <strong>
+                                                    Gray Light
+                                                </strong>
+                                                <br>
+                                                #dbdbdb
+                                                <br>
+                                                $gray-light
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="padding: 1em; color: #282828; background-color: #e7e7e7;">
+                                            <p>
+                                                <strong>
+                                                    Gray Lighter
+                                                </strong>
+                                                <br>
+                                                #e7e7e7
+                                                <br>
+                                                $gray-lighter
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="padding: 1em; color: #282828; background-color: #f4f4f4;">
+                                            <p>
+                                                <strong>
+                                                    Gray Lightest
+                                                </strong>
+                                                <br>
+                                                #f4f4f4
+                                                <br>
+                                                $gray-lightest
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </small>
+                        </div>
+                    </section>
                     <section class="row section">
                         <div class="large-10 medium-11 small-centered columns">
                             <h2>
@@ -3145,6 +3287,7 @@ direction:
                         </div>
                     </section>
                 </article>
+                {% include footer.html %}
             </div>
         </main>
 

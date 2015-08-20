@@ -2324,6 +2324,11 @@
     float: left;
     height: auto;
     padding: ($row-spacing/2) (.5*$gutter) ($row-spacing/2) 0;
+
+    [dir=rtl] &
+    {
+      float: right;
+    }
 }
 
 @media only screen {
