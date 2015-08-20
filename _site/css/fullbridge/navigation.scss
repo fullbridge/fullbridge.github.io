@@ -674,13 +674,13 @@
 
         @include bp(medium)
         {
-            width: calc(100% - 320px + (#{$gutter}/2));
-            width: calc(100% - 32rem + (#{$gutter}/2));
+            width: calc(100% - 300px);
+            width: calc(100% - 30rem);
         }
 
         @include bp(large)
         {
-            width: calc(#{$golden-main-width} + #{$golden-side-width} + (#{$gutter}/2));
+            width: calc(#{$golden-main-width} + #{$golden-side-width});
         }
 
         nav
