@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Stats
+   ========================================================================== */
+
+.stats-box
+{
+    text-align: center;
+
+    figure
+    {
+        position: relative;
+        margin: 0;
+    }
+
+    .stat,
+    .title
+    {
+        text-transform: uppercase;
+
+        @include truncate;
+    }
+
+    .stat
+    {
+        position: absolute;
+        color: $heading-color;
+        line-height: 1;
+
+        @include center(xy);
+        
+        @include bp(small)
+        {
+            font-size: 7vw;
+        }
+        
+        @include bp(desktop)
+        {
+            font-size: 2vw;
+        }
+    }
+
+    .title
+    {
+        color: $gray-regular;
+        line-height: 2;
+        letter-spacing: 1px;
+        font-size: .6em;
+
+        @include transform(translateY(0%));
+    }
+}

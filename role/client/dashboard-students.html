@@ -1,0 +1,107 @@
+---
+title: Client dashboard
+description: 
+canonical: 
+direction: 
+nav-position: fixed
+nav-program-select: no-message
+pin-dashboard: current
+pin-dashboard-students: current
+---
+    {% include head.html %}
+
+        {% include outdated-browser.html %}
+
+        {% include menu-bar-client.html %}
+
+        <main class="content">
+            {% include subnav-client.html %}
+            <div class="content-body">
+                <div class="wrapper">
+                    <div class="block double">
+                        <article class="block horizontal-scroll">
+                            <table class="table data small">
+                                <thead>
+                                    <tr>
+                                        <th class="sorted descending"><span class="column-title">Student Name</span></th>
+                                        <th><span class="column-title">Major</span></th>
+                                        <th width="120"><span class="column-title">Grad. Year</span></th>
+                                        <th width="150"><span class="column-title">Signed Up</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Cori Allen</td>
+                                        <td>Business</td>
+                                        <td>2015</td>
+                                        <td>07/21/2015</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mike Mai</td>
+                                        <td>Graphic Design</td>
+                                        <td>2009</td>
+                                        <td>Yesterday</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% include footer.html %}
+
+        <!-- Modals -->
+        <div id="modal-client-my-programs" class="reveal-modal" aria-labelledby="Modal" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="small-centered small-12 medium-10 columns">
+                    <div class="reveal basic">
+                        <header class="reveal-label">My Programs</header>
+                        <div class="row">
+                            <div class="column">
+                                <div class="block">
+                                    <small>
+                                        <div class="row">
+                                            <div class="small-pull-0 column">
+                                                <div class="pagination" aria-label="Pagination">
+                                                    <a class="disabled" rel="prev start" href="javascript:">&laquo; <span class="text">Prev</span></a>
+                                                    <em class="current">1</em>
+                                                    <a rel="next" href="javascript:">2</a>
+                                                    <a href="javascript:">3</a>
+                                                    <a rel="next" href="javascript:"><span class="text">Next</span> &raquo;</a>
+                                                </div>
+                                            </div>
+                                            <div class="small-push-0 column">
+                                            </div>
+                                        </div>
+                                    </small>
+                                </div>
+                                <div class="block horizontal-scroll">
+                                    <table class="table data small">
+                                        <thead>
+                                            <tr>
+                                                <th><span class="column-title">Title</span></th>
+                                                <th width="150" class="sorted descending"><span class="column-title">Start Date</span></th>
+                                                <th width="100"><span class="column-title"></span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                                                <td>08/21/2015</td>
+                                                <td><a href="javascript:" class="link">Select</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p>
+                                    <small>1&ndash;10 of 23</small>
+                                </p>
+                            </div>
+                        </div>
+                        <a href="javascript:" class="close"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% include bottom.html %}

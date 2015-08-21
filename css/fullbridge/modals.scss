@@ -48,6 +48,7 @@
                 top: 0;
                 right: ($menu-bar-height/1.1);
                 left: ($gutter/2/1.1);
+                color: $heading-color;
                 font-size: 1.1em;
 
                 @include font(heading,bold);

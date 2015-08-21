@@ -16,6 +16,7 @@
 	tfoot 
 	{ 
 		color: $heading-color;
+		white-space: nowrap;
 		background-color: $input-color;
 
 		@include font(heading,bold);
