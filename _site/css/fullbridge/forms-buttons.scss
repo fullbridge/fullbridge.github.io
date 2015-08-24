@@ -305,8 +305,8 @@
 
             & ~ .label-text
             {
-                color: white;
-                background-color: $gray-darkest;
+                color: $background-color;
+                background-color: $heading-color;
                 box-shadow: none;
             }
 
@@ -667,7 +667,7 @@
                 content: '';
                 border-radius: 100em;
                 background-color: $background-color;
-                box-shadow: 0 0 1px $gray-darkest;
+                box-shadow: 0 0 1px $heading-color;
 
                 @include transition(margin $timing);
             }
@@ -700,7 +700,7 @@
             {
                 right: auto;
                 left: 0;
-                color: rgba(white,.5);
+                color: rgba($background-color,.5);
                 content: '\e206';
             }
         }
@@ -981,8 +981,8 @@
 
         &:focus + .label-text
         {
-            color: white;
-            background-color: $gray-darkest;
+            color: $background-color;
+            background-color: $heading-color;
         }
     }
 
@@ -1038,13 +1038,13 @@
     .label-text
     {
         padding: .2em .4em;
-        color: white;
+        color: $background-color;
         line-height: 1;
         white-space: nowrap;
         cursor: auto;
         font-size: .8em;
         border-radius: $border-radius;
-        background-color: $gray-darkest;
+        background-color: $heading-color;
 
         @include transition(background-color $timing);
     }
@@ -1107,7 +1107,7 @@
     {
         display: inline-block;
         height: 100%;
-        color: white;
+        color: $background-color;
         line-height: 2;
         text-shadow: 0 0 2px black;
         text-indent: ($gutter/2);
@@ -1123,8 +1123,8 @@
                 135deg,
                 transparent,
                 transparent 33%,
-                rgba(white,.1) 33%,
-                rgba(white,.1) 66%,
+                rgba($background-color,.1) 33%,
+                rgba($background-color,.1) 66%,
                 transparent 66%),
             linear-gradient( 
                 top,
@@ -1210,7 +1210,7 @@
             right: 0;
             width: ($menu-bar-height*2/3);
             height: $menu-bar-height;
-            color: white;
+            color: $background-color;
             content: '\e10f';
             line-height: 3;
             text-indent: 0;
@@ -1255,7 +1255,7 @@
 
 .button.primary
 {
-    color: white !important;
+    color: $background-color !important;
     background-color: $primary-button-color;
 
     html:not(.touch) &:hover
@@ -1651,7 +1651,7 @@
             {
                 bottom: -6px;
 
-                @include triangle-down(8px, 8px, white);
+                @include triangle-down(8px, 8px, $background-color);
             }
         }
 
@@ -1678,7 +1678,7 @@
             {
                 top: -6px;
 
-                @include triangle-up(8px, 8px, white);
+                @include triangle-up(8px, 8px, $background-color);
             }
         }
 
@@ -1785,7 +1785,7 @@
         margin: 0;
         padding: 0 .7em;
         visibility: hidden;
-        color: white;
+        color: $background-color;
         line-height: 1.2;
         border-radius: $border-radius;
         background-color: $heading-color;
@@ -1947,7 +1947,7 @@
     {
         margin: 0;
         padding: .5em .7em;
-        color: white;
+        color: $background-color;
         line-height: 1.2;
         content: attr(data-tip);
         border-radius: $border-radius;

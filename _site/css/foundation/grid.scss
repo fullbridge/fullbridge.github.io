@@ -81,23 +81,13 @@
   }
 }
 
-.push-0,
-.pull-0,
-.small-push-0,
-.small-pull-0,
-.medium-push-0,
-.medium-pull-0,
-.large-push-0,
-.large-pull-0
-{
-  width: auto;
-}
-
 @media only screen {
   .small-push-0 {
     position: relative;
     left: 0;
     right: auto;
+
+    width: auto;
 
     [dir=rtl] &
     {
@@ -109,7 +99,9 @@
   .small-pull-0 {
     position: relative;
     right: 0;
-    left: auto; 
+    left: auto;
+
+    width: auto;
 
     [dir=rtl] &
     {
@@ -645,6 +637,8 @@
     left: 0;
     right: auto;
 
+    width: auto;
+
     [dir=rtl] &
     {
       left: auto;
@@ -656,6 +650,8 @@
     position: relative;
     right: 0;
     left: auto;  
+
+    width: auto;
 
     [dir=rtl] &
     {
@@ -1189,6 +1185,8 @@
     left: 0;
     right: auto; 
 
+    width: auto;
+
     [dir=rtl] &
     {
       left: auto; 
@@ -1200,6 +1198,8 @@
     position: relative;
     right: 0;
     left: auto; 
+
+    width: auto;
 
     [dir=rtl] &
     {
@@ -1480,6 +1480,8 @@
     left: 0;
     right: auto;
 
+    width: auto;
+
     [dir=rtl] &
     {
       left: auto;
@@ -1491,6 +1493,8 @@
     position: relative;
     right: 0;
     left: auto; 
+
+    width: auto;
 
     [dir=rtl] &
     {
@@ -2023,6 +2027,8 @@
     left: 0;
     right: auto; 
 
+    width: auto;
+
     [dir=rtl] &
     {
       left: auto; 
@@ -2034,6 +2040,8 @@
     position: relative;
     right: 0;
     left: auto; 
+
+    width: auto;
 
     [dir=rtl] &
     {
