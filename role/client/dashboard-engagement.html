@@ -1,0 +1,46 @@
+---
+title: Client dashboard
+description: 
+canonical: 
+direction: 
+nav-position: fixed
+nav-program-select: no-message
+pin-dashboard: current
+pin-dashboard-engagement: current
+chartjs: chart-dashboard-engagement
+---
+    {% include head.html %}
+
+        {% include outdated-browser.html %}
+
+        {% include menu-bar-client.html %}
+
+        <main class="content">
+            {% include subnav-client.html %}
+            <div class="content-body">
+                <div class="wrapper">
+                    <div class="block double">
+                        <article class"row">
+                            <div class="small-12 medium-6 columns">
+                                <h5 class="collapse">Badges Awarded</h5>
+                                <div class="block">
+                                    <canvas id="stats-badges" height="250" width="500"></canvas>
+                                </div>
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <h5 class="collapse">Messages Created</h5>
+                                <div class="block">
+                                    <canvas id="stats-messages" height="250" width="500"></canvas>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% include footer.html %}
+
+        <!-- Modals -->
+        {% include modal-client-programs.html %}
+
+    {% include bottom.html %}

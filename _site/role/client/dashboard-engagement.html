@@ -189,9 +189,9 @@
                         </li>
                     </ul>
                     <ul class="secondary">
-                        <li class="current"><a href="dashboard-overview.html">Overview</a></li>
+                        <li class=""><a href="dashboard-overview.html">Overview</a></li>
                         <li class=""><a href="dashboard-competencies.html">Competencies</a></li>
-                        <li class=""><a href="dashboard-engagement.html">Engagement</a></li>
+                        <li class="current"><a href="dashboard-engagement.html">Engagement</a></li>
                         <li class=""><a href="dashboard-students.html">Students</a></li>
                     </ul>
                 </nav>
@@ -199,112 +199,17 @@
             <div class="content-body">
                 <div class="wrapper">
                     <div class="block double">
-                        <article>
-                            <section>
-                                <form class="form">
-                                    <fieldset>
-                                        <div class="row">
-                                            <div class="medium-6 columns">
-                                                <div class="block">
-                                                    <label class="label small expand">
-                                                        <input type="date" min="2015-08-21" max="2015-09-12" value="2015-08-21">
-                                                        <div class="label-text">From</div>
-                                                        <div class="icon-date"></div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="medium-6 columns">
-                                                <div class="block">
-                                                    <label class="label small expand">
-                                                        <input type="date" min="2015-08-21" max="2015-09-12" value="2015-09-12">
-                                                        <div class="label-text">To</div>
-                                                        <div class="icon-date"></div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </section>
-                            <div class="row">
-                                <div class="small-12 medium-2 columns">
-                                    <section class="block double">
-                                        <h6 class="collapse">Student Info</h6>
-                                        <ul class="small-block-grid-2 medium-block-grid-1">
-                                            <li>
-                                                <div class="stats-box">
-                                                    <figure>
-                                                        <canvas id="stats-students" height="500" width="500"></canvas>
-                                                        <div class="stat">
-                                                            50
-                                                        </div>
-                                                    </figure>
-                                                    <div class="title">
-                                                        Sign ups
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="stats-box">
-                                                    <figure>
-                                                        <canvas id="stats-attendance" height="500" width="500"></canvas>
-                                                        <div class="stat">
-                                                            99<sup>%</sup>
-                                                        </div>
-                                                    </figure>
-                                                    <div class="title">
-                                                        Attendance
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="stats-box">
-                                                    <figure>
-                                                        <canvas id="stats-majors" height="500" width="500"></canvas>
-                                                    </figure>
-                                                    <div class="title">
-                                                        Majors
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="block">
-                                            <a href="javascript:" class="button primary tiny expand">View details</a>
-                                        </div>
-                                    </section>
+                        <article class"row">
+                            <div class="small-12 medium-6 columns">
+                                <h5 class="collapse">Badges Awarded</h5>
+                                <div class="block">
+                                    <canvas id="stats-badges" height="250" width="500"></canvas>
                                 </div>
-                                <div class="small-12 medium-10 columns">
-                                    <div class="row">
-                                        <div class="small-12 medium-6 columns">
-                                            <section class="block double">
-                                                <h6 class="collapse">Traits</h6>
-                                                <div class="block">
-                                                    <div class="stats-box">
-                                                        <figure>
-                                                            <canvas id="stats-traits" height="250" width="500"></canvas>
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <p><a href="javascript:" class="button primary tiny expand">View details</a></p>
-                                            </section>
-                                        </div>
-                                        <div class="small-12 medium-6 columns">
-                                            <section class="block double">
-                                                <h6 class="collapse">Engagement</h6>
-                                                <div class="block">
-                                                    <canvas id="stats-engagement" height="250" width="500"></canvas>
-                                                </div>
-                                                <p><a href="javascript:" class="button primary tiny expand">View details</a></p>
-                                            </section>
-                                        </div>
-                                    </div>
-                                    <section class="block double">
-                                        <h6 class="collapse">Competencies</h6>
-                                        <div class="block">
-                                            <canvas id="stats-competencies" height="250" width="500"></canvas>
-                                        </div>
-                                        <p><a href="javascript:" class="button primary tiny expand">View details</a></p>
-                                    </section>
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <h5 class="collapse">Messages Created</h5>
+                                <div class="block">
+                                    <canvas id="stats-messages" height="250" width="500"></canvas>
                                 </div>
                             </div>
                         </article>
@@ -425,7 +330,7 @@
         <script src="http://anijs.github.io/lib/anijs0.8.0/anijs.js"></script>
         <script src="http://anijs.github.io/lib/anijs0.8.0/helpers/dom/anijs-helper-dom.js"></script>
         <script src="/js/vendor/chart.min.js"></script>
-        <script src="/js/vendor/chart-dashboard-overview.js"></script>
+        <script src="/js/vendor/chart-dashboard-engagement.js"></script>
         <!--<script src="/js/vendor/foundation-responsive-tables.js"></script>-->
         <script src="/js/main.js"></script>
     </body>

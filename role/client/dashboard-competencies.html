@@ -1,0 +1,117 @@
+---
+title: Client dashboard
+description: 
+canonical: 
+direction: 
+nav-position: fixed
+nav-program-select: no-message
+pin-dashboard: current
+pin-dashboard-competencies: current
+chartjs: chart-dashboard-competencies
+---
+    {% include head.html %}
+
+        {% include outdated-browser.html %}
+
+        {% include menu-bar-client.html %}
+
+        <main class="content">
+            {% include subnav-client.html %}
+            <div class="content-body">
+                <div class="wrapper">
+                    <div class="block double">
+                        <form class="row form">
+                            <div class="small-12 medium-4 columns">
+                                <div class="block">
+                                    <label class="label expand small">
+                                        <div class="select">
+                                            <select class="filled">
+                                                <option>All cohorts</option>
+                                                <option>Cohort 1</option>
+                                                <option selected>Cohort 2</option>
+                                                <option>Cohort 3</option>
+                                            </select>
+                                            <div class="label-text">Select cohort</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="small-12 medium-4 columns">
+                                <div class="block">
+                                    <label class="label expand small">
+                                        <div class="select">
+                                            <select class="filled">
+                                                <option selected>All sections</option>
+                                                <option>Section 1</option>
+                                                <option>Section 2</option>
+                                                <option>Section 3</option>
+                                            </select>
+                                            <div class="label-text">Select section</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="small-12 medium-4 columns">
+                                <div class="block">
+                                    <label class="label expand small">
+                                        <div class="select">
+                                            <select class="filled" disabled>
+                                                <option selected>All teams</option>
+                                                <option>Team 1</option>
+                                                <option>Team 2</option>
+                                                <option>Team 3</option>
+                                            </select>
+                                            <div class="label-text">Select team</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <article class="row">
+                            <div class="small-12 medium-6 columns">
+                                <h5>Self Management</h5>
+                                <div class="block">
+                                    <canvas id="stats-self-management" height="100" width="500"></canvas>
+                                </div>
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <h5>Communication</h5>
+                                <div class="block">
+                                    <canvas id="stats-communication" height="100" width="500"></canvas>
+                                </div>
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <h5>Creative Problem Solving</h5>
+                                <div class="block">
+                                    <canvas id="stats-creative-problem-solving" height="100" width="500"></canvas>
+                                </div>
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <h5>Teamwork</h5>
+                                <div class="block">
+                                    <canvas id="stats-teamwork" height="100" width="500"></canvas>
+                                </div>
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <h5>Quantitative Problem Solving</h5>
+                                <div class="block">
+                                    <canvas id="stats-quantitative-problem-solving" height="100" width="500"></canvas>
+                                </div>
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <h5>Job-seeker Skills</h5>
+                                <div class="block">
+                                    <canvas id="stats-job-seeker-skills" height="100" width="500"></canvas>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% include footer.html %}
+
+        <!-- Modals -->
+        {% include modal-client-programs.html %}
+
+    {% include bottom.html %}
