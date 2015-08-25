@@ -181,21 +181,21 @@
                         <div class="subnav ">
                 <nav role="navigation" title="Secondary navigation">
                     <ul class="primary small-even-2">
-                        <li class="current">
+                        <li class="">
                             <a href="dashboard-overview.html"><span class="icon-dashboard"></span> <span class="label-text">Dashboard</span></a>
                         </li>
-                        <li class="">
+                        <li class="current">
                             <a href="support-tutorial.html"><span class="icon-help"></span> <span class="label-text">Support</span></a>
                         </li>
                     </ul>
-                    <ul class="secondary ">
+                    <ul class="secondary hidden">
                         <li class=""><a href="dashboard-overview.html">Overview</a></li>
                         <li class=""><a href="dashboard-competencies.html">Competencies</a></li>
-                        <li class="current"><a href="dashboard-engagement.html">Engagement</a></li>
+                        <li class=""><a href="dashboard-engagement.html">Engagement</a></li>
                         <li class=""><a href="dashboard-students.html">Students</a></li>
                     </ul>
-                    <ul class="secondary hidden">
-                        <li class=""><a href="support-tutorial.html">Tutorial</a></li>
+                    <ul class="secondary ">
+                        <li class="current"><a href="support-tutorial.html">Tutorial</a></li>
                         <li class=""><a href="support-resources.html">Resources</a></li>
                     </ul>
                 </nav>
@@ -203,17 +203,107 @@
             <div class="content-body">
                 <div class="wrapper">
                     <div class="block double">
-                        <article class"row">
-                            <div class="small-12 medium-6 columns">
-                                <h5 class="collapse">Badges Awarded</h5>
-                                <div class="block">
-                                    <canvas id="stats-badges" height="250" width="500"></canvas>
-                                </div>
+                        <article>
+                            <div class="alert-box info" id="help">
+                                <header>
+                                    Need help getting started?
+                                </header>
+                                <p>
+                                    Great, we are here to help. Thank you for partnering with Fullbridge. Landjaeger swine tail venison chuck ground round picanha porchetta ham bresaola chicken ham hock kevin. Shank fatback rump porchetta strip steak meatball. Andouille biltong short loin leberkas strip steak shankle pork loin chicken. Hamburger salami spare ribs ham landjaeger, tail swine shank turducken leberkas pork belly.
+                                </p>
+                                <a href="javascript:" class="close" data-anijs="if: click, do: $addClass hidden, to: #help;"></a>
                             </div>
-                            <div class="small-12 medium-6 columns">
-                                <h5 class="collapse">Messages Created</h5>
-                                <div class="block">
-                                    <canvas id="stats-messages" height="250" width="500"></canvas>
+                            <h3>Getting Started with Fullbridge</h3>
+                            <div class="block">
+                                <div class="units-list">
+                                    <ol>
+                                        <li>
+                                            <a href="javascript:" class="">Welcome to Fullbridge</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" class="">Fullbridge as a Partner</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" class="">Program Running</a>
+                                            <ol>
+                                                <li>
+                                                    <a href="javascript:" class="">Program Overview</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:" class="">A Typical Day</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:" class="">Crucial Steps</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:" class="">Enrollment Best Practices</a>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" class="">Marketing Fullbridge</a>
+                                            <ol>
+                                                <li>
+                                                    <a href="javascript:" class="">Information Session</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:" class="">Email Templates</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:" class="">Print and Social Media</a>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" class="">Space and IT Logistics</a>
+                                            <ol>
+                                                <li>
+                                                    <a href="javascript:" class="">Space Set Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:" class="">Internet Requirements</a>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" class="">Participant Set Up and Communication</a>
+                                            <ol>
+                                                <li>
+                                                    <a href="javascript:" class="">Participant Set Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:" class="">Participant Communication</a>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" class="">Program Manager Materials</a>
+                                            <ol>
+                                                <li>
+                                                    <a href="javascript:" class="">Program Kick-off</a>
+                                                    <ol>
+                                                        <li>
+                                                            <a href="javascript:" class="">Crucial Steps - Notes</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:" class="">A Typical Day - Notes</a>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:" class="">Internal Program Checklist</a>
+                                                    <ol>
+                                                        <li>
+                                                            <a href="javascript:" class="">Pre-program</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:" class="">During and Post Program</a>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
                                 </div>
                             </div>
                         </article>
@@ -320,13 +410,13 @@
         </div>
     </div>
 </div>
-
+        
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
         <script src="http://anijs.github.io/lib/anijs0.8.0/anijs.js"></script>
         <script src="http://anijs.github.io/lib/anijs0.8.0/helpers/dom/anijs-helper-dom.js"></script>
         <script src="/js/vendor/chart.min.js"></script>
-        <script src="/js/vendor/chart-dashboard-engagement.js"></script>
+        <script src="/js/vendor/.js"></script>
         <!--<script src="/js/vendor/foundation-responsive-tables.js"></script>-->
         <script src="/js/main.js"></script>
     </body>

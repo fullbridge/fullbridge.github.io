@@ -19,7 +19,7 @@
 		white-space: nowrap;
 		background-color: $input-color;
 
-		@include font(heading,bold);
+		@include font(body,bold);
 	}
 
 	th,
@@ -36,8 +36,11 @@
 	thead tr th,
 	tfoot tr td 
 	{ 
-		padding: $row-spacing ($gutter/2);
-		font-weight: bold; 
+		padding: $row-spacing ($gutter/2/.8);
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		font-size: .8em;
+		font-weight: bold;
 	}
 
 	thead tr th:first-child,

@@ -1047,7 +1047,7 @@
             }
         }
 
-        & + .secondary
+        & ~ .secondary
         {
             margin-top: -3px;
             padding: $row-spacing 0 0 0;

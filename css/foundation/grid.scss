@@ -55,10 +55,10 @@
   }
 }
 
-.column + .column:last-child,
-.columns + .column:last-child,
-.column + .columns:last-child,
-.columns + .columns:last-child
+.column + .column.end,
+.columns + .column.end, 
+.column + .columns.end,
+.columns + .columns.end
 {
   float: right;
 
@@ -68,31 +68,21 @@
   }
 }
 
-.column + .column.end,
-.columns + .column.end, 
-.column + .columns.end,
-.columns + .columns.end
-{
-  float: left;
-
-  [dir=rtl] &
-  {
-    float: right;
-  }
-}
-
 @media only screen {
   .small-push-0 {
     position: relative;
     left: 0;
     right: auto;
 
+    float: left !important;
     width: auto;
 
     [dir=rtl] &
     {
       left: auto;
       right: 0;
+
+      float: right !important;
     }
   }
 
@@ -101,12 +91,15 @@
     right: 0;
     left: auto;
 
+    float: right !important;
     width: auto;
 
     [dir=rtl] &
     {
       right: auto;
       left: 0;
+
+      float: left !important;
     }
   }
 
@@ -637,12 +630,15 @@
     left: 0;
     right: auto;
 
+    float: left !important;
     width: auto;
 
     [dir=rtl] &
     {
       left: auto;
       right: 0;
+
+      float: right !important;
     }
   }
 
@@ -651,12 +647,15 @@
     right: 0;
     left: auto;  
 
+    float: right !important;
     width: auto;
 
     [dir=rtl] &
     {
       right: auto;
       left: 0;
+
+      float: left !important;
     }
   }
 
@@ -1185,12 +1184,15 @@
     left: 0;
     right: auto; 
 
+    float: left !important;
     width: auto;
 
     [dir=rtl] &
     {
       left: auto; 
       right: 0;
+
+      float: right !important;
     }
   }
 
@@ -1199,12 +1201,15 @@
     right: 0;
     left: auto; 
 
+    float: right !important;
     width: auto;
 
     [dir=rtl] &
     {
       right: auto; 
       left: 0;
+
+      float: left !important;
     }
   }
 
@@ -1480,12 +1485,15 @@
     left: 0;
     right: auto;
 
+    float: left !important;
     width: auto;
 
     [dir=rtl] &
     {
       left: auto;
       right: 0;
+
+      float: right !important;
     }
   }
 
@@ -1494,12 +1502,15 @@
     right: 0;
     left: auto; 
 
+    float: right !important;
     width: auto;
 
     [dir=rtl] &
     {
       right: auto;
       left: 0;
+
+      float: left !important;
     }
   }
 
@@ -2027,12 +2038,15 @@
     left: 0;
     right: auto; 
 
+    float: left !important;
     width: auto;
 
     [dir=rtl] &
     {
       left: auto; 
       right: 0;
+
+      float: right !important;
     }
   }
 
@@ -2041,12 +2055,15 @@
     right: 0;
     left: auto; 
 
+    float: right !important;
     width: auto;
 
     [dir=rtl] &
     {
       right: auto; 
       left: 0;
+
+      float: left !important;
     }
   }
 
