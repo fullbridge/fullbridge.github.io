@@ -1021,6 +1021,12 @@
                 > a
                 {
                     border-left: none;
+
+                    [dir=rtl] &
+                    {
+                        border-right: none;
+                        border-left: $light-divider;
+                    }
                 }
             }
 

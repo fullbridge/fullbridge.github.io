@@ -22,15 +22,13 @@
     {
         display: inline-block;
         position: relative;
-        left: 1px;
-        margin-left: -1px;
         padding: $row-spacing ($gutter/2);
-        color: $body-text-color;
+        color: $gray-regular;
         text-align: center;
         vertical-align: bottom;
         cursor: pointer;
-        border: $light-divider; 
-        background-color: $input-color;
+        border: $light-divider;
+        background-color: $gray-lightest;
 
         @include font(heading,regular);
 
@@ -55,10 +53,23 @@
             padding: $row-spacing $gutter;
         }
 
-        [dir=rtl] &
+        &:after
         {
-            margin-right: 1px;
-            margin-left: -2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            content: '';
+            background-color: $heading-color;
+
+            @include transition(height $timing);
+        }
+
+        html:not(.touch) &:hover:after
+        {
+            height: 4px;
+            background-color: $gray-regular;
         }
 
         [class^="icon-"], 
@@ -132,15 +143,18 @@
 
     .tab [type="radio"]:checked + .tab-label 
     {
-        padding-top: .8em;
-        padding-bottom: .8em;
         color: $heading-color;
-        font-weight: bold;
-        border-bottom-width: 0;
+        border-bottom-color: transparent;
         background-color: $background-color;
         z-index: 1;
 
-        @include border-top-radius(3px);
+        @include font(heading,bold);
+
+        &:after
+        {
+            height: 4px;
+            background-color: $heading-color;
+        }
     }
 
     .tab [type="radio"]:checked ~ .tab-panel 
@@ -160,27 +174,9 @@
         .tab-content
         {
             padding: 0;
-            border-right: none;
-            border-bottom: none;
-            border-left: none;
-        }
-    }
-
-    &[class^="even-"], 
-    &[class*=" even-"],
-    &[class^="small-even-"], 
-    &[class*=" small-even-"]
-    {
-        > .tab > .tab-label
-        {
-            left: 0;
-            margin-left: 0;
-
-            [dir=rtl] &
-            {
-                right: 0;
-                margin-right: 0;
-            }
+            border-right: 0;
+            border-bottom: 0;
+            border-left: 0;
         }
     }
 
@@ -285,17 +281,16 @@
         {
             > .tab > .tab-label
             {
-                left: 0;
                 width: 100% !important;
-                margin-left: 0;
-                padding-right: $gutter !important;
+                padding-right: $gutter;
+                color: $heading-color;
                 text-align: left;
-                border-radius: 0;
 
                 [dir=rtl] &
                 {
                     padding-right: ($gutter/2);
                     padding-left: $gutter;
+                    text-align: right;
                 }
 
                 &:before
@@ -314,6 +309,11 @@
                     }
                 }
 
+                &:after
+                {
+                    display: none;
+                }
+
                 .label-text
                 {
                     display: inline-block;
@@ -322,28 +322,11 @@
 
             > .tab
             {
-                &:first-child .tab-label
-                {
-                    @include border-top-radius($border-radius);
-                }
-
-                &:last-child .tab-label
-                {
-                    @include border-bottom-radius($border-radius);
-                }
-
                 [type="radio"]:checked + .tab-label 
                 {
-                    @include border-bottom-radius(0);
-
                     &:before
                     {
                         color: $gray-lighter;
-                    }
-
-                    &:after
-                    {
-                        display: none;
                     }
 
                     .label-text
@@ -357,9 +340,6 @@
             {
                 padding-right: ($gutter/2);
                 padding-left: ($gutter/2);
-                border-right: $light-divider;
-                border-bottom: $light-divider;
-                border-left: $light-divider;
             }
         }
     }
@@ -391,62 +371,62 @@
     {
         .tab-label
         {
-            letter-spacing: 2px;
             text-transform: uppercase;
-            border: none;
-            border-radius: 0;
+            border: 0;
+            border-radius: $border-radius;
             background-color: $background-color;
+
+            @include font(body,regular);
 
             @include bp(small)
             {
+                letter-spacing: 1px;
                 font-size: 10px;
                 font-size: 1rem;
-                border: none;
             }
 
             @include bp(medium)
             {
+                letter-spacing: 2px;
                 font-size: 11px;
                 font-size: 1.1rem;
             }
 
             @include bp(large)
             {
+                letter-spacing: 3px;
                 font-size: 12px;
                 font-size: 1.2rem;
+            }
+
+            html:not(.touch) &:hover
+            {
+                color: $heading-color;
+
+                @include transition(color $timing);
+            }
+
+            &:after
+            {
+                display: none;
             }
         }
 
         .tab [type="radio"]:checked + .tab-label 
         {
             position: relative;
-            padding-top: $row-spacing; 
-            padding-bottom: $row-spacing; 
+            color: $background-color;
+            background-color: $heading-color;
 
-            @include bp(small)
-            {
-                border: none;
-            }
-
-            &:after
-            {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 3px;
-                content: '';
-                background-color: $heading-color;
-            }
+            @include font(body,bold);
+            @include transition(color $timing);
         }
 
         .tab-content
         {
             margin-top: 0;
             padding: 0;
-            border-right: 0;
-            border-bottom: 0;
-            border-left: 0;
+            border: 0;
             background-color: transparent;
         }
     }
@@ -492,7 +472,6 @@
     {
         padding-top: .8em;
         padding-bottom: .8em;
-        border-bottom-width: 0;
         background-color: $background-color;
         z-index: 1;        
     }
