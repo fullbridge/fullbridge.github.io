@@ -53,6 +53,11 @@
             @extend [data-tip].down;
             @extend [data-tip].flush-left;
             @extend [data-tip].short;
+
+            [dir=rtl] &
+            {
+                @extend [data-tip].flush-right;
+            }
         }
     }
 
@@ -146,6 +151,11 @@
                     {
                         text-decoration: underline;
                         background-color: transparent;
+                    }
+
+                    &.disabled
+                    {
+                        background-image: none !important;
                     }
                 }
 

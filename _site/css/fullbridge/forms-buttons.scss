@@ -1509,6 +1509,8 @@
         padding: 0 ($gutter/2);
         color: $body-text-color;
         line-height: 1.4;
+        text-transform: none;
+        letter-spacing: 0;
         visibility: hidden;
         list-style: none;
         border-radius: $border-radius;
@@ -1787,6 +1789,8 @@
         visibility: hidden;
         color: $background-color;
         line-height: 1.2;
+        text-transform: none;
+        letter-spacing: 0;
         border-radius: $border-radius;
         background-color: $heading-color;
         z-index: 1;
@@ -1796,8 +1800,8 @@
 
         @include bp(small)
         {
-            font-size: 15px;
-            font-size: 1.5rem;
+            font-size: 14px;
+            font-size: 1.4rem;
         }
 
         @include bp(medium)
@@ -1808,8 +1812,8 @@
 
         @include bp(large)
         {
-            font-size: 18px;
-            font-size: 1.8rem;
+            font-size: 16px;
+            font-size: 1.6rem;
         }
 
         &:before
@@ -1840,13 +1844,13 @@
         .bubble
         {
             right: auto;
-            left: calc(100% - #{$gutter});
+            left: calc(100% - #{$gutter/2});
         }
 
         .bubble:before
         {
             right: auto;
-            left: ($gutter/2);
+            left: .2em;
         }
     }
 
@@ -1854,13 +1858,13 @@
     {
         .bubble
         {
-            right: -.9em;
+            right: 0;
             left: auto;
         }
 
         .bubble:before
         {
-            right: ($gutter/2);
+            right: .2em;
             left: auto;
         }
     }
@@ -1949,6 +1953,8 @@
         padding: .5em .7em;
         color: $background-color;
         line-height: 1.2;
+        text-transform: none;
+        letter-spacing: 0;
         content: attr(data-tip);
         border-radius: $border-radius;
         background-color: $heading-color;
@@ -1958,8 +1964,8 @@
 
         @include bp(small)
         {
-            font-size: 15px;
-            font-size: 1.5rem;
+            font-size: 14px;
+            font-size: 1.4rem;
         }
 
         @include bp(medium)
@@ -1970,8 +1976,8 @@
 
         @include bp(large)
         {
-            font-size: 18px;
-            font-size: 1.8rem;
+            font-size: 16px;
+            font-size: 1.6rem;
         }
     }
 
@@ -1990,7 +1996,7 @@
         &:before
         {
             right: auto;
-            left: calc(100% - #{($gutter/2)} - .9em);
+            left: calc(100% - #{($gutter/2)} - .3em);
         }
 
         &:after
@@ -2004,13 +2010,13 @@
     {
         &:before
         {
-            right: -.9em;
+            right: 0;
             left: auto;
         }
 
         &:after
         {
-            right: .1em;
+            right: .2em;
             left: auto;
         }
     }
